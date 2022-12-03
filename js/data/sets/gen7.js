@@ -1,4 +1,4 @@
-
+/* AUTOMATICALLY GENERATED FROM @smogon/sets, DO NOT EDIT! */
 var SETDEX_SM = {
 				"Abra-Pulse":{			
 					"Zel 3 (Factory)":{
