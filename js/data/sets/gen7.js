@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED FROM @smogon/sets, DO NOT EDIT! */
+
 var SETDEX_SM = {
 				"Abra-Pulse":{			
 					"Zel 3 (Factory)":{
@@ -75,7 +75,7 @@ var SETDEX_SM = {
 						"ability":"Magic Guard",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 						"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-						"moves":["Psyquic Terrain","Psychic","Calm Mind","Dazzling Gleam"]},
+						"moves":["Psychic Terrain","Psychic","Calm Mind","Dazzling Gleam"]},
 					"Eve (Inverse) Doubles":{
 						"item":"Life Orb",
 						"level":94,
@@ -83,14 +83,14 @@ var SETDEX_SM = {
 						"ability":"Magic Guard",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Psyquic","Shadow Ball","Grass Knot","Dazzling Gleam"]}},
+						"moves":["Psychic","Shadow Ball","Grass Knot","Dazzling Gleam"]}},
 				"Alakazam-Mega":{
 					"Connal 4 (Short Circuit) Doubles":{
 						"level":95,
 						"nature":"Modest",
 						"ability":"Trace",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Psyquic","Signal Beam","Shadow Ball","Dazzling Gleam"]}},
+						"moves":["Psychic","Signal Beam","Shadow Ball","Dazzling Gleam"]}},
 				"Altaria-Mega":{
 					"Ciel (Big Top)":{
 						"level":78,
@@ -839,7 +839,7 @@ var SETDEX_SM = {
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"moves":["Thunderbolt","Giga Drain","Flamethrower","Acid Spray"]}},
 				"Electivire":{
-					"Connal":{
+					"Connal 1":{
 						"level":38,
 						"nature":"Jolly",
 						"ability":"Motor Drive",
@@ -887,7 +887,7 @@ var SETDEX_SM = {
 						"nature":"Modest",
 						"ability":"Magic Bounce",
 						"evs":{"hp":55, "at":55, "df":55, "sa":55, "sd":55, "sp":55},
-						"moves":["Morning Sun","Psyquic","Signal Beam","Yawn"]},
+						"moves":["Morning Sun","Psychic","Signal Beam","Yawn"]},
 					"Zel 3 (Factory)":{
 						"item":"Synthetic Seed",
 						"level":77,
@@ -1153,34 +1153,34 @@ var SETDEX_SM = {
 						"ability":"Trace",
 						"evs":{"hp":252, "at":0, "df":0, "sa":252, "sd":5, "sp":0},
 						"ivs":{"hp":31, "at":31, "df":31, "sa":31, "sd":31, "sp":0},
-						"moves":["Calm Mind","Psyquic","Wish","Moonblast"]},
+						"moves":["Calm Mind","Psychic","Wish","Moonblast"]},
 					"Adrienn (Misty) Doubles":{
 						"item":"Wise Glasses",
 						"level":77,
 						"nature":"Timid",
 						"ability":"Telepathy",
 						"evs":{"hp":0, "at":0, "df":4, "sa":252, "sd":0, "sp":252},
-						"moves":["Icy Wind","Psyquic","Dazzling Gleam","Focus Blast"]},
+						"moves":["Icy Wind","Psychic","Dazzling Gleam","Focus Blast"]},
 					"Anna (Starlight Arena)":{
 						"item":"Magical Seed",
 						"level":100,
 						"nature":"Timid",
 						"ability":"Telepathy",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Moonblast","Psyquic","Signal Beam","Focus Blast"]}},
+						"moves":["Moonblast","Psychic","Signal Beam","Focus Blast"]}},
 				"Gardevoir-Mega":{
 					"Glass Gauntlet 3:Right (Factory) Doubles":{
 						"level":85,
 						"nature":"Timid",
 						"ability":"Pixilate",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Calm Mind","Psyquic","Thunderbolt","Hyper Voice"]},
+						"moves":["Calm Mind","Psychic","Thunderbolt","Hyper Voice"]},
 					"Lin 1":{
 						"level":100,
 						"nature":"Timid",
 						"ability":"Pixilate",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Shadow Ball","Psyquic","Thunderbolt","Moonblast"]}},
+						"moves":["Shadow Ball","Psychic","Thunderbolt","Moonblast"]}},
 				"Gengar":{
 					"Entity Shade (Short Circuit)":{
 						"item":"Wide Lens",
@@ -1219,7 +1219,7 @@ var SETDEX_SM = {
 						"nature":"Timid",
 						"ability":"Sap Sipper",
 						"evs":{"hp":81, "at":81, "df":81, "sa":81, "sd":81, "sp":81},
-						"moves":["Psyquic","Thunderbolt","Thunder Wave","Hidden Power Fire"]}},
+						"moves":["Psychic","Thunderbolt","Thunder Wave","Hidden Power Fire"]}},
 				"Glaceon":{
 					"Zel 2 (Factory)":{
 						"item":"Never-Melt Ice",
@@ -1344,14 +1344,14 @@ var SETDEX_SM = {
 						"nature":"Calm",
 						"ability":"Shadow Tag",
 						"evs":{"hp":252, "at":0, "df":0, "sa":252, "sd":4, "sp":0},
-						"moves":["Calm Mind","Charge Beam","Foul Play","Psyquic"]},
+						"moves":["Calm Mind","Charge Beam","Foul Play","Psychic"]},
 					"Avril Doubles":{
 						"item":"Wise Glasses",
 						"level":90,
 						"nature":"Timid",
 						"ability":"Frisk",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Calm Mind","Thunderbolt","Dark Pulse","Psyquic"]}},
+						"moves":["Calm Mind","Thunderbolt","Dark Pulse","Psychic"]}},
 				"Granbull":{			
 					"Adrienn (Misty) Doubles":{
 						"item":"Assault Vest",
@@ -1381,21 +1381,21 @@ var SETDEX_SM = {
 						"ability":"Thick Fat",
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Icy Wind","Reflect","Psyquic","Light Screen"]},
+						"moves":["Icy Wind","Reflect","Psychic","Light Screen"]},
 					"Diana 2":{
 						"item":"Kasib Berry",
 						"level":87,
 						"nature":"Timid",
 						"ability":"Thick Fat",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Shadow Ball","Reflect","Psyquic","Light Screen"]},
+						"moves":["Shadow Ball","Reflect","Psychic","Light Screen"]},
 					"Naoman Doubles":{
 						"item":"Light Clay",
 						"level":89,
 						"nature":"Modest",
 						"ability":"Thick Fat",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Shadow Ball","Focus Blast","Psyquic","Light Screen"]}},
+						"moves":["Shadow Ball","Focus Blast","Psychic","Light Screen"]}},
 				"Gyarados":{					
 					"Blake 1 (Snowy Mountain) Doubles":{
 						"level":72,
@@ -1586,13 +1586,13 @@ var SETDEX_SM = {
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 						"moves":["Dark Pulse","Earth Power","Draco Meteor","Flash Cannon"]}},
 				"Hypno":{
-					"Connal":{
+					"Connal 1":{
 						"level":35,
 						"nature":"Modest",
 						"ability":"Insomnia",
 						"evs":{"hp":52, "at":53, "df":53, "sa":53, "sd":53, "sp":53},
 						"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-						"moves":["Hypnosis","Psyquic Terrain","Psyquic","Signal Beam"]},
+						"moves":["Hypnosis","Psychic Terrain","Psychic","Signal Beam"]},
 					"Connal 2 (Short Circuit)":{
 						"item":"Wide Lens",
 						"level":45,
@@ -1679,7 +1679,7 @@ var SETDEX_SM = {
 						"nature":"Modest",
 						"ability":"Dry Skin",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Nasty Plot","Blizzard","Psyquic","Shadow Ball"]}},
+						"moves":["Nasty Plot","Blizzard","Psychic","Shadow Ball"]}},
 				"Kangaskhan-Mega":{
 					"Elias (Sancta Terra)":{
 						"level":100,
@@ -1881,7 +1881,7 @@ var SETDEX_SM = {
 						"ability":"Water Absorb",
 						"evs":{"hp":252, "at":0, "df":0, "sa":252, "sd":4, "sp":0},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Blizzard","Hydro Pump","Psyquic","Dragon Pulse"]}},
+						"moves":["Blizzard","Hydro Pump","Psychic","Dragon Pulse"]}},
 				"Larvesta":{
 					"Bennett (Mirror Arena)":{
 						"item":"Wide Lens",
@@ -2365,7 +2365,7 @@ var SETDEX_SM = {
 						"ability":"Competitive",
 						"evs":{"hp":66, "at":66, "df":66, "sa":66, "sd":66, "sp":66},
 						"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-						"moves":["Charge Beam","Psyquic","Shadow Ball","Light Screen"]},
+						"moves":["Charge Beam","Psychic","Shadow Ball","Light Screen"]},
 					"Cain 4 (Chess Arena: Knight)":{
 						"item":"Wise Glasses",
 						"level":54,
@@ -2373,7 +2373,7 @@ var SETDEX_SM = {
 						"ability":"Competitive",
 						"evs":{"hp":81, "at":81, "df":81, "sa":81, "sd":81, "sp":81},
 						"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-						"moves":["Charge Beam","Psyquic","Shadow Ball","Light Screen"]},
+						"moves":["Charge Beam","Psychic","Shadow Ball","Light Screen"]},
 					"Cain 5 (Factory) Doubles":{
 						"item":"Damp Rock",
 						"level":81,
@@ -2381,7 +2381,7 @@ var SETDEX_SM = {
 						"ability":"Competitive",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 						"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-						"moves":["Charge Beam","Psyquic","Rain Dance","Reflect"]}},
+						"moves":["Charge Beam","Psychic","Rain Dance","Reflect"]}},
 				"Metagross":{
 					"Radomus (Chess Arena: King) Doubles":{
 						"item":"King's Rock",
@@ -2608,7 +2608,7 @@ var SETDEX_SM = {
 						"ability":"Telepathy",
 						"evs":{"hp":51, "at":51, "df":51, "sa":51, "sd":51, "sp":51},
 						"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-						"moves":["Psyquic Terrain","Moonlight","Psybeam","Signal Beam"]},
+						"moves":["Psychic Terrain","Moonlight","Psybeam","Signal Beam"]},
 					"Connal 2 (Short Circuit) Doubles":{
 						"item":"Amplifield Rock",
 						"level":45,
@@ -2616,7 +2616,7 @@ var SETDEX_SM = {
 						"ability":"Telepathy",
 						"evs":{"hp":67, "at":67, "df":67, "sa":67, "sd":67, "sp":67},
 						"ivs":{"hp":25, "at":25, "df":25, "sa":25, "sd":25, "sp":25},
-						"moves":["Psyquic Terrain","Moonlight","Psyshock","Dazzling Gleam"]},
+						"moves":["Psychic Terrain","Moonlight","Psyshock","Dazzling Gleam"]},
 					"Connal 3":{
 						"item":"Amplifield Rock",
 						"level":48,
@@ -2624,7 +2624,7 @@ var SETDEX_SM = {
 						"ability":"Telepathy",
 						"evs":{"hp":72, "at":72, "df":72, "sa":72, "sd":72, "sp":72},
 						"ivs":{"hp":25, "at":25, "df":25, "sa":25, "sd":25, "sp":25},
-						"moves":["Psyquic Terrain","Moonlight","Psyshock","Dazzling Gleam"]}},
+						"moves":["Psychic Terrain","Moonlight","Psyshock","Dazzling Gleam"]}},
 				"Nidoking":{
 					"Cain 2":{
 						"level":36,
@@ -2756,14 +2756,14 @@ var SETDEX_SM = {
 						"ability":"Tinted Lens",
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Hypnosis","Air Slash","Psyquic","Heat Wave"]},
+						"moves":["Hypnosis","Air Slash","Psychic","Heat Wave"]},
 					"Diana 2":{
 						"Choice Specs":"",
 						"level":88,
 						"nature":"Modest",
 						"ability":"Tinted Lens",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Moonblast","Hurricane","Psyquic","Heat Wave"]}},
+						"moves":["Moonblast","Hurricane","Psychic","Heat Wave"]}},
 				"Noivern":{					
 					"Ciel (Big Top)":{
 						"item":"Assault Vest",
@@ -2792,7 +2792,7 @@ var SETDEX_SM = {
 						"nature":"Timid",
 						"ability":"Infiltrator",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Boomburst","Flamethrower","Dragon Pulse","Psyquic"]}},
+						"moves":["Boomburst","Flamethrower","Dragon Pulse","Psychic"]}},
 				"Oranguru":{
 					"Eclipse 3 (Swamp) Doubles":{
 						"level":39,
@@ -3047,14 +3047,14 @@ var SETDEX_SM = {
 						"ability":"Surge Surfer",
 						"evs":{"hp":54, "at":54, "df":54, "sa":54, "sd":54, "sp":54},
 						"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-						"moves":["Volt Switch","Psyquic","Nuzzle","Fake Out"]},
+						"moves":["Volt Switch","Psychic","Nuzzle","Fake Out"]},
 					"Victoria 3 (Ashen Beach)":{
 						"level":39,
 						"nature":"Calm",
 						"ability":"Surge Surfer",
 						"evs":{"hp":58, "at":58, "df":58, "sa":58, "sd":58, "sp":58},
 						"ivs":{"hp":30, "at":30, "df":30, "sa":30, "sd":30, "sp":30},
-						"moves":["Hidden Power Ice","Nasty Plot","Psyquic","Thunderbolt"]},
+						"moves":["Hidden Power Ice","Nasty Plot","Psychic","Thunderbolt"]},
 					"Connal 2 (Short Circuit)":{
 						"level":46,
 						"nature":"Modest",
@@ -3114,14 +3114,14 @@ var SETDEX_SM = {
 						"ability":"Magic Guard",
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"ivs":{"hp":31, "at":31, "df":31, "sa":31, "sd":31, "sp":0},
-						"moves":["Trick Room","Psyquic","Focus Blast","Toxic"]},
+						"moves":["Trick Room","Psychic","Focus Blast","Toxic"]},
 					"Deryl Doubles":{
 						"item":"Leftovers",
 						"level":89,
 						"nature":"Modest",
 						"ability":"Magic Guard",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-						"moves":["Thunder","Psyquic","Recover","Calm Mind"]},
+						"moves":["Thunder","Psychic","Recover","Calm Mind"]},
 					"Eve (Inverse) Doubles":{
 						"item":"Leftovers",
 						"level":94,
@@ -3589,7 +3589,7 @@ var SETDEX_SM = {
 						"ability":"Regenerator",
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"ivs":{"hp":31, "at":31, "df":31, "sa":31, "sd":31, "sp":0},
-						"moves":["Trick Room","Psyquic","Scald","Nasty Plot"]}},
+						"moves":["Trick Room","Psychic","Scald","Nasty Plot"]}},
 				"Solrock":{
 					"Aster 2 (Crystal Cavern) Doubles":{
 						"level":30,
