@@ -713,7 +713,7 @@ var SETDEX_SM = {
 						"ability":"Steelworker",
 						"evs":{"hp":52, "at":52, "df":52, "sa":52, "sd":52, "sp":52},
 						"ivs":{"hp":25, "at":25, "df":25, "sa":25, "sd":25, "sp":25},
-						"moves":["Brick Break","Giga Drain","Ancor Shot","Shadow Claw"]}},
+						"moves":["Brick Break","Giga Drain","Anchor Shot","Shadow Claw"]}},
 				"Ditto":{
 					"Elias (Sancta Terra)":{
 						"item":"Choice Scarf",
