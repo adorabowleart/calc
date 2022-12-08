@@ -2506,7 +2506,7 @@ var SM_PATCH = {
         zp: 200
     },
     'Multi-Attack': {
-        bp: 90,
+        bp: 120,
         type: 'Normal',
         makesContact: true,
         category: 'Physical',
@@ -3906,7 +3906,7 @@ var SS_PATCH = {
     'Mud Shot': { maxPower: 110 },
     'Mud-Slap': { maxPower: 90 },
     'Muddy Water': { maxPower: 130 },
-    'Multi-Attack': { bp: 120, maxPower: 95 },
+    'Multi-Attack': { maxPower: 95 },
     'Mystical Fire': { maxPower: 130 },
     'Natural Gift': { maxPower: 130 },
     'Nature\'s Madness': { maxPower: 100 },

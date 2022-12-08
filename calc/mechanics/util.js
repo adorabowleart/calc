@@ -137,16 +137,22 @@ function getFinalSpeed(gen, pokemon, field, side) {
         speedMods.push(8192);
     if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
         (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
-        (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
-        (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
-        (pokemon.hasAbility('Slush Rush') && weather === 'Hail') ||
-        (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
+        (pokemon.hasAbility('Sand Rush') && (weather === 'Sand' || field.hasTerrain('Desert', 'Ashen Beach'))) ||
+        (pokemon.hasAbility('Swift Swim') && (weather.includes('Rain') || field.hasTerrain('Water', 'Underwater', 'Murkwater'))) ||
+        (pokemon.hasAbility('Slush Rush') && (weather === 'Hail' || field.hasTerrain('Icy', 'Snowy Mountain'))) ||
+        (pokemon.hasAbility('Surge Surfer') && field.hasTerrain('Electric', 'Short-Circuit', 'Murkwater', 'Water', 'Underwater'))) {
         speedMods.push(8192);
     }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
         speedMods.push(6144);
     }
     else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
+        speedMods.push(2048);
+    }
+    if (field.hasTerrain('Water', 'Murkwater') && isGrounded(pokemon, field) && (!pokemon.hasAbility('Surge Surfer', 'Swift Swim') || !pokemon.hasType('Water')) || (field.hasTerrain('New World') && isGrounded(pokemon, field))) {
+        speedMods.push(3072);
+    }
+    if (field.hasTerrain('Underwater') && (!pokemon.hasAbility('Swift Swim') || !pokemon.hasType('Water'))) {
         speedMods.push(2048);
     }
     if (pokemon.hasItem('Choice Scarf')) {
