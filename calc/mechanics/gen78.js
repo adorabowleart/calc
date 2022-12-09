@@ -443,6 +443,38 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             typeEffectiveness = 0;
         }
     }
+    if (field.hasTerrain('Inverse')) {
+        typeEffectiveness = 1;
+        if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] === 0) {
+            typeEffectiveness *= 2;
+        }
+        else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] === 0.5) {
+            typeEffectiveness *= 2;
+        }
+        else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] === 1) {
+            typeEffectiveness *= 1;
+        }
+        else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] === 2) {
+            typeEffectiveness *= 0.5;
+        }
+        if (defender.types[1] != undefined) {
+            if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] === 0) {
+                typeEffectiveness *= 2;
+            }
+            else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] === 0.5) {
+                typeEffectiveness *= 2;
+            }
+            else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] === 1) {
+                typeEffectiveness *= 1;
+            }
+            else if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] === 2) {
+                typeEffectiveness *= 0.5;
+            }
+        }
+        if (move.named('Freeze Dry') && defender.hasType('Water')) {
+            typeEffectiveness *= 4;
+        }
+    }
     if (typeEffectiveness === 0) {
         return result;
     }
