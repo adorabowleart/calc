@@ -221,6 +221,11 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         typeEffectiveness /= 2;
         desc.terrain = field.terrain;
     }
+    if (field.hasTerrain('Flower Garden 4', 'Flower Garden 5') && defender.hasType('Grass') &&
+        gen.types.get((0, util_1.toID)(move.type)).effectiveness['Grass'] > 1) {
+        typeEffectiveness /= 2;
+        desc.terrain = field.terrain;
+    }
     if (field.hasTerrain('Ashen Beach') && move.named('Strength')) {
         var moveType = gen.types.get('fighting');
         var addedType = gen.types.get('psychic');
@@ -256,6 +261,38 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     if (field.hasTerrain('Chess Board') && move.named('AncientPower', 'Psychic', 'SecretPower', 'Strength', 'Continental Crush', 'Sahttered Psyche')) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
         var addedType = gen.types.get('rock');
+        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
+            addedType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    }
+    if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+        var moveType = gen.types.get((0, util_1.toID)(move.type));
+        var addedType = gen.types.get('fire');
+        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
+            addedType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    }
+    if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+        var moveType = gen.types.get((0, util_1.toID)(move.type));
+        var addedType = gen.types.get('water');
+        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
+            addedType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    }
+    if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+        var moveType = gen.types.get((0, util_1.toID)(move.type));
+        var addedType = gen.types.get('grass');
+        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
+            addedType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    }
+    if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+        var moveType = gen.types.get((0, util_1.toID)(move.type));
+        var addedType = gen.types.get('psychic');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
             (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
             addedType.effectiveness[defender.types[0]] *
@@ -309,7 +346,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType.effectiveness[defender.types[0]] *
             (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
     }
-    if (field.hasTerrain('Short-Circuit') && (move.named('FlashCannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Muddy Water', 'Surf') || (attacker.hasAbility('Steelworker') && move.hasType('Steel')))) {
+    if (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && (move.named('FlashCannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Muddy Water', 'Surf') || (attacker.hasAbility('Steelworker') && move.hasType('Steel')))) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
         var addedType = gen.types.get('electric');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
@@ -476,16 +513,6 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() * 0.5);
         }
         result.damage = lostHP;
-        return result;
-    }
-    if (field.hasTerrain('Corrosive Mist') && !defender.hasAbility('Damp', 'Flash Fire') && !field.defenderSide.isProtected && move.named('Eruption', 'Explosion', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Self-Destruct', 'Inferno Overdrive')) {
-        var lostHP = 0;
-        lostHP = Math.floor(defender.maxHP() * 1);
-        if (defender.hasAbility('Sturdy')) {
-            lostHP += 1;
-        }
-        result.damage = lostHP;
-        desc.terrain = field.terrain;
         return result;
     }
     if (move.named('Spectral Thief')) {
@@ -671,7 +698,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 65;
                     desc.moveName = 'Venoshock';
                     break;
-                case 'Crystal':
+                case 'Crystal Fire' || 'Crystal Water' || 'Crystal Grass' || 'Crystal Psychic':
                     basePower = 80;
                     desc.moveName = 'Power Gem';
                     break;
@@ -702,6 +729,14 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                 case 'Fairy Tale':
                     basePower = 50;
                     desc.moveName = 'Secret Sword';
+                    break;
+                case 'Flower Garden 1' || 'Flower Garden 2' || 'Flower Garden 3' || 'Flower Garden 4':
+                    basePower = 0;
+                    desc.moveName = 'Growth';
+                    break;
+                case 'Flower Garden 5':
+                    basePower = 90;
+                    desc.moveName = 'Petal Blizzard';
                     break;
                 case 'Forest':
                     basePower = 120;
@@ -759,13 +794,17 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 40;
                     desc.moveName = 'Rock Smash';
                     break;
-                case 'Starlight':
-                    basePower = 95;
-                    desc.moveName = 'Moonblast';
+                case 'Short-Circuit 0.5' || 'Short-Circuit 0.8' || 'Short-Circuit 1.2' || 'Short-Circuit 1.5' || 'Short-Circuit 2':
+                    basePower = 80;
+                    desc.moveName = 'Discharge';
                     break;
                 case 'Snowy Mountain':
                     basePower = 60;
                     desc.moveName = 'Avalanche';
+                    break;
+                case 'Starlight':
+                    basePower = 95;
+                    desc.moveName = 'Moonblast';
                     break;
                 case 'Superheated':
                     basePower = 95;
@@ -797,7 +836,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             break;
         case 'Bloom Doom':
-            basePower = move.bp * (!field.hasTerrain('Underwater', 'New World', 'Forest', 'Flower Garden') ? 1.3 : 1);
+            basePower = move.bp * (!field.hasTerrain('Underwater', 'New World', 'Forest', 'Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') ? 1.3 : 1);
             desc.moveBP = basePower;
             break;
         case 'Eruption':
@@ -1034,7 +1073,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Crystal':
+        case 'Crystal Fire' || 'Crystal Water' || 'Crystal Grass' || 'Crystal Psychic':
             if (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Ancient Power', 'Diamond Storm', 'Power Gem', 'Rock Smash', 'Rock Tomb')) {
                 basePower = move.bp * 1.5;
             }
@@ -1140,9 +1179,48 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Flower Garden':
-            if (move.named('Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
+        case 'Flower Garden 1' || 'Flower Garden 2' || 'Flower Garden 3' || 'Flower Garden 4' || 'Flower Garden 5':
+            if (field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') && !field.hasWeather('Rain', 'Heavy Rain') && move.named('Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
                 basePower = move.bp * 1.3;
+            }
+            else if (move.named('Cut')) {
+                basePower = move.bp * 1.5;
+                if (defender.hasType('Grass')) {
+                    basePower = move.bp * 2;
+                }
+            }
+            else if (move.named('Petal Blizzar', 'Fleur Cannon', 'Petal Dance')) {
+                if (field.hasTerrain('Flower Garden 3')) {
+                    basePower = move.bp * 1.2;
+                }
+                else if (field.hasTerrain('Flower Garden 4', 'Flower Garden 5')) {
+                    basePower = move.bp * 1.5;
+                }
+            }
+            if (move.hasType('Grass')) {
+                if (field.hasTerrain('Flower Garden 2')) {
+                    basePower = move.bp * 1.1;
+                }
+                else if (field.hasTerrain('Flower Garden 3')) {
+                    basePower = move.bp * 1.3;
+                }
+                else if (field.hasTerrain('Flower Garden 4')) {
+                    basePower = move.bp * 1.5;
+                }
+                else if (field.hasTerrain('Flower Garden 5')) {
+                    basePower = move.bp * 2;
+                }
+            }
+            if (move.hasType('Bug')) {
+                if (field.hasTerrain('Flower Garden 2', 'Flower Garden 3')) {
+                    basePower = move.bp * 1.5;
+                }
+                else if (field.hasTerrain('Flower Garden 4', 'Flower Garden 5')) {
+                    basePower = move.bp * 2;
+                }
+            }
+            if (move.hasType('Fire') && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) {
+                basePower = move.bp * 1.5;
             }
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
@@ -1353,7 +1431,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Short-Circuit':
+        case 'Short-Circuit 2' || 'Short-Circuit 0.5' || 'Short-Circuit 0.8' || 'Short-Circuit 1.2' || 'Short-Circuit 1.5':
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling', 'Hydro Vortex')) {
                 basePower = move.bp * 1.5;
             }
@@ -1362,6 +1440,23 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             }
             if (move.named('Light That Burns the Sky')) {
                 basePower = move.bp * 0.5;
+            }
+            if (move.hasType('Electric')) {
+                if (field.hasTerrain('Short-Circuit 0.5')) {
+                    basePower = move.bp * 0.5;
+                }
+                if (field.hasTerrain('Short-Circuit 0.8')) {
+                    basePower = move.bp * 0.8;
+                }
+                if (field.hasTerrain('Short-Circuit 1.2')) {
+                    basePower = move.bp * 1.2;
+                }
+                if (field.hasTerrain('Short-Circuit 1.5')) {
+                    basePower = move.bp * 1.5;
+                }
+                if (field.hasTerrain('Short-Circuit 2')) {
+                    basePower = move.bp * 2;
+                }
             }
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
@@ -1491,7 +1586,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Gunk Shot', 'Octazooka', 'Sludge', 'Sludge Wave')) {
                 basePower = move.bp * 1.2;
             }
-            if (move.named('Bulldozze', 'Earthquake', 'Magnitude')) {
+            if (move.named('Bulldoze', 'Earthquake', 'Magnitude')) {
                 basePower = move.bp * 1.5;
             }
             desc.moveBP = basePower;
@@ -1650,7 +1745,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
             if (field.hasTerrain('Electric', 'Factory')) {
                 bpMods.push(6144);
             }
-            else if (field.hasTerrain('Short-Circuit')) {
+            else if (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2')) {
                 bpMods.push(8192);
             }
             else {
@@ -1784,13 +1879,30 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
                 (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
                 (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
                 (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
+        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() * 0.75 && field.hasTerrain('Flower Garden 2')) ||
+        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
         (attacker.hasAbility('Overgrow', 'Swarm') && field.hasTerrain('Forest')) ||
+        (attacker.hasAbility('Swarm') && field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
         (attacker.hasAbility('Blaze') && field.hasTerrain('Burning')) ||
         (attacker.hasAbility('Torrent') && field.hasTerrain('Water', 'Underwater')) ||
         (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus')) ||
-        field.hasTerrain('Short-Circuit') && attacker.hasAbility('Plus', 'Minus')) {
-        atMods.push(6144);
-        desc.attackerAbility = attacker.ability;
+        field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && attacker.hasAbility('Plus', 'Minus')) {
+        if (attacker.hasAbility('Swarm') && field.hasTerrain('Flower Garden 3')) {
+            atMods.push(7373);
+            desc.attackerAbility = attacker.ability;
+        }
+        else if (attacker.hasAbility('Swarm', 'Overgrow') && field.hasTerrain('Flower Garden 4')) {
+            atMods.push(7373);
+            desc.attackerAbility = attacker.ability;
+        }
+        else if (attacker.hasAbility('Swarm', 'Overgrow') && field.hasTerrain('Flower Garden 5')) {
+            atMods.push(8192);
+            desc.attackerAbility = attacker.ability;
+        }
+        else {
+            atMods.push(6144);
+            desc.attackerAbility = attacker.ability;
+        }
     }
     else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
         atMods.push(6144);
@@ -1903,7 +2015,7 @@ function calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCriti
             desc.defenderAbility = defender.ability;
         }
     }
-    else if (defender.named('Cherrim') && defender.hasAbility('Flower Gift') && field.hasWeather('Sun', 'Harsh Sunshine') &&
+    else if (defender.named('Cherrim') && defender.hasAbility('Flower Gift') && (field.hasWeather('Sun', 'Harsh Sunshine') || field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) &&
         !hitsPhysical) {
         dfMods.push(6144);
         desc.defenderAbility = defender.ability;
@@ -2003,7 +2115,7 @@ function calculateFinalModsSMSS(gen, attacker, defender, move, field, desc, isCr
         desc.defenderAbility = defender.ability;
     }
     if (defender.hasAbility('Prism Armor')) {
-        if (field.hasTerrain('Dark Crystal', 'Rainbow', 'Crystal')) {
+        if (field.hasTerrain('Dark Crystal', 'Rainbow', 'Crystal Fire', 'Crystal Water', 'Crystal Grass', 'Crystal Psychic')) {
             if (typeEffectiveness > 1) {
                 finalMods.push(1536);
                 desc.defenderAbility = defender.ability;
@@ -2048,6 +2160,11 @@ function calculateFinalModsSMSS(gen, attacker, defender, move, field, desc, isCr
     if (field.defenderSide.isFriendGuard) {
         finalMods.push(3072);
         desc.isFriendGuard = true;
+    }
+    if (defender.hasAbility('Flower Veil') && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) {
+        finalMods.push(3072);
+        desc.defenderAbility = defender.ability;
+        desc.terrain = field.terrain;
     }
     if (defender.hasAbility('Fluffy') && move.hasType('Fire')) {
         finalMods.push(8192);

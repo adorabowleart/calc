@@ -358,7 +358,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
     }
     if ((field.hasTerrain('Misty', 'Swamp') && !field.hasWeather('Rain', 'Heavy Rain', 'Harsh Sunshine') && defender.hasAbility('Dry Skin')) || (field.hasTerrain('Water', 'Underwater') && defender.hasAbility('Dry Skin', 'Water Abosrb') && (0, util_2.isGrounded)(defender, field)) || (field.hasTerrain('Rainbow') && defender.hasStatus('slp')) ||
-        (field.hasTerrain('Forest') && defender.hasAbility('Sap Sipper')) || (field.hasTerrain('Short-Circuit') && defender.hasAbility('Volt Absorb'))) {
+        (field.hasTerrain('Forest') && defender.hasAbility('Sap Sipper')) || (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && defender.hasAbility('Volt Absorb'))) {
         damage += Math.floor(defender.maxHP() / 16);
         if (defender.hasStatus('slp') && field.hasTerrain('Rainbow')) {
             texts.push(' Asleep pokemon in Rainbow Field');
@@ -375,6 +375,29 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             damage *= 2;
         }
         texts.push('Burning Field');
+    }
+    if (field.hasTerrain('Underwater') && (0, util_2.isGrounded)(defender, field) && defender.hasType('Fire', 'Ground', 'Rock') && !defender.hasAbility('Magic Guard', 'Swift Swim')) {
+        var waterType = gen.types.get('water');
+        var effectiveness = waterType.effectiveness[defender.types[0]] * (defender.types[1] ? waterType.effectiveness[defender.types[1]] : 1);
+        if (effectiveness == 2) {
+            damage += Math.floor((effectiveness * defender.maxHP()) / 4);
+        }
+        else if (effectiveness == 4) {
+            damage += Math.floor((effectiveness * defender.maxHP()) / 2);
+        }
+        if (defender.hasAbility('Flame Body', 'Magma Armor')) {
+            damage *= 2;
+        }
+        texts.push('Underwater Field damage');
+    }
+    if (field.hasTerrain('Murkwater') && (0, util_2.isGrounded)(defender, field) && !defender.hasType('Poison', 'Steel') && !defender.hasAbility('Immunity', 'Magic Guard', 'Poison Heal', 'Toxic Boost', 'wonder Guard')) {
+        var poisonType = gen.types.get('poison');
+        var effectiveness = poisonType.effectiveness[defender.types[0]] * (defender.types[1] ? poisonType.effectiveness[defender.types[1]] : 1);
+        damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+        if (defender.hasAbility('Dry Skin', 'Flame Body', 'Magma Armor', 'Water Absorb')) {
+            damage *= 2;
+        }
+        texts.push('Murkwater Field damage');
     }
     if (field.hasTerrain('Swamp') && defender.hasStatus('slp') && !defender.hasAbility('Magic Guard')) {
         damage -= Math.floor(defender.maxHP() / 16);
@@ -547,7 +570,21 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             damage -= Math.floor(defender.maxHP() / 6);
             texts.push(move.name + ' trapping damage in ' + field.terrain);
         }
-        if (attacker.hasItem('Binding Band')) {
+        else if (move.named('Infestation') && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) {
+            if (field.hasTerrain('Flower Garden 3')) {
+                damage -= Math.floor(defender.maxHP() / 6);
+                texts.push(move.name + ' trapping damage in ' + field.terrain);
+            }
+            else if (field.hasTerrain('Flower Garden 4')) {
+                damage -= Math.floor(defender.maxHP() / 4);
+                texts.push(move.name + ' trapping damage in ' + field.terrain);
+            }
+            else if (field.hasTerrain('Flower Garden 5')) {
+                damage -= Math.floor(defender.maxHP() / 3);
+                texts.push(move.name + ' trapping damage in ' + field.terrain);
+            }
+        }
+        else if (attacker.hasItem('Binding Band')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
             texts.push('trapping damage');
         }

@@ -136,11 +136,11 @@ function getFinalSpeed(gen, pokemon, field, side) {
     if (side.isTailwind)
         speedMods.push(8192);
     if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
-        (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
+        (pokemon.hasAbility('Chlorophyll') && (weather.includes('Sun') || field.hasTerrain('Flower Garden 4', 'Flower Garden 5'))) ||
         (pokemon.hasAbility('Sand Rush') && (weather === 'Sand' || field.hasTerrain('Desert', 'Ashen Beach'))) ||
         (pokemon.hasAbility('Swift Swim') && (weather.includes('Rain') || field.hasTerrain('Water', 'Underwater', 'Murkwater'))) ||
         (pokemon.hasAbility('Slush Rush') && (weather === 'Hail' || field.hasTerrain('Icy', 'Snowy Mountain'))) ||
-        (pokemon.hasAbility('Surge Surfer') && field.hasTerrain('Electric', 'Short-Circuit', 'Murkwater', 'Water', 'Underwater'))) {
+        (pokemon.hasAbility('Surge Surfer') && field.hasTerrain('Electric', 'Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2', 'Murkwater', 'Water', 'Underwater'))) {
         speedMods.push(8192);
     }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
