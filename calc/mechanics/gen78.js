@@ -831,7 +831,8 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     desc.moveName = 'Tri Attack';
             }
             break;
-        case 'Plasma Fists' || 'Stoked Sparksurfer':
+        case 'Plasma Fists':
+        case 'Stoked Sparksurfer':
             basePower = move.bp * (!field.hasTerrain('Underwater', 'New World') ? 1.3 : 1);
             desc.moveBP = basePower;
             break;
@@ -854,7 +855,8 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
             desc.moveBP = basePower;
             break;
-        case 'Fishious Rend' || 'Bolt Beak':
+        case 'Fishious Rend':
+        case 'Bolt Beak':
             basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
             desc.moveBP = basePower;
             break;
@@ -900,13 +902,15 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
             desc.moveBP = basePower;
             break;
-        case 'Heat Crash' || 'Heavy Slam':
+        case 'Heat Crash':
+        case 'Heavy Slam':
             var wr = (attacker.weightkg * (0, util_2.getWeightFactor)(attacker)) /
                 (defender.weightkg * (0, util_2.getWeightFactor)(defender));
             basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
             desc.moveBP = basePower;
             break;
-        case 'Power Trip' || 'Stored Power':
+        case 'Power Trip':
+        case 'Stored Power':
             basePower = 20 + 20 * (0, util_2.countBoosts)(gen, attacker.boosts);
             desc.moveBP = basePower;
             break;
@@ -941,11 +945,13 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.attackerItem = attacker.item;
             break;
-        case 'Water Spout' || 'Dragon Energy':
+        case 'Dragon Energy':
+        case 'Water Spout':
             basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
             desc.moveBP = basePower;
             break;
-        case 'Reversal' || 'Flail':
+        case 'Reversal':
+        case 'Flail':
             var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
             basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
             desc.moveBP = basePower;
@@ -973,7 +979,8 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
             desc.moveBP = basePower;
             break;
-        case 'Wring Out' || 'Crush Grip':
+        case 'Wring Out':
+        case 'Crush Grip':
             basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
             basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
             desc.moveBP = basePower;
@@ -1083,7 +1090,10 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Crystal Fire' || 'Crystal Water' || 'Crystal Grass' || 'Crystal Psychic':
+        case 'Crystal Fire':
+        case 'Crystal Water':
+        case 'Crystal Grass':
+        case 'Crystal Psychic':
             basePower = move.bp;
             if (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Ancient Power', 'Diamond Storm', 'Power Gem', 'Rock Smash', 'Rock Tomb')) {
                 basePower *= 1.5;
@@ -1196,7 +1206,11 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Flower Garden 1' || 'Flower Garden 2' || 'Flower Garden 3' || 'Flower Garden 4' || 'Flower Garden 5':
+        case 'Flower Garden 1':
+        case 'Flower Garden 2':
+        case 'Flower Garden 3':
+        case 'Flower Garden 4':
+        case 'Flower Garden 5':
             basePower = move.bp;
             if (field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') && !field.hasWeather('Rain', 'Heavy Rain') && move.named('Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
                 basePower *= 1.3;
@@ -1463,7 +1477,11 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveBP = basePower;
             desc.terrain = field.terrain;
             break;
-        case 'Short-Circuit 2' || 'Short-Circuit 0.5' || 'Short-Circuit 0.8' || 'Short-Circuit 1.2' || 'Short-Circuit 1.5':
+        case 'Short-Circuit 2':
+        case 'Short-Circuit 0.5':
+        case 'Short-Circuit 0.8':
+        case 'Short-Circuit 1.2':
+        case 'Short-Circuit 1.5':
             basePower = move.bp;
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling', 'Hydro Vortex')) {
                 basePower *= 1.5;
