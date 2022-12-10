@@ -89,11 +89,22 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     else if (move.named('Nature Power') || (move.named('Terrain Pulse') && (0, util_2.isGrounded)(attacker, field))) {
         type =
-            field.hasTerrain('Electric') ? 'Electric'
-                : field.hasTerrain('Grassy') ? 'Grass'
-                    : field.hasTerrain('Misty') ? 'Fairy'
-                        : field.hasTerrain('Psychic') ? 'Psychic'
-                            : 'Normal';
+            field.hasTerrain('Ashen Beach', 'Inverse', 'Misty', 'Psychic') ? 'Psychic'
+                : field.hasTerrain('Big Top') ? 'Flying'
+                    : field.hasTerrain('Burning', 'Superheated') ? 'Fire'
+                        : field.hasTerrain('Cave', 'Chess Board', 'Crystal Fire', 'Crystal Water', 'Crystal Grass', 'Crystal Psychic', 'Mountain') ? 'Rock'
+                            : field.hasTerrain('Corrosive', 'Corrosive Mist', 'Murkwater', 'Wasteland') ? 'Poison'
+                                : field.hasTerrain('Dark Crystal') ? 'Dark'
+                                    : field.hasTerrain('Desert') ? 'Ground'
+                                        : field.hasTerrain('Dragon\'s Den', 'New World') ? 'Dragon'
+                                            : field.hasTerrain('Electric', 'Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') ? 'Electric'
+                                                : field.hasTerrain('Factory', 'Mirror') ? 'Steel'
+                                                    : field.hasTerrain('Fairy Tale', 'Rocky') ? 'Fighting'
+                                                        : field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5', 'Forest', 'Grassy') ? 'Grass'
+                                                            : field.hasTerrain('Icy', 'Rainbow', 'Snowy Mountain') ? 'Ice'
+                                                                : field.hasTerrain('Starlight') ? 'Fairy'
+                                                                    : field.hasTerrain('Swamp', 'Underwater', 'Water') ? 'Water'
+                                                                        : 'Normal';
         desc.terrain = field.terrain;
         desc.moveType = type;
     }
@@ -730,7 +741,10 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 65;
                     desc.moveName = 'Venoshock';
                     break;
-                case 'Crystal Fire' || 'Crystal Water' || 'Crystal Grass' || 'Crystal Psychic':
+                case 'Crystal Fire':
+                case 'Crystal Water':
+                case 'Crystal Grass':
+                case 'Crystal Psychic':
                     basePower = 80;
                     desc.moveName = 'Power Gem';
                     break;
@@ -762,7 +776,10 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 50;
                     desc.moveName = 'Secret Sword';
                     break;
-                case 'Flower Garden 1' || 'Flower Garden 2' || 'Flower Garden 3' || 'Flower Garden 4':
+                case 'Flower Garden 1':
+                case 'Flower Garden 2':
+                case 'Flower Garden 3':
+                case 'Flower Garden 4':
                     basePower = 0;
                     desc.moveName = 'Growth';
                     break;
@@ -826,7 +843,11 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 40;
                     desc.moveName = 'Rock Smash';
                     break;
-                case 'Short-Circuit 0.5' || 'Short-Circuit 0.8' || 'Short-Circuit 1.2' || 'Short-Circuit 1.5' || 'Short-Circuit 2':
+                case 'Short-Circuit 0.5':
+                case 'Short-Circuit 0.8':
+                case 'Short-Circuit 1.2':
+                case 'Short-Circuit 1.5':
+                case 'Short-Circuit 2':
                     basePower = 80;
                     desc.moveName = 'Discharge';
                     break;
@@ -1022,7 +1043,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
     }
     switch (field.terrain) {
         case 'Ashen Beach':
-            basePower = move.bp;
             if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Sand Tomb')) {
                 basePower *= 2;
             }
@@ -1039,7 +1059,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Big Top':
-            basePower = move.bp;
             if (move.flags.sound || move.named('Fiery Dance', 'Fire Lash', 'First Impresion', 'Fly', 'Petal Dance', 'Power Whip', 'Revelation Dance', 'VineW hip')) {
                 basePower *= 1.5;
             }
@@ -1053,7 +1072,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Burning':
-            basePower = move.bp;
             if (move.named('Smack Down', 'Thousand Arrows')) {
                 basePower *= 2;
             }
@@ -1070,7 +1088,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Cave':
-            basePower = move.bp;
             if (move.named('Sky Drop')) {
                 basePower *= 0;
             }
@@ -1090,7 +1107,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Chess Board':
-            basePower = move.bp;
             if (move.named('Ancient Power', 'Psychic', 'Secret Power', 'Strength', 'Continental Crush', 'Shattered Psyche', 'Fake Out', 'Feint', 'Feint Attack', 'First Impression', 'Shadow Sneak', 'Smart Strike', 'Sucker Punch')) {
                 basePower *= 1.5;
             }
@@ -1098,7 +1114,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Corrosive':
-            basePower = move.bp;
             if (move.named('Acid', 'Acid Spray')) {
                 basePower *= 2;
             }
@@ -1112,7 +1127,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Corrosive Mist':
-            basePower = move.bp;
             if (move.named('Bubble', 'Bubble Beam', 'Sparkling Aria', 'Acid Spray', 'Clear Smog', 'Smog')) {
                 basePower *= 1.5;
             }
@@ -1126,7 +1140,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Crystal Water':
         case 'Crystal Grass':
         case 'Crystal Psychic':
-            basePower = move.bp;
             if (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Ancient Power', 'Diamond Storm', 'Power Gem', 'Rock Smash', 'Rock Tomb')) {
                 basePower *= 1.5;
             }
@@ -1140,7 +1153,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Dark Crystal':
-            basePower = move.bp;
             if (move.named('Solar Blade', 'Solar Beam')) {
                 basePower *= 0;
             }
@@ -1160,7 +1172,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Desert':
-            basePower = move.bp;
             if (move.named('Burn Up', 'Dig', 'Heat Wave', 'Needle Arm', 'Pin Missile', 'Sand Tomb', 'Solar Beam', 'Solar Blade', 'Thousand Waves', 'Searing Sunraze Smash')) {
                 basePower *= 1.5;
             }
@@ -1171,7 +1182,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Dragon\'s Den':
-            basePower = move.bp;
             if (move.named('Smack Down', 'Thousand Arrows', 'Continental Crush', 'Tectonic Rage', 'Dragon Ascent', 'Pay Day')) {
                 basePower *= 2;
             }
@@ -1191,7 +1201,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Electric':
-            basePower = move.bp;
             if (move.named('Focus Punch')) {
                 basePower *= 0;
             }
@@ -1208,7 +1217,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Factory':
-            basePower = move.bp;
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb')) {
                 basePower *= 2;
             }
@@ -1225,7 +1233,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Fairy Tale':
-            basePower = move.bp;
             if (move.named('Draining Kiss')) {
                 basePower *= 2;
             }
@@ -1243,7 +1250,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Flower Garden 3':
         case 'Flower Garden 4':
         case 'Flower Garden 5':
-            basePower = move.bp;
             if (field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') && !field.hasWeather('Rain', 'Heavy Rain') && move.named('Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
                 basePower *= 1.3;
             }
@@ -1290,7 +1296,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Forest':
-            basePower = move.bp;
             if (move.named('Attack order', 'Cut', 'Electroweb')) {
                 if (move.named('Cut') && defender.hasType('Grass')) {
                     basePower *= 3;
@@ -1312,7 +1317,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Glitch':
-            basePower = move.bp;
             if (move.hasType('Psychic')) {
                 basePower *= 1.5;
             }
@@ -1320,7 +1324,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Grassy':
-            basePower = move.bp;
             if (move.named('Fairy Wind', 'Silver Wind')) {
                 basePower *= 1.5;
             }
@@ -1340,7 +1343,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Holy':
-            basePower = move.bp;
             if (move.named('Ancient Power', 'Extreme Speed', 'Judgment', 'Magical Leaf', 'Mystical Fire', 'Return', 'Sacred Fire', 'Sacred Sword')) {
                 basePower *= 1.5;
             }
@@ -1360,7 +1362,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Icy':
-            basePower = move.bp;
             if (move.named('Scald', 'Steam Eruption')) {
                 basePower *= 0.5;
             }
@@ -1377,7 +1378,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Mirror':
-            basePower = move.bp;
             if (move.named('Mirror Shot')) {
                 basePower *= 2;
             }
@@ -1388,7 +1388,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Misty':
-            basePower = move.bp;
             if (move.named('Explosion', 'Mind blown', 'Self-Destruct')) {
                 basePower *= 0;
             }
@@ -1408,7 +1407,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Mountain':
-            basePower = move.bp;
             if (move.named('Avalanche', 'Circle Throw', 'Eruption', 'Fairy Wind', 'Hyper Voice', 'Icy Wind', 'Ominous Wind', 'Razor Wind', 'Silver Wind', 'Storm Throw', 'Thunder', 'Twister', 'Vital Throw')) {
                 basePower *= 1.5;
             }
@@ -1428,7 +1426,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Murkwater':
-            basePower = move.bp;
             if (move.hasType('Ground') && !move.named('Mud Shot', 'Mud-Slap', 'Thousand Waves', 'Mud Bomb')) {
                 basePower *= 0;
             }
@@ -1451,7 +1448,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'New World':
-            basePower = move.bp;
             if (move.named('Doom Desire')) {
                 basePower *= 4;
             }
@@ -1471,7 +1467,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Psychic':
-            basePower = move.bp;
             if (move.named('Aura Sphere', 'Hex', 'Magical Leaf', 'Mind Blown', 'Moonblast', 'Mystical Fire')) {
                 basePower *= 1.5;
             }
@@ -1482,7 +1477,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Rainbow':
-            basePower = move.bp;
             if (move.named('Aurora Beam', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'Hidden Power', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
                 basePower *= 1.5;
             }
@@ -1496,7 +1490,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Rocky':
-            basePower = move.bp;
             if (move.named('Rock Smash')) {
                 basePower *= 2;
             }
@@ -1514,7 +1507,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Short-Circuit 0.8':
         case 'Short-Circuit 1.2':
         case 'Short-Circuit 1.5':
-            basePower = move.bp;
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
@@ -1545,7 +1537,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Snowy Mountain':
-            basePower = move.bp;
             if (move.named('Icy Wind')) {
                 basePower *= 2;
             }
@@ -1577,7 +1568,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Starlight':
-            basePower = move.bp;
             if (!field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain', 'Hail', 'Strong Winds', 'Sand')) {
                 if (move.named('Doom Desire')) {
                     basePower *= 4;
@@ -1599,7 +1589,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Superheated':
-            basePower = move.bp;
             if (move.named('Scald', 'Steam Eruption')) {
                 basePower *= 1.5;
             }
@@ -1622,7 +1611,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Swamp':
-            basePower = move.bp;
             if (move.named('Explosion', 'Mind blown', 'Self-Destruct')) {
                 basePower *= 0;
             }
@@ -1639,7 +1627,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Underwater':
-            basePower = move.bp;
             if (move.named('Anchor Shot')) {
                 basePower *= 2;
             }
@@ -1665,7 +1652,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Wasteland':
-            basePower = move.bp;
             if (move.named('Spit Up')) {
                 basePower *= 2;
             }
@@ -1682,7 +1668,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         case 'Water':
-            basePower = move.bp;
             if (move.named('Dive', 'Muddy Water', 'Surf', 'Whirlpool', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
@@ -1702,7 +1687,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             break;
         default:
-            basePower = move.bp;
+            desc.moveBP = basePower;
             desc.terrain = field.terrain;
     }
     if (basePower === 0) {

@@ -961,7 +961,7 @@ var SETDEX_SM = {
 						"evs":{"hp":33, "at":33, "df":33, "sa":33, "sd":33, "sp":33},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
 						"moves":["Poison Powder","Leech Seed","Barrage","Bullet Seed"]}},
-				"Exeggutor":{					
+				"Exeggutor-Alola":{
 					"Taka 2 (Factory)":{
 						"item":"Sitrus Berry",
 						"level":41,
@@ -969,8 +969,7 @@ var SETDEX_SM = {
 						"ability":"Frisk",
 						"evs":{"hp":61, "at":61, "df":61, "sa":61, "sd":61, "sp":61},
 						"ivs":{"hp":30, "at":30, "df":30, "sa":30, "sd":30, "sp":30},
-						"moves":["Dragon Hammer","Wood Hammer","Hypnosis","Nature Power"]}},
-				"Exeggutor-Alola":{					
+						"moves":["Dragon Hammer","Wood Hammer","Hypnosis","Nature Power"]},
 					"Taka 3 (Factory)":{
 						"item":"Sitrus Berry",
 						"level":71,
