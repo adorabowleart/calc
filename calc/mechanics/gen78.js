@@ -98,8 +98,8 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                                     : field.hasTerrain('Desert') ? 'Ground'
                                         : field.hasTerrain('Dragon\'s Den', 'New World') ? 'Dragon'
                                             : field.hasTerrain('Electric', 'Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') ? 'Electric'
-                                                : field.hasTerrain('Factory', 'Mirror') ? 'Steel'
-                                                    : field.hasTerrain('Fairy Tale', 'Rocky') ? 'Fighting'
+                                                : field.hasTerrain('Factory', 'Mirror', 'Fairy Tale') ? 'Steel'
+                                                    : field.hasTerrain('Rocky') ? 'Fighting'
                                                         : field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5', 'Forest', 'Grassy') ? 'Grass'
                                                             : field.hasTerrain('Icy', 'Rainbow', 'Snowy Mountain') ? 'Ice'
                                                                 : field.hasTerrain('Starlight') ? 'Fairy'
@@ -163,7 +163,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     if (field.hasTerrain('Fairy Tale') && move.named('Cut', 'Sacred Sword', 'Secret Sword', 'Slash')) {
         type = 'Steel';
     }
-    if (field.hasTerrain('Murkwater') && move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Thousand Waves', 'Sludge Wave')) {
+    if (field.hasTerrain('Murkwater') && move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Thousand Waves')) {
         type = 'Water';
     }
     if (field.hasTerrain('Starlight') && move.named('Solar Beam', 'Solar Blade')) {
@@ -269,7 +269,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType.effectiveness[defender.types[0]] *
             (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
     }
-    if (field.hasTerrain('Chess Board') && move.named('AncientPower', 'Psychic', 'SecretPower', 'Strength', 'Continental Crush', 'Sahttered Psyche')) {
+    if (field.hasTerrain('Chess Board') && move.named('AncientPower', 'Nature Power', 'Psychic', 'SecretPower', 'Strength', 'Continental Crush', 'Sahttered Psyche')) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
         var addedType = gen.types.get('rock');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
@@ -349,7 +349,15 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType.effectiveness[defender.types[0]] *
             (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
     }
-    if (field.hasTerrain('Rocky') && move.named('Bulldoze', 'Earthquake', 'Magnitude', 'RockClimb', 'Strength')) {
+    if (field.hasTerrain('Murkwater') && move.named('Sludge Wave, Nature Power')) {
+        var moveType = gen.types.get((0, util_1.toID)(move.type));
+        var addedType = gen.types.get('water');
+        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
+            addedType.effectiveness[defender.types[0]] *
+            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    }
+    if (field.hasTerrain('Rocky') && move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength')) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
         var addedType = gen.types.get('rock');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
@@ -723,6 +731,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Big Top':
                     basePower = 110;
+                    move.category = 'Physical';
                     desc.moveName = 'Acrobatics';
                     break;
                 case 'Burning':
@@ -731,6 +740,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Cave':
                     basePower = 60;
+                    move.category = 'Physical';
                     desc.moveName = 'Rock Tomb';
                     break;
                 case 'Corrosive':
@@ -738,7 +748,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     desc.moveName = 'Acid Spray';
                     break;
                 case 'Corrosive Mist':
-                    basePower = 65;
+                    basePower = 130;
                     desc.moveName = 'Venoshock';
                     break;
                 case 'Crystal Fire':
@@ -754,6 +764,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Desert':
                     basePower = 35;
+                    move.category = 'Physical';
                     desc.moveName = 'Sand Tomb';
                     break;
                 case 'Dragon\'s Den':
@@ -769,11 +780,13 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     desc.moveName = 'Thunderbolt';
                     break;
                 case 'Factory':
-                    basePower = 50;
+                    basePower = 100;
+                    move.category = 'Physical';
                     desc.moveName = 'Gear Grind';
                     break;
                 case 'Fairy Tale':
-                    basePower = 50;
+                    basePower = 85;
+                    move.overrideDefensiveStat = 'def';
                     desc.moveName = 'Secret Sword';
                     break;
                 case 'Flower Garden 1':
@@ -785,10 +798,12 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Flower Garden 5':
                     basePower = 90;
+                    move.category = 'Physical';
                     desc.moveName = 'Petal Blizzard';
                     break;
                 case 'Forest':
                     basePower = 120;
+                    move.category = 'Physical';
                     desc.moveName = 'Wood Hammer';
                     break;
                 case 'Glitch':
@@ -821,6 +836,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Mountain':
                     basePower = 75;
+                    move.category = 'Physical';
                     desc.moveName = 'Rock Slide';
                     break;
                 case 'Murkwater':
@@ -836,11 +852,12 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     desc.moveName = 'Psychic';
                     break;
                 case 'Rainbow':
-                    basePower = 90;
+                    basePower = 65;
                     desc.moveName = 'Aurora Beam';
                     break;
                 case 'Rocky':
                     basePower = 40;
+                    move.category = 'Physical';
                     desc.moveName = 'Rock Smash';
                     break;
                 case 'Short-Circuit 0.5':
@@ -853,6 +870,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Snowy Mountain':
                     basePower = 60;
+                    move.category = 'Physical';
                     desc.moveName = 'Avalanche';
                     break;
                 case 'Starlight':
@@ -873,6 +891,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     break;
                 case 'Wasteland':
                     basePower = 120;
+                    move.category = 'Physical';
                     desc.moveName = 'Gunk Shot';
                     break;
                 case 'Water':
@@ -1063,7 +1082,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.flags.sound || move.named('Fiery Dance', 'Fire Lash', 'First Impresion', 'Fly', 'Petal Dance', 'Power Whip', 'Revelation Dance', 'VineW hip')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Acrobatics')) {
+            else if (move.named('Acrobatics', 'Nature Power')) {
                 basePower = 110 * 1.5;
             }
             else if (move.named('Pay Day')) {
@@ -1080,7 +1099,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             else if (move.named('Clear Smog', 'Smog')) {
                 basePower *= 1.5;
             }
-            if (move.hasType('Fire') && (0, util_2.isGrounded)(attacker, field)) {
+            if ((move.hasType('Fire')) && (0, util_2.isGrounded)(attacker, field)) {
                 basePower *= 1.5;
             }
             if ((move.hasType('Grass') && (0, util_2.isGrounded)(defender, field)) || move.hasType('Ice')) {
@@ -1094,7 +1113,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Sky Drop')) {
                 basePower *= 0;
             }
-            else if (move.named('Rock Tomb')) {
+            else if (move.named('Rock Tomb', 'Nature Power')) {
                 basePower *= 1.5;
             }
             else if (move.named('Diamond Storm', 'Power Gem')) {
@@ -1111,7 +1130,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Chess Board':
-            if (move.named('Ancient Power', 'Psychic', 'Secret Power', 'Strength', 'Continental Crush', 'Shattered Psyche', 'Fake Out', 'Feint', 'Feint Attack', 'First Impression', 'Shadow Sneak', 'Smart Strike', 'Sucker Punch')) {
+            if (move.named('Ancient Power', 'Psychic', 'Secret Power', 'Strength', 'Continental Crush', 'Shattered Psyche', 'Fake Out', 'Feint', 'Feint Attack', 'First Impression', 'Nature Power', 'Shadow Sneak', 'Smart Strike', 'Sucker Punch')) {
                 basePower *= 1.5;
             }
             desc.moveBP = basePower;
@@ -1119,7 +1138,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Corrosive':
-            if (move.named('Acid', 'Acid Spray')) {
+            if (move.named('Acid', 'Acid Spray', 'Nature Power')) {
                 basePower *= 2;
             }
             else if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Smack Down', 'Thousand Arrows', 'Whirlpool')) {
@@ -1147,7 +1166,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Crystal Water':
         case 'Crystal Grass':
         case 'Crystal Psychic':
-            if (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Ancient Power', 'Diamond Storm', 'Power Gem', 'Rock Smash', 'Rock Tomb')) {
+            if (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Ancient Power', 'Diamond Storm', 'Nature Power', 'Power Gem', 'Rock Smash', 'Rock Tomb')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dark Pulse', 'Night Daze', 'Light That Burns the Sky', 'Bulldoze', 'Earthquake', 'Magnitude', 'Tectonic Rage', 'Aurora Beam', 'Dazzling Gleam', 'Doom Desire', 'Luster Purge', 'Mirror Shot', 'Moongeist Beam', 'Photon Geyser', 'Signal Beam', 'Techno Blast', 'Menacing Moonraze Maelstrom')) {
@@ -1167,7 +1186,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             else if (move.named('Prismatic Laser', 'Black Hole Eclipse')) {
                 basePower *= 2;
             }
-            else if (move.named('Aurora Beam', 'Dark Pulse', 'Dazzling Gleam', 'Diamond Storm', 'Doom Desire', 'Flash Cannon', 'Luster Purge', 'Mirror Shot', 'Moongeist Beam', 'Night Daze', 'Nigh Slash', 'Photon Geyser', 'Power Gem', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Signal Beam', 'Techno Blast', 'Menacing Moonraze Maelstrom')) {
+            else if (move.named('Aurora Beam', 'Dark Pulse', 'Nature Power', 'Dazzling Gleam', 'Diamond Storm', 'Doom Desire', 'Flash Cannon', 'Luster Purge', 'Mirror Shot', 'Moongeist Beam', 'Night Daze', 'Nigh Slash', 'Photon Geyser', 'Power Gem', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Signal Beam', 'Techno Blast', 'Menacing Moonraze Maelstrom')) {
                 basePower *= 1.5;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Tectonic Rage')) {
@@ -1181,7 +1200,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Desert':
-            if (move.named('Burn Up', 'Dig', 'Heat Wave', 'Needle Arm', 'Pin Missile', 'Sand Tomb', 'Solar Beam', 'Solar Blade', 'Thousand Waves', 'Searing Sunraze Smash')) {
+            if (move.named('Burn Up', 'Dig', 'Heat Wave', 'Needle Arm', 'Pin Missile', 'Sand Tomb', 'Nature Power', 'Solar Beam', 'Solar Blade', 'Thousand Waves', 'Searing Sunraze Smash')) {
                 basePower *= 1.5;
             }
             if ((move.hasType('Water') && (0, util_2.isGrounded)(attacker, field)) || (move.hasType('Electric') && (0, util_2.isGrounded)(defender, field))) {
@@ -1229,7 +1248,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Factory':
-            if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb')) {
+            if (move.named('Flash Cannon', 'Gear Grind', 'Nature Power', 'Gyro Ball', 'Magnet Bomb')) {
                 basePower *= 2;
             }
             else if (move.named('Steamroller', 'Techno Blast')) {
@@ -1273,7 +1292,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower *= 2;
                 }
             }
-            else if (move.named('Petal Blizzar', 'Fleur Cannon', 'Petal Dance')) {
+            else if (move.named('Petal Blizzard', 'Nature Power', 'Fleur Cannon', 'Petal Dance')) {
                 if (field.hasTerrain('Flower Garden 3')) {
                     basePower *= 1.2;
                 }
@@ -1361,7 +1380,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Holy':
-            if (move.named('Ancient Power', 'Extreme Speed', 'Judgment', 'Magical Leaf', 'Mystical Fire', 'Return', 'Sacred Fire', 'Sacred Sword')) {
+            if (move.named('Ancient Power', 'Extreme Speed', 'Judgment', 'Nature Power', 'Magical Leaf', 'Mystical Fire', 'Return', 'Sacred Fire', 'Sacred Sword')) {
                 basePower *= 1.5;
             }
             else if (move.named('Aeroblast', 'Crush Grip', 'Diamond Storm', 'Doom Desire', 'Dragon Ascent', 'Fleur Cannon', 'Hyperspace Hole', 'Land\'s Wrath', 'Luster Purge', 'Mist Ball', 'Moongeist Beam', 'Origin Pulse', 'Precipice Blades', 'Prismatic Laser', 'Psycho Boost', 'Psystrike', 'Relic Song', 'Roar of Time', 'Sacred Sword', 'Spacial Rend', 'Sunsteel Strike', 'Genesis Supernova', 'Menacing Moonraze Maeltrom', 'Searing Sunraze Smash')) {
@@ -1398,7 +1417,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Mirror':
-            if (move.named('Mirror Shot')) {
+            if (move.named('Mirror Shot', 'Nature Power')) {
                 basePower *= 2;
             }
             else if (move.named('Aurora Beam', 'Dazzling Gleam', 'Doom Desire', 'Flash Cannon', 'Luster Purge', 'Photon Geyser', 'Prismatic Laser', 'Signal Beam', 'Techno Blast', 'Ligh That Burns the Sky')) {
@@ -1415,7 +1434,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             else if (move.named('Dark Pulse', 'Night Daze', 'Shadow Ball')) {
                 basePower *= 0.5;
             }
-            else if (move.named('Aura Sphere', 'Dazzling Gleam', 'Doom Desire', 'Fairy Wind', 'Icy Wind', 'Magical Leaf', 'Mist Ball', 'Moonblast', 'Moongeist Beam', 'Mystical Fire', 'Sylver Wind', 'Steam Eruption')) {
+            else if (move.named('Aura Sphere', 'Dazzling Gleam', 'Doom Desire', 'Fairy Wind', 'Icy Wind', 'Magical Leaf', 'Mist Ball', 'Nature Power', 'Moonblast', 'Moongeist Beam', 'Mystical Fire', 'Sylver Wind', 'Steam Eruption')) {
                 basePower *= 1.5;
             }
             else if (move.named('Acid Downpour')) {
@@ -1475,7 +1494,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Doom Desire')) {
                 basePower *= 4;
             }
-            else if (move.named('Ancient Power', 'Comet Punch', 'Draco Meteor', 'Future Sight', 'Hyperspace Fury', 'Hyperspace Hole', 'Meteor Mash', 'Moonblast', 'Spacial Rend', 'Swift', 'Vacuum Wave', 'Black Hole Eclipse')) {
+            else if (move.named('Ancient Power', 'Comet Punch', 'Draco Meteor', 'Future Sight', 'Hyperspace Fury', 'Hyperspace Hole', 'Meteor Mash', 'Moonblast', 'Spacial Rend', 'Nature Power', 'Swift', 'Vacuum Wave', 'Black Hole Eclipse')) {
                 basePower *= 2;
             }
             else if (move.named('Aeroblast', 'Aurora Beam', 'Bolt Strike', 'Blue Flare', 'Core Enforcer', 'Crush Grip', 'Dazzling Gleam', 'Diamond Storm', 'Dragon Ascent', 'Earth Power', 'Eruption', 'Flash Cannon', 'FleurCannon', 'Freeze Shock', 'Fusion Bolt', 'Fusion Flare', 'Ice Burn', 'Judgment', 'Land\'s Wrath', 'Luster Purge', 'Magma Storm', 'Mind Blown', 'Mirro Shot', 'Mist Ball', 'Moongeist Beam', 'Multi-Attack', 'Oblivion Wing', 'Origin Pulse', 'Photon Geyser', 'Plasma Fists', 'Power Gem', 'Precipice Blades', 'Prismatic Laser', 'Psycho Boost', 'Psystrike', 'Relic Song', 'Roar of Time', 'Sacred Fire', 'Sacred Sword', 'Searing Shot', 'Secret Sword', 'Seed Flare', 'Shadow Force', 'Signal Beam', 'Spectral Thief', 'Steam Eruption', 'Sunsteel Strike', 'Techno Blast', 'Thousand Arrows', 'Thousand Waves', 'V-Create', 'Continental Crush', 'Genesis Supernova', 'Menacing Moonraze Maeltrom', 'Searing Sunraze Smash', 'Soul-Stealing 7-Star Strike')) {
@@ -1503,7 +1522,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Rainbow':
-            if (move.named('Aurora Beam', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'Hidden Power', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
+            if (move.named('Aurora Beam', 'Nature Power', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'Hidden Power', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dark Pulse', 'Night Daze', 'Shadow Ball', 'Never-Ending Nightmare')) {
@@ -1517,7 +1536,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Rocky':
-            if (move.named('Rock Smash')) {
+            if (move.named('Rock Smash', 'Nature Power')) {
                 basePower *= 2;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength', 'Accelerock')) {
@@ -1538,7 +1557,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Dark Pulse', 'Night Daze', 'Nigh Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
+            else if (move.named('Dark Pulse', 'Night Daze', 'Nigh Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
                 basePower *= 1.3;
             }
             else if (move.named('Light That Burns the Sky')) {
@@ -1569,7 +1588,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Icy Wind')) {
                 basePower *= 2;
             }
-            else if (move.named('Avalanche', 'Circle Throw', 'Fairy Wind', 'Glaciate', 'Hyper Voice', 'Ominous Wind', 'Powder Snow', 'Razor Wind', 'Silver Wind', 'Storm Throw', 'Twister', 'Vital Throw')) {
+            else if (move.named('Avalanche', 'Nature Power', 'Circle Throw', 'Fairy Wind', 'Glaciate', 'Hyper Voice', 'Ominous Wind', 'Powder Snow', 'Razor Wind', 'Silver Wind', 'Storm Throw', 'Twister', 'Vital Throw')) {
                 basePower *= 1.5;
             }
             else if (move.named('Fairy Wind', 'Gust', 'Icy Wind', 'Ominous Wind', 'Razor Wind', 'Silver Wind', 'Twister') && field.hasWeather('Strong Winds')) {
@@ -1605,7 +1624,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                 else if (move.named('Comet Punch', 'Draco Meteor', 'Hyperspace Fury', 'Hyperspace Hole', 'Meteor Mash', 'Moongeist Beam', 'Spacial Rend', 'Swift', 'BlackHole Eclipse', 'Menacing Moonraze Maeltrom', 'Searing Sunraze Smash')) {
                     basePower *= 2;
                 }
-                else if (move.named('Aurora Beam', 'Dazzling Gleam', 'Flash Cannon', 'Luster Purge', 'Mirro Shot', 'Moonblast', 'Photon Geyser', 'Signal Beam', 'Solar Beam', 'Techno Blast')) {
+                else if (move.named('Aurora Beam', 'Dazzling Gleam', 'Flash Cannon', 'Luster Purge', 'Mirro Shot', 'Moonblast', 'Nature Power', 'Photon Geyser', 'Signal Beam', 'Solar Beam', 'Techno Blast')) {
                     basePower *= 1.5;
                 }
                 if (move.hasType('Dark', 'Psychic')) {
@@ -1623,7 +1642,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Scald', 'Steam Eruption')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Eruption', 'Explosion', 'Self-Destruct', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive') && !field.hasWeather('Rain', 'Heavy Rain')) {
+            else if (move.named('Eruption', 'Explosion', 'Self-Destruct', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Nature Power', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive') && !field.hasWeather('Rain', 'Heavy Rain')) {
                 basePower *= 1.3;
             }
             else if (move.named('Muddy Water', 'Sparkling Aria', 'Surf', 'Water Pledge', 'Water Spout', 'Hydro Vortex', 'Oceanic Operetta')) {
@@ -1646,7 +1665,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Explosion', 'Mind blown', 'Self-Destruct')) {
                 basePower *= 0;
             }
-            else if (move.named('Smack Down', 'Thousand Arrows', 'Brine', 'Mud Bomb', 'Gunk Shot', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Sludge Wave', 'Surf', 'Hydro Vortex')) {
+            else if (move.named('Smack Down', 'Thousand Arrows', 'Brine', 'Mud Bomb', 'Gunk Shot', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Nature Power', 'Sludge Wave', 'Surf', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude')) {
@@ -1663,7 +1682,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Anchor Shot')) {
                 basePower *= 2;
             }
-            else if (move.named('Water Pulse')) {
+            else if (move.named('Water Pulse', 'Nature Power')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dive', 'Bounce', 'Fly', 'Sky Drop', 'Acid Downpour')) {
@@ -1692,7 +1711,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             else if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Power Whip', 'Vine Whip')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Gunk Shot', 'Octazooka', 'Sludge', 'Sludge Wave')) {
+            else if (move.named('Gunk Shot', 'Nature Power', 'Octazooka', 'Sludge', 'Sludge Wave')) {
                 basePower *= 1.2;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude')) {
@@ -1703,7 +1722,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Water':
-            if (move.named('Dive', 'Muddy Water', 'Surf', 'Whirlpool', 'Hydro Vortex')) {
+            if (move.named('Dive', 'Muddy Water', 'Surf', 'Whirlpool', 'Nature Power', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dive', 'Blizzard', 'Glaciate', 'Subzero Slammer', 'Acid Downpour')) {
