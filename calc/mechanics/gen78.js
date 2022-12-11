@@ -1186,7 +1186,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             else if (move.named('Prismatic Laser', 'Black Hole Eclipse')) {
                 basePower *= 2;
             }
-            else if (move.named('Aurora Beam', 'Dark Pulse', 'Nature Power', 'Dazzling Gleam', 'Diamond Storm', 'Doom Desire', 'Flash Cannon', 'Luster Purge', 'Mirror Shot', 'Moongeist Beam', 'Night Daze', 'Nigh Slash', 'Photon Geyser', 'Power Gem', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Signal Beam', 'Techno Blast', 'Menacing Moonraze Maelstrom')) {
+            else if (move.named('Aurora Beam', 'Dark Pulse', 'Nature Power', 'Dazzling Gleam', 'Diamond Storm', 'Doom Desire', 'Flash Cannon', 'Luster Purge', 'Mirror Shot', 'Moongeist Beam', 'Night Daze', 'Night Slash', 'Photon Geyser', 'Power Gem', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Signal Beam', 'Techno Blast', 'Menacing Moonraze Maelstrom')) {
                 basePower *= 1.5;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Tectonic Rage')) {
