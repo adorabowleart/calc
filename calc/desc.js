@@ -36,20 +36,20 @@ function display(gen, attacker, defender, move, field, damage, rawDesc, notation
     return koChanceText ? "".concat(desc, ": ").concat(damageText, " -- ").concat(koChanceText) : "".concat(desc, ": ").concat(damageText);
 }
 exports.display = display;
-function displayMove(gen, attacker, defender, move, damage, notation) {
+function displayMove(gen, attacker, defender, move, damage, notation, field) {
     if (notation === void 0) { notation = '%'; }
     var _a = __read((0, result_1.damageRange)(damage), 2), minDamage = _a[0], maxDamage = _a[1];
     var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
     var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
     var minDisplay = toDisplay(notation, min, defender.maxHP());
     var maxDisplay = toDisplay(notation, max, defender.maxHP());
-    var recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
-    var recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
+    var recoveryText = getRecovery(gen, attacker, defender, move, damage, notation, field).text;
+    var recoilText = getRecoil(gen, attacker, defender, move, damage, notation, field).text;
     return "".concat(minDisplay, " - ").concat(maxDisplay).concat(notation).concat(recoveryText &&
         " (".concat(recoveryText, ")")).concat(recoilText && " (".concat(recoilText, ")"));
 }
 exports.displayMove = displayMove;
-function getRecovery(gen, attacker, defender, move, damage, notation) {
+function getRecovery(gen, attacker, defender, move, damage, notation, field) {
     if (notation === void 0) { notation = '%'; }
     var _a = __read((0, result_1.damageRange)(damage), 2), minDamage = _a[0], maxDamage = _a[1];
     var minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
@@ -62,6 +62,10 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
         for (var i = 0; i < minD.length; i++) {
             recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
             recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+        }
+        if (field.hasTerrain('Ashen Beach')) {
+            recovery[0] *= 2;
+            recovery[1] *= 2;
         }
     }
     if (move.named('G-Max Finale')) {
@@ -83,7 +87,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation) {
     return { recovery: recovery, text: text };
 }
 exports.getRecovery = getRecovery;
-function getRecoil(gen, attacker, defender, move, damage, notation) {
+function getRecoil(gen, attacker, defender, move, damage, notation, field) {
     if (notation === void 0) { notation = '%'; }
     var _a = __read((0, result_1.damageRange)(damage), 2), minDamage = _a[0], maxDamage = _a[1];
     var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
@@ -182,7 +186,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
     if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.timesUsedWithMetronome === 1) {
         return { chance: 1, n: 1, text: 'guaranteed OHKO' };
     }
-    var hazards = getHazards(gen, defender, field.defenderSide);
+    var hazards = getHazards(gen, defender, field.defenderSide, field);
     var eot = getEndOfTurn(gen, attacker, defender, move, field);
     var toxicCounter = defender.hasStatus('tox') && !defender.hasAbility('Magic Guard') ? defender.toxicCounter : 0;
     var qualifier = '';
@@ -297,7 +301,7 @@ var TRAPPING = [
     'Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb',
     'Thunder Cage', 'Whirlpool', 'Wrap', 'G-Max Sandblast', 'G-Max Centiferno',
 ];
-function getHazards(gen, defender, defenderSide) {
+function getHazards(gen, defender, defenderSide, field) {
     var damage = 0;
     var texts = [];
     if (defender.hasItem('Heavy-Duty Boots')) {
@@ -308,7 +312,64 @@ function getHazards(gen, defender, defenderSide) {
         var effectiveness = rockType.effectiveness[defender.types[0]] *
             (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
         damage += Math.floor((effectiveness * defender.maxHP()) / 8);
-        texts.push('Stealth Rock');
+        if (field.hasTerrain('Cave', 'Rocky')) {
+            damage *= 2;
+            texts.push('Stealth Rock in ' + field.terrain);
+        }
+        else if (field.hasTerrain('Inverse')) {
+            if (effectiveness == 0.25) {
+                damage *= 8;
+                texts.push('Stealth Rock in ' + field.terrain);
+            }
+            else if (effectiveness == 0.5) {
+                damage *= 4;
+                texts.push('Stealth Rock in ' + field.terrain);
+            }
+            else if (effectiveness == 2) {
+                damage /= 4;
+                texts.push('Stealth Rock in ' + field.terrain);
+            }
+            else if (effectiveness == 4) {
+                damage /= 8;
+                texts.push('Stealth Rock in ' + field.terrain);
+            }
+            else {
+                texts.push('Stealth Rock in ' + field.terrain);
+            }
+        }
+        else {
+            texts.push('Stealth Rock');
+        }
+    }
+    else if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer') && field.hasTerrain('Crystal Fire', 'Crystal Water', 'Crystal Grass', 'Crystal Psychic')) {
+        if (field.hasTerrain('Crystal Fire')) {
+            var rockType = gen.types.get('fire');
+            var effectiveness = rockType.effectiveness[defender.types[0]] *
+                (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
+            damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+            texts.push('Stealth Rock (Fire) in ' + field.terrain);
+        }
+        else if (field.hasTerrain('Crystal Water')) {
+            var rockType = gen.types.get('water');
+            var effectiveness = rockType.effectiveness[defender.types[0]] *
+                (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
+            damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+            texts.push('Stealth Rock (Water) in ' + field.terrain);
+        }
+        else if (field.hasTerrain('Crystal Grass')) {
+            var rockType = gen.types.get('grass');
+            var effectiveness = rockType.effectiveness[defender.types[0]] *
+                (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
+            damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+            texts.push('Stealth Rock (Grass) in ' + field.terrain);
+        }
+        else {
+            var rockType = gen.types.get('psychic');
+            var effectiveness = rockType.effectiveness[defender.types[0]] *
+                (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
+            damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+            texts.push('Stealth Rock (Psychic) in ' + field.terrain);
+        }
     }
     if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
         var steelType = gen.types.get('steel');

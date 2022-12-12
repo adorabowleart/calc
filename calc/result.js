@@ -36,6 +36,7 @@ var Result = (function () {
         this.field = field;
         this.damage = damage;
         this.rawDesc = rawDesc;
+        this.field = field;
     }
     Result.prototype.desc = function () {
         return this.fullDesc();
@@ -54,15 +55,15 @@ var Result = (function () {
     };
     Result.prototype.moveDesc = function (notation) {
         if (notation === void 0) { notation = '%'; }
-        return (0, desc_1.displayMove)(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
+        return (0, desc_1.displayMove)(this.gen, this.attacker, this.defender, this.move, this.damage, notation, this.field);
     };
     Result.prototype.recovery = function (notation) {
         if (notation === void 0) { notation = '%'; }
-        return (0, desc_1.getRecovery)(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
+        return (0, desc_1.getRecovery)(this.gen, this.attacker, this.defender, this.move, this.damage, notation, this.field);
     };
     Result.prototype.recoil = function (notation) {
         if (notation === void 0) { notation = '%'; }
-        return (0, desc_1.getRecoil)(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
+        return (0, desc_1.getRecoil)(this.gen, this.attacker, this.defender, this.move, this.damage, notation, this.field);
     };
     Result.prototype.kochance = function (err) {
         if (err === void 0) { err = true; }

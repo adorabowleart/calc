@@ -493,6 +493,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         if (move.named('Freeze Dry') && defender.hasType('Water')) {
             typeEffectiveness *= 4;
         }
+        if (defender.hasType('Flying') && field.hasWeather('Strong Winds') && typeEffectiveness > 1) {
+            typeEffectiveness /= 2;
+            desc.weather = field.weather;
+        }
     }
     if (typeEffectiveness === 0) {
         return result;
@@ -713,6 +717,72 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     desc.attackBoost =
         move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
     result.damage = childDamage ? [damage, childDamage] : damage;
+    if (field.hasTerrain('Corrosive Mist') && move.named('Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive', 'Explosion', 'Self-Destruct')) {
+        var lostHP = 0;
+        if (defender.hasAbility('Damp', 'Flash Fire') || field.defenderSide.isProtected) {
+            return result;
+        }
+        else if (defender.hasAbility('Sturdy')) {
+            lostHP = defender.maxHP();
+            result.damage = lostHP - 1;
+            return result;
+        }
+        else {
+            lostHP = defender.maxHP();
+            result.damage = lostHP;
+            return result;
+        }
+    }
+    if (field.hasTerrain('Cave') && move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Tectonic Rage')) {
+        var lostHP_1 = 0;
+        if (defender.hasAbility('Bulletproof', 'Rock Head') || field.defenderSide.isProtected) {
+            return result;
+        }
+        else if (defender.hasAbility('Sturdy')) {
+            lostHP_1 = defender.maxHP();
+            result.damage = lostHP_1 - 1;
+            return result;
+        }
+        else if (defender.hasAbility('Prism Armor', 'Solid Rock')) {
+            lostHP_1 = Math.floor(defender.maxHP() / 3);
+            var finaldmg = damage.map(function (num) { return num + lostHP_1; });
+            result.damage = finaldmg;
+            return result;
+        }
+        else if (defender.hasAbility('Battle Armor', 'Shell Armor')) {
+            lostHP_1 = Math.floor(defender.maxHP() / 2);
+            var finaldmg = damage.map(function (num) { return num + lostHP_1; });
+            result.damage = finaldmg;
+            return result;
+        }
+        else {
+            lostHP_1 = defender.maxHP();
+            result.damage = lostHP_1;
+            return result;
+        }
+    }
+    if (field.hasTerrain('Mirror') && move.named('Boomburst', 'Bulldoze', 'Earthquake', 'Explosion', 'Hyper Voice', 'Magnitude', 'Self-Destruct', 'Tectonic Rage')) {
+        var lostHP_2 = 0;
+        if (defender.hasAbility('Battle Armor', 'Shell Armor') || field.defenderSide.isProtected) {
+            return result;
+        }
+        else {
+            lostHP_2 = Math.floor(defender.maxHP() / 2);
+            var finaldmg = damage.map(function (num) { return num + lostHP_2; });
+            result.damage = finaldmg;
+            return result;
+        }
+    }
+    if (field.hasTerrain('Big Top') && (move.named('Blaze Kick', 'Body Slam', 'Bounce', 'Brutal Swing', 'bulldoze', 'Crabhammer', 'Dragon Hammer', 'Dragon Rush', 'Dual Chop', 'Earthquake', 'Giga Impact', 'Heat Crash', 'Heavy Slam', 'High Horsepower', 'Ice Hammer', 'Icicle Crash', 'Iron Tail', 'Magnitude', 'Meteor Maash', 'Pound', 'Sky Drop', 'Smack Down', 'Stomp', 'Stomping Tantrum', 'Strenght', 'Wood Hammer') || (move.hasType('Fighting') && move.category == 'Physical'))) {
+        var lostHPWeak = damage.map(function (num) { return Math.floor(num * 0.5); });
+        var lostHPOK = damage;
+        var lostHPNice = damage.map(function (num) { return Math.floor(num * 1.5); });
+        var lostHPPow = damage.map(function (num) { return Math.floor(num * 2); });
+        var lostHPOver = damage.map(function (num) { return Math.floor(num * 3); });
+        var finaldmg = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
+        result.damage = finaldmg;
+        return result;
+    }
     return result;
 }
 exports.calculateSMSS = calculateSMSS;
@@ -1260,6 +1330,9 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             }
             if ((0, util_2.isGrounded)(attacker, field) && move.hasType('Electric')) {
                 basePower *= 1.5;
+            }
+            if (move.named('Wild Charge')) {
+                move.recoil = [0, 4];
             }
             desc.moveBP = basePower;
             desc.terrain = field.terrain;

@@ -4,7 +4,7 @@ export declare const SEED_BOOSTED_STAT: {
 };
 export declare function getItemBoostType(item: string | undefined): "Normal" | "Fighting" | "Flying" | "Poison" | "Ground" | "Rock" | "Bug" | "Ghost" | "Steel" | "Fire" | "Water" | "Grass" | "Electric" | "Psychic" | "Ice" | "Dragon" | "Dark" | "Fairy" | undefined;
 export declare function getBerryResistType(berry: string | undefined): "Normal" | "Fighting" | "Flying" | "Poison" | "Ground" | "Rock" | "Bug" | "Ghost" | "Steel" | "Fire" | "Water" | "Grass" | "Electric" | "Psychic" | "Ice" | "Dragon" | "Dark" | "Fairy" | undefined;
-export declare function getFlingPower(item?: string): 0 | 100 | 50 | 40 | 85 | 20 | 10 | 110 | 90 | 60 | 80 | 70 | 95 | 130 | 30;
+export declare function getFlingPower(item?: string): 0 | 10 | 100 | 50 | 20 | 40 | 110 | 90 | 60 | 130 | 80 | 85 | 70 | 95 | 30;
 export declare function getNaturalGift(gen: Generation, item: string): {
     t: TypeName;
     p: number;
