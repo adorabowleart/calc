@@ -2529,7 +2529,7 @@ var SETDEX_SM = {
 						"ability":"Shields Down",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 						"moves":["Shell Smash","Acrobatics","Iron Head","Rock Slide"]}},
-				"Minum":{
+				"Minun":{
 					"Julia (Electric)":{
 						"level":12,
 						"nature":"Modest",
