@@ -2233,7 +2233,7 @@ var SETDEX_SM = {
 						"ability":"Lightning Rod",
 						"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Overheat","Discharge","Thunde Wave","Hidden Power Ice"]},
+						"moves":["Overheat","Discharge","Thunder Wave","Hidden Power Ice"]},
 					"Diana 2":{
 						"item":"Life Orb",
 						"level":88,
@@ -2241,7 +2241,7 @@ var SETDEX_SM = {
 						"ability":"Lightning Rod",
 						"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 						"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-						"moves":["Thunderbolt","Flamethrower","Thunde Wave","Hidden Power Ice"]}},
+						"moves":["Thunderbolt","Flamethrower","Thunder Wave","Hidden Power Ice"]}},
 				"Manectric-Mega":{
 					"Sirius 3 (Dragon's Den) Doubles":{
 						"level":97,
@@ -3215,14 +3215,14 @@ var SETDEX_SM = {
 						"nature":"Timid",
 						"ability":"Poison Point",
 						"evs":{"hp":66, "at":66, "df":66, "sa":66, "sd":66, "sp":66},
-						"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden power Fire"]},
+						"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden Power Fire"]},
 					"Fern 5 (Grassy)":{
 						"item":"Leftovers",
 						"level":54,
 						"nature":"Timid",
 						"ability":"Poison Point",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-						"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden power Fire"]},
+						"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden Power Fire"]},
 					"Ace Of Spades (Factory)":{
 						"level":70,
 						"nature":"Rash",
@@ -3235,7 +3235,7 @@ var SETDEX_SM = {
 						"ability":"Poison Point",
 						"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 						"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-						"moves":["Sleep Powder","Giga Drain","Sludge Bomb","Hidden power Fire"]}},
+						"moves":["Sleep Powder","Giga Drain","Sludge Bomb","Hidden Power Fire"]}},
 				"Rotom":{
 					"Connal":{
 						"level":35,

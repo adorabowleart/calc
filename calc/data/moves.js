@@ -287,7 +287,7 @@ var GSC_PATCH = {
     'Cotton Spore': { bp: 0, category: 'Status', type: 'Grass' },
     'Extreme Speed': { bp: 80, type: 'Normal', priority: 1 },
     'Fury Cutter': { bp: 10, type: 'Bug' },
-    Magnitude: { bp: 0, type: 'Ground' },
+    Magnitude: { bp: 10, type: 'Ground' },
     'Milk Drink': { bp: 0, category: 'Status', type: 'Normal' },
     'Scary Face': { bp: 0, category: 'Status', type: 'Normal' },
     Charm: { bp: 0, category: 'Status', type: 'Normal' },

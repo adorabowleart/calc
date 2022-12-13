@@ -627,11 +627,6 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         baseDamage = (0, util_2.pokeRound)((0, util_2.OF32)(baseDamage * 2048) / 4096);
         desc.weather = field.weather;
     }
-    if (hasTerrainSeed(defender) &&
-        field.hasTerrain(defender.item.substring(0, defender.item.indexOf(' '))) &&
-        items_1.SEED_BOOSTED_STAT[defender.item] === defenseStat) {
-        desc.defenderItem = defender.item;
-    }
     if (isCritical) {
         baseDamage = Math.floor((0, util_2.OF32)(baseDamage * 1.5));
         desc.isCritical = isCritical;
@@ -780,6 +775,18 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         var lostHPPow = damage.map(function (num) { return Math.floor(num * 2); });
         var lostHPOver = damage.map(function (num) { return Math.floor(num * 3); });
         var finaldmg = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
+        result.damage = finaldmg;
+        return result;
+    }
+    if (move.named('Magnitude')) {
+        var lostHP4 = damage;
+        var lostHP5 = damage.map(function (num) { return Math.floor(num * 3); });
+        var lostHP6 = damage.map(function (num) { return Math.floor(num * 5); });
+        var lostHP7 = damage.map(function (num) { return Math.floor(num * 7); });
+        var lostHP8 = damage.map(function (num) { return Math.floor(num * 9); });
+        var lostHP9 = damage.map(function (num) { return Math.floor(num * 11); });
+        var lostHP10 = damage.map(function (num) { return Math.floor(num * 15); });
+        var finaldmg = lostHP4.concat(lostHP5, lostHP6, lostHP7, lostHP8, lostHP9, lostHP10);
         result.damage = finaldmg;
         return result;
     }
@@ -989,9 +996,6 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Acrobatics':
             basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
             desc.moveBP = basePower;
-            if (field.hasTerrain('Big Top')) {
-                desc.terrain = field.terrain;
-            }
             break;
         case 'Payback':
             basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
@@ -1921,7 +1925,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
         desc.moveBP = basePower / 2;
         desc.weather = field.weather;
     }
-    if (field.attackerSide.isHelpingHand) {
+    if (field.attackerSide.isHelpingHand || (field.hasTerrain('Big Top') && attacker.hasItem('Synthetic Seed'))) {
         bpMods.push(6144);
         desc.isHelpingHand = true;
     }
@@ -2161,9 +2165,13 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
             desc.attackerAbility = attacker.ability;
         }
     }
-    else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
+    else if ((attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) || (attacker.hasItem('Elemental Seed') && field.hasTerrain('Dragon\'s Den'))) {
         atMods.push(6144);
         desc.attackerAbility = 'Flash Fire';
+    }
+    else if (attacker.hasItem('Elemental Seed') && field.hasTerrain('Electric') && move.hasType('Electric')) {
+        atMods.push(8192);
+        desc.attackerItem = attacker.item;
     }
     else if ((attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
         (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
