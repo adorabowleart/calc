@@ -761,6 +761,19 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         if (defender.hasAbility('Battle Armor', 'Shell Armor') || field.defenderSide.isProtected) {
             return result;
         }
+        else if (move.named('Magnitude')) {
+            lostHP_2 = Math.floor(defender.maxHP() / 2);
+            var lostHP4 = damage;
+            var lostHP5 = damage.map(function (num) { return Math.floor((num * 3) + lostHP_2); });
+            var lostHP6 = damage.map(function (num) { return Math.floor((num * 5) + lostHP_2); });
+            var lostHP7 = damage.map(function (num) { return Math.floor((num * 7) + lostHP_2); });
+            var lostHP8 = damage.map(function (num) { return Math.floor((num * 9) + lostHP_2); });
+            var lostHP9 = damage.map(function (num) { return Math.floor((num * 11) + lostHP_2); });
+            var lostHP10 = damage.map(function (num) { return Math.floor((num * 15) + lostHP_2); });
+            var finaldmg = lostHP4.concat(lostHP5, lostHP6, lostHP7, lostHP8, lostHP9, lostHP10);
+            result.damage = finaldmg;
+            return result;
+        }
         else {
             lostHP_2 = Math.floor(defender.maxHP() / 2);
             var finaldmg = damage.map(function (num) { return num + lostHP_2; });
