@@ -49,7 +49,7 @@ var EV_ITEMS = [
     'Power Weight',
 ];
 function isGrounded(pokemon, field) {
-    return (field.isGravity || pokemon.hasItem('Iron Ball') ||
+    return (field.isGravity || pokemon.hasItem('Iron Ball') || (!field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && !pokemon.hasItem('Synthetic Seed')) ||
         (!pokemon.hasType('Flying') &&
             !pokemon.hasAbility('Levitate') &&
             !pokemon.hasItem('Air Balloon')));
@@ -290,17 +290,155 @@ function checkSeedBoost(pokemon, field) {
     if (!pokemon.item)
         return;
     if (field.terrain && pokemon.item.includes('Seed')) {
-        var terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
-        if (field.hasTerrain(terrainSeed)) {
-            if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
+        if (pokemon.hasItem('Telluric Seed')) {
+            if (field.hasTerrain('Wasteland')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 1)
+                    : Math.min(6, pokemon.boosts.atk + 1);
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+            }
+            else if (field.hasTerrain('Mountain')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 2)
+                    : Math.min(6, pokemon.boosts.atk + 2);
+            }
+            else if (field.hasTerrain('Swamp')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 1)
+                    : Math.min(6, pokemon.boosts.def + 1);
+                pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spd - 1)
+                    : Math.min(6, pokemon.boosts.spd + 1);
+            }
+            else if (field.hasTerrain('Desert')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 1)
+                    : Math.min(6, pokemon.boosts.def + 1);
+                pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spd - 1)
+                    : Math.min(6, pokemon.boosts.spd + 1);
+                pokemon.boosts.spe = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spe - 1)
+                    : Math.min(6, pokemon.boosts.spe + 1);
+            }
+            else if (field.hasTerrain('Rocky', 'Superheated')) {
                 pokemon.boosts.def = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.def - 1)
                     : Math.min(6, pokemon.boosts.def + 1);
             }
-            else {
+            else if (field.hasTerrain('Cave')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 2)
+                    : Math.min(6, pokemon.boosts.def + 2);
+            }
+            else if (field.hasTerrain('Snowy Mountain')) {
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 2)
+                    : Math.min(6, pokemon.boosts.spa + 2);
+            }
+        }
+        else if (pokemon.hasItem('Synthetic Seed')) {
+            if (field.hasTerrain('Big Top')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 1)
+                    : Math.min(6, pokemon.boosts.atk + 1);
+            }
+            else if (field.hasTerrain('Glitch')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 1)
+                    : Math.min(6, pokemon.boosts.def + 1);
+            }
+            else if (field.hasTerrain('Chess Board', 'Factory')) {
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+            }
+            else if (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2', 'Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) {
                 pokemon.boosts.spd = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.spd - 1)
                     : Math.min(6, pokemon.boosts.spd + 1);
+            }
+        }
+        else if (pokemon.hasItem('Elemental Seed')) {
+            if (field.hasTerrain('Burning')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 1)
+                    : Math.min(6, pokemon.boosts.atk + 1);
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+                pokemon.boosts.spe = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spe - 1)
+                    : Math.min(6, pokemon.boosts.spe + 1);
+            }
+            else if (field.hasTerrain('Corrosive Mist')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 1)
+                    : Math.min(6, pokemon.boosts.atk + 1);
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+            }
+            else if (field.hasTerrain('Grassy')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 1)
+                    : Math.min(6, pokemon.boosts.def + 1);
+            }
+            else if (field.hasTerrain('Dragon\'s Den')) {
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+            }
+            else if (field.hasTerrain('Water', 'Misty')) {
+                pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spd - 1)
+                    : Math.min(6, pokemon.boosts.spd + 1);
+            }
+            else if (field.hasTerrain('Electric', 'Underwater', 'Murkwater')) {
+                pokemon.boosts.spe = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spe - 1)
+                    : Math.min(6, pokemon.boosts.spe + 1);
+            }
+            else if (field.hasTerrain('Icy')) {
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 2)
+                    : Math.min(6, pokemon.boosts.def + 2);
+            }
+        }
+        else if (pokemon.hasItem('Magical Seed')) {
+            if (field.hasTerrain('Psychic')) {
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 2)
+                    : Math.min(6, pokemon.boosts.spa + 2);
+            }
+            else if (field.hasTerrain('Starlight', 'Rainbow', 'Crystal Fire', 'Crystal Water', 'Crystal Grass', 'Crystal Psychic', 'Holy')) {
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+            }
+            else if (field.hasTerrain('Dark Crystal')) {
+                pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spd - 1)
+                    : Math.min(6, pokemon.boosts.spd + 1);
+            }
+            else if (field.hasTerrain('New World', 'Inverse')) {
+                pokemon.boosts.atk = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.atk - 1)
+                    : Math.min(6, pokemon.boosts.atk + 1);
+                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.def - 1)
+                    : Math.min(6, pokemon.boosts.def + 1);
+                pokemon.boosts.spa = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spa - 1)
+                    : Math.min(6, pokemon.boosts.spa + 1);
+                pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spd - 1)
+                    : Math.min(6, pokemon.boosts.spd + 1);
+                pokemon.boosts.spe = pokemon.hasAbility('Contrary')
+                    ? Math.max(-6, pokemon.boosts.spe - 1)
+                    : Math.min(6, pokemon.boosts.spe + 1);
             }
         }
     }
