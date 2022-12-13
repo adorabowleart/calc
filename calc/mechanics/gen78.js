@@ -782,14 +782,56 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         }
     }
     if (field.hasTerrain('Big Top') && (move.named('Blaze Kick', 'Body Slam', 'Bounce', 'Brutal Swing', 'bulldoze', 'Crabhammer', 'Dragon Hammer', 'Dragon Rush', 'Dual Chop', 'Earthquake', 'Giga Impact', 'Heat Crash', 'Heavy Slam', 'High Horsepower', 'Ice Hammer', 'Icicle Crash', 'Iron Tail', 'Magnitude', 'Meteor Maash', 'Pound', 'Sky Drop', 'Smack Down', 'Stomp', 'Stomping Tantrum', 'Strenght', 'Wood Hammer') || (move.hasType('Fighting') && move.category == 'Physical'))) {
-        var lostHPWeak = damage.map(function (num) { return Math.floor(num * 0.5); });
-        var lostHPOK = damage;
-        var lostHPNice = damage.map(function (num) { return Math.floor(num * 1.5); });
-        var lostHPPow = damage.map(function (num) { return Math.floor(num * 2); });
-        var lostHPOver = damage.map(function (num) { return Math.floor(num * 3); });
-        var finaldmg = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
-        result.damage = finaldmg;
-        return result;
+        if (move.named('Magnitude')) {
+            var lostHP4Weak = damage.map(function (num) { return Math.floor(num * 0.5); });
+            var lostHP4OK = damage;
+            var lostHP4Nice = damage.map(function (num) { return Math.floor(num * 1.5); });
+            var lostHP4Pow = damage.map(function (num) { return Math.floor(num * 2); });
+            var lostHP4Over = damage.map(function (num) { return Math.floor(num * 3); });
+            var lostHP5Weak = damage.map(function (num) { return Math.floor(num * 3 * 0.5); });
+            var lostHP5OK = damage.map(function (num) { return Math.floor(num * 3); });
+            var lostHP5Nice = damage.map(function (num) { return Math.floor(num * 3 * 1.5); });
+            var lostHP5Pow = damage.map(function (num) { return Math.floor(num * 3 * 2); });
+            var lostHP5Over = damage.map(function (num) { return Math.floor(num * 3 * 3); });
+            var lostHP6Weak = damage.map(function (num) { return Math.floor(num * 5 * 0.5); });
+            var lostHP6OK = damage.map(function (num) { return Math.floor(num * 5); });
+            var lostHP6Nice = damage.map(function (num) { return Math.floor(num * 5 * 1.5); });
+            var lostHP6Pow = damage.map(function (num) { return Math.floor(num * 5 * 2); });
+            var lostHP6Over = damage.map(function (num) { return Math.floor(num * 5 * 3); });
+            var lostHP7Weak = damage.map(function (num) { return Math.floor(num * 7 * 0.5); });
+            var lostHP7OK = damage.map(function (num) { return Math.floor(num * 7); });
+            var lostHP7Nice = damage.map(function (num) { return Math.floor(num * 7 * 1.5); });
+            var lostHP7Pow = damage.map(function (num) { return Math.floor(num * 7 * 2); });
+            var lostHP7Over = damage.map(function (num) { return Math.floor(num * 7 * 3); });
+            var lostHP8Weak = damage.map(function (num) { return Math.floor(num * 9 * 0.5); });
+            var lostHP8OK = damage.map(function (num) { return Math.floor(num * 9); });
+            var lostHP8Nice = damage.map(function (num) { return Math.floor(num * 9 * 1.5); });
+            var lostHP8Pow = damage.map(function (num) { return Math.floor(num * 9 * 2); });
+            var lostHP8Over = damage.map(function (num) { return Math.floor(num * 9 * 3); });
+            var lostHP9Weak = damage.map(function (num) { return Math.floor(num * 11 * 0.5); });
+            var lostHP9OK = damage.map(function (num) { return Math.floor(num * 11); });
+            var lostHP9Nice = damage.map(function (num) { return Math.floor(num * 11 * 1.5); });
+            var lostHP9Pow = damage.map(function (num) { return Math.floor(num * 11 * 2); });
+            var lostHP9Over = damage.map(function (num) { return Math.floor(num * 11 * 3); });
+            var lostHP10Weak = damage.map(function (num) { return Math.floor(num * 15 * 0.5); });
+            var lostHP10OK = damage.map(function (num) { return Math.floor(num * 15); });
+            var lostHP10Nice = damage.map(function (num) { return Math.floor(num * 15 * 1.5); });
+            var lostHP10Pow = damage.map(function (num) { return Math.floor(num * 15 * 2); });
+            var lostHP10Over = damage.map(function (num) { return Math.floor(num * 15 * 3); });
+            var finaldmg = lostHP4Weak.concat(lostHP4OK, lostHP4Nice, lostHP4Pow, lostHP4Over, lostHP5Weak, lostHP5OK, lostHP5Nice, lostHP5Pow, lostHP5Over, lostHP6Weak, lostHP6OK, lostHP6Nice, lostHP6Pow, lostHP6Over, lostHP7Weak, lostHP7OK, lostHP7Nice, lostHP7Pow, lostHP7Over, lostHP8Weak, lostHP8OK, lostHP8Nice, lostHP8Pow, lostHP8Over, lostHP9Weak, lostHP9OK, lostHP9Nice, lostHP9Pow, lostHP9Over, lostHP10Weak, lostHP10OK, lostHP10Nice, lostHP10Pow, lostHP10Over);
+            result.damage = finaldmg.sort(function (a, b) { return a - b; });
+            return result;
+        }
+        else {
+            var lostHPWeak = damage.map(function (num) { return Math.floor(num * 0.5); });
+            var lostHPOK = damage;
+            var lostHPNice = damage.map(function (num) { return Math.floor(num * 1.5); });
+            var lostHPPow = damage.map(function (num) { return Math.floor(num * 2); });
+            var lostHPOver = damage.map(function (num) { return Math.floor(num * 3); });
+            var finaldmg = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
+            result.damage = finaldmg;
+            return result;
+        }
     }
     if (move.named('Magnitude')) {
         var lostHP4 = damage;
