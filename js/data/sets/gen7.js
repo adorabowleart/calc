@@ -1,55 +1,17 @@
 /* AUTOMATICALLY GENERATED FROM @smogon/sets, DO NOT EDIT! */
 var SETDEX_SM = {
 "Abra-Pulse":{			
-	"Zel 3 (Factory)":{
-		"item":"Telluric Seed",
-		"level":75,
-		"nature":"Modest",
-		"ability":"Magic Guard",
-		"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
-		"moves":["Hyper Beam","Dark Pulse","Hyper Beam","Hyper Beam"]},
-	"Lin 1":{
-		"item":"Life Orb",
-		"level":100,
-		"nature":"Timid",
-		"ability":"Magic Guard",
-		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-		"moves":["Psyshock","Shadow Ball","Aura Sphere","Flash Cannon"]}},
+	"Zel 3 (Factory)":{"item":"Telluric Seed","level":75,"nature":"Modest","ability":"Magic Guard","evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},"moves":["Hyper Beam","Dark Pulse","Hyper Beam","Hyper Beam"]},
+	"Lin 1":{"item":"Life Orb","level":100,"nature":"Timid","ability":"Magic Guard","evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},"moves":["Psyshock","Shadow Ball","Aura Sphere","Flash Cannon"]}},
 "Absol":{
-	"Luna (Dark Crystal Cavern)":{
-		"item":"Life Orb",
-		"level":64,
-		"nature":"Adamant",
-		"ability":"Pressure",
-		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
-		"moves":["Swords Dance","Night Slash","Sucker Punch","Play Rough"]}},
+	"Luna (Dark Crystal Cavern)":{"item":"Life Orb","level":64,"nature":"Adamant","ability":"Pressure","evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},"moves":["Swords Dance","Night Slash","Sucker Punch","Play Rough"]},
+	"Maddie Doubles":{"ability":"Super Luck","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sucker Punch","Play Rough","Fire Blast","Superpower"],"nature":"Adamant","item":"White Herb"}},
 "Absol-Mega":{
-	"Glass Gauntlet 2 (Factory)":{
-		"level":85,
-		"nature":"Jolly",
-		"ability":"Magic Bounce",
-		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
-		"moves":["Swords Dance","Superpower","Knock Off","Play Rough"]}},
+	"Glass Gauntlet 2 (Factory)":{"level":85,"nature":"Jolly","ability":"Magic Bounce","evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},"moves":["Swords Dance","Superpower","Knock Off","Play Rough"]}},
 "Aegislash-Blade":{
-	"Titania (Fairy Tale)":{
-		"item":"Magical Seed",
-		"level":90,
-		"nature":"Adamant",
-		"ability":"Stance Change",
-		"evs":{"hp":252, "at":4, "df":0, "sa":0, "sd":252, "sp":0},
-		"moves":["King's Shield","Swords Dance","Shadow Sneak","Sacred Sword"]},
-	"Spirit Fezz (Swamp)":{
-		"ability":"Stance Change","level":95,
-		"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},
-		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Swords Dance","Shadow Sneak","Iron Head","King's Shield"],
-		"nature":"Adamant","item":"Leftovers"},
-	"Spirit Jonah (Fairy Tale) Doubles":{
-		"ability":"Stance Change","level":95,
-		"evs":{"hp":0,"at":252,"df":128,"sa":0,"sd":128,"sp":0},
-		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},
-		"moves":["Sacred Sword","King's Shield","Shadow Sneak","Rock Slide"],
-		"nature":"Brave","item":"Leftovers"}},
+	"Titania (Fairy Tale)":{"item":"Magical Seed","level":90,"nature":"Adamant","ability":"Stance Change","evs":{"hp":252, "at":4, "df":0, "sa":0, "sd":252, "sp":0},"moves":["King's Shield","Swords Dance","Shadow Sneak","Sacred Sword"]},
+	"Spirit Fezz (Swamp)":{"ability":"Stance Change","level":95,"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Shadow Sneak","Iron Head","King's Shield"],"nature":"Adamant","item":"Leftovers"},
+	"Spirit Jonah (Fairy Tale) Doubles":{"ability":"Stance Change","level":95,"evs":{"hp":0,"at":252,"df":128,"sa":0,"sd":128,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Sacred Sword","King's Shield","Shadow Sneak","Rock Slide"],"nature":"Brave","item":"Leftovers"}},
 "Aegislash-Shield":{
 	"Titania (Fairy Tale)":{
 		"item":"Magical Seed",
@@ -138,7 +100,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Psychic","Focus Blast","Shadow Ball","Energy Ball"],
-		"nature":"Modest","item":"Magical Seed"}},
+		"nature":"Modest","item":"Magical Seed"},
+	"Eustace":{"ability":"Magic Guard","level":84,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psychic","Focus Blast","Recover","Charge Beam"],"nature":"Timid","item":"Life Orb"}},
 "Alakazam-Mega":{
 	"Connal 4 (Short Circuit) Doubles":{
 		"level":95,
@@ -165,7 +128,10 @@ var SETDEX_SM = {
 		"evs":{"hp":252,"at":0,"df":176,"sa":0,"sd":80,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Spore","Giga Drain","Rage Powder","Hidden Power Ground"],
-		"nature":"Bold","item":"Black Sludge"}},			
+		"nature":"Bold","item":"Black Sludge"},
+	"Craudburry":{"ability":"Effect Spore","level":61,"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Spore","Giga Drain","Sludge Bomb","Synthesis"],"nature":"Calm"}},			
+"Ampharos":{
+	"Mattie Doubles":{"ability":"Static","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Signal Beam","Dragon Pulse","Light Screen"],"nature":"Modest","item":"Light Clay"}},
 "Ampharos-Mega":{
 	"Arclight (Factory)":{
 		"level":79,
@@ -276,7 +242,8 @@ var SETDEX_SM = {
 		"evs":{"hp":252,"at":128,"df":0,"sa":128,"sd":0,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},
 		"moves":["Belly Drum","Aqua Jet","Play Rough","Brick Break"],
-		"nature":"Brave","item":"Sitrus Berry"}},
+		"nature":"Brave","item":"Sitrus Berry"},
+	"Santiago":{"ability":"Huge Power","level":79,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Aqua Jet","Play Rough","Belly Drum","Waterfall"],"nature":"Adamant"}},
 "Baltoy":{
 	"Ace of Clubs (Forest)":{
 		"level":26,
@@ -301,6 +268,8 @@ var SETDEX_SM = {
 		"evs":{"hp":57, "at":57, "df":57, "sa":57, "sd":57, "sp":57},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
 		"moves":["Stealth Rock","Slash","Scald","Rock Slide"]}},
+"Beartic":{
+	"Pokemon Savage (Icy)":{"ability":"Snow Cloak","level":65,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Flail","Rest","Blizzard","Hail"],"nature":"Hardy"}},
 "Bewear":{
 	"Noel (Grassy)":{
 		"item":"Muscle Band",
@@ -332,6 +301,8 @@ var SETDEX_SM = {
 		"moves":["Stealth Rock","Dual Chop","Sucker Punch","Swords Dance"],
 		"nature":"Adamant","item":"Focus Sash",}},
 "Blastoise":{
+	"Archer 1":{"ability":"Torrent","level":42,"evs":{"hp":63,"at":63,"df":63,"sa":63,"sd":63,"sp":63},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Aqua Tail","Bite","Skull Bash","Yawn"],"nature":"Adamant",},
+	"Archer 2":{"ability":"Torrent","level":60,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Hydro Pump","Hydro Cannon","Ice Beam","Yawn"],"nature":"Modest"},
 	"Amaria:Zekrom (Water Surface) Doubles":{
 		"item":"Fightinium Z",
 		"level":88,
@@ -451,7 +422,8 @@ var SETDEX_SM = {
 		"ability":"Water Absorb",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"ivs":{"hp":0, "at":0, "df":0, "sa":0, "sd":0, "sp":0},
-		"moves":["Seed Bomb","Sucker Punch","Swords Dance","Brick Break"]}},
+		"moves":["Seed Bomb","Sucker Punch","Swords Dance","Brick Break"]},
+	"Corin Rouge (Desert)":{"ability":"Sand Veil","level":82,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sucker Punch","Needle Arm","Swords Dance","Substitute"],"nature":"Adamant","item":"Bright Powder"}},
 "Camerupt":{
 	"Reborn Cal (Dragon's Den)":{
 		"item":"Elemental Seed",
@@ -601,7 +573,9 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Dragon Pulse","Solar Beam","Air Slash","Heat Wave"],
-		"nature":"Timid","item":"Choice Scarf"}},
+		"nature":"Timid","item":"Choice Scarf"},
+	"Maxwell 1":{"ability":"Solar Power","level":42,"evs":{"hp":63,"at":63,"df":63,"sa":63,"sd":63,"sp":63},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Dragon Rage","Hidden Power","Flame Burst","Ancient Power"],"nature":"Modest"},
+	"Maxwell 2":{"ability":"Solar Power","level":60,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Flamethrower","Air Slash","Dragon Pulse","Blast Burn"],"nature":"Modest","item":"Wise Glasses"}},
 "Charizard-Mega-X":{
 	"Saphira (Dragon's Den)":{
 		"level":97,
@@ -895,7 +869,8 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Magician",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-		"moves":["Mystical Fire","Psyshock","Dazzling Gleam","Shadow Ball"]}},
+		"moves":["Mystical Fire","Psyshock","Dazzling Gleam","Shadow Ball"]},
+	"Corin Rouge (Desert)":{"ability":"Magician","level":86,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Psyshock","Solar Beam","Dazzling Gleam"],"nature":"Timid","item":"Firium Z"}},
 "Dhelmise":{
 	"Entity Shade (Short Circuit)":{
 		"item":"Lum Berry",
@@ -904,7 +879,8 @@ var SETDEX_SM = {
 		"ability":"Steelworker",
 		"evs":{"hp":52, "at":52, "df":52, "sa":52, "sd":52, "sp":52},
 		"ivs":{"hp":25, "at":25, "df":25, "sa":25, "sd":25, "sp":25},
-		"moves":["Brick Break","Giga Drain","Anchor Shot","Shadow Claw"]}},
+		"moves":["Brick Break","Giga Drain","Anchor Shot","Shadow Claw"]},
+	"Mattie Doubles":{"ability":"Steelworker","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Anchor Shot","Power Whip","Rock Slide","Phantom Force"],"nature":"Jolly"}},
 "Ditto":{
 	"Elias (Sancta Terra)":{
 		"item":"Choice Scarf",
@@ -1053,13 +1029,13 @@ var SETDEX_SM = {
 		"ability":"Battle Armor",
 		"evs":{"hp":63, "at":63, "df":63, "sa":63, "sd":63, "sp":63},
 		"moves":["Knock Off","Fire Fang","Cross Poison","Aqua Tail"]}},
-	"Druddigon":{
-		"Spirit Franz (Chess Board) Doubles":{
-			"ability":"Sheer Force","level":95,
-			"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},
-			"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-			"moves":["Outrage","Fire Punch","Rock Slide","Thunder Punch"],
-			"nature":"Adamant","item":"King's Rock"}},
+"Druddigon":{
+	"Spirit Franz (Chess Board) Doubles":{
+		"ability":"Sheer Force","level":95,
+		"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},
+		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
+		"moves":["Outrage","Fire Punch","Rock Slide","Thunder Punch"],
+		"nature":"Adamant","item":"King's Rock"}},
 "Dustox":{
 	"Bennett (Mirror Arena)":{
 		"item":"Bright Powder",
@@ -1693,7 +1669,8 @@ var SETDEX_SM = {
 		"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Rock Polish","Dynamic Punch","Earthquake","Shadow Punch"],
-		"nature":"Adamant","item":"Telluric Seed"}},
+		"nature":"Adamant","item":"Telluric Seed"},
+	"Maddie Doubles":{"ability":"No Guard","level":74,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Rock Slide","Dynamic Punch","Ice Punch","Hammer Arm"],"nature":"Adamant"}},
 "Goodra":{
 	"Angela Doubles":{
 		"item":"Wide Lens",
@@ -1987,7 +1964,9 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Flash Fire",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-		"moves":["Flamethrower","Dark Pulse","Nasty Plot","Sludge Bomb"]}},
+		"moves":["Flamethrower","Dark Pulse","Nasty Plot","Sludge Bomb"]},
+	"Maxwell 1":{"ability":"Flash Fire","level":45,"evs":{"hp":67,"at":67,"df":67,"sa":67,"sd":67,"sp":67},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Fire Fang","Feint Attack","Thunder Fang","Return"],"nature":"Adamant"},
+	"Maxwell 2":{"ability":"Flash Fire","level":62,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nasty Plot","Flamethrower","Dark Pulse","Sludge Bomb"],"nature":"Modest","item":"Wise Glasses"}},
 "Hydreigon":{
 	"Lin 2 (New World)":{
 		"item":"White Herb",
@@ -2076,7 +2055,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Heat Wave","Rock Slide","Close Combat","Fake Out"],
-		"nature":"Naive","item":"Telluric Seed"}},
+		"nature":"Naive","item":"Telluric Seed"},
+	"Maddie Doubles":{"ability":"Blaze","level":76,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Close Combat","Rock Slide","Flare Blitz","Acrobatics"],"nature":"Adamant","item":"Sitrus Berry"}},
 "Jirachi":{
 	"Anna (Starlight Arena)":{
 		"item":"Psychium Z",
@@ -2140,7 +2120,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Rock Slide","Stone Edge","Waterfall","Superpower"],
-		"nature":"Adamant","item":"Assault Vest"}},
+		"nature":"Adamant","item":"Assault Vest"},
+	"Maddie Doubles":{"ability":"Weak Armor","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Rock Slide","Waterfall","Knock Off","X-Scissor"],"nature":"Adamant","item":"Focus Sash"}},
 "Kangaskhan-Mega":{
 	"Elias (Sancta Terra)":{
 		"level":100,
@@ -2206,8 +2187,10 @@ var SETDEX_SM = {
 		"nature":"Bold",
 		"ability":"Prankster",
 		"evs":{"hp":192, "at":0, "df":252, "sa":0, "sd":64, "sp":0},
-		"moves":["Flash Cannon","Thunder Wave","Draining Kiss","Calm Mind"]}},
+		"moves":["Flash Cannon","Thunder Wave","Draining Kiss","Calm Mind"]},
+	"Corin Rouge (Desert)":{"ability":"Prankster","level":81,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Spikes","Thunder Wave","Swagger","Foul Play"],"nature":"Bold","item":"Leftovers"}},
 "Klinklang":{
+	"Mechanightmare (Factory)":{"ability":"Clear Body","level":35,"evs":{"hp":52,"at":52,"df":52,"sa":52,"sd":52,"sp":52},"ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30,"sp":30},"moves":["Discharge","Charge Beam","Mirror Shot","Autotomize"],"nature":"Modest"},
 	"Ace of Spades (Factory)":{
 		"nature":"Adamant",
 		"level":70,
@@ -2790,7 +2773,8 @@ var SETDEX_SM = {
 		"ability":"Lightning Rod",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-		"moves":["Thunderbolt","Flamethrower","Thunder Wave","Hidden Power Ice"]}},
+		"moves":["Thunderbolt","Flamethrower","Thunder Wave","Hidden Power Ice"]},
+	"Eustace":{"ability":"Lightning Rod","level":81,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Flamethrower","Thunderbolt","Hidden Power"],"nature":"Timid","item":"Choice Specs"}},
 "Manectric-Mega":{
 	"Sirius 3 (Dragon's Den) Doubles":{
 		"level":97,
@@ -3145,7 +3129,8 @@ var SETDEX_SM = {
 		"nature":"Adamant",
 		"ability":"Stamina",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-		"moves":["Close Combat","High Horsepower","Counter","Rock Slide"]}},
+		"moves":["Close Combat","High Horsepower","Counter","Rock Slide"]},
+	"Colin Doubles":{"ability":"Stamina","level":74,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Superpower","Heavy Slam","Rock Slide","High Horsepower"],"nature":"Adamant","item":"Assault Vest"}},
 "Muk-Alola":{
 	"Cain 3 (Wasteland)":{
 		"level":44,
@@ -3169,7 +3154,8 @@ var SETDEX_SM = {
 		"ability":"Alchemy Power",
 		"evs":{"hp":252, "at":252, "df":4, "sa":0, "sd":0, "sp":0},
 		"ivs":{"hp":15, "at":15, "df":15, "sa":15, "sd":15, "sp":15},
-		"moves":["Gunk Shot","Thunder Punch","Rock Slide","Knock Off"]}},
+		"moves":["Gunk Shot","Thunder Punch","Rock Slide","Knock Off"]},
+	"Matthew Doubles":{"ability":"Alchemy Power","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Minimize","Sludge Wave","Fire Blast","Giga Drain"],"nature":"Calm"}},
 "Muk-Pulse":{
 	"Zel 2 (Factory)":{
 		"item":"Leftovers",
@@ -3310,7 +3296,9 @@ var SETDEX_SM = {
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Solar Beam","Hypnosis","Flamethrower","Psyshock"],
 		"nature":"Timid",
-		"item":"Life Orb"}},
+		"item":"Life Orb"},
+	"Maxwell 1":{"ability":"Drought","level":41,"evs":{"hp":61,"at":61,"df":61,"sa":61,"sd":61,"sp":61},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Will-O-Wisp","Payback","Flamethrower","Confuse Ray"],"nature":"Modest"},
+	"Maxwell 2":{"ability":"Drought","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Will-O-Wisp","Fire Blast","Extrasensory","Confuse Ray"],"nature":"Modest","item":"Wise Glasses"}},
 "Ninetales-Alola":{	
 	"Serra (Mirror Arena)":{
 		"item":"Icy Rock",
@@ -3473,7 +3461,9 @@ var SETDEX_SM = {
 		"ability":"Iron Fist",
 		"evs":{"hp":57, "at":57, "df":57, "sa":57, "sd":57, "sp":57},
 		"ivs":{"hp":30, "at":30, "df":30, "sa":30, "sd":30, "sp":30},
-		"moves":["Bullet Punch","Payback","Strength","Circle Throw"]}},
+		"moves":["Bullet Punch","Payback","Strength","Circle Throw"]},
+	"Pokemon Don 1 and 2":{"ability":"Scrappy","level":45,"evs":{"hp":67,"at":67,"df":67,"sa":67,"sd":67,"sp":67},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Body Slam","Circle Throw","Crunch","Vital Throw"],"nature":"Adamant"},
+	"Pokemon Don 3":{"ability":"Iron Fist","level":50,"evs":{"hp":75,"at":75,"df":75,"sa":75,"sd":75,"sp":75},"ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30,"sp":30},"moves":["Body Slam","Circle Throw","Crunch","Hammer Arm"],"nature":"Adamant","item":"Sitrus Berry"}},
 "Passimian":{
 	"Aster 3 (Swamp) Doubles":{
 		"level":39,
@@ -3503,6 +3493,9 @@ var SETDEX_SM = {
 		"ability":"Defiant",
 		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
 		"moves":["Close Combat","Earthquake","Rock Slide","Gunk Shot"]}},
+"Pelipper":{
+	"Archer 1":{"ability":"Drizzle","level":41,"evs":{"hp":61,"at":61,"df":61,"sa":61,"sd":61,"sp":61},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Roost","Tailwind","Brine","Ice Beam"],"nature":"Modest"},
+	"Archer 2":{"ability":"Drizzle","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Hydro Pump","Hurricane","Roost","Tailwind"],"nature":"Modest"}},
 "Pichu":{
 	"Victoria 1":{
 		"item":"Eviolite",
@@ -3775,6 +3768,8 @@ var SETDEX_SM = {
 		"ability":"Sheer Force",
 		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
 		"moves":["Rock Slide","Iron Head","Fire Punch","Rock Smash"]}},
+"Relicanth":{
+	"Archer 2":{"ability":"Rock Head","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30,"sp":30},"moves":["Hydro Pump","Head Smash","Double-Edge","Yawn"],"nature":"Bashful"}},
 "Reshiram":{
 	"Legendary Dragon (Dragon's Den)":{
 		"item":"Elemental Seed",
@@ -4069,7 +4064,7 @@ var SETDEX_SM = {
 		"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
 		"moves":["Sludge Bomb","Flamethrower","Nasty Plot","Dragon Pulse"]},
-	"Diana 1 Doubles":{
+	"Diana 2":{
 		"item":"Black Sludge",
 		"level":89,
 		"nature":"Timid",
@@ -4097,7 +4092,8 @@ var SETDEX_SM = {
 		"nature":"Adamant",
 		"ability":"Sand Rush",
 		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
-		"moves":["Earthquake","Sword Dance","Stone Edge","X-Scissor"]}},
+		"moves":["Earthquake","Sword Dance","Stone Edge","X-Scissor"]},
+	"Corin Rouge (Desert)":{"ability":"Sand Rush","level":83,"evs":{"hp":128,"at":128,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Earthquake","Swords Dance","Stone Edge","X-Scissor"],"nature":"Adamant","item":"Muscle Band"}},
 "Sandslash-Alola":{	
 	"Serra (Mirror Arena)":{
 		"item":"Wide Lens",
@@ -4161,7 +4157,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Acrobatics","Leaf Blade","Rock Slide","Swords Dance"],
-		"nature":"Adamant","item":"Magical Seed"}},
+		"nature":"Adamant","item":"Magical Seed"},
+	"Eustace":{"ability":"Unburden","level":81,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Leaf Blade","Earthquake","Rock Slide"],"nature":"Jolly","item":"Sitrus Berry"}},
 "Scizor":{
 	"Fern 6 Doubles":{
 		"level":71,
@@ -4206,7 +4203,8 @@ var SETDEX_SM = {
 		"evs":{"hp":252,"at":100,"df":0,"sa":0,"sd":156,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Bullet Punch","Bug Bite","Swords Dance","Roost"],
-		"nature":"Adamant","item":"Focus Sash"}},
+		"nature":"Adamant","item":"Focus Sash"},
+	"Eustace":{"ability":"Technician","level":83,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["U-turn","Bullet Punch","Superpower","Thief"],"nature":"Adamant"}},
 "Scizor-Mega":{
 	"Titania (Fairy Tale)":{
 		"level":86,
@@ -4282,6 +4280,8 @@ var SETDEX_SM = {
 		"ability":"Technician",
 		"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 		"moves":["Bug Bite","Night Slash","Swords Dance","Wing Attack"]}},
+"Seaking":{
+	"Archer 2":{"ability":"Lightning Rod","level":59,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30,"sp":30},"moves":["Drill Run","Waterfall","Megahorn","Poison Jab"],"nature":"Adamant"}},
 "Seismitoad":{
 	"Amaria(Water Surface) Doubles":{
 		"item":"Life Orb",
@@ -4362,6 +4362,10 @@ var SETDEX_SM = {
 		"ability":"Shed Skin",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["Sludge Bomb","Giga Drain","Flamethrower","Sludge Wave"]}},
+"Sharpedo":{
+	"Archer 1":{"ability":"Speed Boost","level":45,"evs":{"hp":67,"at":67,"df":67,"sa":67,"sd":67,"sp":67},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Aqua Jet","Crunch","Slash","Ice Fang"],"nature":"Adamant"},
+	"Archer 2":{"ability":"Speed Boost","level":62,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Aqua Jet","Crunch","Earthquake","Ice Fang"],"nature":"Adamant"},
+	"Eustace":{"ability":"Speed Boost","level":82,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Aqua Jet","Waterfall","Crunch","Earthquake"],"nature":"Adamant","item":"Life Orb"}},
 "Sigilyph":{
 	"Eve (Inverse) Doubles":{
 		"item":"Life Orb",
@@ -4437,7 +4441,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":0,"df":128,"sa":252,"sd":128,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Ice Beam","Scald","Trick Room","Psychic"],
-		"nature":"Modest","item":"Leftovers"}},
+		"nature":"Modest","item":"Leftovers"},
+	"Mattie Doubles":{"ability":"Regenerator","level":74,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Scald","Fire Blast","Icy Wind","Slack Off"],"nature":"Modest"}},
 "Solrock":{
 	"Aster 2 (Crystal Cavern) Doubles":{
 		"level":30,
@@ -4612,7 +4617,8 @@ var SETDEX_SM = {
 		"nature":"Calm",
 		"ability":"Pixilate",
 		"evs":{"hp":252, "at":0, "df":0, "sa":4, "sd":0, "sp":0},
-		"moves":["Swift","Shadow Ball","Wish","Protect"]}},
+		"moves":["Swift","Shadow Ball","Wish","Protect"]},
+	"Santiago":{"ability":"Pixilate","level":80,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hyper Voice","Wish","Shadow Ball","Hidden Power"],"nature":"Modest"}},
 "Talonflame":{
 	"Spirit Jonathan (Big Top) Doubles":{
 		"ability":"Gale Wings",
@@ -4802,6 +4808,9 @@ var SETDEX_SM = {
 		"ability":"Natural Cure",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["DRain Punch","Horn Leech","Shadow Claw","Rock Slide"]}},
+"Tsareena":{
+	"Suzy":{"ability":"Queen Majesty","level":45,"evs":{"hp":67,"at":67,"df":67,"sa":67,"sd":67,"sp":67},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Synthesis","Aromatherapy","Play Rough","Trop Kick"],"nature":"Adamant"},
+	"Matthew Doubles":{"ability":"Queen Majesty","level":74,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Play Rough","High Jump Kick","Power Whip","Knock Off"],"nature":"Adamant","item":"Life Orb"}},
 "Turtonator":{
 	"Igneous Cal (Superheated)":{
 		"level":38,
@@ -4809,7 +4818,8 @@ var SETDEX_SM = {
 		"ability":"Shell Armor",
 		"evs":{"hp":57, "at":57, "df":57, "sa":57, "sd":57, "sp":57},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-		"moves":["Dragon Pulse","Flamethrower","Head Smash","Revenge"]}},
+		"moves":["Dragon Pulse","Flamethrower","Head Smash","Revenge"]},
+	"Maxwell 2":{"ability":"Shell Armor","level":59,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shell Trap","Overheat","Explosion","Dragon Pulse"],"nature":"Bashful","item":"Wise Glasses"}},
 "Typhlosion":{
 	"Igneous Cal (Superheated)":{
 		"level":40,
@@ -4829,7 +4839,8 @@ var SETDEX_SM = {
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Heat Wave","Hidden Power Rock","Focus Blast","Eruption"],
-		"nature":"Timid","item":"Elemental Seed"}},
+		"nature":"Timid","item":"Elemental Seed"},
+	"Mattie Doubles":{"ability":"Flash Fire","level":76,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Eruption","Heat Wave","Rock Slide","Extrasensory"],"nature":"Timid","item":"Sitrus Berry"}},
 "Tyranitar":{
 	"Luna (Dark Crystal Cavern)":{
 		"item":"Magical Seed",
@@ -5293,4 +5304,27 @@ var SETDEX_SM = {
 		"evs":{"hp":37, "at":37, "df":37, "sa":37, "sd":37, "sp":37},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
 		"moves":["Pursuit","Grass Knot","Feint Attack","Taunt"]}},
+"Heatmor":{
+	"Maxwell 2":{"ability":"White Smoke","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hone Claws","Fire Punch","Thunder Punch","Sucker Punch"],"nature":"Adamant","item":"Muscle Band"}},
+"Victreebel":{
+	"Craudburry":{"ability":"Gluttony","level":60,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Leaf Blade","Strength Sap","Sludge Bomb","Sleep Powder"],"nature":"Naughty"}},
+"Qwilfish":{
+	"Craudburry":{"ability":"Poison Point","level":60,"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Explosion","Waterfall","Destiny Bond","Throat Chop"],"nature":"Adamant"}},
+"Crabominable":{
+	"Craudburry":{"ability":"Anger Point","level":62,"evs":{"hp":236,"at":252,"df":0,"sa":0,"sd":0,"sp":20},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Ice Hammer","Close Combat","Earthquake","Stone Edge"],"nature":"Adamant","item":"Assault Vest"}},
+"Slaking":{
+	"Craudburry":{"ability":"Truant","level":63,"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hammer Arm","Slack Off","Frustration","Night Slash"],"nature":"Adamant","item":"Leftovers"}},
+"Lopunny":{
+	"Santiago":{"ability":"Limber","level":82,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Power-Up Punch","High Jump Kick","Ice Punch","Bounce"],"nature":"Jolly","item":"Sitrus Berry"}},
+"Lickilicky":{
+	"Matthew Doubles":{"ability":"Own Tempo","level":76,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Power Whip","Muddy Water","Blizzard","Hammer Arm"],"nature":"Bashful"}},
+"Weezing":{
+	"Colin Doubles":{"ability":"Levitate","level":73,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Destiny Bond","Fire Blast","Sludge Bomb","Infestation"],"nature":"Bold",}},
+"Zangoose":{
+	"Colin Doubles":{"ability":"Toxic Boost","level":76,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Close Combat","Quick Attack","Shadow Claw","Swords Dance"],"nature":"Jolly","item":"Toxic Orb"}},     
+"Liepard":{	
+	"Corin Rouge (Desert)":{"ability":"Limber","level":82,"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Encore","Play Rough","U-turn","Foul Play"],"nature":"Adamant","item":"Muscle Band"}},
+"Magikarp":{
+	"Corin Rouge (Desert)":{"ability":"Swift Swim","level":5,"evs":{"hp":7,"at":7,"df":7,"sa":7,"sd":7,"sp":7},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Splash","Flail","Tackle","Bounce"],"nature":"Hardy"}},
+
 };
