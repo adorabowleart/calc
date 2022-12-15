@@ -6182,9 +6182,11 @@ XY['Arceus'].otherFormes.sort();
 var SM_PATCH = {
     Abra: { otherFormes: ['Abra-Pulse'] },
     Avalugg: { otherFormes: ['Avalugg-Pulse'] },
+    Breloom: { otherFormes: ['Breloom-Bot'] },
     Clawitzer: { otherFormes: ['Clawitzer-Pulse'] },
     Hypno: { otherFormes: ['Hypno-Pulse'] },
     Magnezone: { otherFormes: ['Magnezone-Pulse'] },
+    Mismagius: { otherFormes: ['Mismagius-Aevian'] },
     Swalot: { otherFormes: ['Swalot-Pulse'] },
     Tangrowth: { otherFormes: ['Tangrowth-Pulse-A', 'Tangrowth-Pulse-B', 'Tangrowth-Pulse-C'] },
     'Alakazam-Mega': { bs: { sd: 105 } },
@@ -6269,6 +6271,13 @@ var SM_PATCH = {
         baseSpecies: 'Avalugg',
         abilities: { 0: 'Solid Rock' }
     },
+    'Breloom-Bot': {
+        types: ['Steel', 'Fighting'],
+        bs: { hp: 210, at: 160, df: 140, sa: 60, sd: 100, sp: 100 },
+        weightkg: 39.2,
+        baseSpecies: 'Breloom',
+        abilities: { 0: 'Effect Spore' }
+    },
     'Clawitzer-Pulse': {
         types: ['Water', 'Dragon'],
         bs: { hp: 252, at: 1, df: 60, sa: 120, sd: 70, sp: 252 },
@@ -6297,8 +6306,15 @@ var SM_PATCH = {
         baseSpecies: 'Mr. Mime',
         abilities: { 0: 'Wonder Guard' }
     },
+    'Mismagius-Aevian': {
+        types: ['Grass', 'Ghost'],
+        bs: { hp: 60, at: 105, df: 60, sa: 105, sd: 60, sp: 105 },
+        weightkg: 4.4,
+        baseSpecies: 'Mismagius',
+        abilities: { 0: 'Magic Bounce' }
+    },
     'Muk-Pulse': {
-        types: ['Poison', 'Poison'],
+        types: ['Poison'],
         bs: { hp: 105, at: 105, df: 70, sa: 97, sd: 250, sp: 40 },
         weightkg: 62,
         baseSpecies: 'Muk',

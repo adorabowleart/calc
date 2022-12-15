@@ -1194,7 +1194,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Sand Tomb')) {
                 basePower *= 2;
             }
-            else if (move.named('Hidden Power', 'Land\'s Wrath', 'Muddy Water', 'Strength', 'Surf', 'Thousand Waves', 'Clangorous Soulblaze')) {
+            else if (move.named('Hidden Power', 'Hidden Power Bug', 'Hidden Power Dark', 'Hidden Power Dragon', 'Hidden Power Electric', 'Hidden Power Fighting', 'Hidden Power Fire', 'Hidden Power Flying', 'Hidden Power Ghost', 'Hidden Power Grass', 'Hidden Power Ground', 'Hidden Power Ice', 'Hidden Power Poison', 'Hidden Power Psychic', 'Hidden Power Rock', 'Hidden Power Steel', 'Hidden Power Water', 'Land\'s Wrath', 'Muddy Water', 'Strength', 'Surf', 'Thousand Waves', 'Clangorous Soulblaze')) {
                 basePower *= 1.5;
             }
             else if (move.named('Splintered Stormshards', 'Aura Sphere', 'Focus Blast', 'Stored Power', 'Zen Headbutt')) {
@@ -1695,7 +1695,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Rainbow':
-            if (move.named('Aurora Beam', 'Nature Power', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'Hidden Power', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
+            if (move.named('Aurora Beam', 'Nature Power', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'Hidden Power', 'Hidden Power Bug', 'Hidden Power Dark', 'Hidden Power Dragon', 'Hidden Power Electric', 'Hidden Power Fighting', 'Hidden Power Fire', 'Hidden Power Flying', 'Hidden Power Ghost', 'Hidden Power Grass', 'Hidden Power Ground', 'Hidden Power Ice', 'Hidden Power Poison', 'Hidden Power Psychic', 'Hidden Power Rock', 'Hidden Power Steel', 'Hidden Power Water', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dark Pulse', 'Night Daze', 'Shadow Ball', 'Never-Ending Nightmare')) {
