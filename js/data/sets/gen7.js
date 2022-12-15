@@ -2998,7 +2998,15 @@ var SETDEX_SM = {
 		"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Rest","Sleep Talk","Dragon Tail","Scald"],
-		"nature":"Bold","item":"Leftovers"}},
+		"nature":"Bold","item":"Leftovers"},
+	"Eclipse (Factory) Doubles":{
+		"ability":"Marvel Scale",
+		"level":67,
+		"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},
+		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
+		"moves":["Confuse Ray","Recover","Blizzard","Scald"],
+		"nature":"Modest","item":"Leftovers"
+	}},
 "Mime-Pulse":{
 	"Master Mime (Short Circuit) Doubles":{
 		"level":100,
