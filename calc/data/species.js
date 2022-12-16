@@ -6183,6 +6183,7 @@ var SM_PATCH = {
     Abra: { otherFormes: ['Abra-Pulse'] },
     Avalugg: { otherFormes: ['Avalugg-Pulse'] },
     Breloom: { otherFormes: ['Breloom-Bot'] },
+    Camerupt: { otherFormes: ['Camerupt-Pulse'] },
     Clawitzer: { otherFormes: ['Clawitzer-Pulse'] },
     Hypno: { otherFormes: ['Hypno-Pulse'] },
     Magnezone: { otherFormes: ['Magnezone-Pulse'] },
@@ -6257,15 +6258,22 @@ var SM_PATCH = {
         baseSpecies: 'Abra',
         abilities: { 0: 'Magic Guard' }
     },
+    'Aegislash-Crystal': {
+        types: ['Steel', 'Fairy'],
+        bs: { hp: 200, at: 150, df: 150, sa: 150, sd: 150, sp: 70 },
+        weightkg: 53,
+        abilities: { 0: 'Friend Guard' },
+        baseSpecies: 'Aegislash-Blade'
+    },
     'Arceus-Pulse': {
-        types: ['Normal', 'Normal'],
+        types: ['Normal'],
         bs: { hp: 255, at: 125, df: 155, sa: 125, sd: 155, sp: 160 },
         weightkg: 320,
         baseSpecies: 'Arceus',
         abilities: { 0: 'Multitype' }
     },
     'Avalugg-Pulse': {
-        types: ['Ice', 'Ice'],
+        types: ['Ice'],
         bs: { hp: 105, at: 160, df: 255, sa: 97, sd: 255, sp: 10 },
         weightkg: 505,
         baseSpecies: 'Avalugg',
@@ -6277,6 +6285,13 @@ var SM_PATCH = {
         weightkg: 39.2,
         baseSpecies: 'Breloom',
         abilities: { 0: 'Effect Spore' }
+    },
+    'Camerupt-Pulse': {
+        types: ['Fire', 'Ghost'],
+        bs: { hp: 1, at: 10, df: 10, sa: 170, sd: 10, sp: 10 },
+        weightkg: 220,
+        baseSpecies: 'Camerupt',
+        abilities: { 0: 'Sturdy' }
     },
     'Clawitzer-Pulse': {
         types: ['Water', 'Dragon'],
