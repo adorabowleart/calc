@@ -1733,7 +1733,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
         case 'Short-Circuit 0.8':
         case 'Short-Circuit 1.2':
         case 'Short-Circuit 1.5':
-            if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling', 'Hydro Vortex')) {
+            if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling Gleam', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
             else if (move.named('Splintered Stormshards', 'Dark Pulse', 'Night Daze', 'Nigh Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
@@ -1900,7 +1900,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                 basePower *= 1.2;
             }
             else if (move.named('Bulldoze', 'Earthquake', 'Magnitude')) {
-                basePower *= 1.5;
+                basePower *= 0.25;
             }
             else if (move.named('Splintered Stormshards')) {
                 basePower *= 1.3;

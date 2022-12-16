@@ -1284,7 +1284,7 @@ var SETDEX_SM = {
 		"ability":"Iron Barbs",
 		"evs":{"hp":33, "at":33, "df":33, "sa":33, "sd":33, "sp":33},
 		"ivs":{"hp":5, "at":5, "df":5, "sa":5, "sd":5, "sp":5},
-		"moves":["Leech Seed","Pin Missile","Nature Power","Sand Storm"]}},
+		"moves":["Leech Seed","Pin Missile","Nature Power","Sandstorm"]}},
 "Ferrothorn":{
 	"Florinia 2 (Glitch)":{
 		"item":"Assault Vest",
