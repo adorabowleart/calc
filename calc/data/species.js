@@ -5132,7 +5132,7 @@ var XY_PATCH = {
         bs: { hp: 60, at: 150, df: 50, sa: 150, sd: 50, sp: 60 },
         weightkg: 53,
         abilities: { 0: 'Stance Change' },
-        otherFormes: ['Aegislash-Shield', 'Aegislash-Both']
+        otherFormes: ['Aegislash-Shield', 'Aegislash-Both', 'Aegislash-Crystal']
     },
     'Aegislash-Shield': {
         types: ['Steel', 'Ghost'],
