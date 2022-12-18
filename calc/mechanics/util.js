@@ -139,7 +139,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
         (pokemon.hasAbility('Chlorophyll') && (weather.includes('Sun') || field.hasTerrain('Flower Garden 4', 'Flower Garden 5'))) ||
         (pokemon.hasAbility('Sand Rush') && (weather === 'Sand' || field.hasTerrain('Desert', 'Ashen Beach'))) ||
         (pokemon.hasAbility('Swift Swim') && (weather.includes('Rain') || field.hasTerrain('Water', 'Underwater', 'Murkwater'))) ||
-        (pokemon.hasAbility('Slush Rush') && (weather === 'Hail' || field.hasTerrain('Icy', 'Snowy Mountain'))) ||
+        (pokemon.hasAbility('Slush Rush') && (weather === 'Hail' || field.hasTerrain('Icy', 'Snowy Mt'))) ||
         (pokemon.hasAbility('Surge Surfer') && field.hasTerrain('Electric', 'Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2', 'Murkwater', 'Water', 'Underwater'))) {
         speedMods.push(8192);
     }
@@ -333,7 +333,7 @@ function checkSeedBoost(pokemon, field) {
                     ? Math.max(-6, pokemon.boosts.def - 2)
                     : Math.min(6, pokemon.boosts.def + 2);
             }
-            else if (field.hasTerrain('Snowy Mountain')) {
+            else if (field.hasTerrain('Snowy Mt')) {
                 pokemon.boosts.spa = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.spa - 2)
                     : Math.min(6, pokemon.boosts.spa + 2);

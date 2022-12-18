@@ -520,7 +520,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('sandstorm damage');
         }
     }
-    else if (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy Mountain')) {
+    else if (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy Mt')) {
         if (defender.hasAbility('Ice Body')) {
             damage += Math.floor(defender.maxHP() / 16);
             texts.push(damage + 'hp Ice Body recovery');

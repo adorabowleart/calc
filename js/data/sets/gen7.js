@@ -6272,6 +6272,4 @@ var SETDEX_SM = {
 	"T8:Shade (Glitch)":{"ability":"Pressure","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Draco Meteor","Psychic","Shadow Sneak","Aqua Tail"],"nature":"Careful","item":"Assault Vest",}},
 "Nihilego":{
 	"T8:Anna (Glitch)":{"ability":"Beast Boost","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psychic","Thunderbolt","Stealth Rock","Toxic Spikes"],"nature":"Timid","item":"Synthetic Seed",}},
-
-
 };

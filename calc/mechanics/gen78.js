@@ -101,7 +101,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                                                 : field.hasTerrain('Factory', 'Mirror', 'Fairy Tale') ? 'Steel'
                                                     : field.hasTerrain('Rocky') ? 'Fighting'
                                                         : field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5', 'Forest', 'Grassy') ? 'Grass'
-                                                            : field.hasTerrain('Icy', 'Rainbow', 'Snowy Mountain') ? 'Ice'
+                                                            : field.hasTerrain('Icy', 'Rainbow', 'Snowy Mt') ? 'Ice'
                                                                 : field.hasTerrain('Starlight') ? 'Fairy'
                                                                     : field.hasTerrain('Swamp', 'Underwater', 'Water') ? 'Water'
                                                                         : 'Normal';
@@ -373,7 +373,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType.effectiveness[defender.types[0]] *
             (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
     }
-    if (field.hasTerrain('Snowy Mountain') && move.hasType('Rock')) {
+    if (field.hasTerrain('Snowy Mt') && move.hasType('Rock')) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
         var addedType = gen.types.get('Ice');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
@@ -1000,7 +1000,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                     basePower = 80;
                     desc.moveName = 'Discharge';
                     break;
-                case 'Snowy Mountain':
+                case 'Snowy Mt':
                     basePower = 60;
                     move.category = 'Physical';
                     desc.moveName = 'Avalanche';
@@ -1763,7 +1763,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.terrain = field.terrain;
             desc.moveType = move.type;
             break;
-        case 'Snowy Mountain':
+        case 'Snowy Mt':
             if (move.named('Icy Wind')) {
                 basePower *= 2;
             }
@@ -2077,7 +2077,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
             }
         }
         else if (attacker.hasAbility('Aerilate')) {
-            if (field.hasTerrain('Mountain', 'Snowy Mountain')) {
+            if (field.hasTerrain('Mountain', 'Snowy Mt')) {
                 bpMods.push(6144);
             }
             else {
@@ -2085,7 +2085,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
             }
         }
         else if (attacker.hasAbility('Refrigerate')) {
-            if (field.hasTerrain('Icy', 'Snowy Mountain')) {
+            if (field.hasTerrain('Icy', 'Snowy Mt')) {
                 bpMods.push(6144);
             }
             else {
@@ -2317,7 +2317,7 @@ function calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCriti
     if (field.hasTerrain('New World') && !(0, util_2.isGrounded)(defender, field)) {
         dfMods.push(3686);
     }
-    if ((field.hasTerrain('Misty') && defender.hasType('Fairy')) || (field.hasTerrain('Dragon\'s Den') && defender.hasType('Dragon')) || (field.hasTerrain('Desert') && defender.hasType('Ground')) || (field.hasTerrain('Icy', 'Snowy Mountain') && defender.hasType('Ice') && field.hasWeather('Hail'))) {
+    if ((field.hasTerrain('Misty') && defender.hasType('Fairy')) || (field.hasTerrain('Dragon\'s Den') && defender.hasType('Dragon')) || (field.hasTerrain('Desert') && defender.hasType('Ground')) || (field.hasTerrain('Icy', 'Snowy Mt') && defender.hasType('Ice') && field.hasWeather('Hail'))) {
         dfMods.push(6144);
         desc.terrain = field.terrain;
     }
@@ -2430,7 +2430,7 @@ function calculateFinalModsSMSS(gen, attacker, defender, move, field, desc, isCr
         finalMods.push(3072);
         desc.defenderAbility = defender.ability;
     }
-    if (field.hasTerrain('Mountain', 'Snowy Mountain') && attacker.hasAbility('Long Reach')) {
+    if (field.hasTerrain('Mountain', 'Snowy Mt') && attacker.hasAbility('Long Reach')) {
         finalMods.push(6144);
         desc.defenderAbility = defender.ability;
     }
