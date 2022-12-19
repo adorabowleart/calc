@@ -375,7 +375,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     if (field.hasTerrain('Snowy Mt') && move.hasType('Rock')) {
         var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('Ice');
+        var addedType = gen.types.get('ice');
         typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
             (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
             addedType.effectiveness[defender.types[0]] *
