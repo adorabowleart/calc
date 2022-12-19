@@ -1528,7 +1528,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if ((0, util_2.isGrounded)(attacker, field) && move.hasType('Grass')) {
                 basePower *= 1.5;
             }
-            else if ((0, util_2.isGrounded)(defender, field) && move.hasType('Fire')) {
+            if ((0, util_2.isGrounded)(defender, field) && move.hasType('Fire')) {
                 basePower *= 1.5;
             }
             if (move.named('Sludge Wave', 'Acid Downpour') || (move.named('Gust', 'Hurricane', 'Razor Wind', 'Twister', 'Supersonic Skystrike', 'Splintered Stormshards', 'Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive') && !field.hasWeather('Rain', 'Heavy Rain'))) {
@@ -1782,7 +1782,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.hasType('Flying') && move.category == 'Special' && field.hasWeather('Strong Winds')) {
                 basePower *= 1.5;
             }
-            else if (move.hasType('Rock', 'Flying')) {
+            if (move.hasType('Rock', 'Flying')) {
                 basePower *= 1.5;
             }
             else if (move.hasType('Ice')) {

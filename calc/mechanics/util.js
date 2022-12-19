@@ -49,8 +49,9 @@ var EV_ITEMS = [
     'Power Weight',
 ];
 function isGrounded(pokemon, field) {
-    return (field.isGravity || pokemon.hasItem('Iron Ball') || (!field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && !pokemon.hasItem('Synthetic Seed')) ||
+    return (field.isGravity || pokemon.hasItem('Iron Ball') ||
         (!pokemon.hasType('Flying') &&
+            (!field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && !pokemon.hasItem('Synthetic Seed')) &&
             !pokemon.hasAbility('Levitate') &&
             !pokemon.hasItem('Air Balloon')));
 }
