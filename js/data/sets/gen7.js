@@ -105,13 +105,13 @@ var SETDEX_SM = {
 		"ability":"Magic Guard","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psyshock","Focus Blast","Shadow Ball","Hidden Power Ice"],
+		"moves":["Psyshock","Focus Blast","Shadow Ball","HP Ice"],
 		"nature":"Modest","item":"Life Orb"},
 	"Spirit Troy (Mountain) Doubles":{
 		"ability":"Magic Guard","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psyshock","Focus Blast","Shadow Ball","Hidden Power Ice"],
+		"moves":["Psyshock","Focus Blast","Shadow Ball","HP Ice"],
 		"nature":"Modest","item":"Life Orb"},
 	"Spirit Diana (Holy)":{
 		"ability":"Magic Guard","level":95,
@@ -144,13 +144,13 @@ var SETDEX_SM = {
 		"ability":"Regenerator","level":95,
 		"evs":{"hp":252,"at":0,"df":176,"sa":0,"sd":80,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Spore","Giga Drain","Clear Smog","Hidden Power Fire"],
+		"moves":["Spore","Giga Drain","Clear Smog","HP Fire"],
 		"nature":"Bold","item":"Black Sludge"},
 	"Spirit Lexi (Rainbow)":{
 		"ability":"Regenerator","level":95,
 		"evs":{"hp":252,"at":0,"df":176,"sa":0,"sd":80,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Spore","Giga Drain","Rage Powder","Hidden Power Ground"],
+		"moves":["Spore","Giga Drain","Rage Powder","HP Ground"],
 		"nature":"Bold","item":"Black Sludge"},
 	"Craudburry":{"ability":"Effect Spore","level":61,"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Spore","Giga Drain","Sludge Bomb","Synthesis"],"nature":"Calm"},
 	"T0:Cresselia (New World)":{"ability":"Regenerator","level":102,"evs":{"hp":252,"at":0,"df":252,"sa":4,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Spore","Giga Drain","Sludge Bomb","Nature Power"],"nature":"Bold","item":"Black Sludge",},
@@ -246,7 +246,7 @@ var SETDEX_SM = {
 		"ability":"Aroma Veil",
 		"evs":{"hp":200, "at":0, "df":56, "sa":252, "sd":0, "sp":252},
 		"moves":["Dazzling Gleam","Psychic","Flash Cannon","Thunder"]},
-	"T1:Entei (New World)":{"ability":"Aroma Veil","level":103,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Trick Room","Nasty Plot","Moonblast","Hidden Power Dark"],"nature":"Quiet","item":"Focus Sash",},
+	"T1:Entei (New World)":{"ability":"Aroma Veil","level":103,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Trick Room","Nasty Plot","Moonblast","HP Dark"],"nature":"Quiet","item":"Focus Sash",},
 	"T2:Ciel (New World)":{"ability":"Defeatist","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["U-turn","Ancient Power","Crunch","Tailwind"],"nature":"Adamant","item":"Focus Sash",}},
 "Aurorus":{			
 	"Zel 3 (Factory)":{
@@ -263,7 +263,7 @@ var SETDEX_SM = {
 		"ability":"Snow Warning",
 		"evs":{"hp":0, "at":0, "df":0, "sa":252, "sd":4, "sp":252},
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-		"moves":["Blizzard","Earth Power","Flash Cannon","Hidden Power Rock"]},
+		"moves":["Blizzard","Earth Power","Flash Cannon","HP Rock"]},
 	"T5:Lumi (Wasteland)":{"ability":"Snow Warning","level":130,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Earth Power","Thunderbolt","Nature Power"],"nature":"Quiet","item":"Assault Vest",},
 	"T5:Genesect 5 (Short-Circuit) Doubles":{"ability":"Snow Warning","level":128,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nature Power","Blizzard","Flash Cannon","Discharge"],"nature":"Modest","item":"Synthetic Seed",},
 	"T5:Tanner (Holy) Doubles":{"ability":"Refrigerate","level":126,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Round","Earth Power","Stealth Rock","Nature Power"],"nature":"Modest","item":"Stone Plate",}},
@@ -380,7 +380,7 @@ var SETDEX_SM = {
 		"ability":"Speed Boost",
 		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":4, "sp":252},
 		"moves":["Brick Break","Protect","Acrobatics","Blaze Kick"]},
-	"T2:Samsom (Ashen Beach)":{"ability":"Speed Boost","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Protect","Flamethrower","Focus Blast","Hidden Power Ice"],"nature":"Modest","item":"Focus Sash",},
+	"T2:Samsom (Ashen Beach)":{"ability":"Speed Boost","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Protect","Flamethrower","Focus Blast","HP Ice"],"nature":"Modest","item":"Focus Sash",},
 	"T3:Alistasia  (Random)":{"ability":"Speed Boost","level":120,"evs":{"hp":0,"at":252,"df":0,"sa":0,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Acrobatics","Superpower","Blaze Kick"],"nature":"Adamant","item":"Focus Sash",},
 	"T3:Multilyrical Melody (Random) Doubles":{"ability":"Speed Boost","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Baton Pass","Acrobatics","Brick Break","Poison Jab"],"nature":"Jolly","item":"Magical Seed",}},	
 "Blaziken-Mega":{
@@ -555,7 +555,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},
-		"moves":["Shadow Ball","Heat Wave","Trick Room","Hidden Power Ice"],
+		"moves":["Shadow Ball","Heat Wave","Trick Room","HP Ice"],
 		"nature":"Modest",
 		"item":"Synthetic Seed"},
 	"Spirit Duster (Big Top)":{
@@ -579,7 +579,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},
-		"moves":["Shadow Ball","Heat Wave","Hidden Power Fighting","Energy Ball"],
+		"moves":["Shadow Ball","Heat Wave","HP Fighting","Energy Ball"],
 		"nature":"Quiet","item":"Magical Seed"},
 	"Spirit Owen (Desert) Doubles":{
 		"ability":"Flame Body",
@@ -594,12 +594,12 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psychic","Heat Wave","Hidden Power Ice","Energy Ball"],
+		"moves":["Psychic","Heat Wave","HP Ice","Energy Ball"],
 		"nature":"Modest",
 		"item":"Synthetic Seed"},
 	"T3:Maxwell":{"ability":"Flash Fire","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shadow Ball","Flamethrower","Calm Mind","Substitute"],"nature":"Modest","item":"Leftovers",},
 	"T4:Charlotte (Psychic) Doubles":{"ability":"Flame Body","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":5,"at":5,"df":5,"sa":5,"sd":5,"sp":5},"moves":["Hex","Heat Wave","Psychic","Calm Mind"],"nature":"Timid","item":"Magical Seed",},
-	"T7:Eclipse (Rainbow)":{"ability":"Flash Fire","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Fire Blast","Hidden Power Ghost","Psychic","Energy Ball"],"nature":"Timid","item":"Magical Seed",}},
+	"T7:Eclipse (Rainbow)":{"ability":"Flash Fire","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Fire Blast","HP Ghost","Psychic","Energy Ball"],"nature":"Timid","item":"Magical Seed",}},
 "Chasey":{
 	"TERR4 (Glich)":{
 		"item":"Eviolite",
@@ -637,7 +637,7 @@ var SETDEX_SM = {
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Dragon Pulse","Solar Beam","Air Slash","Heat Wave"],
 		"nature":"Timid","item":"Choice Scarf"},
-	"Maxwell 1":{"ability":"Solar Power","level":42,"evs":{"hp":63,"at":63,"df":63,"sa":63,"sd":63,"sp":63},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Dragon Rage","Hidden Power","Flame Burst","Ancient Power"],"nature":"Modest"},
+	"Maxwell 1":{"ability":"Solar Power","level":42,"evs":{"hp":63,"at":63,"df":63,"sa":63,"sd":63,"sp":63},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Dragon Rage","HP","Flame Burst","Ancient Power"],"nature":"Modest"},
 	"Maxwell 2":{"ability":"Solar Power","level":60,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Flamethrower","Air Slash","Dragon Pulse","Blast Burn"],"nature":"Modest","item":"Wise Glasses"},
 	"T3:Maxwell":{"ability":"Solar Power","level":120,"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Flamethrower","Air Slash","Dragon Pulse","Blast Burn"],"nature":"Modest","item":"Leftovers",},
 	"T5:Shiv (Forest)":{"ability":"Blaze","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Fire Blast","Solar Beam","Dragon Pulse","Focus Blast"],"nature":"Timid","item":"Magical Seed",},
@@ -652,7 +652,7 @@ var SETDEX_SM = {
 	"T4:Heatran (Corrosive Mist)":{"ability":"Tough Claws","level":125,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mega Kick","Dragon Dance","Dragon Claw","Fire Punch"],"nature":"Adamant","item":"Charizardite X",}},
 "Charizard-Mega-Y":{
 	"T2:Keldeo (Ashen Beach) Doubles":{"ability":"Drought","level":115,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Beat Up","Solar Beam","Focus Blast","Flamethrower"],"nature":"Timid","item":"Charizardite Y",},
-	"T3:Bennett (Rainbow) Doubles":{"ability":"Drought","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Heat Wave","Hidden Power Electric","Air Slash"],"nature":"Modest","item":"Charizardite Y",},
+	"T3:Bennett (Rainbow) Doubles":{"ability":"Drought","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Heat Wave","HP Electric","Air Slash"],"nature":"Modest","item":"Charizardite Y",},
 	"T5:Taka (Holy) Doubles":{"ability":"Drought","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Solar Beam","Air Slash","Focus Blast"],"nature":"Timid","item":"Charizardite Y",}},
 "Chatot":{
 	"Taka 1 (Rocky)":{
@@ -963,7 +963,7 @@ var SETDEX_SM = {
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["Mystical Fire","Psyshock","Dazzling Gleam","Shadow Ball"]},
 	"Corin Rouge (Desert)":{"ability":"Magician","level":86,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Psyshock","Solar Beam","Dazzling Gleam"],"nature":"Timid","item":"Firium Z"},
-	"T3:Bennett (Rainbow) Doubles":{"ability":"Magician","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mystical Fire","Dazzling Gleam","Psyshock","Hidden Power Grass"],"nature":"Modest","item":"Magical Seed",},
+	"T3:Bennett (Rainbow) Doubles":{"ability":"Magician","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mystical Fire","Dazzling Gleam","Psyshock","HP Grass"],"nature":"Modest","item":"Magical Seed",},
 	"T3:Corin Rouge (New World) Doubles":{"ability":"Magician","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Heat Wave","Psyshock","Solar Beam","Dazzling Gleam"],"nature":"Timid","item":"Firium Z",},
 	"T4:Jirachi (Psychic)":{"ability":"Magician","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mystical Fire","Psychic","Shadow Ball","Calm Mind"],"nature":"Timid","item":"Focus Sash",},
 	"T6.5:Zina (Starlight)":{"ability":"Magician","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Dazzling Gleam","Fire Blast","Psychic","Wish"],"nature":"Timid","item":"Magical Seed",}},
@@ -1271,13 +1271,13 @@ var SETDEX_SM = {
 		"ability":"Synchronize","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psychic","Shadow Ball","Hidden Power Fire","Toxic"],
+		"moves":["Psychic","Shadow Ball","HP Fire","Toxic"],
 		"nature":"Modest","item":"Elemental Seed"},
 	"Spirit Josh (Big Top)":{
 		"ability":"Magic Bounce","level":95,
 		"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psychic","Calm Mind","Hidden Power Fighting","Wish"],
+		"moves":["Psychic","Calm Mind","HP Fighting","Wish"],
 		"nature":"Timid","item":"Leftovers"},
 	"T5:Eve (Wasteland)":{"ability":"Synchronize","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psychic","Shadow Ball","Dazzling Gleam","Calm Mind"],"nature":"Timid","item":"Life Orb",}},
 "Excadrill":{
@@ -1412,7 +1412,7 @@ var SETDEX_SM = {
 		"nature":"Careful",
 		"ability":"Iron Barbs",
 		"evs":{"hp":252, "at":0, "df":0, "sa":0, "sd":252, "sp":0},
-		"moves":["Explosion","Hidden Power Water","Giga Drain","Nature Power"]},
+		"moves":["Explosion","HP Water","Giga Drain","Nature Power"]},
 	"Spirit Cloud (Underwater)":{
 		"ability":"Iron Barbs","level":95,
 		"evs":{"hp":252,"at":0,"df":128,"sa":0,"sd":128,"sp":0},
@@ -1431,7 +1431,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Flower Veil",
 		"evs":{"hp":252, "at":0, "df":4, "sa":252, "sd":0, "sp":0},
-		"moves":["Dazzling Gleam","Hidden Power Ground","Wish","Nature Power"]},
+		"moves":["Dazzling Gleam","HP Ground","Wish","Nature Power"]},
 	"Angela Doubles":{
 		"item":"Leftovers",
 		"level":89,
@@ -1610,7 +1610,7 @@ var SETDEX_SM = {
 		"moves":["Calm Mind","Thunderbolt","Psychic","Focus Blast"],
 		"nature":"Modest",
 		"item":"Magical Seed"},
-	"T2:Samsom (Ashen Beach)":{"ability":"Synchronize","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Moonblast","Psychic","Hidden Power Ground"],"nature":"Modest","item":"Sitrus Berry",},
+	"T2:Samsom (Ashen Beach)":{"ability":"Synchronize","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Moonblast","Psychic","HP Ground"],"nature":"Modest","item":"Sitrus Berry",},
 	"T4:Tapu Lele (Psychic) Doubles":{"ability":"Telepathy","level":125,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psych Up","Moonblast","Psyshock","Focus Blast"],"nature":"Timid","item":"Leftovers",},
 	"T4:Anna (Psychic) Doubles":{"ability":"Telepathy","level":125,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":0},"ivs":{"hp":5,"at":5,"df":5,"sa":5,"sd":5,"sp":5},"moves":["Moonblast","Psyshock","Calm Mind","Shadow Ball"],"nature":"Modest","item":"Leftovers",}},
 "Gardevoir-Mega":{
@@ -1647,13 +1647,13 @@ var SETDEX_SM = {
 		"ability":"Cursed Body","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Shadow Ball","Thunderbolt","Focus Blast","Hidden Power Fire"],
+		"moves":["Shadow Ball","Thunderbolt","Focus Blast","HP Fire"],
 		"nature":"Timid","item":"Telluric Seed"},
 	"Spirit Nate (Desert)":{
 		"ability":"Cursed Body","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Shadow Ball","Thunderbolt","Destiny Bond","Hidden Power Fire"],
+		"moves":["Shadow Ball","Thunderbolt","Destiny Bond","HP Fire"],
 		"nature":"Timid","item":"Life Orb"},
 	"Spirit Quinn (Inverse)":{
 		"ability":"Cursed Body","level":95,
@@ -1671,7 +1671,7 @@ var SETDEX_SM = {
 		"ability":"Cursed Body","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Psychic","Thunderbolt","Energy Ball","Hidden Power Fire"],
+		"moves":["Psychic","Thunderbolt","Energy Ball","HP Fire"],
 		"nature":"Timid","item":"Synthetic Seed"},
 	"T3:Heather (Mountain) Doubles":{"ability":"Cursed Body","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Thunder","Ominous Wind","Icy Wind","Sludge Bomb"],"nature":"Timid",},
 	"T7:Titania (Cave) Doubles":{"ability":"Cursed Body","level":138,"evs":{"hp":0,"at":52,"df":4,"sa":200,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Explosion","Sludge Wave","Perish Song","Shadow Ball"],"nature":"Mild","item":"Life Orb",}},
@@ -1702,7 +1702,7 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Sap Sipper",
 		"evs":{"hp":81, "at":81, "df":81, "sa":81, "sd":81, "sp":81},
-		"moves":["Psychic","Thunderbolt","Thunder Wave","Hidden Power Fire"]}},
+		"moves":["Psychic","Thunderbolt","Thunder Wave","HP Fire"]}},
 "Glaceon":{
 	"Zel 2 (Factory)":{
 		"item":"Never-Melt Ice",
@@ -1740,7 +1740,7 @@ var SETDEX_SM = {
 		"moves":["Blizzard","Wish","Hyper Voice","Helping Hand"]},
 	"T3:Multilyrical Melody (Random) Doubles":{"ability":"Snow Cloak","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Signal Beam","Hyper Voice","Baton Pass"],"nature":"Modest","item":"Magical Seed",},
 	"T5:Lumi  (Wasteland)":{"ability":"Snow Cloak","level":130,"evs":{"hp":0,"at":0,"df":252,"sa":0,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Wish","Shadow Ball","Signal Beam"],"nature":"Modest","item":"Life Orb",},
-	"T6:Reshiram (Icy) Doubles":{"ability":"Snow Cloak","level":133,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":3,"at":3,"df":3,"sa":3,"sd":3,"sp":3},"moves":["Blizzard","Shadow Ball","Wish","Hidden Power Fighting"],"nature":"Modest","item":"Elemental Seed",}},
+	"T6:Reshiram (Icy) Doubles":{"ability":"Snow Cloak","level":133,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":3,"at":3,"df":3,"sa":3,"sd":3,"sp":3},"moves":["Blizzard","Shadow Ball","Wish","HP Fighting"],"nature":"Modest","item":"Elemental Seed",}},
 "Gligar":{					
 	"Taka 2 (Factory)":{
 		"level":42,
@@ -1847,7 +1847,7 @@ var SETDEX_SM = {
 		"ability":"Swift Swim","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Surf","Ice Beam","Shell Smash","Hidden Power Electric"],
+		"moves":["Surf","Ice Beam","Shell Smash","HP Electric"],
 		"nature":"Modest","item":"White Herb"}},
 "Gothitelle":{			
 	"Glass Gauntlet 2 (Factory)":{
@@ -2247,7 +2247,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Volt Absorb",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Shadow Ball","Signal Beam","Hidden Power Ice","Discharge"]},
+		"moves":["Shadow Ball","Signal Beam","HP Ice","Discharge"]},
 	"Arcturus Doubles":{
 		"item":"Life Orb",
 		"level":89,
@@ -2260,19 +2260,19 @@ var SETDEX_SM = {
 		"ability":"Volt Absorb","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Thunderbolt","Volt Switch","Shadow Ball","Hidden Power Ice"],
+		"moves":["Thunderbolt","Volt Switch","Shadow Ball","HP Ice"],
 		"nature":"Timid","item":"Choice Specs"},
 	"Spirit Zippo (Icy)":{
 		"ability":"Volt Absorb","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Thunderbolt","Signal Beam","Shadow Ball","Hidden Power Ice"],
+		"moves":["Thunderbolt","Signal Beam","Shadow Ball","HP Ice"],
 		"nature":"Timid","item":"Elemental Seed"},
 	"Spirit Lexi (Rainbow)":{
 		"ability":"Volt Absorb","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Thunderbolt","Volt Switch","Shadow Ball","Hidden Power Ice"],
+		"moves":["Thunderbolt","Volt Switch","Shadow Ball","HP Ice"],
 		"nature":"Timid","item":"Choice Specs"},
 	"T7:Amaria (Cave) Doubles":{"ability":"Volt Absorb","level":137,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Discharge","Synchronoise","Roar","Hyper Beam"],"nature":"Mild","item":"Life Orb",}},
 "Jynx":{	
@@ -2290,7 +2290,7 @@ var SETDEX_SM = {
 		"ability":"Dry Skin",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 		"moves":["Nasty Plot","Blizzard","Psychic","Shadow Ball"]},
-	"T2:Samsom (Ashen Beach)":{"ability":"Oblivious","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Psychic","Ice Beam","Hidden Power Fire"],"nature":"Modest","item":"Choice Scarf",},
+	"T2:Samsom (Ashen Beach)":{"ability":"Oblivious","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Psychic","Ice Beam","HP Fire"],"nature":"Modest","item":"Choice Scarf",},
 	"T6.5:Giratina (Inverse)":{"ability":"Dry Skin","level":140,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Signal Beam","Ice Beam","Draining Kiss","Nasty Plot"],"nature":"Timid","item":"Focus Sash",}},
 "Kabutops":{
 	"Spirit Cloud (Underwater)":{
@@ -2331,7 +2331,7 @@ var SETDEX_SM = {
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Dragon Dance","Substitute","Waterfall","Outrage"],
 		"nature":"Adamant","item":"Leftovers"},
-	"T5:Kiki (Ashen Beach)":{"ability":"Sniper","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Draco Meteor","Hidden Power Fire","Ice Beam"],"nature":"Modest","item":"Telluric Seed",},
+	"T5:Kiki (Ashen Beach)":{"ability":"Sniper","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Draco Meteor","HP Fire","Ice Beam"],"nature":"Modest","item":"Telluric Seed",},
 	"T7:Amaria 2 (Water) Doubles":{"ability":"Swift Swim","level":141,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Blizzard","Muddy Water","Draco Meteor","Flash Cannon"],"nature":"Modest","item":"Wide Lens",}},
 "Kirlia":{					
 	"Victoria 2":{
@@ -2603,17 +2603,17 @@ var SETDEX_SM = {
 		"nature":"Adamant",
 		"ability":"Chlorophyll",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Sleep Powder","Giga Drain","Growth","Hidden Power Rock"]},
+		"moves":["Sleep Powder","Giga Drain","Growth","HP Rock"]},
 	"Spirit Allan (Psychic)":{
 		"ability":"Chlorophyll",
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Giga Drain","Quiver Dance","Sleep Powder","Hidden Power Rock"],
+		"moves":["Giga Drain","Quiver Dance","Sleep Powder","HP Rock"],
 		"nature":"Modest",
 		"item":"Focus Sash"},
-	"T3:Laura (Flower Garden) Doubles":{"ability":"Chlorophyll","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sleep Powder","Giga Drain","Growth","Hidden Power"],"nature":"Timid","item":"Life Orb",},
-	"T4:Laura (Psychic) Doubles":{"ability":"Own Tempo","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Nature Power","Hidden Power Rock","Safeguard"],"nature":"Timid","item":"Magical Seed",}},
+	"T3:Laura (Flower Garden) Doubles":{"ability":"Chlorophyll","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sleep Powder","Giga Drain","Growth","HP"],"nature":"Timid","item":"Life Orb",},
+	"T4:Laura (Psychic) Doubles":{"ability":"Own Tempo","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Nature Power","HP Rock","Safeguard"],"nature":"Timid","item":"Magical Seed",}},
 "Lucario":{
 	"Kiki (Ashen Beach)":{
 		"level":42,
@@ -2621,7 +2621,7 @@ var SETDEX_SM = {
 		"ability":"Steadfast",
 		"evs":{"hp":63, "at":63, "df":63, "sa":63, "sd":63, "sp":63},
 		"ivs":{"hp":30, "at":30, "df":30, "sa":30, "sd":30, "sp":30},
-		"moves":["Aura Sphere","Psychic","Calm Mind","Hidden Power Dark"]},
+		"moves":["Aura Sphere","Psychic","Calm Mind","HP Dark"]},
 	"Samson (Big Top)":{
 		"item":"Focus Sash",
 		"level":67,
@@ -2878,17 +2878,17 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Analytic",
 		"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
-		"moves":["Discharge","Thunder Wave","Flash Cannon","Hidden Power Fire"]},
+		"moves":["Discharge","Thunder Wave","Flash Cannon","HP Fire"]},
 	"Naoman Doubles":{
 		"item":"Choice Specs",
 		"level":89,
 		"nature":"Modest",
 		"ability":"Sturdy",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":25},
-		"moves":["Thunderbolt","Signal Beam","Flash Cannon","Hidden Power Water"]},
+		"moves":["Thunderbolt","Signal Beam","Flash Cannon","HP Water"]},
 	"T3:Breloombot Clarice (Random)":{"ability":"Magnet Pull","level":120,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Signal Beam","Volt Switch","Flash Cannon","Thunderbolt"],"nature":"Timid","item":"Choice Specs",},
-	"T3:John":{"ability":"Analytic","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Discharge","Thunder Wave","Flash Cannon","Hidden Power Fire"],"nature":"Modest","item":"Air Balloon",},
-	"T3:Julia 2":{"ability":"Magnet Pull","level":120,"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hidden Power Ice","Thunderbolt","Flash Cannon","Signal Beam"],"nature":"Modest","item":"Choice Specs",}},
+	"T3:John":{"ability":"Analytic","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Discharge","Thunder Wave","Flash Cannon","HP Fire"],"nature":"Modest","item":"Air Balloon",},
+	"T3:Julia 2":{"ability":"Magnet Pull","level":120,"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["HP Ice","Thunderbolt","Flash Cannon","Signal Beam"],"nature":"Modest","item":"Choice Specs",}},
 "Magnezone-Pulse":{			
 	"Zel 3 (Factory)":{
 		"item":"Wiki Berry",
@@ -2896,7 +2896,7 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Levitate",
 		"evs":{"hp":252, "at":0, "df":0, "sa":252, "sd":4, "sp":0},
-		"moves":["Discharge","Magnet Bomb","Autotomize","Hidden Power Fire"]},
+		"moves":["Discharge","Magnet Bomb","Autotomize","HP Fire"]},
 	"T5:Pulse Mime (Glitch)":{"ability":"Levitate","level":130,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Parabolic Charge","Core Enforcer","Bolt Strike","Recover"],"nature":"Timid","item":"Leftovers",}},
 "Malamar":{
 	"Radomus (Chess Arena: Pawn) Doubles":{
@@ -2987,7 +2987,7 @@ var SETDEX_SM = {
 		"ability":"Lightning Rod",
 		"evs":{"hp":85, "at":85, "df":85, "sa":85, "sd":85, "sp":85},
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-		"moves":["Overheat","Discharge","Thunder Wave","Hidden Power Ice"]},
+		"moves":["Overheat","Discharge","Thunder Wave","HP Ice"]},
 	"Diana 2":{
 		"item":"Life Orb",
 		"level":88,
@@ -2995,9 +2995,9 @@ var SETDEX_SM = {
 		"ability":"Lightning Rod",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
-		"moves":["Thunderbolt","Flamethrower","Thunder Wave","Hidden Power Ice"]},
-	"Eustace":{"ability":"Lightning Rod","level":81,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Flamethrower","Thunderbolt","Hidden Power"],"nature":"Timid","item":"Choice Specs"},
-	"T3:Eustace":{"ability":"Lightning Rod","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Flamethrower","Thunderbolt","Hidden Power Ice"],"nature":"Timid","item":"Choice Specs",},
+		"moves":["Thunderbolt","Flamethrower","Thunder Wave","HP Ice"]},
+	"Eustace":{"ability":"Lightning Rod","level":81,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Flamethrower","Thunderbolt","HP"],"nature":"Timid","item":"Choice Specs"},
+	"T3:Eustace":{"ability":"Lightning Rod","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Flamethrower","Thunderbolt","HP Ice"],"nature":"Timid","item":"Choice Specs",},
 	"T5:Genesect 4 (Short-Circuit) Doubles":{"ability":"Minus","level":126,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Discharge","Overheat","Volt Switch","Signal Beam"],"nature":"Timid","item":"Choice Specs",}},
 "Manectric-Mega":{
 	"Sirius 3 (Dragon's Den) Doubles":{
@@ -3365,7 +3365,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Nasty Plot","Thunderbolt","Shadow Ball","Hidden Power Fighting"],
+		"moves":["Nasty Plot","Thunderbolt","Shadow Ball","HP Fighting"],
 		"nature":"Timid",
 		"item":"Focus Sash"},
 	"Spirit Ikaru (Psychic) ":{
@@ -3374,9 +3374,9 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Nasty Plot","Thunderbolt","Shadow Ball","Hidden Power Fighting"],
+		"moves":["Nasty Plot","Thunderbolt","Shadow Ball","HP Fighting"],
 		"nature":"Timid","item":"Focus Sash"},
-	"T2:Samsom (Ashen Beach)":{"ability":"Levitate","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Psychic","Shadow Ball","Hidden Power Rock"],"nature":"Timid","item":"Colbur Berry",},
+	"T2:Samsom (Ashen Beach)":{"ability":"Levitate","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Psychic","Shadow Ball","HP Rock"],"nature":"Timid","item":"Colbur Berry",},
 	"T4:Euphie (Psychic)":{"ability":"Levitate","level":125,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nasty Plot","Hex","Mystical Fire","Dazzling Gleam"],"nature":"Timid","item":"Focus Sash",},
 	"T6:Lugia (Dark Crystal)":{"ability":"Levitate","level":135,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Power Gem","Shadow Ball","Dazzling Gleam","Will-O-Wisp"],"nature":"Timid","item":"Magical Seed",}},
 "Mudsdale":{			
@@ -3546,7 +3546,7 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Drought",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Solar Beam","Nasty Plot","Heat Wave","Hidden Power Rock"]},
+		"moves":["Solar Beam","Nasty Plot","Heat Wave","HP Rock"]},
 	"Spirit Allan (Psychic ) ":{
 		"ability":"Drought",
 		"level":95,
@@ -3574,7 +3574,7 @@ var SETDEX_SM = {
 	"Maxwell 2":{"ability":"Drought","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Will-O-Wisp","Fire Blast","Extrasensory","Confuse Ray"],"nature":"Modest","item":"Wise Glasses"},
 	"T4:Charlotte (Psychic) Doubles":{"ability":"Drought","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Hex","Psyshock","Solar Beam"],"nature":"Modest","item":"Heat Rock",},
 	"T5:Genesect 7 (Short-Circuit) Doubles":{"ability":"Drought","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Heat Wave","Foul Play","Dark Pulse","Extrasensory"],"nature":"Adamant","item":"Heat Rock",},
-	"T7:Titania (Grassy) Doubles":{"ability":"Drought","level":143,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Solar Beam","Fire Blast","Dark Pulse","Hidden Power"],"nature":"Timid","item":"Heat Rock",}},
+	"T7:Titania (Grassy) Doubles":{"ability":"Drought","level":143,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Solar Beam","Fire Blast","Dark Pulse","HP"],"nature":"Timid","item":"Heat Rock",}},
 "Ninetales-Alola":{	
 	"Serra (Mirror Arena)":{
 		"item":"Icy Rock",
@@ -3688,7 +3688,7 @@ var SETDEX_SM = {
 		"ability":"Shell Armor","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Shell Smash","Hidden Power Fire","Ice Beam","Scald"],
+		"moves":["Shell Smash","HP Fire","Ice Beam","Scald"],
 		"nature":"Timid","item":"Telluric Seed"}},
 "Oranguru":{
 	"Eclipse 3 (Swamp) Doubles":{
@@ -3727,8 +3727,8 @@ var SETDEX_SM = {
 		"ability":"Sand Veil",
 		"evs":{"hp":252, "at":0, "df":4, "sa":252, "sd":0, "sp":0},
 		"moves":["Giga Drain","Shore Up","Psychic","Amnesia"]},
-	"T3:Terra (Ashen Beach)":{"ability":"Water Compact","level":120,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shore Up","Earth Power","Shadow Ball","Hidden Power Fire"],"nature":"Modest","item":"Life Orb",},
-	"T5:Kiki (Ashen Beach)":{"ability":"Water Compact","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Stealth Rock","Shore Up","Hidden Power Ghost","Earth Power"],"nature":"Modest","item":"Leftovers",}},
+	"T3:Terra (Ashen Beach)":{"ability":"Water Compact","level":120,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shore Up","Earth Power","Shadow Ball","HP Fire"],"nature":"Modest","item":"Life Orb",},
+	"T5:Kiki (Ashen Beach)":{"ability":"Water Compact","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Stealth Rock","Shore Up","HP Ghost","Earth Power"],"nature":"Modest","item":"Leftovers",}},
 "Pancham":{
 	"Victoria 1":{
 		"level":18,
@@ -3888,7 +3888,7 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Download",
 		"evs":{"hp":81, "at":81, "df":81, "sa":81, "sd":81, "sp":81},
-		"moves":["Nasty Plot","Psychic","Hidden Power Fire","Tri Attack"]},
+		"moves":["Nasty Plot","Psychic","HP Fire","Tri Attack"]},
 	"Ace of Hearts (Holy)":{
 		"level":60,
 		"nature":"Modest",
@@ -3906,7 +3906,7 @@ var SETDEX_SM = {
 		"ability":"Adaptability","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Tri Attack","Discharge","Dark Pulse","Hidden Power Fighting"],
+		"moves":["Tri Attack","Discharge","Dark Pulse","HP Fighting"],
 		"nature":"Timid","item":"King's Rock"},
 	"T1:Raikou (Mountain)":{"ability":"Adaptability","level":104,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Icy Wind","Thunder","Psyshock","Tri Attack"],"nature":"Timid","item":"Choice Specs",},
 	"T4:Noel (Psychic) Doubles":{"ability":"Download","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"moves":["Psyshock","Blizzard","Dark Pulse","Conversion"],"nature":"Timid","item":"Normalium Z",},
@@ -3958,7 +3958,7 @@ var SETDEX_SM = {
 	"T3:Alistasia  (Random)":{"ability":"Torrent","level":120,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sparkling Aria","Moonblast","Sing","Ice Beam"],"nature":"Modest","item":"Primarium Z",},
 	"T3:Amethyst (Starlight)":{"ability":"Torrent","level":120,"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moonblast","Sparkling Aria","Hyper Voice","Psychic"],"nature":"Bold","item":"Assault Vest",},
 	"T3:Shelly (Fairy Tale)":{"ability":"Torrent","level":120,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sparkling Aria","Moonblast","Amnesia","Substitute"],"nature":"Modest","item":"Primarium Z",},
-	"T4:Heatran (Corrosive Mist)":{"ability":"Liquid Voice","level":125,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psychic","Hidden Power Dragon","Moonblast","Hyper Voice"],"nature":"Modest","item":"Elemental Seed",},
+	"T4:Heatran (Corrosive Mist)":{"ability":"Liquid Voice","level":125,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psychic","HP Dragon","Moonblast","Hyper Voice"],"nature":"Modest","item":"Elemental Seed",},
 	"T4:Cain (Dark Crystal)":{"ability":"Torrent","level":125,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Dazzling Gleam","Ice Beam","Psychic","Hydro Pump"],"nature":"Modest","item":"Choice Specs",},
 	"T5:Tanner (Holy) Doubles":{"ability":"Liquid Voice","level":126,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Round","Ice Beam","Psychic","Dazzling Gleam"],"nature":"Modest","item":"Magical Seed",},
 	"T7:Amaria (Cave) Doubles":{"ability":"Torrent","level":138,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Sparkling Aria","Perish Song","Blizzard","Dazzling Gleam"],"nature":"Mild","item":"Life Orb",}},
@@ -4010,7 +4010,7 @@ var SETDEX_SM = {
 		"ability":"Blaze",
 		"evs":{"hp":48, "at":48, "df":48, "sa":48, "sd":48, "sp":48},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-		"moves":["Nature Power","Incinerate","Flame Charge","Hidden Power Electric"]}},
+		"moves":["Nature Power","Incinerate","Flame Charge","HP Electric"]}},
 "Raichu":{			
 	"Arclight (Factory)":{
 		"item":"Wise Glasses",
@@ -4018,7 +4018,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Lightning Rod",
 		"evs":{"hp":252, "at":4, "df":0, "sa":0, "sd":0, "sp":252},
-		"moves":["Focus Blast","Thunderbolt","Hidden Power Ice","Nasty Plot"]}},
+		"moves":["Focus Blast","Thunderbolt","HP Ice","Nasty Plot"]}},
 "Raichu-Alola":{
 	"Connal":{
 		"level":36,
@@ -4033,7 +4033,7 @@ var SETDEX_SM = {
 		"ability":"Surge Surfer",
 		"evs":{"hp":58, "at":58, "df":58, "sa":58, "sd":58, "sp":58},
 		"ivs":{"hp":30, "at":30, "df":30, "sa":30, "sd":30, "sp":30},
-		"moves":["Hidden Power Ice","Nasty Plot","Psychic","Thunderbolt"]},
+		"moves":["HP Ice","Nasty Plot","Psychic","Thunderbolt"]},
 	"Connal 2 (Short Circuit)":{
 		"level":46,
 		"nature":"Modest",
@@ -4211,21 +4211,21 @@ var SETDEX_SM = {
 		"level":33,
 		"ability":"Poison Point",
 		"evs":{"hp":49, "at":49, "df":49, "sa":49, "sd":49, "sp":49},
-		"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden Power Fire"]},
+		"moves":["Sleep Powder","Giga Drain","Extrasensory","HP Fire"]},
 	"Fern 4 (Wasteland)":{
 		"item":"Leftovers",
 		"level":44,
 		"nature":"Timid",
 		"ability":"Poison Point",
 		"evs":{"hp":66, "at":66, "df":66, "sa":66, "sd":66, "sp":66},
-		"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden Power Fire"]},
+		"moves":["Sleep Powder","Giga Drain","Extrasensory","HP Fire"]},
 	"Fern 5 (Grassy)":{
 		"item":"Leftovers",
 		"level":54,
 		"nature":"Timid",
 		"ability":"Poison Point",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Sleep Powder","Giga Drain","Extrasensory","Hidden Power Fire"]},
+		"moves":["Sleep Powder","Giga Drain","Extrasensory","HP Fire"]},
 	"Ace Of Spades (Factory)":{
 		"level":70,
 		"nature":"Rash",
@@ -4238,15 +4238,15 @@ var SETDEX_SM = {
 		"ability":"Poison Point",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-		"moves":["Sleep Powder","Giga Drain","Sludge Bomb","Hidden Power Fire"]},
+		"moves":["Sleep Powder","Giga Drain","Sludge Bomb","HP Fire"]},
 	"T3:Flora":{"ability":"Technician","level":120,"evs":{"hp":148,"at":0,"df":4,"sa":100,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Giga Drain","Sleep Powder","Nature Power","Weather Ball"],"nature":"Timid","item":"Coba Berry",},
 	"T3:Magearna (Factory)":{"ability":"Technician","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Toxic Spikes","Giga Drain","Dazzling Gleam","Shadow Ball"],"nature":"Timid","item":"Life Orb",},
-	"T4:Tapu Bulu (Grassy) Doubles":{"ability":"Technician","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Dazzling Gleam","Grass Knot","Venoshock","Hidden Power Fire"],"nature":"Modest","item":"Life Orb",},
-	"T5:Gracidea Friends (Corrosive) Doubles":{"ability":"Technician","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Venoshock","Sleep Powder","Giga Drain","Hidden Power Fire"],"nature":"Timid","item":"Telluric Seed",},
+	"T4:Tapu Bulu (Grassy) Doubles":{"ability":"Technician","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Dazzling Gleam","Grass Knot","Venoshock","HP Fire"],"nature":"Modest","item":"Life Orb",},
+	"T5:Gracidea Friends (Corrosive) Doubles":{"ability":"Technician","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Venoshock","Sleep Powder","Giga Drain","HP Fire"],"nature":"Timid","item":"Telluric Seed",},
 	"T5:Shiv (Forest)":{"ability":"Natural Cure","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nature Power","Sleep Powder","Toxic Spikes","Giga Drain"],"nature":"Timid","item":"Focus Sash",},
 	"T5:Shiv 2 (Starlight)":{"ability":"Natural Cure","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nature Power","Sleep Powder","Toxic Spikes","Giga Drain"],"nature":"Timid","item":"Focus Sash",},
-	"T7:10 Cell (Glitch)":{"ability":"Natural Cure","level":140,"evs":{"hp":0,"at":0,"df":4,"sa":0,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Giga Drain","Extrasensory","Leaf Storm","Hidden Power Ice"],"nature":"Timid","item":"Assault Vest",},
-	"T8:Fern (Holy)":{"ability":"Technician","level":148,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Magical Leaf","Nature Power","Sludge Bomb","Hidden Power"],"nature":"Timid","item":"Magical Seed",}},
+	"T7:10 Cell (Glitch)":{"ability":"Natural Cure","level":140,"evs":{"hp":0,"at":0,"df":4,"sa":0,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Giga Drain","Extrasensory","Leaf Storm","HP Ice"],"nature":"Timid","item":"Assault Vest",},
+	"T8:Fern (Holy)":{"ability":"Technician","level":148,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Magical Leaf","Nature Power","Sludge Bomb","HP"],"nature":"Timid","item":"Magical Seed",}},
 "Rotom":{
 	"Connal":{
 		"level":35,
@@ -4289,7 +4289,7 @@ var SETDEX_SM = {
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 		"ivs":{"hp":0, "at":0, "df":0, "sa":0, "sd":0, "sp":0},
 		"moves":["Shadow Ball","Discharge","Blizzard","Foul Play"]},
-	"T1:Raikou (Mountain)":{"ability":"Levitate","level":103,"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Blizzard","Hidden Power Flying","Pain Split"],"nature":"Modest","item":"Icium Z",},
+	"T1:Raikou (Mountain)":{"ability":"Levitate","level":103,"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Blizzard","HP Flying","Pain Split"],"nature":"Modest","item":"Icium Z",},
 	"T5:Genesect 6 (Short-Circuit) Doubles":{"ability":"Levitate","level":128,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Blizzard","Shadow Ball","Thunder"],"nature":"Timid","item":"Electrium Z",},
 	"T7:30 Cell (Glitch)":{"ability":"Levitate","level":141,"evs":{"hp":4,"at":0,"df":0,"sa":0,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Thunderbolt","Reflect","Light Screen"],"nature":"Calm","item":"Synthetic Seed",}},
 "Rotom-Heat":{
@@ -4299,7 +4299,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Levitate ",
 		"evs":{"hp":252, "at":0, "df":4, "sa":0, "sd":252, "sp":0},
-		"moves":["Reflect","Volt Switch","Overheat","Hidden Power Ice"]},
+		"moves":["Reflect","Volt Switch","Overheat","HP Ice"]},
 	"T5:Genesect 8 (Short-Circuit) Doubles":{"ability":"Levitate","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Thunder","Volt Switch","Overheat","Shadow Ball"],"nature":"Modest","item":"Electrium Z",}},
 "Rotom-Wash":{
 	"Arcturus Doubles":{
@@ -4315,7 +4315,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":128,"sa":252,"sd":128,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},
-		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Hidden Power Grass"],
+		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","HP Grass"],
 		"nature":"Quiet","item":"Wiki Berry"},
 	"Spirit Trevor (Rainbow)":{
 		"ability":"Levitate",
@@ -4329,7 +4329,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":128,"sa":252,"sd":128,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Hidden Power Ice"],
+		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","HP Ice"],
 		"nature":"Modest",
 		"item":"Wiki Berry"},
 	"Spirit Diana (Holy)":{
@@ -4337,7 +4337,7 @@ var SETDEX_SM = {
 		"level":95,
 		"evs":{"hp":0,"at":0,"df":128,"sa":252,"sd":128,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Hidden Power Ice"],
+		"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","HP Ice"],
 		"nature":"Modest",
 		"item":"Magical Seed"},
 	"T3:Julia (Random)":{"ability":"Levitate","level":120,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Pain Split"],"nature":"Modest","item":"Waterium Z",},
@@ -4416,7 +4416,7 @@ var SETDEX_SM = {
 		"ability":"Corrosion",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["Sludge Bomb","Flamethrower","Nasty Plot","Toxic"]},
-	"T4:Tapu Bulu (Grassy) Doubles":{"ability":"Corrosion","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sludge Wave","Hidden Power Grass","Heat Wave","Dragon Pulse"],"nature":"Modest","item":"Life Orb",}},
+	"T4:Tapu Bulu (Grassy) Doubles":{"ability":"Corrosion","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sludge Wave","HP Grass","Heat Wave","Dragon Pulse"],"nature":"Modest","item":"Life Orb",}},
 "Sandile":{
 	"Fern 1":{
 		"level":13,
@@ -4513,7 +4513,7 @@ var SETDEX_SM = {
 	"T3:Atreus (Forest)":{"ability":"Unburden","level":119,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Leaf Blade","Acrobatics","Drain Punch"],"nature":"Adamant","item":"Focus Sash",},
 	"T3:Eustace":{"ability":"Unburden","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Leaf Blade","Earthquake","Rock Slide"],"nature":"Jolly","item":"Sitrus Berry",}},
 "Sceptile-Mega":{
-	"T3:Shannon (Forest)":{"ability":"Lightning Rod","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Giga Drain","Dragon Pulse","Hidden Power Fire"],"nature":"Modest","item":"Sceptilite",},
+	"T3:Shannon (Forest)":{"ability":"Lightning Rod","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Giga Drain","Dragon Pulse","HP Fire"],"nature":"Modest","item":"Sceptilite",},
 	"T4:Laura (Psychic) Doubles":{"ability":"Lightning Rod","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":5,"at":5,"df":5,"sa":5,"sd":5,"sp":5},"moves":["Dragon Pulse","Rock Slide","Nature Power","Giga Drain"],"nature":"Modest","item":"Sceptilite",}},
 "Scizor":{
 	"Fern 6 Doubles":{
@@ -4658,7 +4658,7 @@ var SETDEX_SM = {
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
 		"moves":["Sludge Wave","Earth Power","Surf","Focus Blast"],
 		"nature":"Modest","item":"Choice Specs"},
-	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Water Absorb","level":115,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Muddy Water","Mud Bomb","Focus Blast","Hidden Power Bug"],"nature":"Modest",},
+	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Water Absorb","level":115,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Muddy Water","Mud Bomb","Focus Blast","HP Bug"],"nature":"Modest",},
 	"T3:Sandy":{"ability":"Swift Swim","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Earth Power","Muddy Water","Focus Blast","Sludge Bomb"],"nature":"Modest","item":"Choice Specs",},
 	"T5:Genesect 9 (Short-Circuit) Doubles":{"ability":"Swift Swim","level":130,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Muddy Water","Earth Power","Focus Blast","Sludge Bomb"],"nature":"Modest","item":"Life Orb",}},
 "Serperior":{
@@ -4668,7 +4668,7 @@ var SETDEX_SM = {
 		"nature":"Timid",
 		"ability":"Contrary",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
-		"moves":["Leaf Storm","Nature Power","Dragon Pulse","Hidden Power Fire"]},
+		"moves":["Leaf Storm","Nature Power","Dragon Pulse","HP Fire"]},
 	"Spirit Franz (Chess Board) Doubles":{
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
@@ -4679,33 +4679,33 @@ var SETDEX_SM = {
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Leaf Storm","Glare","Hidden Power Fire","Dragon Tail"],
+		"moves":["Leaf Storm","Glare","HP Fire","Dragon Tail"],
 		"nature":"Timid","item":"Life Orb",},
 	"Spirit Tenshi (Grassy)":{
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Leaf Storm","Hidden Power Ice","Leech Seed","Substitute"],
+		"moves":["Leaf Storm","HP Ice","Leech Seed","Substitute"],
 		"nature":"Timid","item":"Life Orb"},
 	"Spirit Trevor (Rainbow)":{
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Leaf Storm","Dragon Pulse","Hidden Power Fire","Sunny Day"],
+		"moves":["Leaf Storm","Dragon Pulse","HP Fire","Sunny Day"],
 		"nature":"Timid","item":"Life Orb"},
 	"Spirit Troy (Mountain) Doubles":{
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Leaf Storm","Dragon Pulse","Hidden Power Fire","Sunny Day"],
+		"moves":["Leaf Storm","Dragon Pulse","HP Fire","Sunny Day"],
 		"nature":"Timid","item":"Life Orb"},
 	"Spirit Diana (Holy)":{
 		"ability":"Contrary","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Leaf Storm","Dragon Pulse","Hidden Power Fire","Knock Off"],
+		"moves":["Leaf Storm","Dragon Pulse","HP Fire","Knock Off"],
 		"nature":"Timid","item":"Assault Vest"},
-	"T5:Fern (Wasteland)":{"ability":"Contrary","level":129,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Leaf Storm","Giga Drain","Dragon Pulse","Hidden Power Fire"],"nature":"Timid","item":"Life Orb",},
+	"T5:Fern (Wasteland)":{"ability":"Contrary","level":129,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Leaf Storm","Giga Drain","Dragon Pulse","HP Fire"],"nature":"Timid","item":"Life Orb",},
 	"T8:Fern (Holy)":{"ability":"Contrary","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nature Power","Leaf Storm","Dragon Pulse","Giga Drain"],"nature":"Timid","item":"Grassium Z",}},
 "Seviper":{
 	"Sirius 1 (Short Circuit) Doubles":{
@@ -4971,7 +4971,7 @@ var SETDEX_SM = {
 		"ability":"Torrent",
 		"evs":{"hp":252, "at":4, "df":252, "sa":4, "sd":0, "sp":0},
 		"moves":["Dive","Earthquake","Stone Edge","Whirlpool"]},
-	"T3:Terra (Ashen Beach)":{"ability":"Torrent","level":120,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Surf","Mud Bomb","Hidden Power Fire"],"nature":"Modest","item":"Telluric Seed",}},
+	"T3:Terra (Ashen Beach)":{"ability":"Torrent","level":120,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Surf","Mud Bomb","HP Fire"],"nature":"Modest","item":"Telluric Seed",}},
 "Swampert-Mega":{
 	"Amaria:Reshiram (Water Surface)":{
 		"item":"Assault Vest",
@@ -5004,7 +5004,7 @@ var SETDEX_SM = {
 		"ability":"Pixilate",
 		"evs":{"hp":252, "at":0, "df":0, "sa":4, "sd":0, "sp":0},
 		"moves":["Swift","Shadow Ball","Wish","Protect"]},
-	"Santiago":{"ability":"Pixilate","level":80,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hyper Voice","Wish","Shadow Ball","Hidden Power"],"nature":"Modest"},
+	"Santiago":{"ability":"Pixilate","level":80,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hyper Voice","Wish","Shadow Ball","HP"],"nature":"Modest"},
 	"T3:Amethyst (Starlight)":{"ability":"Pixilate","level":120,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Wish","Protect","Swift","Yawn"],"nature":"Modest","item":"Leftovers",},
 	"T4:Tapu Fini (Misty)":{"ability":"Cute Charm","level":125,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hyper Voice","Wish","Protect","Psyshock"],"nature":"Modest","item":"Elemental Seed",},
 	"T4:Jirachi (Psychic)":{"ability":"Cute Charm","level":125,"evs":{"hp":252,"at":0,"df":56,"sa":200,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moonblast","Psyshock","Calm Mind","Wish"],"nature":"Sassy","item":"Leftovers",},
@@ -5027,12 +5027,12 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Regenerator",
 		"evs":{"hp":252, "at":0, "df":0, "sa":252, "sd":0, "sp":0},
-		"moves":["Hidden Power Ice","Giga Drain","Nature Power","Rock Slide"]},
+		"moves":["HP Ice","Giga Drain","Nature Power","Rock Slide"]},
 	"Spirit Leo (Chess Board) Doubles":{
 		"ability":"Regenerator","level":95,
 		"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":252,"sp":0},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Hidden Power Fire","Brick Break","Rock Slide","Power Whip"],
+		"moves":["HP Fire","Brick Break","Rock Slide","Power Whip"],
 		"nature":"Brave","item":"Synthetic Seed"},
 	"T4:Laura (Psychic) Doubles":{"ability":"Leaf Guard","level":125,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":5,"at":5,"df":5,"sa":5,"sd":5,"sp":5},"moves":["Rock Slide","Solar Beam","Nature Power","Psych Up"],"nature":"Modest","item":"Life Orb",}},
 "Tangrowth-Pulse-A":{
@@ -5147,7 +5147,7 @@ var SETDEX_SM = {
 		"ability":"Drought",
 		"evs":{"hp":45, "at":45, "df":45, "sa":45, "sd":45, "sp":45},
 		"ivs":{"hp":5, "at":5, "df":5, "sa":5, "sd":5, "sp":5},
-		"moves":["Stealth Rock","Fire Spin","Nature Power","Hidden Power Electric"]},
+		"moves":["Stealth Rock","Fire Spin","Nature Power","HP Electric"]},
 	"T5:Craudburry (Flower Garden)":{"ability":"Drought","level":130,"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Explosion","Fissure","Double Team"],"nature":"Modest",}},
 "Torracat":{
 	"Victoria 1":{
@@ -5244,18 +5244,18 @@ var SETDEX_SM = {
 		"ability":"Blaze",
 		"evs":{"hp":60, "at":60, "df":60, "sa":60, "sd":60, "sp":60},
 		"ivs":{"hp":20, "at":20, "df":20, "sa":20, "sd":20, "sp":20},
-		"moves":["Solar Beam","Hidden Power Rock","Sunny Day","Flame Charge"]},
+		"moves":["Solar Beam","HP Rock","Sunny Day","Flame Charge"]},
 	"Charlotte (Superheated) Doubles":{
 		"level":69,
 		"nature":"Timid",
 		"ability":"Blaze",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Eruption","Solar Beam","Heat Wave","Hidden Power Rock"]},
+		"moves":["Eruption","Solar Beam","Heat Wave","HP Rock"]},
 	"Spirit Godot (Burning) ":{
 		"ability":"Flash Fire","level":95,
 		"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},
 		"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},
-		"moves":["Heat Wave","Hidden Power Rock","Focus Blast","Eruption"],
+		"moves":["Heat Wave","HP Rock","Focus Blast","Eruption"],
 		"nature":"Timid","item":"Elemental Seed"},
 	"Mattie Doubles":{"ability":"Flash Fire","level":76,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Eruption","Heat Wave","Rock Slide","Extrasensory"],"nature":"Timid","item":"Sitrus Berry"},
 	"T4:Latios (Mountain) Doubles":{"ability":"Blaze","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Eruption","Rock Slide","Heat Wave","Focus Blast"],"nature":"Timid","item":"Assault Vest",}},
@@ -5412,7 +5412,7 @@ var SETDEX_SM = {
 		"ivs":{"hp":0, "at":0, "df":0, "sa":0, "sd":0, "sp":0},
 		"moves":["Blizzard","Wish","Protect","Surf"]},
 	"T1:Suicune (Water)":{"ability":"Hydration","level":105,"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":252,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Acid Armor","Surf","Ice Beam","Rest"],"nature":"Calm","item":"Elemental Seed",},
-	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Water Absorb","level":115,"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":0,"sp":4},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Blizzard","Muddy Water","Hidden Power Ground","Shadow Ball"],"nature":"Bold","item":"Choice Specs",}},
+	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Water Absorb","level":115,"evs":{"hp":0,"at":0,"df":252,"sa":252,"sd":0,"sp":4},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Blizzard","Muddy Water","HP Ground","Shadow Ball"],"nature":"Bold","item":"Choice Specs",}},
 "Venomoth":{
 	"Bennett (Mirror Arena)":{
 		"level":48,
@@ -5439,7 +5439,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Chlorophyll",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Sleep Powder","Nature Power","Giga Drain","Hidden Power Fire"]},
+		"moves":["Sleep Powder","Nature Power","Giga Drain","HP Fire"]},
 	"T3:Margo (Forest)":{"ability":"Chlorophyll","level":119,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Sludge Wave","Giga Drain","Sleep Powder"],"nature":"Modest","item":"Life Orb",},
 	"T3:Laura (Flower Garden) Doubles":{"ability":"Chlorophyll","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Nature Power","Sleep Powder","Petal Blizzard","Earthquake"],"nature":"Adamant","item":"Synthetic Seed",},
 	"T7:Groudon (Grassy) Doubles":{"ability":"Chlorophyll","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sludge Bomb","Solar Beam","Weather Ball","Grass Whistle"],"nature":"Hasty","item":"Elemental Seed",}},
@@ -5483,8 +5483,8 @@ var SETDEX_SM = {
 		"ability":"Effect Spore",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["Sludge Bomb","Giga Drain","Sleep Powder","Moonblast"]},
-	"T1:Entei (New World)":{"ability":"Chlorophyll","level":104,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Sludge Bomb","Moonblast","Petal Dance","Hidden Power Dark"],"nature":"Quiet","item":"Choice Specs",},
-	"T3:Willow (Forest)":{"ability":"Chlorophyll","level":118,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sludge Bomb","Moonblast","Hidden Power Fire","Giga Drain"],"nature":"Modest","item":"Choice Specs",}},
+	"T1:Entei (New World)":{"ability":"Chlorophyll","level":104,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Sludge Bomb","Moonblast","Petal Dance","HP Dark"],"nature":"Quiet","item":"Choice Specs",},
+	"T3:Willow (Forest)":{"ability":"Chlorophyll","level":118,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sludge Bomb","Moonblast","HP Fire","Giga Drain"],"nature":"Modest","item":"Choice Specs",}},
 "Vivillon":{
 	"Bennett (Mirror Arena)":{
 		"item":"Bright Powder",
@@ -5515,7 +5515,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Flame Body",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
-		"moves":["Giga Drain","Quiver Dance","Heat Wave","Hidden Power Rock"]},
+		"moves":["Giga Drain","Quiver Dance","Heat Wave","HP Rock"]},
 	"Shelly 2 (Factory) Doubles":{
 		"item":"Leftovers",
 		"level":82,
@@ -5691,7 +5691,7 @@ var SETDEX_SM = {
 		"nature":"Modest",
 		"ability":"Schooling",
 		"evs":{"hp":252, "at":0, "df":0, "sa":4, "sd":0, "sp":252},
-		"moves":["Dive","Hidden Power Electric","Ice Beam","Whirlpool"]}},
+		"moves":["Dive","HP Electric","Ice Beam","Whirlpool"]}},
 "Yanmega":{			
 	"Shelly (Forest) Doubles":{
 		"level":33,
@@ -5714,7 +5714,7 @@ var SETDEX_SM = {
 		"ability":"Speed Boost",
 		"evs":{"hp":4, "at":0, "df":0, "sa":252, "sd":0, "sp":252},
 		"moves":["Signal Beam","Shadow Ball","Air Slash","Giga Drain"]},
-	"T3:Shelly (Fairy Tale)":{"ability":"Speed Boost","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Detect","Bug Buzz","Air Slash","Hidden Power Dragon"],"nature":"Modest","item":"Life Orb",}},
+	"T3:Shelly (Fairy Tale)":{"ability":"Speed Boost","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Detect","Bug Buzz","Air Slash","HP Dragon"],"nature":"Modest","item":"Life Orb",}},
 "Zekrom":{
 	"Legendary Dragon (Dragon's Den)":{
 		"item":"Groundium Z",
@@ -5752,7 +5752,7 @@ var SETDEX_SM = {
 		"ability":"Illusion",
 		"evs":{"hp":252, "at":252, "df":252, "sa":252, "sd":252, "sp":252},
 		"moves":["Dark Pulse","Shadow Ball","Focus Blast","Trick"]},
-	"T2:Keldeo (Ashen Beach) Doubles":{"ability":"Illusion","level":115,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Focus Blast","Dark Pulse","Sludge Bomb","Hidden Power Flying"],"nature":"Timid","item":"Choice Specs",},
+	"T2:Keldeo (Ashen Beach) Doubles":{"ability":"Illusion","level":115,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Focus Blast","Dark Pulse","Sludge Bomb","HP Flying"],"nature":"Timid","item":"Choice Specs",},
 	"T6:Ace (New World)":{"ability":"Illusion","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Night Daze","Flamethrower","Shadow Ball","Extrasensory"],"nature":"Timid","item":"Darkinium Z",},
 	"T6.5:Zina (Starlight)":{"ability":"Illusion","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Night Daze","Focus Blast","Nasty Plot","Flamethrower"],"nature":"Timid","item":"Focus Sash",}},
 "Zorua":{
@@ -5767,7 +5767,7 @@ var SETDEX_SM = {
 "Heatmor":{
 	"Maxwell 2":{"ability":"White Smoke","level":58,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hone Claws","Fire Punch","Thunder Punch","Sucker Punch"],"nature":"Adamant","item":"Muscle Band"},
 	"T3:Maxwell":{"ability":"White Smoke","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Hone Claws","Fire Punch","Thunder Punch","Sucker Punch"],"nature":"Adamant","item":"Muscle Band",},
-	"T5:Craudburry (Flower Garden)":{"ability":"Gluttony","level":130,"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Giga Drain","Hidden Power Ice","Focus Blast"],"nature":"Timid",}},
+	"T5:Craudburry (Flower Garden)":{"ability":"Gluttony","level":130,"evs":{"hp":0,"at":252,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Heat Wave","Giga Drain","HP Ice","Focus Blast"],"nature":"Timid",}},
 "Victreebel":{
 	"Craudburry":{"ability":"Gluttony","level":60,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Leaf Blade","Strength Sap","Sludge Bomb","Sleep Powder"],"nature":"Naughty"},
 	"T3:Willow (Forest)":{"ability":"Chlorophyll","level":118,"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Swords Dance","Nature Power","Sucker Punch","Strength Sap"],"nature":"Adamant","item":"Telluric Seed",},
@@ -5809,9 +5809,9 @@ var SETDEX_SM = {
 	"T7:Yveltal (Starlight)":{"ability":"Levitate","level":145,"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moonblast","Lunar Dance","Psyshock","Light Screen"],"nature":"Timid","item":"Leftovers",},
 	"T8:Arceus (New World)":{"ability":"Levitate","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Lunar Dance","Lunar Dance","Lunar Dance","Lunar Dance"],"nature":"Hardy","item":"Focus Sash",}},
 "Raikou":{
-	"T1:Raikou (Mountain)":{"ability":"Pressure","level":107,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shadow Ball","Thunder","Aura Sphere","Hidden Power Flying"],"nature":"Timid","item":"Telluric Seed",},
+	"T1:Raikou (Mountain)":{"ability":"Pressure","level":107,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shadow Ball","Thunder","Aura Sphere","HP Flying"],"nature":"Timid","item":"Telluric Seed",},
 	"T5:Genesect 4 (Short-Circuit) Doubles":{"ability":"Inner Focus","level":127,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Thunderbolt","Extrasensory","Shadow Ball"],"nature":"Timid","item":"Choice Specs",},
-	"T6:Reshiram (Icy) Doubles":{"ability":"Pressure","level":133,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":3,"at":3,"df":3,"sa":3,"sd":3,"sp":3},"moves":["Extreme Speed","Aura Sphere","Hidden Power Ice","Thunderbolt"],"nature":"Timid","item":"Life Orb",}},
+	"T6:Reshiram (Icy) Doubles":{"ability":"Pressure","level":133,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":3,"at":3,"df":3,"sa":3,"sd":3,"sp":3},"moves":["Extreme Speed","Aura Sphere","HP Ice","Thunderbolt"],"nature":"Timid","item":"Life Orb",}},
 "Ursaring":{
 	"T1:Entei (New World)":{"ability":"Guts","level":103,"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Facade","Knock Off","Close Combat","Swords Dance"],"nature":"Brave","item":"Flame Orb",}},
 "Entei":{
@@ -5821,8 +5821,8 @@ var SETDEX_SM = {
 	"T7:Eclipse (Rainbow)":{"ability":"Inner Focus","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sacred Fire","Extreme Speed","Stone Edge","Curse"],"nature":"Adamant","item":"Leftovers",},
 	"T8:Fern (Holy)":{"ability":"Inner Focus","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Extreme Speed","Sacred Fire","Iron Head","Stone Edge"],"nature":"Adamant","item":"Life Orb",}},
 "Suicune":{
-	"T1:Suicune (Water)":{"ability":"Pressure","level":107,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Ice Beam","Calm Mind","Hidden Power Electric"],"nature":"Timid","item":"Elemental Seed",},
-	"T5:Kiki (Ashen Beach)":{"ability":"Inner Focus","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Rest","Whirlpool","Hidden Power Flying"],"nature":"Bold","item":"Leftovers",},
+	"T1:Suicune (Water)":{"ability":"Pressure","level":107,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Ice Beam","Calm Mind","HP Electric"],"nature":"Timid","item":"Elemental Seed",},
+	"T5:Kiki (Ashen Beach)":{"ability":"Inner Focus","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Rest","Whirlpool","HP Flying"],"nature":"Bold","item":"Leftovers",},
 	"T5:Genesect 9 (Short-Circuit) Doubles":{"ability":"Inner Focus","level":130,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Tailwind","Blizzard","Scald","Shadow Ball"],"nature":"Modest","item":"Synthetic Seed",}},
 "Stakataka":{
 	"T1:Golem (New World)":{"ability":"Beast Boost","level":106,"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Trick Room","Gyro Ball","Stone Edge","Stealth Rock"],"nature":"Brave","item":"Leftovers",},
@@ -5851,18 +5851,18 @@ var SETDEX_SM = {
 	"T7:Mew (Holy) Doubles":{"ability":"Justified","level":145,"evs":{"hp":252,"at":4,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Stealth Rock","Sacred Sword","Rock Slide","Zen Headbutt"],"nature":"Jolly","item":"Leftovers",}},
 "Virizion":{
 	"T2:One For All (New World) Doubles":{"ability":"Justified","level":112,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sacred Sword","Leaf Blade","Stone Edge","Swords Dance"],"nature":"Adamant","item":"Magical Seed",},
-	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Justified","level":115,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Focus Blast","Giga Drain","Hidden Power Rock"],"nature":"Timid",}},
+	"T2:Swords of Justice (Ashen Beach) Doubles":{"ability":"Justified","level":115,"evs":{"hp":0,"at":0,"df":4,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Calm Mind","Focus Blast","Giga Drain","HP Rock"],"nature":"Timid",}},
 "Silvally":{
 	"T2:All For One 1 (New World) Doubles":{"ability":"RKS System","level":114,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Snarl","Icy Wind","Parting Shot","Tailwind"],"nature":"Bold","item":"Leftovers",},
 	"T2:All For One 2 (New World) Doubles":{"ability":"RKS System","level":114,"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Snarl","Multi-Attack","Heat Wave","Rock Slide"],"nature":"Quiet","item":"Magical Seed",},
 	"T2:All For One 3 (New World) Doubles":{"ability":"RKS System","level":114,"evs":{"hp":252,"at":252,"df":4,"sa":0,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Snarl","Multi-Attack","Draco Meteor","Parting Shot"],"nature":"Quiet","item":"Magical Seed",}},	
 "Keldeo":{
-	"T2:Keldeo (Ashen Beach) Doubles":{"ability":"Justified","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Focus Blast","Calm Mind","Hidden Power Rock"],"nature":"Timid","item":"Leftovers",},
-	"T5:Dialga (Holy) Doubles":{"ability":"Justified","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Secret Sword","Surf","Icy Wind","Hidden Power Fairy"],"nature":"Modest","item":"Magical Seed",},
+	"T2:Keldeo (Ashen Beach) Doubles":{"ability":"Justified","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Surf","Focus Blast","Calm Mind","HP Rock"],"nature":"Timid","item":"Leftovers",},
+	"T5:Dialga (Holy) Doubles":{"ability":"Justified","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Secret Sword","Surf","Icy Wind","HP Fairy"],"nature":"Modest","item":"Magical Seed",},
 	"T7:Mew (Holy) Doubles":{"ability":"Justified","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Secret Sword","Hydro Pump","Aqua Jet","Icy Wind"],"nature":"Timid","item":"Life Orb",}},	
 "Pheromosa":{
 	"T2:Samsom (Ashen Beach)":{"ability":"Beast Boost","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Focus Blast","Bug Buzz","Ice Beam","Quiver Dance"],"nature":"Modest","item":"Life Orb",},
-	"T3:Bennett (Rainbow) Doubles":{"ability":"Beast Boost","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Silver Wind","Swift","Focus Blast","Hidden Power Rock"],"nature":"Modest","item":"Magical Seed",},
+	"T3:Bennett (Rainbow) Doubles":{"ability":"Beast Boost","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Silver Wind","Swift","Focus Blast","HP Rock"],"nature":"Modest","item":"Magical Seed",},
 	"T7:Groudon (Grassy) Doubles":{"ability":"Beast Boost","level":145,"evs":{"hp":0,"at":252,"df":0,"sa":4,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["U-turn","Blizzard","Silver Wind","High Jump Kick"],"nature":"Hasty","item":"Elemental Seed",}},	
 "Regigigas":{
 	"T2:Regigigas (New World)":{"ability":"Slow Start","level":114,"evs":{"hp":0,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Knock Off","Rock Slide","Nature Power","Secret Power"],"nature":"Naughty","item":"Magical Seed",},
@@ -5891,9 +5891,9 @@ var SETDEX_SM = {
 	"T6:Amaria (Water) Doubles":{"ability":"Beast Boost","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Flamethrower","Leech Seed","Protect","Giga Drain"],"nature":"Modest","item":"Elemental Seed",}},	
 "Zapdos":{
 	"T2:Ciel (New World)":{"ability":"Static","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Volt Switch","Heat Wave","Ancient Power","Roost"],"nature":"Modest","item":"Leftovers",},
-	"T4:Latias (Mountain) Doubles":{"ability":"Static","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Heat Wave","Thunder","Hidden Power Ice","Air Cutter"],"nature":"Modest","item":"Life Orb",},
+	"T4:Latias (Mountain) Doubles":{"ability":"Static","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Heat Wave","Thunder","HP Ice","Air Cutter"],"nature":"Modest","item":"Life Orb",},
 	"T5:Genesect 3 (Short-Circuit) Doubles":{"ability":"Pressure","level":127,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Zap Cannon","Tailwind","Volt Switch","Heat Wave"],"nature":"Modest","item":"Leftovers",},
-	"T7:Amaria 2 (Water) Doubles":{"ability":"Static","level":142,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Thunder","Heat Wave","Tailwind","Hidden Power Ice"],"nature":"Modest","item":"Charti Berry",}},
+	"T7:Amaria 2 (Water) Doubles":{"ability":"Static","level":142,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Thunder","Heat Wave","Tailwind","HP Ice"],"nature":"Modest","item":"Charti Berry",}},
 "Pinsir-Mega":{
 	"T2:Ciel (New World)":{"ability":"Aerilate","level":115,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Knock Off","Close Combat","Quick Attack","Secret Power"],"nature":"Adamant","item":"Pinsirite",}},
 "Samurott":{
@@ -6005,14 +6005,14 @@ var SETDEX_SM = {
 "Xurkitree":{
 	"T3:Julia 2":{"ability":"Beast Boost","level":120,"evs":{"hp":0,"at":0,"df":0,"sa":252,"sd":4,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunderbolt","Energy Ball","Dazzling Gleam","Tail Glow"],"nature":"Modest","item":"Life Orb",},
 	"T4:Tapu Koko (Electric) Doubles":{"ability":"Beast Boost","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Discharge","Dazzling Gleam","Energy Ball","Tail Glow"],"nature":"Timid","item":"Elemental Seed",},
-	"T7:50 Cell (Glitch)":{"ability":"Beast Boost","level":140,"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Power Whip","Thunderbolt","Tail Glow","Hidden Power Ice"],"nature":"Bold","item":"Focus Sash",},
+	"T7:50 Cell (Glitch)":{"ability":"Beast Boost","level":140,"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Power Whip","Thunderbolt","Tail Glow","HP Ice"],"nature":"Bold","item":"Focus Sash",},
 	"T7:Groudon (Grassy) Doubles":{"ability":"Beast Boost","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Solar Beam","Nature Power","Tail Glow","Dazzling Gleam"],"nature":"Modest","item":"Elemental Seed",},
 	"T8:Anna (Glitch)":{"ability":"Beast Boost","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Tail Glow","Power Whip","Thunderbolt","Thunder Wave"],"nature":"Timid","item":"Leftovers",}},
 "Shiinotic":{
 	"T3:Craudburry":{"ability":"Illuminate","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moonblast","Giga Drain","Spore","Leech Seed"],"nature":"Adamant","item":"Leftovers",}},
 "Carbink":{
 	"T3:Hoopa (New World) Doubles":{"ability":"Sturdy","level":120,"evs":{"hp":252,"at":0,"df":128,"sa":0,"sd":128,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Trick Room","Stealth Rock","Explosion","Helping Hand"],"nature":"Brave","item":"Amplifield Rock",},
-	"T7:40 Cell (Glitch)":{"ability":"Clear Body","level":140,"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Reflect","Psychic","Moonblast","Hidden Power Electric"],"nature":"Calm","item":"Synthetic Seed",}},
+	"T7:40 Cell (Glitch)":{"ability":"Clear Body","level":140,"evs":{"hp":252,"at":0,"df":4,"sa":0,"sd":252,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Reflect","Psychic","Moonblast","HP Electric"],"nature":"Calm","item":"Synthetic Seed",}},
 "Dusknoir":{
 	"T3:Hoopa (New World) Doubles":{"ability":"Frisk","level":120,"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Rock Slide","Shadow Sneak","Sucker Punch","Power-Up Punch"],"nature":"Brave","item":"Life Orb",}},
 "Hoopa":{
@@ -6094,7 +6094,7 @@ var SETDEX_SM = {
 "Audino-Mega":{
 	"T4:Noel (Psychic) Doubles":{"ability":"Healer","level":125,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":15,"at":15,"df":15,"sa":15,"sd":15,"sp":15},"moves":["Hyper Voice","Blizzard","Dazzling Gleam","Calm Mind"],"nature":"Modest","item":"Audinite",},
 	"T4:Lin (Psychic) Doubles":{"ability":"Healer","level":125,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Psych Up","Calm Mind","Draining Kiss","Simple Beam"],"nature":"Calm","item":"Audinite",},
-	"T7:Eclipse (Rainbow)":{"ability":"Healer","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Rest","Sleep Talk","Hidden Power Fairy","Calm Mind"],"nature":"Calm","item":"Audinite",}},
+	"T7:Eclipse (Rainbow)":{"ability":"Healer","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Rest","Sleep Talk","HP Fairy","Calm Mind"],"nature":"Calm","item":"Audinite",}},
 "Moltres":{
 	"T4:Charlotte (Psychic) Doubles":{"ability":"Flame Body","level":125,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":5,"at":5,"df":5,"sa":5,"sd":5,"sp":5},"moves":["Heat Wave","Hurricane","Ancient Power","U-turn"],"nature":"Timid","item":"Flyinium Z",},
 	"T5:Genesect 7 (Short-Circuit) Doubles":{"ability":"Pressure","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Heat Wave","Tailwind","U-turn","Solar Beam"],"nature":"Rash","item":"Life Orb",}},
@@ -6108,7 +6108,7 @@ var SETDEX_SM = {
 	"T6:Titania (Cave) Doubles":{"ability":"Technician","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Spectral Thief","Rock Tomb","Rolling Kick","Shadow Sneak"],"nature":"Adamant","item":"Marshadium Z",}},
 "Latias":{
 	"T5:Lumi (Wasteland)":{"ability":"Levitate","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psycho Shift","Mist Ball","Dragon Pulse","Surf"],"nature":"Timid","item":"Telluric Seed",},
-	"T6:Ace (New World)":{"ability":"Levitate","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mist Ball","Draco Meteor","Reflect","Hidden Power Fire"],"nature":"Timid","item":"Eject Button",}},
+	"T6:Ace (New World)":{"ability":"Levitate","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mist Ball","Draco Meteor","Reflect","HP Fire"],"nature":"Timid","item":"Eject Button",}},
 "Latios":{
 	"T5:Eve (Wasteland)":{"ability":"Levitate","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Psycho Shift","Dragon Pulse","Luster Purge","Thunderbolt"],"nature":"Timid","item":"Telluric Seed",},
 	"T6:Ace (New World)":{"ability":"Levitate","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Luster Purge","Dragon Pulse","Calm Mind","Recover"],"nature":"Timid","item":"Soul Dew",}},
@@ -6129,10 +6129,10 @@ var SETDEX_SM = {
 	"T5:Genesect (Short-Circuit) Doubles":{"ability":"Sturdy","level":126,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Zap Cannon","Discharge","Flash Cannon","Dazzling Gleam"],"nature":"Modest","item":"Synthetic Seed",},
 	"T7:Not Mewtwo":{"ability":"Sturdy","level":100,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Stealth Rock","Discharge","Flash Cannon","Earth Power"],"nature":"Hardy","item":"Air Balloon",}},
 "Articuno":{
-	"T3:Meloetta (Random) Doubles":{"ability":"Pressure","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Signal Beam","Hidden Power Grass","Hurricane"],"nature":"Modest","item":"Choice Specs",},
+	"T3:Meloetta (Random) Doubles":{"ability":"Pressure","level":120,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Signal Beam","HP Grass","Hurricane"],"nature":"Modest","item":"Choice Specs",},
 	"T5:Genesect 6 (Short-Circuit) Doubles":{"ability":"Snow Cloak","level":128,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Tailwind","Aurora Veil","Blizzard","Hurricane"],"nature":"Timid","item":"Light Clay",},
 	"T6:Ho Oh (Mirror)":{"ability":"Snow Cloak","level":135,"evs":{"hp":252,"at":0,"df":0,"sa":4,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Aurora Veil","Aurora Beam","Ancient Power","Roost"],"nature":"Timid","item":"Synthetic Seed",},
-	"T8:Shade (Glitch)":{"ability":"Snow Cloak","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Bubble Beam","Extrasensory","Hidden Power Fire"],"nature":"Calm","item":"Assault Vest",}},
+	"T8:Shade (Glitch)":{"ability":"Snow Cloak","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Blizzard","Bubble Beam","Extrasensory","HP Fire"],"nature":"Calm","item":"Assault Vest",}},
 "Blacephalon":{
 	"T5:Genesect 7 (Short-Circuit) Doubles":{"ability":"Beast Boost","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Mind Blown","Shadow Ball","Flamethrower","Heat Wave"],"nature":"Timid",},
 	"T5:Taka (Holy) Doubles":{"ability":"Beast Boost","level":130,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Mind Blown","Shadow Ball","Will-O-Wisp","Psychic"],"nature":"Timid","item":"Elemental Seed",}},
@@ -6198,7 +6198,7 @@ var SETDEX_SM = {
 	"T8:Arceus (Glitch)":{"ability":"Desolate Land","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Precipice Blades","Fire Blast","Solar Beam","Rock Slide"],"nature":"Rash","item":"Red Orb",}},
 "Kyogre-Primal":{
 	"T6:Amaria (Water) Doubles":{"ability":"Primordial Sea","level":135,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Origin Pulse","Calm Mind","Ice Beam"],"nature":"Modest","item":"Blue Orb",},
-	"T7:Rayquaza (Snowy Mountain) Doubles":{"ability":"Primordial Sea","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Icy Wind","Origin Pulse","Hidden Power Flying"],"nature":"Timid","item":"Blue Orb",},
+	"T7:Rayquaza (Snowy Mountain) Doubles":{"ability":"Primordial Sea","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Icy Wind","Origin Pulse","HP Flying"],"nature":"Timid","item":"Blue Orb",},
 	"T7:Amaria (Cave) Doubles":{"ability":"Primordial Sea","level":141,"evs":{"hp":0,"at":52,"df":4,"sa":200,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Surf","Earthquake","Calm Mind","Blizzard"],"nature":"Rash","item":"Blue Orb",},
 	"T7:Kyogre (Water) Doubles":{"ability":"Primordial Sea","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thunder","Origin Pulse","Calm Mind","Ice Beam"],"nature":"Modest","item":"Blue Orb",}},
 "Guzzlord":{
@@ -6231,7 +6231,7 @@ var SETDEX_SM = {
 	"T7:Mewtwo (Holy) Doubles":{"ability":"Shadow Shield","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Psychic","Moonblast","Heat Wave"],"nature":"Timid","item":"Magical Seed",},
 	"T7:Titania (Grassy) Doubles":{"ability":"Shadow Shield","level":144,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":20,"at":20,"df":20,"sa":20,"sd":20,"sp":20},"moves":["Solar Beam","Moongeist Beam","Moonblast","Psyshock"],"nature":"Calm","item":"Lunalium Z",},
 	"T7:Yveltal (Starlight)":{"ability":"Shadow Shield","level":145,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Cosmic Power","Moongeist Beam","Night Daze","Roost"],"nature":"Timid","item":"Magical Seed",},
-	"T7:Eclipse (Rainbow)":{"ability":"Shadow Shield","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Moonblast","Psyshock","Hidden Power Fighting"],"nature":"Timid","item":"Lunalium Z",},
+	"T7:Eclipse (Rainbow)":{"ability":"Shadow Shield","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Moonblast","Psyshock","HP Fighting"],"nature":"Timid","item":"Lunalium Z",},
 	"T8:Lin (New World) Doubles":{"ability":"Shadow Shield","level":150,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":0},"moves":["Trick Room","Moongeist Beam","Moonblast","Roost"],"nature":"Sassy","item":"Leftovers",}},
 "Solgaleo":{
 	"T6.5:Naganadel (Wasteland)":{"ability":"Full Metal Body","level":140,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sunsteel Strike","Fire Blast","Stone Edge","Knock Off"],"nature":"Naughty","item":"Life Orb",},
@@ -6244,7 +6244,7 @@ var SETDEX_SM = {
 	"T7:Necrozma (Rainbow)":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Stealth Rock","Photon Geyser","Heat Wave","Light Screen"],"nature":"Modest","item":"Magical Seed",},
 	"T7:Eclipse (Rainbow)":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Photon Geyser","Recycle","Dragon Pulse","Protect"],"nature":"Timid","item":"Magical Seed",}},
 "Necrozma-Dawn-Wings":{
-	"T7:Necrozma (Rainbow)":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Photon Geyser","Power Gem","Hidden Power Fairy"],"nature":"Modest","item":"Magical Seed",},
+	"T7:Necrozma (Rainbow)":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":0,"df":4,"sa":252,"sd":0,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Photon Geyser","Power Gem","HP Fairy"],"nature":"Modest","item":"Magical Seed",},
 	"T7:Mew (Holy) Doubles":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Moongeist Beam","Photon Geyser","Flash Cannon","Heat Wave"],"nature":"Modest","item":"Magical Seed",}},
 "Necrozma-Dusk-Mane":{
 	"T7:Necrozma (Rainbow)":{"ability":"Prism Armor","level":145,"evs":{"hp":252,"at":0,"df":0,"sa":252,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Sunsteel Strike","Photon Geyser","Swords Dance","Earthquake"],"nature":"Adamant","item":"Magical Seed",},
