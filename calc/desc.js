@@ -409,7 +409,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     var texts = [];
     if ((field.hasTerrain('Swamp') && defender.hasItem('Telluric Seed')) || (field.hasTerrain('Water', 'Murkwater') && defender.hasItem('Elemental Seed')) || (field.hasTerrain('Grassy') && defender.hasItem('Elemental Seed')) || (field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') && defender.hasItem('Synthetic Seed'))) {
         damage += Math.floor(defender.maxHP() / 16);
-        texts.push('Telluric Seed recovery on ' + field.terrain);
+        texts.push(defender.item + ' recovery on ' + field.terrain);
     }
     else if (field.hasTerrain('Desert') && defender.hasItem('Telluric Seed')) { }
     else if (field.hasTerrain('Wasteland')) {

@@ -51,7 +51,6 @@ var EV_ITEMS = [
 function isGrounded(pokemon, field) {
     return (field.isGravity || pokemon.hasItem('Iron Ball') ||
         (!pokemon.hasType('Flying') &&
-            (!field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && !pokemon.hasItem('Synthetic Seed')) &&
             !pokemon.hasAbility('Levitate') &&
             !pokemon.hasItem('Air Balloon')));
 }
@@ -150,10 +149,10 @@ function getFinalSpeed(gen, pokemon, field, side) {
     else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
         speedMods.push(2048);
     }
-    if (field.hasTerrain('Water', 'Murkwater') && isGrounded(pokemon, field) && (!pokemon.hasAbility('Surge Surfer', 'Swift Swim') || !pokemon.hasType('Water')) || (field.hasTerrain('New World') && isGrounded(pokemon, field))) {
+    if (field.hasTerrain('Water', 'Murkwater') && isGrounded(pokemon, field) && !(pokemon.hasAbility('Surge Surfer', 'Swift Swim') || pokemon.hasType('Water')) || (field.hasTerrain('New World') && isGrounded(pokemon, field))) {
         speedMods.push(3072);
     }
-    if (field.hasTerrain('Underwater') && (!pokemon.hasAbility('Swift Swim') || !pokemon.hasType('Water'))) {
+    if (field.hasTerrain('Underwater') && !(pokemon.hasAbility('Swift Swim') || pokemon.hasType('Water'))) {
         speedMods.push(2048);
     }
     if (pokemon.hasItem('Choice Scarf')) {

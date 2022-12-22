@@ -477,6 +477,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         desc.defenderItem = defender.item;
         return result;
     }
+    if (move.hasType('Ground') && !move.named('Thousand Arrows') && !field.isGravity && defender.hasItem('Synthetic Seed') && field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2')) {
+        desc.defenderItem = defender.item;
+        return result;
+    }
     if (move.priority > 0 && field.hasTerrain('Psychic') && (0, util_2.isGrounded)(defender, field)) {
         desc.terrain = field.terrain;
         return result;
