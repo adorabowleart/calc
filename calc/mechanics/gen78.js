@@ -237,195 +237,150 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         typeEffectiveness /= 2;
         desc.terrain = field.terrain;
     }
-    if (field.hasTerrain('Ashen Beach') && move.named('Strength')) {
-        var moveType = gen.types.get('fighting');
-        var addedType = gen.types.get('psychic');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Burning') && move.named('Smack Down', 'Thousand Arrows', 'Clear Smog', 'Smog')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('fire');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Corrosive') && (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Smack Down', 'Thousand Arrows', 'Whirlpool') || move.hasType('Grass'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('poison');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Corrosive Mist') && (move.named('Bubble', 'Bubble Beam', 'Sparkling Aria', 'Energy Ball') || (move.hasType('Flying') && move.category === 'Special'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('poison');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Chess Board') && move.named('AncientPower', 'Nature Power', 'Psychic', 'SecretPower', 'Strength', 'Continental Crush', 'Sahttered Psyche')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('rock');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('fire');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('water');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('grass');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('psychic');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Dragon\'s Den') && move.named('Smack Down', 'Thousand Arrows', 'Continental Crush', 'Tectonic Rage')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('fire');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Electric') && move.named('Explosion', 'Hurricane', 'Muddy Water', 'Self-Destruct', 'Smack Down', 'Surf', 'Thousand Arrows', 'Hydro Vortex')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('electric');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Fairy Tale') && move.hasType('Fire')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('dragon');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Icy') && move.hasType('Rock')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('ice');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Murkwater') && (move.hasType('Water') || move.named('Smack Down'))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('poison');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Murkwater') && move.named('Sludge Wave, Nature Power')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('water');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Rocky') && move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('rock');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && (move.named('FlashCannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Muddy Water', 'Surf') || (attacker.hasAbility('Steelworker') && move.hasType('Steel')))) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('electric');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Snowy Mt') && move.hasType('Rock')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('ice');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Starlight') && move.hasType('Dark')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('fairy');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Starlight', 'New World') && move.named('Doom Desire')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('fire');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Swamp') && move.named('Smack Down', 'Thousand Arrows')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('water');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Underwater') && move.hasType('Ground')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('water');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
-    }
-    if (field.hasTerrain('Wasteland') && move.named('Mud Bomb', 'Mud-Slap', 'Mud Shot')) {
-        var moveType = gen.types.get((0, util_1.toID)(move.type));
-        var addedType = gen.types.get('poison');
-        typeEffectiveness = (moveType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? moveType.effectiveness[defender.types[1]] : 1) *
-            addedType.effectiveness[defender.types[0]] *
-            (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1));
+    var moveType = gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] *
+        (defender.types[1] ? gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] : 1);
+    var addedType;
+    switch (field.terrain) {
+        case 'Ashen Beach':
+            addedType = gen.types.get('psychic');
+            if (move.named('Strength')) {
+                moveType = gen.types.get('fighting').effectiveness[defender.types[0]] *
+                    (defender.types[1] ? gen.types.get('fighting').effectiveness[defender.types[1]] : 1);
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Burning':
+        case 'New World':
+        case 'Dragon\'s Den':
+            addedType = gen.types.get('fire');
+            if (move.named('Doom Desire') && field.hasTerrain('New World')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.named('Smack Down', 'Thousand Arrows', 'Clear Smog', 'Smog') && field.hasTerrain('Burning')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.named('Smack Down', 'Thousand Arrows', 'Continental Crush', 'Tectonic Rage') && field.hasTerrain('Dragon\'s Den')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Corrosive':
+        case 'Wasteland':
+        case 'Corrosive Mist':
+            addedType = gen.types.get('poison');
+            if ((move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Smack Down', 'Thousand Arrows', 'Whirlpool') || move.hasType('Grass')) && field.hasTerrain('Corrosive')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.named('Mud Bomb', 'Mud-Slap', 'Mud Shot') && field.hasTerrain('Wasteland')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            if ((move.named('Bubble', 'Bubble Beam', 'Sparkling Aria', 'Energy Ball') || (move.hasType('Flying') && move.category === 'Special')) && field.hasTerrain('Corrosive Mist')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Chess Board':
+        case 'Rocky':
+            addedType = gen.types.get('rock');
+            if (move.named('AncientPower', 'Nature Power', 'Psychic', 'SecretPower', 'Strength', 'Continental Crush', 'Sahttered Psyche') && field.hasTerrain('Chess Board')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength') && field.hasTerrain('Rocky')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Crystal Fire':
+        case 'Crystal Water':
+        case 'Crystal Grass':
+        case 'Crystal Psychic':
+            if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+                addedType = gen.types.get('fire');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+                addedType = gen.types.get('water');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+                addedType = gen.types.get('grass');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+                addedType = gen.types.get('psychic');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Electric':
+            addedType = gen.types.get('electric');
+            if (move.named('Explosion', 'Hurricane', 'Muddy Water', 'Self-Destruct', 'Smack Down', 'Surf', 'Thousand Arrows', 'Hydro Vortex')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Fairy Tale':
+            addedType = gen.types.get('dragon');
+            if (move.hasType('Fire')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Icy':
+        case 'Snowy Mt':
+            addedType = gen.types.get('ice');
+            if (move.hasType('Rock')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Murkwater':
+            if (move.named('Sludge Wave', 'Nature Power')) {
+                addedType = gen.types.get('water');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.hasType('Water') || move.named('Smack Down')) {
+                addedType = gen.types.get('poison');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Short-Circuit 0.5':
+        case 'Short-Circuit 0.8':
+        case 'Short-Circuit 1.2':
+        case 'Short-Circuit 1.5':
+        case 'Short-Circuit 2':
+            if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength')) {
+                addedType = gen.types.get('electric');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Starlight':
+            if (move.hasType('Dark')) {
+                addedType = gen.types.get('fairy');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.named('Doom Desire')) {
+                addedType = gen.types.get('fire');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'New World':
+            if (move.named('Doom Desire')) {
+                addedType = gen.types.get('fire');
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        case 'Swamp':
+        case 'Underwater':
+            addedType = gen.types.get('water');
+            if (move.named('Smack Down', 'Thousand Arrows') && field.hasTerrain('Swamp')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            else if (move.hasType('Ground') && field.hasTerrain('Underwater')) {
+                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+            }
+            break;
+        default:
+            typeEffectiveness = typeEffectiveness;
     }
     if (field.hasTerrain('Underwater') && move.hasType('Water') && defender.hasType('Water')) {
         typeEffectiveness *= 2;
         desc.terrain = field.terrain;
     }
-    if (field.hasTerrain('Holy') && move.hasType('Normal')) {
+    else if (field.hasTerrain('Holy') && move.hasType('Normal')) {
         if (typeEffectiveness === 0) {
             typeEffectiveness = gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] +
                 (defender.types[1] ? gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] : 1);
@@ -437,10 +392,10 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             typeEffectiveness *= 2;
         }
     }
-    if (field.hasTerrain('Fairy Tale') && move.hasType('Steel') && defender.hasType('Dragon')) {
+    else if (field.hasTerrain('Fairy Tale') && move.hasType('Steel') && defender.hasType('Dragon')) {
         typeEffectiveness *= 2;
     }
-    if (field.hasTerrain('Glitch')) {
+    else if (field.hasTerrain('Glitch')) {
         if (move.hasType('Bug') && defender.hasType('Poison')) {
             typeEffectiveness *= 2;
         }
@@ -462,7 +417,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             typeEffectiveness = 0;
         }
     }
-    if (field.hasTerrain('Inverse')) {
+    else if (field.hasTerrain('Inverse')) {
         typeEffectiveness = 1;
         if (gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] === 0) {
             typeEffectiveness *= 2;
