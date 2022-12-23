@@ -6183,8 +6183,11 @@ var SM_PATCH = {
     Abra: { otherFormes: ['Abra-Pulse'] },
     Avalugg: { otherFormes: ['Avalugg-Pulse'] },
     Breloom: { otherFormes: ['Breloom-Bot'] },
-    Camerupt: { otherFormes: ['Camerupt-Pulse'] },
+    Camerupt: { otherFormes: ['Camerupt-Pulse', 'Camerupt-Mega'] },
+    Cinccino: { otherFormes: ['Cinccino-Cass'] },
     Clawitzer: { otherFormes: ['Clawitzer-Pulse'] },
+    Gardevoir: { otherFormes: ['Gardevoir-Cass', 'Gardevoir-Mega'] },
+    Glaceon: { otherFormes: ['Glaceon-Cass'] },
     Hypno: { otherFormes: ['Hypno-Pulse'] },
     Magnezone: { otherFormes: ['Magnezone-Pulse'] },
     Mismagius: { otherFormes: ['Mismagius-Aevian'] },
@@ -6293,12 +6296,30 @@ var SM_PATCH = {
         baseSpecies: 'Camerupt',
         abilities: { 0: 'Sturdy' }
     },
+    'Cinccino-Cass': {
+        types: ['Normal', 'Fairy'],
+        bs: { hp: 75, at: 95, df: 60, sa: 65, sd: 60, sp: 115 },
+        weightkg: 7.5,
+        abilities: { 0: 'Cute Charm' }
+    },
     'Clawitzer-Pulse': {
         types: ['Water', 'Dragon'],
         bs: { hp: 252, at: 1, df: 60, sa: 120, sd: 70, sp: 252 },
         weightkg: 35.3,
         baseSpecies: 'Clawitzer',
         abilities: { 0: 'Contrary' }
+    },
+    'Gardevoir-Cass': {
+        types: ['Dark', 'Fairy'],
+        bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 80 },
+        weightkg: 48.4,
+        abilities: { 0: 'Synchronize' }
+    },
+    'Glaceon-Cass': {
+        types: ['Ice', 'Ghost'],
+        bs: { hp: 65, at: 60, df: 110, sa: 130, sd: 95, sp: 65 },
+        weightkg: 25.9,
+        abilities: { 0: 'Snow Cloak' }
     },
     'Hypno-Pulse': {
         types: ['Psychic', 'Dark'],
