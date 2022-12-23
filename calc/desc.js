@@ -444,14 +444,14 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
         texts.push(damage + ' damage on Burning');
     }
-    else if (field.hasTerrain('Underwater') && (0, util_2.isGrounded)(defender, field) && defender.hasType('Fire', 'Ground', 'Rock') && !defender.hasAbility('Magic Guard', 'Swift Swim')) {
+    else if (field.hasTerrain('Underwater') && defender.hasType('Fire', 'Ground', 'Rock') && !defender.hasAbility('Magic Guard', 'Swift Swim')) {
         var waterType = gen.types.get('water');
         var effectiveness = waterType.effectiveness[defender.types[0]] * (defender.types[1] ? waterType.effectiveness[defender.types[1]] : 1);
         if (effectiveness == 2) {
-            damage += Math.floor((effectiveness * defender.maxHP()) / 4);
+            damage += Math.floor(defender.maxHP() / 4);
         }
         else if (effectiveness == 4) {
-            damage += Math.floor((effectiveness * defender.maxHP()) / 2);
+            damage += Math.floor(defender.maxHP() / 2);
         }
         if (defender.hasAbility('Flame Body', 'Magma Armor')) {
             damage *= 2;
