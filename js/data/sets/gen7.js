@@ -3102,7 +3102,8 @@ var SETDEX_SM = {
 		"moves":["Outrage","Rock Slide","Shadow Bone","Flare Blitz"]},
 	"T3:Shannon (Forest)":{"ability":"Lightning Rod","level":120,"evs":{"hp":252,"at":252,"df":0,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Bonemerang","Shadow Bone","Stone Edge","Flare Blitz"],"nature":"Adamant","item":"Sitrus Berry",},
 	"T3:Elena (Mountain) Doubles":{"ability":"Rock Head","level":120,"evs":{"hp":0,"at":252,"df":252,"sa":0,"sd":4,"sp":0},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Shadow Bone","Earthquake","Fire Punch","Iron Head"],"nature":"Adamant","item":"Assault Vest",},
-	"T5:Genesect 8 (Short-Circuit) Doubles":{"ability":"Cursed Body","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Shadow Bone","Flare Blitz","Thunder Punch","Rock Slide"],"nature":"Adamant","item":"Thick Club",}},
+	"T5:Genesect 8 (Short-Circuit) Doubles":{"ability":"Cursed Body","level":129,"evs":{"hp":85,"at":85,"df":85,"sa":85,"sd":85,"sp":85},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Shadow Bone","Flare Blitz","Thunder Punch","Rock Slide"],"nature":"Adamant","item":"Thick Club",},
+	"Partner Cain (Connal/Sirius)":{"ability":"Lightning Rod","level":44,"evs":{"hp":66,"at":66,"df":66,"sa":66,"sd":66,"sp":66},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Flame Wheel","Bonemerang","Shadow Bone","Will-O-Wisp"],"nature":"Adamant",}},
 "Masquerain":{			
 	"Shelly (Forest) Doubles":{
 		"item":"Silver Powder",
@@ -3528,7 +3529,6 @@ var SETDEX_SM = {
 	"T7:10 Cell (Glitch)":{"ability":"Sheer Force","level":141,"evs":{"hp":252,"at":0,"df":252,"sa":0,"sd":0,"sp":4},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Amnesia","Flamethrower","Blizzard","Thunderbolt"],"nature":"Calm","item":"Synthetic Seed",},
 	"Partner Cain (Connal/Sirius)":{"ability":"Sheer Force","level":46,"evs":{"hp":69,"at":69,"df":69,"sa":69,"sd":69,"sp":69},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Thrash","Throat Chop","Poison Tail","Shadow Ball"],"nature":"Bashful",},
 	"Partner Cain (T5)":{"ability":"Sheer Force","level":130,"evs":{"hp":4,"at":0,"df":0,"sa":252,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Earth Power","Blizzard","Thunder","Flamethrower"],"nature":"Modest","item":"Life Orb",}},
-	"Marowak-Alola":{"Partner Cain (Connal/Sirius)":{"ability":"Lightning Rod","level":44,"evs":{"hp":66,"at":66,"df":66,"sa":66,"sd":66,"sp":66},"ivs":{"hp":10,"at":10,"df":10,"sa":10,"sd":10,"sp":10},"moves":["Flame Wheel","Bonemerang","Shadow Bone","Will-O-Wisp"],"nature":"Adamant",}},
 "Nidoqueen":{
 	"Aya (Wasteland)":{
 		"item":"Black Sludge",
