@@ -4469,7 +4469,7 @@ var SETDEX_SM = {
 		"nature":"Adamant",
 		"ability":"Sand Rush",
 		"evs":{"hp":4, "at":252, "df":0, "sa":0, "sd":0, "sp":252},
-		"moves":["Earthquake","Sword Dance","Stone Edge","X-Scissor"]},
+		"moves":["Earthquake","Swords Dance","Stone Edge","X-Scissor"]},
 	"Corin Rouge (Desert)":{"ability":"Sand Rush","level":83,"evs":{"hp":128,"at":128,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Earthquake","Swords Dance","Stone Edge","X-Scissor"],"nature":"Adamant","item":"Muscle Band"},
 	"T3:Sandy":{"ability":"Sand Rush","level":120,"evs":{"hp":4,"at":252,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":31,"at":31,"df":31,"sa":31,"sd":31,"sp":31},"moves":["Drill Run","Knock Off","Iron Head","Rock Slide"],"nature":"Adamant","item":"Choice Band",},
 	"T3:Corin Rouge (New World) Doubles":{"ability":"Sand Rush","level":120,"evs":{"hp":128,"at":128,"df":0,"sa":0,"sd":0,"sp":252},"ivs":{"hp":0,"at":0,"df":0,"sa":0,"sd":0,"sp":0},"moves":["Earthquake","Swords Dance","Stone Edge","X-Scissor"],"nature":"Adamant","item":"Muscle Band",}},
