@@ -3663,7 +3663,7 @@ var SETDEX_SM = {
 		"ivs":{"hp":10, "at":10, "df":10, "sa":10, "sd":10, "sp":10},
 		"moves":["Hypnosis","Air Slash","Psychic","Heat Wave"]},
 	"Diana 2":{
-		"Choice Specs":"",
+		"item":"Choice Specs",
 		"level":88,
 		"nature":"Modest",
 		"ability":"Tinted Lens",
