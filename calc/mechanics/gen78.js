@@ -2154,12 +2154,13 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
                 (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
                 (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
                 (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
-        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() * 0.75 && field.hasTerrain('Flower Garden 2')) ||
-        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
-        (attacker.hasAbility('Overgrow', 'Swarm') && field.hasTerrain('Forest')) ||
-        (attacker.hasAbility('Swarm') && field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
-        (attacker.hasAbility('Blaze') && field.hasTerrain('Burning')) ||
-        (attacker.hasAbility('Torrent') && field.hasTerrain('Water', 'Underwater')) ||
+        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() * 0.75 && field.hasTerrain('Flower Garden 2') && move.hasType('Grass')) ||
+        (attacker.hasAbility('Overgrow') && attacker.curHP() <= attacker.maxHP() && move.hasType('Grass') && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
+        (attacker.hasAbility('Swarm') && field.hasTerrain('Forest') && move.hasType('Bug')) ||
+        (attacker.hasAbility('Overgrow') && field.hasTerrain('Forest') && move.hasType('Grass')) ||
+        (attacker.hasAbility('Swarm') && move.hasType('Bug') && field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) ||
+        (attacker.hasAbility('Blaze') && field.hasTerrain('Burning') && move.hasType('Fire')) ||
+        (attacker.hasAbility('Torrent') && field.hasTerrain('Water', 'Underwater') && move.hasType('Water')) ||
         (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus')) ||
         field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && attacker.hasAbility('Plus', 'Minus')) {
         if (attacker.hasAbility('Swarm') && field.hasTerrain('Flower Garden 3')) {
