@@ -1759,7 +1759,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
                 if (move.named('Doom Desire')) {
                     basePower *= 4;
                 }
-                else if (move.named('Comet Punch', 'Draco Meteor', 'Hyperspace Fury', 'Hyperspace Hole', 'Meteor Mash', 'Moongeist Beam', 'Spacial Rend', 'Swift', 'BlackHole Eclipse', 'Menacing Moonraze Maeltrom', 'Searing Sunraze Smash')) {
+                else if (move.named('Comet Punch', 'Draco Meteor', 'Hyperspace Fury', 'Hyperspace Hole', 'Meteor Mash', 'Moongeist Beam', 'Spacial Rend', 'Swift', 'Black Hole Eclipse', 'Menacing Moonraze Maeltrom', 'Searing Sunraze Smash')) {
                     basePower *= 2;
                 }
                 else if (move.named('Aurora Beam', 'Dazzling Gleam', 'Flash Cannon', 'Luster Purge', 'Mirro Shot', 'Moonblast', 'Nature Power', 'Photon Geyser', 'Signal Beam', 'Solar Beam', 'Techno Blast')) {
