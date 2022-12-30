@@ -1153,7 +1153,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Sand Tomb')) {
                 basePower *= 2;
             }
-            else if (move.named('HP', 'HP Bug', 'HP Dark', 'HP Dragon', 'HP Electric', 'HP Fighting', 'HP Fire', 'HP Flying', 'HP Ghost', 'HP Grass', 'HP Ground', 'HP Ice', 'HP Poison', 'HP Psychic', 'HP Rock', 'HP Steel', 'HP Water', 'Land\'s Wrath', 'Muddy Water', 'Strength', 'Surf', 'Thousand Waves', 'Clangorous Soulblaze')) {
+            else if (move.named('HP', 'HP Bug', 'HP Dark', 'HP Dragon', 'HP Electric', 'HP Fighting', 'HP Fairy', 'HP Fire', 'HP Flying', 'HP Ghost', 'HP Grass', 'HP Ground', 'HP Ice', 'HP Poison', 'HP Psychic', 'HP Rock', 'HP Steel', 'HP Water', 'Land\'s Wrath', 'Muddy Water', 'Strength', 'Surf', 'Thousand Waves', 'Clangorous Soulblaze')) {
                 basePower *= 1.5;
             }
             else if (move.named('Splintered Stormshards', 'Aura Sphere', 'Focus Blast', 'Stored Power', 'Zen Headbutt')) {
@@ -1654,7 +1654,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Rainbow':
-            if (move.named('Aurora Beam', 'Nature Power', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'HP', 'HP Bug', 'HP Dark', 'HP Dragon', 'HP Electric', 'HP Fighting', 'HP Fire', 'HP Flying', 'HP Ghost', 'HP Grass', 'HP Ground', 'HP Ice', 'HP Poison', 'HP Psychic', 'HP Rock', 'HP Steel', 'HP Water', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
+            if (move.named('Aurora Beam', 'Nature Power', 'Dazzling Gleam', 'Dragon Pulse', 'Fire Pledge', 'Fleur Cannon', 'Grass Pledge', 'Heart Stamp', 'HP', 'HP Bug', 'HP Dark', 'HP Dragon', 'HP Electric', 'HP Fairy', 'HP Fighting', 'HP Fire', 'HP Flying', 'HP Ghost', 'HP Grass', 'HP Ground', 'HP Ice', 'HP Poison', 'HP Psychic', 'HP Rock', 'HP Steel', 'HP Water', 'Judgment', 'Mist Ball', 'Moonblast', 'Mystica lFire', 'Prismatic Laser', 'Relic Song', 'Sacred Fire', 'Secret Power', 'Silver Wind', 'Solar Beam', 'Solar Blade', 'Sparkling Aria', 'Tri Attack', 'Water Pledge', 'Weather Ball', 'Zen Headbutt', 'Oceanic Operetta', 'Twinkle Tackle')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dark Pulse', 'Night Daze', 'Shadow Ball', 'Never-Ending Nightmare')) {

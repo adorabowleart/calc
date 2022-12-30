@@ -295,6 +295,7 @@ var GSC_PATCH = {
     'HP Dark': { bp: 70, type: 'Dark' },
     'HP Dragon': { bp: 70, type: 'Dragon' },
     'HP Electric': { bp: 70, type: 'Electric' },
+    'HP Fairy': { bp: 70, type: 'Fairy' },
     'HP Fighting': { bp: 70, type: 'Fighting' },
     'HP Fire': { bp: 70, type: 'Fire' },
     'HP Flying': { bp: 70, type: 'Flying' },

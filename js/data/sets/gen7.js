@@ -5128,7 +5128,7 @@ var SETDEX_SM = {
 			"nature": "Quiet",
 			"ability": "Serene Grace",
 			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
-			"moves": ["Dazzling Gleam", "Air Slash", "Grass Knot", "Root"]},
+			"moves": ["Dazzling Gleam", "Air Slash", "Grass Knot", "Roost"]},
 		"Ciel (Big Top)": {
 			"item": "Leftovers",
 			"level": 75,
