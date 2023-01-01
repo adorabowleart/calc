@@ -342,7 +342,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         case 'Short-Circuit 1.2':
         case 'Short-Circuit 1.5':
         case 'Short-Circuit 2':
-            if (move.named('Bulldoze', 'Earthquake', 'Magnitude', 'Rock Climb', 'Strength')) {
+            if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Muddy Water', 'Surf')) {
                 addedType = gen.types.get('electric');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
