@@ -291,19 +291,19 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         case 'Crystal Water':
         case 'Crystal Grass':
         case 'Crystal Psychic':
-            if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+            if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('fire');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
-            else if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+            else if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('water');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
-            else if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+            else if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('grass');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
-            else if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strenght', 'Prismatic Laser') || move.hasType('Rock'))) {
+            else if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('psychic');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
