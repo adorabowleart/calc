@@ -777,8 +777,58 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             var lostHP10Nice = damage.map(function (num) { return Math.floor(num * 15 * 1.5); });
             var lostHP10Pow = damage.map(function (num) { return Math.floor(num * 15 * 2); });
             var lostHP10Over = damage.map(function (num) { return Math.floor(num * 15 * 3); });
-            var finaldmg = lostHP4Weak.concat(lostHP4OK, lostHP4Nice, lostHP4Pow, lostHP4Over, lostHP5Weak, lostHP5OK, lostHP5Nice, lostHP5Pow, lostHP5Over, lostHP6Weak, lostHP6OK, lostHP6Nice, lostHP6Pow, lostHP6Over, lostHP7Weak, lostHP7OK, lostHP7Nice, lostHP7Pow, lostHP7Over, lostHP8Weak, lostHP8OK, lostHP8Nice, lostHP8Pow, lostHP8Over, lostHP9Weak, lostHP9OK, lostHP9Nice, lostHP9Pow, lostHP9Over, lostHP10Weak, lostHP10OK, lostHP10Nice, lostHP10Pow, lostHP10Over);
-            result.damage = finaldmg.sort(function (a, b) { return a - b; });
+            if (attacker.hasAbility('Guts', 'Sheer Force', 'Huge Power', 'Pure Power')) {
+                if (attacker.boosts[attackStat] > 0) {
+                    result.damage = lostHP4Over.concat(lostHP5Over, lostHP6Over, lostHP7Over, lostHP8Over, lostHP9Over, lostHP10Over);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == 0) {
+                    result.damage = lostHP4Pow.concat(lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow, lostHP4Over, lostHP5Over, lostHP6Over, lostHP7Over, lostHP8Over, lostHP9Over, lostHP10Over);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == -1) {
+                    result.damage = lostHP4Pow.concat(lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == -2) {
+                    result.damage = lostHP4Nice.concat(lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice, lostHP4Pow, lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] <= -3 && attacker.boosts[attackStat] >= -5) {
+                    result.damage = lostHP4Nice.concat(lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == -6) {
+                    result.damage = lostHP4OK.concat(lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+            }
+            else {
+                if (attacker.boosts[attackStat] == 0) {
+                    result.damage = lostHP4Weak.concat(lostHP5Weak, lostHP6Weak, lostHP7Weak, lostHP8Weak, lostHP9Weak, lostHP10Weak, lostHP4OK, lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice, lostHP4Pow, lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == 1) {
+                    result.damage = lostHP4Weak.concat(lostHP5Weak, lostHP6Weak, lostHP7Weak, lostHP8Weak, lostHP9Weak, lostHP10Weak, lostHP4OK, lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice, lostHP4Pow, lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow, lostHP4Over, lostHP5Over, lostHP6Over, lostHP7Over, lostHP8Over, lostHP9Over, lostHP10Over);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] > 1) {
+                    result.damage = lostHP4OK.concat(lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice, lostHP4Pow, lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow, lostHP4Over, lostHP5Over, lostHP6Over, lostHP7Over, lostHP8Over, lostHP9Over, lostHP10Over);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == -1) {
+                    result.damage = lostHP4Weak.concat(lostHP5Weak, lostHP6Weak, lostHP7Weak, lostHP8Weak, lostHP9Weak, lostHP10Weak, lostHP4OK, lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice, lostHP4Pow, lostHP5Pow, lostHP6Pow, lostHP7Pow, lostHP8Pow, lostHP9Pow, lostHP10Pow);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] <= -2 && attacker.boosts[attackStat] >= -5) {
+                    result.damage = lostHP4Weak.concat(lostHP5Weak, lostHP6Weak, lostHP7Weak, lostHP8Weak, lostHP9Weak, lostHP10Weak, lostHP4OK, lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK, lostHP4Nice, lostHP5Nice, lostHP6Nice, lostHP7Nice, lostHP8Nice, lostHP9Nice, lostHP10Nice);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+                else if (attacker.boosts[attackStat] == -6) {
+                    result.damage = lostHP4Weak.concat(lostHP5Weak, lostHP6Weak, lostHP7Weak, lostHP8Weak, lostHP9Weak, lostHP10Weak, lostHP4OK, lostHP5OK, lostHP6OK, lostHP7OK, lostHP8OK, lostHP9OK, lostHP10OK);
+                    result.damage.sort(function (a, b) { return a - b; });
+                }
+            }
             return result;
         }
         else {
@@ -787,8 +837,46 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             var lostHPNice = damage.map(function (num) { return Math.floor(num * 1.5); });
             var lostHPPow = damage.map(function (num) { return Math.floor(num * 2); });
             var lostHPOver = damage.map(function (num) { return Math.floor(num * 3); });
-            var finaldmg = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
-            result.damage = finaldmg;
+            if (attacker.hasAbility('Guts', 'Sheer Force', 'Huge Power', 'Pure Power')) {
+                if (attacker.boosts[attackStat] > 0) {
+                    result.damage = lostHPOver;
+                }
+                else if (attacker.boosts[attackStat] == 0) {
+                    result.damage = lostHPPow.concat(lostHPOver);
+                }
+                else if (attacker.boosts[attackStat] == -1) {
+                    result.damage = lostHPPow;
+                }
+                else if (attacker.boosts[attackStat] == -2) {
+                    result.damage = lostHPNice.concat(lostHPPow);
+                }
+                else if (attacker.boosts[attackStat] <= -3 && attacker.boosts[attackStat] >= -5) {
+                    result.damage = lostHPNice;
+                }
+                else if (attacker.boosts[attackStat] == -6) {
+                    result.damage = lostHPOK.concat(lostHPNice);
+                }
+            }
+            else {
+                if (attacker.boosts[attackStat] == 0) {
+                    result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow);
+                }
+                else if (attacker.boosts[attackStat] == 1) {
+                    result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
+                }
+                else if (attacker.boosts[attackStat] > 1) {
+                    result.damage = lostHPOK.concat(lostHPNice, lostHPPow, lostHPOver);
+                }
+                else if (attacker.boosts[attackStat] == -1) {
+                    result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow);
+                }
+                else if (attacker.boosts[attackStat] <= -2 && attacker.boosts[attackStat] >= -5) {
+                    result.damage = lostHPWeak.concat(lostHPOK, lostHPNice);
+                }
+                else if (attacker.boosts[attackStat] == -6) {
+                    result.damage = lostHPWeak.concat(lostHPOK);
+                }
+            }
             return result;
         }
     }
