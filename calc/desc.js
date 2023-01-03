@@ -20,6 +20,7 @@ exports.__esModule = true;
 var result_1 = require("./result");
 var util_1 = require("./util");
 var util_2 = require("./mechanics/util");
+var gen78_1 = require("./mechanics/gen78");
 function display(gen, attacker, defender, move, field, damage, rawDesc, notation, err) {
     if (notation === void 0) { notation = '%'; }
     if (err === void 0) { err = true; }
@@ -171,6 +172,13 @@ exports.getRecoil = getRecoil;
 function getKOChance(gen, attacker, defender, move, field, damage, err) {
     if (err === void 0) { err = true; }
     damage = combine(damage);
+    if (field.hasTerrain('Big Top') &&
+        (move.named('Blaze Kick', 'Body Slam', 'Bounce', 'Brutal Swing', 'Bulldoze', 'Crabhammer', 'Dragon Hammer', 'Dragon Rush', 'Dual Chop', 'Earthquake', 'Giga Impact', 'Heat Crash', 'Heavy Slam', 'High Horsepower', 'Ice Hammer', 'Icicle Crash', 'Iron Tail', 'Magnitude', 'Meteor Mash', 'Pound', 'Sky Drop', 'Smack Down', 'Stomp', 'Stomping Tantrum', 'Strength', 'Wood Hammer') || (move.hasType('Fighting') && move.category == 'Physical'))) {
+        damage = gen78_1.strikerdmg;
+    }
+    else if (move.named('Magnitude') && !field.hasTerrain('Big Top')) {
+        damage = gen78_1.magdmg;
+    }
     if (isNaN(damage[0])) {
         (0, util_1.error)(err, 'damage[0] must be a number.');
         return { chance: 0, n: 0, text: '' };

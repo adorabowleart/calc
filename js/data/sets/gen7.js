@@ -190,7 +190,7 @@ var SETDEX_SM = {
 			"nature": "Brave",
 			"ability": "Solid Rock",
 			"evs": {"hp": 252, "at": 0, "df": 252, "sa": 0, "sd": 4, "sp": 0},
-			"moves": ["HAmmer Arm", "Earthquake", "Recover", "Avalanche"]},
+			"moves": ["Hammer Arm", "Earthquake", "Recover", "Avalanche"]},
 		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Stamina", "level": 130, "evs": {"hp": 252, "at": 252, "df": 4, "sa": 0, "sd": 0, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Power Whip", "Roar", "Strength Sap", "Rock Slide"], "nature": "Brave", "item": "Lum Berry",}},
 	"Azumarill": {
 		"Spirit Jonah (Fairy Tale) Doubles": {
