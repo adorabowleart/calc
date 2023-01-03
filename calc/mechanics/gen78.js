@@ -403,7 +403,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             typeEffectiveness *= 2;
         }
         if (move.hasType('Ice') && defender.hasType('Fire')) {
-            typeEffectiveness /= 2;
+            typeEffectiveness *= 2;
         }
         if (move.hasType('Dragon')) {
             if (typeEffectiveness === 0) {
