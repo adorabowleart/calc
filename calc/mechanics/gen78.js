@@ -845,6 +845,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                 else if (attacker.boosts[attackStat] == 0) {
                     result.damage = lostHPPow.concat(lostHPOver);
                     exports.strikerdmg = lostHPPow.concat(lostHPPow, lostHPPow, lostHPPow, lostHPOver, lostHPOver, lostHPOver);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
                 else if (attacker.boosts[attackStat] == -1) {
                     result.damage = lostHPPow;
@@ -853,6 +854,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                 else if (attacker.boosts[attackStat] == -2) {
                     result.damage = lostHPNice.concat(lostHPPow);
                     exports.strikerdmg = lostHPNice.concat(lostHPNice, lostHPNice, lostHPNice, lostHPPow, lostHPPow, lostHPPow);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
                 else if (attacker.boosts[attackStat] <= -3 && attacker.boosts[attackStat] >= -5) {
                     result.damage = lostHPNice;
@@ -861,57 +863,71 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                 else if (attacker.boosts[attackStat] == -6) {
                     result.damage = lostHPOK.concat(lostHPNice);
                     exports.strikerdmg = lostHPOK.concat(lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
             }
             else {
                 if (attacker.boosts[attackStat] == 0) {
                     result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow);
                     exports.strikerdmg = lostHPWeak.concat(lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPPow);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
                 else if (attacker.boosts[attackStat] == 1) {
                     result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow, lostHPOver);
                     exports.strikerdmg = lostHPWeak.concat(lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice, lostHPNice, lostHPPow, lostHPPow, lostHPOver);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
                 else if (attacker.boosts[attackStat] > 1) {
                     result.damage = lostHPOK.concat(lostHPNice, lostHPPow, lostHPOver);
                     if (attacker.boosts[attackStat] == 2) {
                         exports.strikerdmg = lostHPOK.concat(lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPPow, lostHPOver);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == 3) {
                         exports.strikerdmg = lostHPOK.concat(lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice, lostHPNice, lostHPPow, lostHPPow, lostHPOver, lostHPOver, lostHPOver);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == 4) {
                         exports.strikerdmg = lostHPOK.concat(lostHPOK, lostHPNice, lostHPNice, lostHPPow, lostHPOver, lostHPOver);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == 5) {
                         exports.strikerdmg = lostHPOK.concat(lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice, lostHPNice, lostHPPow, lostHPPow, lostHPOver, lostHPOver, lostHPOver, lostHPOver, lostHPOver);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == 6) {
                         exports.strikerdmg = lostHPOK.concat(lostHPNice, lostHPNice, lostHPPow, lostHPOver, lostHPOver, lostHPOver);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                 }
                 else if (attacker.boosts[attackStat] == -1) {
                     result.damage = lostHPWeak.concat(lostHPOK, lostHPNice, lostHPPow);
                     exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPWeak, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice, lostHPNice, lostHPPow);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
                 else if (attacker.boosts[attackStat] <= -2 && attacker.boosts[attackStat] >= -5) {
                     result.damage = lostHPWeak.concat(lostHPOK, lostHPNice);
                     if (attacker.boosts[attackStat] == -2) {
                         exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == -3) {
                         exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice, lostHPNice);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == -4) {
                         exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice, lostHPNice);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                     else if (attacker.boosts[attackStat] == -5) {
                         exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPWeak, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPOK, lostHPNice);
+                        exports.strikerdmg.sort(function (a, b) { return a - b; });
                     }
                 }
                 else if (attacker.boosts[attackStat] == -6) {
                     result.damage = lostHPWeak.concat(lostHPOK);
                     exports.strikerdmg = lostHPWeak.concat(lostHPWeak, lostHPWeak, lostHPWeak, lostHPOK, lostHPOK, lostHPOK);
+                    exports.strikerdmg.sort(function (a, b) { return a - b; });
                 }
             }
             return result;
@@ -927,6 +943,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         var lostHP10 = damage.map(function (num) { return Math.floor(num * 15); });
         result.damage = lostHP4.concat(lostHP5, lostHP6, lostHP7, lostHP8, lostHP9, lostHP10);
         exports.magdmg = lostHP4.concat(lostHP5, lostHP5, lostHP6, lostHP6, lostHP6, lostHP6, lostHP7, lostHP7, lostHP7, lostHP7, lostHP7, lostHP7, lostHP8, lostHP8, lostHP8, lostHP8, lostHP9, lostHP9, lostHP10);
+        exports.strikerdmg.sort(function (a, b) { return a - b; });
         return result;
     }
     return result;
