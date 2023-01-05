@@ -84,7 +84,7 @@ function getRecovery(gen, attacker, defender, move, damage, notation, field) {
         return { recovery: recovery, text: text };
     var minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
     var maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
-    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " recovered");
+    text = "".concat(minHealthRecovered, " - ").concat(maxHealthRecovered).concat(notation, " [").concat(recovery[0], " - ").concat(recovery[1], "] recovered");
     return { recovery: recovery, text: text };
 }
 exports.getRecovery = getRecovery;
@@ -111,7 +111,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation, field) {
         }
         if (!attacker.hasAbility('Rock Head')) {
             recoil = [minRecoilDamage, maxRecoilDamage];
-            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " recoil damage");
+            text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " [").concat(Math.floor(min / 100 * minRecoilDamage), " - ").concat(Math.floor(max / 100 * maxRecoilDamage), "] recoil damage");
         }
     }
     else if (move.hasCrashDamage) {
@@ -148,12 +148,12 @@ function getRecoil(gen, attacker, defender, move, damage, notation, field) {
                     }
                 }
                 else {
-                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " crash damage on miss");
+                    text = "".concat(minRecoilDamage, " - ").concat(maxRecoilDamage).concat(notation, " [").concat(Math.floor(min / 100 * minRecoilDamage), " - ").concat(Math.floor(max / 100 * maxRecoilDamage), "] crash damage on miss");
                 }
                 break;
             default:
                 recoil = notation === '%' ? 24 : 50;
-                text = '50% crash damage';
+                text = "50% [".concat(Math.floor(attacker.maxHP() / 100 * 50), "] crash damage");
         }
     }
     else if (move.struggleRecoil) {
@@ -164,7 +164,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation, field) {
     }
     else if (move.mindBlownRecoil) {
         recoil = notation === '%' ? 24 : 50;
-        text = '50% recoil damage';
+        text = "50% [".concat(Math.ceil(attacker.maxHP() / 100 * 50), "] recoil damage");
     }
     return { recoil: recoil, text: text };
 }
@@ -324,27 +324,27 @@ function getHazards(gen, defender, defenderSide, field) {
         damage += Math.floor((effectiveness * defender.maxHP()) / 8);
         if (field.hasTerrain('Cave', 'Rocky')) {
             damage *= 2;
-            texts.push(damage + ' damage Stealth Rock on ' + field.terrain);
+            texts.push(damage + ' damage Stealth Rock in ' + field.terrain);
         }
         else if (field.hasTerrain('Inverse')) {
             if (effectiveness == 0.25) {
                 damage *= 8;
-                texts.push(damage + ' Stealth Rock damage on ' + field.terrain);
+                texts.push(damage + ' Stealth Rock damage in ' + field.terrain);
             }
             else if (effectiveness == 0.5) {
                 damage *= 4;
-                texts.push(damage + ' Stealth Rock damage on ' + field.terrain);
+                texts.push(damage + ' Stealth Rock damage in ' + field.terrain);
             }
             else if (effectiveness == 2) {
                 damage /= 4;
-                texts.push(damage + ' Stealth Rock damage on ' + field.terrain);
+                texts.push(damage + ' Stealth Rock damage in ' + field.terrain);
             }
             else if (effectiveness == 4) {
                 damage /= 8;
-                texts.push(damage + ' Stealth Rock damage on ' + field.terrain);
+                texts.push(damage + ' Stealth Rock damage in ' + field.terrain);
             }
             else {
-                texts.push(damage + ' Stealth Rock damage on ' + field.terrain);
+                texts.push(damage + ' Stealth Rock damage in ' + field.terrain);
             }
         }
         else {
@@ -358,28 +358,28 @@ function getHazards(gen, defender, defenderSide, field) {
             var effectiveness = rockType.effectiveness[defender.types[0]] *
                 (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
             damage += Math.floor((effectiveness * defender.maxHP()) / 8);
-            texts.push(damage + ' Stealth Rock (Fire) damage on ' + field.terrain);
+            texts.push(damage + ' Stealth Rock (Fire) damage in ' + field.terrain);
         }
         else if (field.hasTerrain('Crystal Water')) {
             var rockType = gen.types.get('water');
             var effectiveness = rockType.effectiveness[defender.types[0]] *
                 (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
             damage += Math.floor((effectiveness * defender.maxHP()) / 8);
-            texts.push(damage + ' Stealth Rock (Water) damage on ' + field.terrain);
+            texts.push(damage + ' Stealth Rock (Water) damage in ' + field.terrain);
         }
         else if (field.hasTerrain('Crystal Grass')) {
             var rockType = gen.types.get('grass');
             var effectiveness = rockType.effectiveness[defender.types[0]] *
                 (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
             damage += Math.floor((effectiveness * defender.maxHP()) / 8);
-            texts.push(damage + ' Stealth Rock (Grass) damage on ' + field.terrain);
+            texts.push(damage + ' Stealth Rock (Grass) damage in ' + field.terrain);
         }
         else {
             var rockType = gen.types.get('psychic');
             var effectiveness = rockType.effectiveness[defender.types[0]] *
                 (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
             damage += Math.floor((effectiveness * defender.maxHP()) / 8);
-            texts.push(damage + ' Stealth Rock (Psychic) damage on ' + field.terrain);
+            texts.push(damage + ' Stealth Rock (Psychic) damage in ' + field.terrain);
         }
     }
     if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
@@ -397,16 +397,16 @@ function getHazards(gen, defender, defenderSide, field) {
                 texts.push('Spikes');
             }
             else {
-                texts.push('1 layer of Spikes');
+                texts.push('1 layer of Spikes [' + damage + ']');
             }
         }
         else if (defenderSide.spikes === 2) {
             damage += Math.floor(defender.maxHP() / 6);
-            texts.push('2 layers of Spikes');
+            texts.push('2 layers of Spikes [' + damage + ']');
         }
         else if (defenderSide.spikes === 3) {
             damage += Math.floor(defender.maxHP() / 4);
-            texts.push('3 layers of Spikes');
+            texts.push('3 layers of Spikes [' + damage + ']');
         }
     }
     if (isNaN(damage)) {
@@ -419,30 +419,33 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     var texts = [];
     if ((field.hasTerrain('Swamp') && defender.hasItem('Telluric Seed')) || (field.hasTerrain('Water', 'Murkwater') && defender.hasItem('Elemental Seed')) || (field.hasTerrain('Grassy') && defender.hasItem('Elemental Seed')) || (field.hasTerrain('Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') && defender.hasItem('Synthetic Seed'))) {
         damage += Math.floor(defender.maxHP() / 16);
-        texts.push(defender.item + ' recovery on ' + field.terrain);
+        texts.push(damage + ' ' + defender.item + ' recovery in ' + field.terrain);
     }
-    else if (field.hasTerrain('Desert') && defender.hasItem('Telluric Seed')) { }
+    else if (field.hasTerrain('Desert') && defender.hasItem('Telluric Seed')) {
+        damage -= Math.floor(defender.maxHP() / 8);
+        texts.push(damage + ' ' + defender.item + ' damage in Wasteland');
+    }
     else if (field.hasTerrain('Wasteland')) {
         if (field.defenderSide.spikes > 0 && (0, util_2.isGrounded)(defender, field)) {
             damage -= Math.floor(defender.maxHP() / 3);
-            texts.push(damage + ' Spikes damage on Wasteland');
+            texts.push(damage + ' Spikes damage in Wasteland');
         }
         if (field.defenderSide.isSR) {
             var rockType = gen.types.get('rock');
             var effectiveness = rockType.effectiveness[defender.types[0]] *
                 (defender.types[1] ? rockType.effectiveness[defender.types[1]] : 1);
             damage += Math.floor((effectiveness * defender.maxHP()) / 4);
-            texts.push(damage + ' Stealth Rock damage on Wasteland');
+            texts.push(damage + ' Stealth Rock damage in Wasteland');
         }
     }
     else if ((field.hasTerrain('Misty', 'Swamp') && !field.hasWeather('Rain', 'Heavy Rain', 'Harsh Sunshine') && defender.hasAbility('Dry Skin')) || (field.hasTerrain('Water', 'Underwater') && defender.hasAbility('Dry Skin', 'Water Abosrb') && (0, util_2.isGrounded)(defender, field)) || (field.hasTerrain('Rainbow') && defender.hasStatus('slp')) ||
         (field.hasTerrain('Forest') && defender.hasAbility('Sap Sipper')) || (field.hasTerrain('Short-Circuit 0.5', 'Short-Circuit 0.8', 'Short-Circuit 1.2', 'Short-Circuit 1.5', 'Short-Circuit 2') && defender.hasAbility('Volt Absorb'))) {
         damage += Math.floor(defender.maxHP() / 16);
         if (defender.hasStatus('slp') && field.hasTerrain('Rainbow')) {
-            texts.push(damage + ' Asleep pokemon on Rainbow Field');
+            texts.push(damage + 'hp recovery while asleep in Rainbow Field');
         }
         else {
-            texts.push(damage + ' ' + defender.ability + ' on ' + field.terrain);
+            texts.push(damage + ' ' + defender.ability + ' in ' + field.terrain);
         }
     }
     else if (field.hasTerrain('Burning') && (0, util_2.isGrounded)(defender, field) && !defender.hasType('Fire') && !defender.hasAbility('Flame Body', 'Flare Boost', 'Flash Fire', 'Heatproof', 'Magma Armor', 'Water Bubble', 'Water Veil')) {
@@ -452,7 +455,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         if (defender.hasAbility('Fluffy', 'Grass Pelt', 'Ice Body')) {
             damage *= 2;
         }
-        texts.push(damage + ' damage on Burning');
+        texts.push(damage + ' damage in ' + field.terrain);
     }
     else if (field.hasTerrain('Underwater') && defender.hasType('Fire', 'Ground', 'Rock') && !defender.hasAbility('Magic Guard', 'Swift Swim')) {
         var waterType = gen.types.get('water');
@@ -466,7 +469,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         if (defender.hasAbility('Flame Body', 'Magma Armor')) {
             damage *= 2;
         }
-        texts.push(damage + ' Underwater Field damage');
+        texts.push(damage + ' Underwater field damage');
     }
     else if (field.hasTerrain('Murkwater') && (0, util_2.isGrounded)(defender, field) && !defender.hasType('Poison', 'Steel') && !defender.hasAbility('Immunity', 'Magic Guard', 'Poison Heal', 'Toxic Boost', 'wonder Guard')) {
         var poisonType = gen.types.get('poison');
@@ -475,19 +478,19 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         if (defender.hasAbility('Dry Skin', 'Flame Body', 'Magma Armor', 'Water Absorb')) {
             damage *= 2;
         }
-        texts.push(damage + ' Murkwater Field damage');
+        texts.push(damage + ' Murkwater field damage');
     }
     else if (field.hasTerrain('Swamp') && defender.hasStatus('slp') && !defender.hasAbility('Magic Guard')) {
         damage -= Math.floor(defender.maxHP() / 16);
-        texts.push(damage + ' Swamp damage while asleep');
+        texts.push(damage + ' Swamp field damage while asleep');
     }
     else if (field.hasTerrain('Corrosive') && defender.hasStatus('slp') && !defender.hasAbility('Magic Guard', 'Immunity', 'Poison Heal', 'Toxic Boost', 'Wonder Guard') && (0, util_2.isGrounded)(defender, field)) {
         damage -= Math.floor(defender.maxHP() / 16);
-        texts.push(damage + ' Corrosive damage while asleep');
+        texts.push(damage + ' Corrosive field damage while asleep');
     }
     else if (defender.hasAbility('Grass Pelt') && field.hasTerrain('Corrosive') && !defender.hasType('Poison', 'Steel')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push(damage + ' Corrosive Field damage to pokemon with ' + defender.ability);
+        texts.push(damage + ' Corrosive field damage to pokemon with ' + defender.ability);
     }
     else if ((field.hasTerrain('Corrosive Mist') && defender.hasAbility('DrySkin') && !defender.hasType('Poison', 'Steel')) || (field.hasTerrain('Desert') && defender.hasAbility('Dry Skin') && !field.hasWeather('Harsh Sunshine', 'Heavy Rain', 'Rain'))) {
         if (field.hasWeather('Sun', 'Harsh Sunshine') && field.hasTerrain('Corrosive Mist')) {
@@ -496,30 +499,30 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         else {
             damage -= Math.floor(defender.maxHP() / 8);
         }
-        texts.push(damage + ' ' + defender.ability + ' damage on ' + field.terrain);
+        texts.push(damage + ' damage to pokemon with ' + defender.ability + ' in ' + field.terrain);
     }
     else if ((field.hasTerrain('Corrosive Mist') || !field.hasWeather('Rain', 'Heavy Rain', 'Harsh Sunshine')) && defender.hasAbility('DrySkin') && defender.hasType('Poison')) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push(damage + 'hp recovery on Corrosive Mist');
+        texts.push(damage + 'hp recovery in Corrosive Mist');
     }
     else if (field.hasTerrain('Murkwater') && defender.hasAbility('Dry Skin', 'Water Absorb') && (0, util_2.isGrounded)(defender, field)) {
         damage += Math.floor(defender.maxHP() / 8);
-        texts.push(defender.ability + ' ' + damage + 'hp recovery on ' + field.terrain);
+        texts.push(damage + 'hp recovery to pokemon with' + defender.ability + ' in ' + field.terrain);
     }
     if (field.hasWeather('Sun', 'Harsh Sunshine')) {
         if (defender.hasAbility('Solar Power', 'Dry Skin')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push(defender.ability + ' damage');
+            texts.push(damage + ' Dry Skin damage');
         }
     }
     else if (field.hasWeather('Rain', 'Heavy Rain')) {
         if (defender.hasAbility('Dry Skin')) {
             damage += Math.floor(defender.maxHP() / 8);
-            texts.push('Dry Skin recovery');
+            texts.push(damage + ' Dry Skin recovery');
         }
         else if (defender.hasAbility('Rain Dish')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Rain Dish recovery');
+            texts.push(damage + ' Rain Dish recovery');
         }
     }
     else if (field.hasWeather('Sand')) {
@@ -527,13 +530,13 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
             !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
-            texts.push('sandstorm damage');
+            texts.push(damage + ' sandstorm damage');
         }
     }
     else if (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy Mt')) {
         if (defender.hasAbility('Ice Body')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push(damage + 'hp Ice Body recovery');
+            texts.push(damage + ' hp Ice Body recovery');
         }
         else if (!defender.hasType('Ice') && !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') && !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / 16);
@@ -543,31 +546,31 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     var loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
     if (defender.hasItem('Leftovers') && !loseItem) {
         damage += Math.floor(defender.maxHP() / 16);
-        texts.push('Leftovers recovery');
+        texts.push(damage + ' Leftovers recovery');
     }
     else if (defender.hasItem('Black Sludge') && !loseItem) {
         if (defender.hasType('Poison')) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Black Sludge recovery');
+            texts.push(damage + ' Black Sludge recovery');
         }
         else if (!defender.hasAbility('Magic Guard', 'Klutz')) {
             damage -= Math.floor(defender.maxHP() / 8);
-            texts.push('Black Sludge damage');
+            texts.push(damage + ' Black Sludge damage');
         }
     }
     else if (defender.hasItem('Sticky Barb')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Sticky Barb damage');
+        texts.push(damage + ' Sticky Barb damage');
     }
     if (field.defenderSide.isSeeded) {
         if (!defender.hasAbility('Magic Guard')) {
             if (field.hasTerrain('Wasteland')) {
                 damage -= Math.floor(defender.maxHP() / 4);
-                texts.push('boosted Leech Seed damage');
+                texts.push(damage + ' boosted Leech Seed damage');
             }
             else {
                 damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
-                texts.push('Leech Seed damage');
+                texts.push(damage + ' Leech Seed damage');
             }
         }
     }
@@ -575,26 +578,26 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         if (defender.hasAbility('Liquid Ooze')) {
             if (field.hasTerrain('Wasteland', 'Murkwater')) {
                 damage -= (Math.floor(attacker.maxHP() / 4));
-                texts.push('Liquid Ooze damage in' + field.terrain);
+                texts.push(damage + ' Liquid Ooze damage in' + field.terrain);
             }
             else {
                 damage -= Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
-                texts.push('Liquid Ooze damage');
+                texts.push(damage + ' Liquid Ooze damage');
             }
         }
         else if (field.hasTerrain('Wasteland')) {
             damage += Math.floor(defender.maxHP() / 4);
-            texts.push('boosted Leech Seed recovery in Waterland');
+            texts.push(damage + ' boosted Leech Seed recovery in Waterland');
         }
         else {
             damage += Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
-            texts.push('Leech Seed recovery');
+            texts.push(damage + ' Leech Seed recovery');
         }
     }
     if (field.hasTerrain('Grassy')) {
         if ((0, util_2.isGrounded)(defender, field)) {
             damage += Math.floor(defender.maxHP() / 16);
-            texts.push('Grassy Terrain recovery');
+            texts.push(damage + ' Grassy Terrain recovery');
         }
     }
     if (defender.hasStatus('psn')) {
@@ -605,91 +608,92 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             else {
                 damage += Math.floor(defender.maxHP() / 8);
             }
-            texts.push('Poison Heal');
+            texts.push(damage + ' Poison Heal recovery');
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
-            texts.push('poison damage');
+            texts.push(damage + ' poison damage');
         }
     }
     else if (defender.hasStatus('tox')) {
         if (defender.hasAbility('Poison Heal')) {
             damage += Math.floor(defender.maxHP() / 8);
-            texts.push('Poison Heal');
+            texts.push(damage + ' Poison Heal recovery');
         }
         else if (!defender.hasAbility('Magic Guard')) {
-            texts.push('toxic damage');
+            damage -= Math.floor(defender.maxHP() / 8);
+            texts.push(damage + ' toxic damage');
         }
     }
     else if (defender.hasStatus('brn')) {
         if (field.hasTerrain('Icy')) {
             if (defender.hasAbility('Heatproof')) {
                 damage -= Math.floor(defender.maxHP() / 64);
-                texts.push('reduced burn damage');
+                texts.push(damage + ' reduced burn damage');
             }
             damage -= Math.floor(defender.maxHP() / 32);
-            texts.push('reduced burn damage');
+            texts.push(damage + ' reduced burn damage');
         }
         if (defender.hasAbility('Heatproof')) {
             damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
-            texts.push('reduced burn damage');
+            texts.push(damage + ' reduced burn damage');
         }
         else if (!defender.hasAbility('Magic Guard')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
-            texts.push('burn damage');
+            texts.push(damage + ' burn damage');
         }
     }
     else if ((defender.hasStatus('slp') || defender.hasAbility('Comatose')) && attacker.hasAbility('isBadDreams') && !defender.hasAbility('Magic Guard')) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Bad Dreams');
+        texts.push(damage + ' Bad Dreams damage');
     }
     if ((!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) || (field.hasTerrain('Desert') && !defender.hasAbility('Magic Guard') && defender.hasItem('Telluric Seed')) || (field.hasTerrain('Burning') && !defender.hasAbility('Magic Guard') && defender.hasItem('Elemental Seed'))) {
         if ((field.hasTerrain('Burning') && move.named('Fire Spin')) || (field.hasTerrain('Burning') && defender.hasItem('Elemental Seed')) || (field.hasTerrain('Desert') && defender.hasItem('Telluric Seed')) || (field.hasTerrain('Desert') && move.named('Sand Tomb')) || (field.hasTerrain('Dragon\'s Den') && move.named('Magma Storm')) || (field.hasTerrain('Water', 'Underwater') && move.named('Whirlpool'))) {
             damage -= Math.floor(defender.maxHP() / 6);
-            texts.push(move.name + ' trapping damage on ' + field.terrain);
+            texts.push(damage + ' ' + move.name + ' trapping damage in ' + field.terrain);
         }
         else if (move.named('Infestation') && field.hasTerrain('Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5')) {
             if (field.hasTerrain('Flower Garden 3')) {
                 damage -= Math.floor(defender.maxHP() / 6);
-                texts.push(move.name + ' trapping damage on ' + field.terrain);
+                texts.push(damage + ' ' + move.name + ' trapping damage in ' + field.terrain);
             }
             else if (field.hasTerrain('Flower Garden 4')) {
                 damage -= Math.floor(defender.maxHP() / 4);
-                texts.push(move.name + ' trapping damage on ' + field.terrain);
+                texts.push(damage + ' ' + move.name + ' trapping damage in ' + field.terrain);
             }
             else if (field.hasTerrain('Flower Garden 5')) {
                 damage -= Math.floor(defender.maxHP() / 3);
-                texts.push(move.name + ' trapping damage on ' + field.terrain);
+                texts.push(damage + ' ' + move.name + ' trapping damage in ' + field.terrain);
             }
         }
         else if (attacker.hasItem('Binding Band')) {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
-            texts.push('trapping damage');
+            texts.push(damage + ' trapping damage');
         }
         else {
             damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16);
-            texts.push('trapping damage');
+            texts.push(damage + ' trapping damage');
         }
     }
     if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') && (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
         damage -= Math.floor(defender.maxHP() / 8);
-        texts.push('Sea of Fire damage');
+        texts.push(damage + ' Sea of Fire damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Grass') && (field.defenderSide.vinelash || move.named('G-Max Vine Lash'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Vine Lash damage');
+        texts.push(damage + ' Vine Lash damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') && (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Wildfire damage');
+        texts.push(damage + ' Wildfire damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Water') && (field.defenderSide.cannonade || move.named('G-Max Cannonade'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Cannonade damage');
+        texts.push(damage + ' Cannonade damage');
     }
     if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') && (field.defenderSide.volcalith || move.named('G-Max Volcalith'))) {
         damage -= Math.floor(defender.maxHP() / 6);
-        texts.push('Volcalith damage');
+        texts.push(damage + ' Volcalith damage');
     }
     return { damage: damage, texts: texts };
 }

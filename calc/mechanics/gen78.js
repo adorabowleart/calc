@@ -2238,9 +2238,11 @@ function calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCriti
         ? 'atk'
         : move.named('Body Press')
             ? 'def'
-            : move.category === 'Special'
-                ? 'spa'
-                : 'atk';
+            : field.hasTerrain('Glitch') && move.category === 'Special' && attackSource.stats.spa < attackSource.stats.spd
+                ? 'spd'
+                : move.category === 'Special'
+                    ? 'spa'
+                    : 'atk';
     desc.attackEVs =
         move.named('Foul Play')
             ? (0, util_2.getEVDescriptionText)(gen, defender, attackStat, defender.nature)
