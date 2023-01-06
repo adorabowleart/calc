@@ -5190,7 +5190,7 @@ var SETDEX_SM = {
 			"nature": "Adamant",
 			"ability": "Natural Cure",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
-			"moves": ["DRain Punch", "Horn Leech", "Shadow Claw", "Rock Slide"]}},
+			"moves": ["Drain Punch", "Horn Leech", "Shadow Claw", "Rock Slide"]}},
 	"Tsareena": {
 		"Suzy": {"ability": "Queen Majesty", "level": 45, "evs": {"hp": 67, "at": 67, "df": 67, "sa": 67, "sd": 67, "sp": 67}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Synthesis", "Aromatherapy", "Play Rough", "Trop Kick"], "nature": "Adamant"},
 		"Matthew Doubles": {"ability": "Queen Majesty", "level": 74, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Play Rough", "High Jump Kick", "Power Whip", "Knock Off"], "nature": "Adamant", "item": "Life Orb"},
