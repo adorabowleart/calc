@@ -2834,7 +2834,7 @@ var SETDEX_SM = {
 			"level": 89,
 			"nature": "Modest",
 			"ability": "Sturdy",
-			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 25},
+			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
 			"moves": ["Thunderbolt", "Signal Beam", "Flash Cannon", "HP Water"]},
 		"T3:Breloombot Clarice (Random)": {"ability": "Magnet Pull", "level": 120, "evs": {"hp": 0, "at": 0, "df": 4, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Signal Beam", "Volt Switch", "Flash Cannon", "Thunderbolt"], "nature": "Timid", "item": "Choice Specs",},
 		"T3:John": {"ability": "Analytic", "level": 120, "evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Discharge", "Thunder Wave", "Flash Cannon", "HP Fire"], "nature": "Modest", "item": "Air Balloon",},
