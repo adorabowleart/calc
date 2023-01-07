@@ -561,13 +561,19 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         ? 'atk'
         : move.named('Body Press')
             ? 'def'
-            : move.category === 'Special'
-                ? 'spa'
-                : 'atk';
+            : field.hasTerrain('Glitch') && move.category === 'Special' && attackSource.stats.spa < attackSource.stats.spd
+                ? 'spd'
+                : move.category === 'Special'
+                    ? 'spa'
+                    : 'atk';
     var defense = calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCritical);
     var hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical' ||
         (move.named('Shell Side Arm') && (0, util_2.getShellSideArmCategory)(attacker, defender) === 'Physical');
-    var defenseStat = hitsPhysical ? 'def' : 'spd';
+    var defenseStat = hitsPhysical
+        ? 'def'
+        : !hitsPhysical && field.hasTerrain('Glitch') && defender.stats.spa > defender.stats.spd
+            ? 'spa'
+            : 'spd';
     var baseDamage = (0, util_2.getBaseDamage)(attacker.level, basePower, attack, defense);
     var isSpread = field.gameType !== 'Singles' &&
         ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
@@ -2387,7 +2393,11 @@ function calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCrit
     var defense;
     var hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical' ||
         (move.named('Shell Side Arm') && (0, util_2.getShellSideArmCategory)(attacker, defender) === 'Physical');
-    var defenseStat = hitsPhysical ? 'def' : 'spd';
+    var defenseStat = hitsPhysical
+        ? 'def'
+        : !hitsPhysical && field.hasTerrain('Glitch') && defender.stats.spa > defender.stats.spd
+            ? 'spa'
+            : 'spd';
     desc.defenseEVs = (0, util_2.getEVDescriptionText)(gen, defender, defenseStat, defender.nature);
     if (defender.boosts[defenseStat] === 0 ||
         (isCritical && defender.boosts[defenseStat] > 0) ||
