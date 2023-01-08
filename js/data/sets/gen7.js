@@ -907,7 +907,7 @@ var SETDEX_SM = {
 		"T4:Manaphy (Underwater)": {"ability": "Steelworker", "level": 125, "evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 15, "at": 15, "df": 15, "sa": 15, "sd": 15, "sp": 15}, "moves": ["Power Whip", "Anchor Shot", "Whirlpool", "Synthesis"], "nature": "Adamant", "item": "Leftovers",},
 		"T5:Genesect 2 (Short-Circuit) Doubles": {"ability": "Steelworker", "level": 126, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Anchor Shot", "Shadow Claw", "Power Whip", "Rock Slide"], "nature": "Adamant", "item": "Life Orb",}},
 	"Ditto": {
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"item": "Choice Scarf",
 			"level": 42,
 			"nature": "Timid",
@@ -965,7 +965,7 @@ var SETDEX_SM = {
 			"ability": "Multiscale",
 			"evs": {"hp": 252, "at": 64, "df": 0, "sa": 0, "sd": 0, "sp": 192},
 			"moves": ["Dragon Dance", "Fire Punch", "Extreme Speed", "Shadow Claw"]},
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"item": "Choice Band",
 			"level": 100,
 			"nature": "Adamant",
@@ -1047,7 +1047,7 @@ var SETDEX_SM = {
 			"ability": "Berserk",
 			"evs": {"hp": 252, "at": 0, "df": 4, "sa": 252, "sd": 0, "sp": 0},
 			"moves": ["Hyper Voice", "Surf", "Heat Wave", "Roost"]},
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"item": "Wiki Berry",
 			"level": 100,
 			"nature": "Modest",
@@ -1480,13 +1480,13 @@ var SETDEX_SM = {
 			"ability": "Rough Skin",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
 			"moves": ["Dragon Claw", "Earthquake", "Poison Jab", "Iron Head"]},
-		"T3RR4 (Glitch)": {
+		"T3RR4 2 (Glitch)": {
 			"item": "Assault Vest",
 			"level": 98,
 			"nature": "Jolly",
 			"ability": "Rough Skin",
 			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 0, "sd": 252, "sp": 252},
-			"moves": ["Dragon Meteor", "Bulldoze", "Stone Edge", "Flamethrower"]},
+			"moves": ["Draco Meteor", "Bulldoze", "Stone Edge", "Flamethrower"]},
 		"Lin 1": {
 			"item": "Choice Scarf",
 			"level": 100,
@@ -2247,7 +2247,7 @@ var SETDEX_SM = {
 			"nature": "Adamant", "item": "Assault Vest"},
 		"Maddie Doubles": {"ability": "Weak Armor", "level": 73, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Rock Slide", "Waterfall", "Knock Off", "X-Scissor"], "nature": "Adamant", "item": "Focus Sash"}},
 	"Kangaskhan-Mega": {
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"level": 100,
 			"nature": "Jolly",
 			"ability": "Parental Bond",
@@ -2357,13 +2357,13 @@ var SETDEX_SM = {
 			"ability": "Bulletproof",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
 			"moves": ["Dragon Dance", "Poison Jab", "Close Combat", "Outrage"]},
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"item": "Kommonium Z",
 			"level": 100,
 			"nature": "Adamant",
 			"ability": "Bulletproof",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
-			"moves": ["Clanging Scales", "Poison Jab", "Close Combat", "Poison Jab"]},
+			"moves": ["Clanging Scales", "Earthquake", "Close Combat", "Poison Jab"]},
 		"T2:Keldeo (Ashen Beach) Doubles": {"ability": "Soundproof", "level": 115, "evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20}, "moves": ["Clanging Scales", "Focus Blast", "Flash Cannon", "Flamethrower"], "nature": "Timid", "item": "Kommonium Z",},
 		"T3:MacKrezzy (Random)": {"ability": "Soundproof", "level": 120, "evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Clanging Scales", "Ice Punch", "Close Combat", "Poison Jab"], "nature": "Rash", "item": "Kommonium Z",},
 		"T3:Elias (Holy) Doubles": {"ability": "Bulletproof", "level": 120, "evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Clanging Scales", "Earthquake", "Close Combat", "Poison Jab"], "nature": "Adamant", "item": "Kommonium Z",},
@@ -3619,7 +3619,7 @@ var SETDEX_SM = {
 			"ability": "Infiltrator",
 			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252},
 			"moves": ["Boomburst", "Flamethrower", "Dragon Pulse", "Defog"]},
-		"Elias (Sancta Terra)": {
+		"Elias (Holy)": {
 			"item": "Magical Seed",
 			"level": 100,
 			"nature": "Timid",
