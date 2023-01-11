@@ -45,4 +45,3 @@ export declare class Move implements State.Move {
     clone(): Move;
 }
 export declare function getZMoveName(moveName: string, moveType: I.TypeName, item?: string): string;
-export declare function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, isStatus?: boolean, pokemonAbility?: string): string;

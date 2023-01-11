@@ -492,42 +492,8 @@ var SM = XY.filter(function (i) { return i !== 'Old Amber'; }).concat([
     'Water Memory',
     'Waterium Z',
 ]);
-var SS = SM.concat([
-    'Berry Sweet',
-    'Blunder Policy',
-    'Chipped Pot',
-    'Clover Sweet',
-    'Cracked Pot',
-    'Eject Pack',
-    'Flower Sweet',
-    'Fossilized Bird',
-    'Fossilized Dino',
-    'Fossilized Drake',
-    'Fossilized Fish',
-    'Galarica Cuff',
-    'Galarica Wreath',
-    'Heavy-Duty Boots',
-    'Leek',
-    'Love Sweet',
-    'Ribbon Sweet',
-    'Room Service',
-    'Rusted Shield',
-    'Rusted Sword',
-    'Star Sweet',
-    'Strawberry Sweet',
-    'Sweet Apple',
-    'Tart Apple',
-    'Throat Spray',
-]);
-var SV = SM.concat([
-    'Ability Shield',
-    'Booster Energy',
-    'Clear Amulet',
-    'Covert Cloak',
-    'Loaded Dice',
-    'Mirror Herb',
-    'Punching Glove',
-]);
+var SS = SM.concat([]);
+var SV = SM.concat([]);
 for (var i = 0; i < 100; i++) {
     SS.push("TR".concat(i < 10 ? "0".concat(i) : i));
 }
