@@ -45,7 +45,7 @@ var SETDEX_SS = {
 		"T3:Julia 2": {"ability": "Mold Breaker", "level": 120, "evs": {"hp": 0, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Volt Switch", "Dragon Pulse", "Power Gem", "Thunder"], "nature": "Modest", "item": "Ampharosite",}},
 	"Araquanid": {
 		"T7:20 Cell (Glitch)": {"ability": "Water Bubble", "level": 140, "evs": {"hp": 252, "at": 0, "df": 4, "sa": 0, "sd": 252, "sp": 0}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Sticky Web", "Liquidation", "Giga Drain", "Blizzard"], "nature": "Rash", "item": "Life Orb",}},
-	"Arceus-Pulse": {
+	"Arceus-.Pulse": {
 		"T8:Arceus (New World)": {"ability": "Multitype", "level": 150, "evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Judgment", "Spacial Rend", "Psyshock", "Moonlight"], "nature": "Calm", "item": "Magical Seed",},
 		"T8:Arceus (Glitch)": {"ability": "Multitype", "level": 150, "evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Roar of Time", "Blizzard", "Overheat", "Moonlight"], "nature": "Calm", "item": "Synthetic Seed",}},
 	"Aromatisse": {

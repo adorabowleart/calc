@@ -6268,7 +6268,7 @@ var SM_PATCH = {
         abilities: { 0: 'Friend Guard' },
         baseSpecies: 'Aegislash-Blade'
     },
-    'Arceus-Pulse': {
+    'Arceus-.Pulse': {
         types: ['Normal'],
         bs: { hp: 255, at: 125, df: 155, sa: 125, sd: 155, sp: 160 },
         weightkg: 320,
