@@ -1522,6 +1522,9 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             desc.moveType = move.type;
             break;
         case 'Fairy Tale':
+            if (move.hasType('Dragon')) {
+                basePower *= 2;
+            }
             if (move.named('Draining Kiss')) {
                 basePower *= 2;
             }

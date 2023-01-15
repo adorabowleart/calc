@@ -588,7 +588,7 @@ var SETDEX_SM = {
 			"moves": ["Drain Punch", "Poison Jab", "Knock Off", "Bulk Up"]},
 		"Lin 1": {
 			"item": "Flame Orb",
-			"level": 1000,
+			"level": 100,
 			"nature": "Adamant",
 			"ability": "Guts",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
