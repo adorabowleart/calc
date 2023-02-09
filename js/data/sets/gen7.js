@@ -1,7 +1,7 @@
 /* AUTOMATICALLY GENERATED FROM @smogon/sets, DO NOT EDIT! */
 var SETDEX_SM = {
 	"Abra-Pulse": {
-		"Zel 3 (Factory)": {"item": "Telluric Seed", "level": 75, "nature": "Modest", "ability": "Magic Guard", "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "moves": ["Hyper Beam", "Dark Pulse", "Hyper Beam", "Hyper Beam"]}, 
+		"Zel 3 (Factory)": {"item": "Silk Scarf", "level": 75, "nature": "Modest", "ability": "Magic Guard", "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "moves": ["Hyper Beam", "Dark Pulse", "Hyper Beam", "Hyper Beam"]}, 
 		"Lin 1": {"item": "Life Orb", "level": 100, "nature": "Timid", "ability": "Magic Guard", "evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252}, "moves": ["Psyshock", "Shadow Ball", "Aura Sphere", "Flash Cannon"]}}, 
 	"Absol": {
 		"Luna (Dark Crystal Cavern)": {"item": "Life Orb", "level": 64, "nature": "Adamant", "ability": "Pressure", "evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252}, "moves": ["Swords Dance", "Night Slash", "Sucker Punch", "Play Rough"]},
@@ -504,6 +504,13 @@ var SETDEX_SM = {
 			"ability": "Tough Claws",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
 			"moves": ["Dragon Dance", "Flare Blitz", "Dragon Claw", "Earthquake"]},},
+	"Chansey": {
+		"T3RR4 2": {
+			"level": 96,
+			"nature": "Calm",
+			"ability": "Serene Grace",
+			"evs": {"hp": 4, "at": 0, "df": 252, "sa": 0, "sd": 252, "sp": 0},
+			"moves": ["Blizzard", "Thuderbolt", "Psyquic", "Soft-Boiled"]},},
 	"Chatot": {
 		"Taka 1 (Rocky)": {
 			"level": 25,
