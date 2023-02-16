@@ -1619,7 +1619,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             break;
         case 'Glitch':
             if (move.hasType('Psychic')) {
-                basePower *= 1.5;
+                basePower *= 1.2;
             }
             else if (move.named('Splintered Stormshards')) {
                 basePower *= 1.3;
