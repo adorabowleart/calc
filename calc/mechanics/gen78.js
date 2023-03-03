@@ -2587,13 +2587,6 @@ function calculateFinalModsSMSS(gen, attacker, defender, move, field, desc, isCr
             desc.defenderAbility = defender.ability;
         }
     }
-    if (defender.hasAbility('Multiscale') &&
-        defender.curHP() === defender.maxHP() &&
-        !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
-        !attacker.hasAbility('Parental Bond (Child)')) {
-        finalMods.push(2048);
-        desc.defenderAbility = defender.ability;
-    }
     if (field.defenderSide.isFriendGuard) {
         finalMods.push(3072);
         desc.isFriendGuard = true;
