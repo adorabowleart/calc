@@ -866,7 +866,7 @@ var SETDEX_SM = {
 			"nature": "Jolly",
 			"ability": "Multiscale",
 			"evs": {"hp": 252, "at": 64, "df": 0, "sa": 0, "sd": 0, "sp": 192},
-			"moves": ["Dragon Dance", "Fire Punch", "Extreme Speed", "Shadow Claw"]},
+			"moves": ["Dragon Dance", "Fire Punch", "Extreme Speed", "Dragon Claw"]},
 		"Elias (Holy)": {
 			"item": "Choice Band",
 			"level": 100,
