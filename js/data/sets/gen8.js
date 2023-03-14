@@ -39,7 +39,7 @@ var SETDEX_SS = {
 		"T5:Pulse Camerupt (New World) Doubles": {"ability": "Effect Spore", "level": 130, "evs": {"hp": 252, "at": 0, "df": 252, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Spore", "Strength Sap", "Rage Powder", "Sludge Bomb"], "nature": "Bold", "item": "Black Sludge",},
 		"T7:Not Mewtwo": {"ability": "Effect Spore", "level": 100, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 10, "at": 10, "df": 10, "sa": 10, "sd": 10, "sp": 10}, "moves": ["Spore", "Giga Drain", "Toxic", "Venoshock"], "nature": "Hardy", "item": "Black Sludge",}},
 	"Ampharos": {
-		"T5:Genesect 3 (Short-Circuit) Doubles": {"ability": "Plus", "level": 126, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Zap Cannon", "Dragon Pulse", "Signal Beam", "Volt Switch"], "nature": "Modest", "item": "Wide Lens",}},
+		"T5:Genesect 3 (Short-Circuit) Doubles": {"ability": "Plus", "level": 126, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Zap Cannon", "Dragon Pulse", "Signal Beam", "Volt Switch"], "nature": "Modest", "item": "WPulseide Lens",}},
 	"Ampharos-Mega": {
 		"T3:Julia (Random)": {"ability": "Mold Breaker", "level": 120, "evs": {"hp": 0, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Volt Switch", "Dragon Pulse", "Power Gem", "Thunder"], "nature": "Modest", "item": "Ampharosite",},
 		"T3:Julia 2": {"ability": "Mold Breaker", "level": 120, "evs": {"hp": 0, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Volt Switch", "Dragon Pulse", "Power Gem", "Thunder"], "nature": "Modest", "item": "Ampharosite",}},
@@ -56,7 +56,7 @@ var SETDEX_SS = {
 		"T5:Genesect 5 (Short-Circuit) Doubles": {"ability": "Snow Warning", "level": 128, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Nature Power", "Blizzard", "Flash Cannon", "Discharge"], "nature": "Modest", "item": "Synthetic Seed",},
 		"T5:Tanner (Holy) Doubles": {"ability": "Refrigerate", "level": 126, "evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Round", "Earth Power", "Stealth Rock", "Nature Power"], "nature": "Modest", "item": "Stone Plate",}},
 	"Avalugg-Pulse": {
-		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Stamina", "level": 130, "evs": {"hp": 252, "at": 252, "df": 4, "sa": 0, "sd": 0, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Power Whip", "Roar", "Strength Sap", "Rock Slide"], "nature": "Brave", "item": "Lum Berry",}},
+		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Solid Rock", "level": 130, "evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Heavy Slam", "Ice Shard", "Precipice Blades", "Smack Down"], "nature": "Brave", "item": "Assault Vest",}},
 	"Azumarill": {
 		"T4:Tapu Fini (Misty)": {"ability": "Huge Power", "level": 125, "evs": {"hp": 252, "at": 4, "df": 0, "sa": 0, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Belly Drum", "Aqua Jet", "Play Rough", "Superpower"], "nature": "Adamant", "item": "Elemental Seed",}},
 	"Banette-Mega": {
@@ -583,7 +583,7 @@ var SETDEX_SS = {
 	"Tangrowth": {
 		"T4:Laura (Psychic) Doubles": {"ability": "Leaf Guard", "level": 125, "evs": {"hp": 252, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 0}, "ivs": {"hp": 5, "at": 5, "df": 5, "sa": 5, "sd": 5, "sp": 5}, "moves": ["Rock Slide", "Solar Beam", "Nature Power", "Psych Up"], "nature": "Modest", "item": "Life Orb",}},
 	"Tangrowth-Pulse-A": {
-		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Solid Rock", "level": 130, "evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Heavy Slam", "Ice Shard", "Precipice Blades", "Smack Down"], "nature": "Brave", "item": "Assault Vest",}},
+		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Stamina", "level": 130, "evs": {"hp": 252, "at": 252, "df": 4, "sa": 0, "sd": 0, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Power Whip", "Roar", "Strength Sap", "Rock Slide"], "nature": "Brave", "item": "Lum Berry",}},
 	"Tangrowth-Pulse-B": {
 		"T5:Pulse Tangrowth (Swamp) Doubles": {"ability": "Arena Trap", "level": 130, "evs": {"hp": 252, "at": 0, "df": 4, "sa": 0, "sd": 252, "sp": 0}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Trick Room", "Sleep Powder", "Petal Blizzard", "Mud Bomb"], "nature": "Sassy", "item": "Amplifield Rock",}},
 	"Tangrowth-Pulse-C": {
