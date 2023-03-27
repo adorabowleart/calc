@@ -5085,7 +5085,7 @@ var SETDEX_SM = {
 			"level": 72,
 			"nature": "Bold",
 			"ability": "Ice Body",
-			"evs": {"hp": 252, "at": 0, "df": 4, "sa": 85, "sd": 252, "sp": 0},
+			"evs": {"hp": 252, "at": 0, "df": 4, "sa": 0, "sd": 252, "sp": 0},
 			"ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20},
 			"moves": ["Protect", "Blizzard", "Surf", "Stockpile"]},
 		"Blake 3 (Icy)": {
