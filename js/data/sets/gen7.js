@@ -2830,31 +2830,7 @@ var SETDEX_SM = {
 			"nature": "Jolly",
 			"ability": "Pure Power",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
-			"moves": ["Fake Out", "High Jump Kick", "Zen Headbutt", "Fire Punch"]},
-		"Cain 3 (Wasteland)": {
-			"level": 44,
-			"nature": "Timid",
-			"ability": "Competitive",
-			"evs": {"hp": 66, "at": 66, "df": 66, "sa": 66, "sd": 66, "sp": 66},
-			"ivs": {"hp": 15, "at": 15, "df": 15, "sa": 15, "sd": 15, "sp": 15},
-			"moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"]},
-		"Cain 4 (Chess Arena: Knight)": {
-			"item": "Wise Glasses",
-			"level": 54,
-			"nature": "Timid",
-			"ability": "Competitive",
-			"evs": {"hp": 81, "at": 81, "df": 81, "sa": 81, "sd": 81, "sp": 81},
-			"ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20},
-			"moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"]},
-		"Cain 5 (Factory) Doubles": {
-			"item": "Damp Rock",
-			"level": 81,
-			"nature": "Timid",
-			"ability": "Competitive",
-			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252},
-			"ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20},
-			"moves": ["Charge Beam", "Psychic", "Rain Dance", "Reflect"]},
-		"Partner Cain (Connal/Sirius)": {"ability": "Competitive", "level": 44, "evs": {"hp": 66, "at": 66, "df": 66, "sa": 66, "sd": 66, "sp": 66}, "ivs": {"hp": 10, "at": 10, "df": 10, "sa": 10, "sd": 10, "sp": 10}, "moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"], "nature": "Timid",}},
+			"moves": ["Fake Out", "High Jump Kick", "Zen Headbutt", "Fire Punch"]}},
 	"Metagross": {
 		"Radomus (Chess Arena: King) Doubles": {
 			"item": "King's Rock",
@@ -2900,6 +2876,31 @@ var SETDEX_SM = {
 			"ability": "Tough Claws",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
 			"moves": ["Meteor Mash", "Earthquake", "Zen Headbutt", "Bullet Punch"]},},
+	"Meowstic-F": {
+		"Cain 3 (Wasteland)": {
+			"level": 44,
+			"nature": "Timid",
+			"ability": "Competitive",
+			"evs": {"hp": 66, "at": 66, "df": 66, "sa": 66, "sd": 66, "sp": 66},
+			"ivs": {"hp": 15, "at": 15, "df": 15, "sa": 15, "sd": 15, "sp": 15},
+			"moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"]},
+		"Cain 4 (Chess Arena: Knight)": {
+			"item": "Wise Glasses",
+			"level": 54,
+			"nature": "Timid",
+			"ability": "Competitive",
+			"evs": {"hp": 81, "at": 81, "df": 81, "sa": 81, "sd": 81, "sp": 81},
+			"ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20},
+			"moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"]},
+		"Cain 5 (Factory) Doubles": {
+			"item": "Damp Rock",
+			"level": 81,
+			"nature": "Timid",
+			"ability": "Competitive",
+			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252},
+			"ivs": {"hp": 20, "at": 20, "df": 20, "sa": 20, "sd": 20, "sp": 20},
+			"moves": ["Charge Beam", "Psychic", "Rain Dance", "Reflect"]},
+		"Partner Cain (Connal/Sirius)": {"ability": "Competitive", "level": 44, "evs": {"hp": 66, "at": 66, "df": 66, "sa": 66, "sd": 66, "sp": 66}, "ivs": {"hp": 10, "at": 10, "df": 10, "sa": 10, "sd": 10, "sp": 10}, "moves": ["Charge Beam", "Psychic", "Shadow Ball", "Light Screen"], "nature": "Timid",}},
 	"Mewtwo": {
 		"PKMNPKMNT M2 (Glitch Field)": {
 			"item": "Leftovers",
