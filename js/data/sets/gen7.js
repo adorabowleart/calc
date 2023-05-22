@@ -1638,7 +1638,7 @@ var SETDEX_SM = {
 			"level": 83,
 			"nature": "Calm",
 			"ability": "Shadow Tag",
-			"evs": {"hp": 252, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 0},
+			"evs": {"hp": 252, "at": 0, "df": 252, "sa": 0, "sd": 4, "sp": 0},
 			"moves": ["Calm Mind", "Charge Beam", "Foul Play", "Psychic"]},
 		"Avril Doubles": {
 			"item": "Wise Glasses",
