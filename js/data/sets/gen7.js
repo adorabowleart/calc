@@ -1321,6 +1321,14 @@ var SETDEX_SM = {
 			"ability": "Swarm",
 			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252},
 			"moves": ["Sticky Web", "Bug Buzz", "Thunder", "Electroweb"]}},
+	"Garbodor-Pulse": {
+		"Mr.Bigglesworth": {
+			"item": "Black Sludge",
+			"level": 65,
+			"nature": "Adamant",
+			"ability": "Gooey",
+			"evs": {"hp": 252, "at": 252, "df": 4, "sa": 0, "sd": 0, "sp": 0},
+			"moves": ["Gunk Shot", "Pain Split", "Stockpile", "Drain Punch"]}},
 	"Garchomp": {
 		"Solaris (Superheated)": {
 			"item": "Leftovers",
@@ -4763,6 +4771,12 @@ var SETDEX_SM = {
 			"ability": "Natural Cure",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
 			"moves": ["Drain Punch", "Horn Leech", "Shadow Claw", "Rock Slide"]}},
+	"Trubbish": {
+		"Mr. Bigglesworth": {
+			"level": 30,
+			"nature": "Bashful",
+			"ability": "Aftermath",
+			"moves": ["Toxic Spikes", "Sludge Bomb", "Self-Destruct", "Acid Spray"]}},
 	"Tsareena": {
 		"Suzy": {"ability": "Queen Majesty", "level": 45, "evs": {"hp": 67, "at": 67, "df": 67, "sa": 67, "sd": 67, "sp": 67}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Synthesis", "Aromatherapy", "Play Rough", "Trop Kick"], "nature": "Adamant"},
 		"Matthew Doubles": {"ability": "Queen Majesty", "level": 74, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Play Rough", "High Jump Kick", "Power Whip", "Knock Off"], "nature": "Adamant", "item": "Life Orb"},},

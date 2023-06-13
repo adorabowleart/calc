@@ -6186,6 +6186,7 @@ var SM_PATCH = {
     Camerupt: { otherFormes: ['Camerupt-Pulse', 'Camerupt-Mega'] },
     Cinccino: { otherFormes: ['Cinccino-Cass'] },
     Clawitzer: { otherFormes: ['Clawitzer-Pulse'] },
+    Garbodor: { otherFormes: ['Garbodor-Pulse'] },
     Gardevoir: { otherFormes: ['Gardevoir-Cass', 'Gardevoir-Mega'] },
     Glaceon: { otherFormes: ['Glaceon-Cass'] },
     Hypno: { otherFormes: ['Hypno-Pulse'] },
@@ -6314,6 +6315,12 @@ var SM_PATCH = {
         bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 80 },
         weightkg: 48.4,
         abilities: { 0: 'Synchronize' }
+    },
+    'Garbodor-Pulse': {
+        types: ['Poison'],
+        bs: { hp: 80, at: 137, df: 107, sa: 60, sd: 107, sp: 85 },
+        weightkg: 107.3,
+        abilities: { 0: 'Gooey' }
     },
     'Glaceon-Cass': {
         types: ['Ice', 'Ghost'],
