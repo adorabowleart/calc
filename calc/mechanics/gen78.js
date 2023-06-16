@@ -2333,7 +2333,7 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
             desc.attackerAbility = attacker.ability;
         }
     }
-    else if ((attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) || (attacker.hasItem('Elemental Seed') && field.hasTerrain('Dragon\'s Den'))) {
+    else if ((attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) || (attacker.hasItem('Elemental Seed') && field.hasTerrain('Dragon\'s Den') && move.hasType('Fire'))) {
         atMods.push(6144);
         desc.attackerAbility = 'Flash Fire';
     }
