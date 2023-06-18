@@ -949,7 +949,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         var lostHP10 = damage.map(function (num) { return Math.floor(num * 15); });
         result.damage = lostHP4.concat(lostHP5, lostHP6, lostHP7, lostHP8, lostHP9, lostHP10);
         exports.magdmg = lostHP4.concat(lostHP5, lostHP5, lostHP6, lostHP6, lostHP6, lostHP6, lostHP7, lostHP7, lostHP7, lostHP7, lostHP7, lostHP7, lostHP8, lostHP8, lostHP8, lostHP8, lostHP9, lostHP9, lostHP10);
-        exports.strikerdmg.sort(function (a, b) { return a - b; });
+        exports.magdmg.sort(function (a, b) { return a - b; });
         return result;
     }
     return result;
