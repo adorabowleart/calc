@@ -397,7 +397,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     else if (field.hasTerrain('Glitch')) {
         if (move.hasType('Bug') && defender.hasType('Poison')) {
-            typeEffectiveness *= 2;
+            typeEffectiveness *= 4;
         }
         if (move.hasType('Poison') && defender.hasType('Bug')) {
             typeEffectiveness *= 2;
@@ -410,8 +410,12 @@ function calculateSMSS(gen, attacker, defender, move, field) {
                 typeEffectiveness = gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] +
                     (defender.types[1] ? gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] : 1);
             }
-            defender.hasType('Steel', 'Dragon');
-            typeEffectiveness *= 2;
+            if (defender.hasType('Steel')) {
+                typeEffectiveness *= 2;
+            }
+            if (defender.hasType('Dragon')) {
+                typeEffectiveness /= 2;
+            }
         }
         if (move.hasType('Ghost') && defender.hasType('Psychic')) {
             typeEffectiveness = 0;
