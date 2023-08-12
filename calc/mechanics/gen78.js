@@ -1147,12 +1147,19 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             }
             break;
         case 'Plasma Fists':
+            basePower = move.bp;
+            if (!field.hasTerrain('Underwater', 'New World') && !attacker.hasItem('Everstone')) {
+                basePower = move.bp * 1.3;
+            }
+            desc.moveBP = basePower;
+            break;
         case 'Stoked Sparksurfer':
-            basePower = move.bp * (!field.hasTerrain('Underwater', 'New World') ? 1.3 : 1);
+        case 'Genesis Supernova':
+            basePower = move.bp * (field.hasTerrain('Underwater', 'New World') ? 1 : 1.3);
             desc.moveBP = basePower;
             break;
         case 'Bloom Doom':
-            basePower = move.bp * (!field.hasTerrain('Underwater', 'New World', 'Forest', 'Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') ? 1.3 : 1);
+            basePower = move.bp * (field.hasTerrain('Underwater', 'New World', 'Forest', 'Flower Garden 1', 'Flower Garden 2', 'Flower Garden 3', 'Flower Garden 4', 'Flower Garden 5') ? 1 : 1.3);
             desc.moveBP = basePower;
             break;
         case 'Eruption':
@@ -1850,7 +1857,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling Gleam', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Splintered Stormshards', 'Dark Pulse', 'Night Daze', 'Nigh Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
+            else if (move.named('Splintered Stormshards', 'Dark Pulse', 'Night Daze', 'Night Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
                 basePower *= 1.3;
             }
             else if (move.named('Light That Burns the Sky')) {
