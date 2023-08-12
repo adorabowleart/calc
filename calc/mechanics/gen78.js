@@ -750,7 +750,7 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             return result;
         }
     }
-    if (field.hasTerrain('Big Top') && (move.named('Blaze Kick', 'Body Slam', 'Bounce', 'Brutal Swing', 'Bulldoze', 'Crabhammer', 'Dragon Hammer', 'Dragon Rush', 'Dual Chop', 'Earthquake', 'Giga Impact', 'Heat Crash', 'Heavy Slam', 'High Horsepower', 'Ice Hammer', 'Icicle Crash', 'Iron Tail', 'Magnitude', 'Meteor Maash', 'Pound', 'Sky Drop', 'Smack Down', 'Stomp', 'Stomping Tantrum', 'Strength', 'Wood Hammer') || (move.hasType('Fighting') && move.category == 'Physical'))) {
+    if (field.hasTerrain('Big Top') && (move.named('Blaze Kick', 'Body Slam', 'Bounce', 'Brutal Swing', 'Bulldoze', 'Crabhammer', 'Dragon Hammer', 'Dragon Rush', 'Dual Chop', 'Earthquake', 'Giga Impact', 'Heat Crash', 'Heavy Slam', 'High Horsepower', 'Ice Hammer', 'Icicle Crash', 'Iron Tail', 'Magnitude', 'Meteor Mash', 'Pound', 'Sky Drop', 'Smack Down', 'Stomp', 'Stomping Tantrum', 'Strength', 'Wood Hammer') || (move.hasType('Fighting') && move.category == 'Physical'))) {
         if (move.named('Magnitude')) {
             var lostHP4Weak = damage.map(function (num) { return Math.floor(num * 0.5); });
             var lostHP4OK = damage;
@@ -1857,7 +1857,7 @@ function calculateBasePowerSMSS(gen, attacker, defender, move, field, hasAteAbil
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Magnet Bomb', 'Muddy Water', 'Surf', 'Dazzling Gleam', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Splintered Stormshards', 'Dark Pulse', 'Night Daze', 'Night Slash', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
+            else if (move.named('Splintered Stormshards', 'Night Slash', 'Dark Pulse', 'Night Daze', 'Shadow Ball', 'Shadow Bone', 'Shadow Claw', 'Shadow Force', 'Shadow Punch', 'Shadow Sneak', 'Charge Beam', 'Discharge', 'Nature Power', 'Parabolic Charge', 'Wild Charge', 'Gigavolt Havoc')) {
                 basePower *= 1.3;
             }
             else if (move.named('Light That Burns the Sky')) {
