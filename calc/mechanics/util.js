@@ -401,7 +401,7 @@ function checkSeedBoost(pokemon, field) {
                     : Math.min(6, pokemon.boosts.spe + 1);
             }
             else if (field.hasTerrain('Icy')) {
-                pokemon.boosts.def = pokemon.hasAbility('Contrary')
+                pokemon.boosts.spe = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.spe - 2)
                     : Math.min(6, pokemon.boosts.spe + 2);
             }
