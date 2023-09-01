@@ -2445,8 +2445,12 @@ function calculateDfModsSMSS(gen, attacker, defender, move, field, desc, isCriti
     if (field.hasTerrain('New World') && !(0, util_2.isGrounded)(defender, field)) {
         dfMods.push(3686);
     }
-    if (((field.hasTerrain('Misty') && defender.hasType('Fairy') && move.category === 'Special')) || (field.hasTerrain('Dragon\'s Den') && defender.hasType('Dragon')) || (field.hasTerrain('Desert') && defender.hasType('Ground')) || (field.hasTerrain('Icy', 'Snowy Mt') && defender.hasType('Ice') && field.hasWeather('Hail'))) {
+    if (((field.hasTerrain('Misty') && defender.hasType('Fairy') && move.category === 'Special')) || (field.hasTerrain('Desert') && defender.hasType('Ground')) || (field.hasTerrain('Icy', 'Snowy Mt') && defender.hasType('Ice') && field.hasWeather('Hail'))) {
         dfMods.push(6144);
+        desc.terrain = field.terrain;
+    }
+    if (field.hasTerrain('Dragon\'s Den') && defender.hasType('Dragon')) {
+        dfMods.push(5325);
         desc.terrain = field.terrain;
     }
     if (field.hasTerrain('Dark Crystal') && (defender.hasType('Dark', 'Ghost'))) {
