@@ -402,8 +402,8 @@ function checkSeedBoost(pokemon, field) {
             }
             else if (field.hasTerrain('Icy')) {
                 pokemon.boosts.def = pokemon.hasAbility('Contrary')
-                    ? Math.max(-6, pokemon.boosts.def - 2)
-                    : Math.min(6, pokemon.boosts.def + 2);
+                    ? Math.max(-6, pokemon.boosts.spe - 2)
+                    : Math.min(6, pokemon.boosts.spe + 2);
             }
         }
         else if (pokemon.hasItem('Magical Seed')) {
