@@ -2980,6 +2980,7 @@ var SETDEX_SM = {
 			"moves": ["Drain Punch", "Play Rough", "Swords Dance", "Shadow Sneak"]},
 		"Cain 5 (Factory) Doubles": {
 			"level": 81,
+			"item":"Electric Gem",
 			"nature": "Lonely",
 			"ability": "Disguise",
 			"evs": {"hp": 128, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 128},
