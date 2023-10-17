@@ -655,7 +655,7 @@ var SETDEX_SM = {
 			"ability": "Storm Drain",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
 			"ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0},
-			"moves": ["Stockpile", "Smack Down", "Recover", "Sandstorm"]},
+			"moves": ["Stealth Rock", "Earth Power", "Rock Slide", "Giga Drain"]},
 		"Florinia 2 (Glitch)": {
 			"item": "Synthetic Seed",
 			"level": 95,
