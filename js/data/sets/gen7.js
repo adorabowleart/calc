@@ -507,6 +507,7 @@ var SETDEX_SM = {
 	"Chansey": {
 		"T3RR4 2": {
 			"level": 96,
+			"item":"Eviolite",
 			"nature": "Calm",
 			"ability": "Serene Grace",
 			"evs": {"hp": 4, "at": 0, "df": 252, "sa": 0, "sd": 252, "sp": 0},
@@ -1256,7 +1257,7 @@ var SETDEX_SM = {
 		"Lin 2 (New World)": {
 			"item": "Life Orb",
 			"level": 100,
-			"nature": "Rasht",
+			"nature": "Rash",
 			"ability": "Levitate",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
 			"moves": ["Earth Power", "Draco Meteor", "Throat Chop", "Roost"]},},
@@ -4574,7 +4575,7 @@ var SETDEX_SM = {
 			"level": 100,
 			"nature": "Calm",
 			"ability": "Pixilate",
-			"evs": {"hp": 252, "at": 0, "df": 0, "sa": 4, "sd": 0, "sp": 0},
+			"evs": {"hp": 252, "at": 0, "df": 252, "sa": 4, "sd": 0, "sp": 0},
 			"moves": ["Swift", "Shadow Ball", "Wish", "Protect"]},
 		"Santiago": {"ability": "Pixilate", "level": 80, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Hyper Voice", "Wish", "Shadow Ball", "HP"], "nature": "Modest"},},
 	"Talonflame": {

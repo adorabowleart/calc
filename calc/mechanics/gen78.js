@@ -462,14 +462,12 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Magma Armor') && field.hasTerrain('Dragon\'s Den')) ||
-        (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
-        (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
-        (move.hasType('Electric') &&
-            defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
-        (move.hasType('Ground') &&
-            !field.isGravity && !move.named('Thousand Arrows') &&
-            !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
+        (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) || (move.hasType('Rock')) && field.hasTerrain('Crystal Grass') && defender.hasAbility("Sap Sipper") ||
+        (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) || (move.hasType('Rock')) && field.hasTerrain('Crystal Fire') && defender.hasAbility("Flash Fire") ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) || (move.hasType('Rock')) && field.hasTerrain('Crystal Water') && (defender.hasAbility("Water Absorb") || defender.hasAbility('Storm Drain')) ||
+        (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
+        (move.hasType('Rock')) && field.hasTerrain('Crystal Psychic') && defender.hasType('Dark') ||
+        (move.hasType('Ground') && !field.isGravity && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
         (move.flags.bullet && (defender.hasAbility('Bulletproof') || (defender.boosts.def > 0 && field.hasTerrain('Rocky')))) ||
         (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
         (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
@@ -2347,6 +2345,9 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
     else if ((attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) || (attacker.hasItem('Elemental Seed') && field.hasTerrain('Dragon\'s Den') && move.hasType('Fire'))) {
         atMods.push(6144);
         desc.attackerAbility = 'Flash Fire';
+    }
+    if (attacker.hasItem('Eviolite') && field.hasTerrain('Glitch')) {
+        atMods.push(6144);
     }
     else if (attacker.hasItem('Elemental Seed') && field.hasTerrain('Electric') && move.hasType('Electric')) {
         atMods.push(8192);
