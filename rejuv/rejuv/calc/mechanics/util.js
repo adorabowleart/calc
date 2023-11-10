@@ -52,7 +52,8 @@ function isGrounded(pokemon, field) {
     return (field.isGravity ||
         (field.hasTerrain('Deep-Earth') && pokemon.hasAbility('Magnet Pull', 'Contrary', 'Oblivious', 'Unaware')) ||
         pokemon.hasItem('Iron Ball') ||
-        (!pokemon.hasType('Flying') && !pokemon.hasAbility('Levitate') && !pokemon.hasItem('Air Balloon')));
+        (!pokemon.hasType('Flying') && !pokemon.hasAbility('Levitate') && !pokemon.hasItem('Air Balloon')) ||
+        (pokemon.hasItem('Probopass Crest') && pokemon.name === 'Probopass'));
 }
 exports.isGrounded = isGrounded;
 function getModifiedStat(stat, mod, gen) {
@@ -257,6 +258,9 @@ function getFinalSpeed(gen, pokemon, field, side) {
     }
     if ((field.hasWeather('Shadow Sky') || field.hasTerrain('Dark-Crystal')) && pokemon.hasAbility('Shadow Dance')) {
         speedMods.push(6144);
+    }
+    if (pokemon.hasItem('Empoleon Crest') && pokemon.name === 'Empoleon' && (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy-Mountain', 'Frozen'))) {
+        speedMods.push(8192);
     }
     speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
     if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet')) {
@@ -836,9 +840,6 @@ function checkSeedBoost(pokemon, field) {
     }
 }
 exports.checkSeedBoost = checkSeedBoost;
-function checkCrest(pokemon) {
-}
-exports.checkCrest = checkCrest;
 function checkMultihitBoost(gen, attacker, defender, move, field, desc, usedWhiteHerb) {
     if (usedWhiteHerb === void 0) { usedWhiteHerb = false; }
     if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {

@@ -19,7 +19,6 @@ export declare function checkDauntlessShield(source: Pokemon, gen: Generation, f
 export declare function checkEmbody(source: Pokemon, gen: Generation): void;
 export declare function checkInfiltrator(pokemon: Pokemon, affectedSide: Side): void;
 export declare function checkSeedBoost(pokemon: Pokemon, field: Field): void;
-export declare function checkCrest(pokemon: Pokemon): void;
 export declare function checkMultihitBoost(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, usedWhiteHerb?: boolean): boolean;
 export declare function chainMods(mods: number[], lowerBound: number, upperBound: number): number;
 export declare function getBaseDamage(level: number, basePower: number, attack: number, defense: number): number;
@@ -27,7 +26,7 @@ export declare function getQPBoostedStat(pokemon: Pokemon, gen?: Generation): St
 export declare function isQPActive(pokemon: Pokemon, field: Field): boolean;
 export declare function getFinalDamage(baseAmount: number, i: number, effectiveness: number, isBurned: boolean, stabMod: number, finalMod: number, protect?: boolean): number;
 export declare function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory;
-export declare function getWeightFactor(pokemon: Pokemon, field: Field): 2 | 4 | 1 | 0.5;
+export declare function getWeightFactor(pokemon: Pokemon, field: Field): 1 | 2 | 0.5 | 4;
 export declare function countBoosts(gen: Generation, boosts: StatsTable): number;
 export declare function getEVDescriptionText(gen: Generation, pokemon: Pokemon, stat: 'atk' | 'def' | 'spd' | 'spa', natureName: NatureName): string;
 export declare function handleFixedDamageMoves(attacker: Pokemon, move: Move, field: Field): number;

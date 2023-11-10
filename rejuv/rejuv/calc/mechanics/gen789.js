@@ -16,8 +16,6 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     (0, util_2.checkWonderRoom)(defender, field.isWonderRoom);
     (0, util_2.checkSeedBoost)(attacker, field);
     (0, util_2.checkSeedBoost)(defender, field);
-    (0, util_2.checkCrest)(attacker);
-    (0, util_2.checkCrest)(defender);
     (0, util_2.checkDauntlessShield)(attacker, gen, field);
     (0, util_2.checkDauntlessShield)(defender, gen, field);
     (0, util_2.checkEmbody)(attacker, gen);
@@ -633,6 +631,348 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             typeEffectiveness *= 0;
         }
     }
+    switch (attacker.item) {
+        case 'Gothitelle Crest':
+            if (attacker.name === 'Gothitelle') {
+                if (move.hasType('Dark')) {
+                    attacker.types = ['Dark'];
+                }
+                else if (move.hasType('Psychic')) {
+                    attacker.types = ['Psychic'];
+                }
+            }
+            break;
+        case 'Magcargo Crest':
+            if (attacker.name === 'Magcargo') {
+                attacker.stats.spe = attacker.stats.def;
+                attacker.stats.spa *= 1.1;
+            }
+            break;
+        case 'Fearow Crest':
+            if (attacker.name === 'Fearow' && move.named('Drill Peck', 'Drill Run', 'Megahorn')) {
+                move.bp *= 1.5;
+            }
+            break;
+        case 'Stantler Crest':
+            if (attacker.name === 'Stantler' || attacker.name === 'Wyrdeer') {
+                attacker.stats.atk *= 1.5;
+            }
+            break;
+        case 'Hypno Crest':
+            if (attacker.name === 'Hypno') {
+                attacker.stats.spa *= 1.5;
+            }
+            break;
+        case 'Relicanth Crest':
+            if (attacker.name === 'Relicanth') {
+                attacker.stats.atk *= 1.2;
+            }
+            break;
+        case 'Oricorio Crest':
+            if (attacker.name === 'Oricorio') {
+                attacker.stats.spe *= 1.25;
+                attacker.stats.spa *= 1.25;
+            }
+            break;
+        case 'Seviper Crest':
+            if (attacker.name === 'Seviper') {
+                attacker.stats.spe *= 1.5;
+            }
+            break;
+        case 'Cofagrigus Crest':
+            if (attacker.name === 'Cofagrigus') {
+                attacker.stats.spa *= 1.25;
+            }
+            break;
+        case 'Dusknoir Crest':
+            if (attacker.name === 'Dusknoir') {
+                attacker.stats.atk *= 1.20;
+                if (move.bp <= 60) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Skuntank Crest':
+            if (attacker.name === 'Skuntank') {
+                attacker.stats.atk *= 1.2;
+                attacker.stats.spe *= 1.2;
+            }
+            break;
+        case 'Cherrim Crest':
+            if (attacker.name === 'Cherrim-Sunshine') {
+                attacker.stats.spa *= 1.5;
+                attacker.stats.atk *= 1.5;
+            }
+            break;
+        case 'Claydol Crest':
+            if (attacker.name === 'Claydol') {
+                attacker.stats.spa = attacker.stats.def;
+                if (move.name.includes(' Beam')) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Dedenne Crest':
+            if (attacker.name === 'Dedenne') {
+                attacker.stats.atk = attacker.stats.spe;
+            }
+            break;
+        case 'Feraligatr Crest':
+            if (attacker.name === 'Feraligatr') {
+                if (move.bp > 0) {
+                    move.priority += 1;
+                }
+                if (move.flags.bite) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Ledian Crest':
+            if (attacker.name === 'Ledian' && move.flags.punch) {
+                move.bp *= 4;
+            }
+            break;
+        case 'Ariados Crest':
+            if (attacker.name === 'Ariados') {
+                attacker.stats.spe *= 1.5;
+                if (defender.hasStatus('psn', 'tox') || defender.boosts['spe'] < 0) {
+                    move.isCrit = true;
+                }
+            }
+            break;
+        case 'Whiscash Crest':
+            if (attacker.name === 'Whiscash') {
+                attacker.stats.atk *= 1.2;
+                attacker.stats.spa *= 1.2;
+            }
+            break;
+        case 'Infernape Crest':
+            if (attacker.name === 'Infernape') {
+                attacker.stats.atk = attacker.stats.def;
+            }
+            break;
+        case 'Empoleon Crest':
+            if (attacker.name === 'Empoleon') {
+                if (move.hasType('Ice')) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Thievul Crest':
+            if (attacker.name === 'Thievul') {
+                attacker.stats.spe *= 1.5;
+            }
+            break;
+        case 'Probopass Crest':
+            if (attacker.name === 'Probopass') {
+                move.bp += 60;
+            }
+            break;
+        case 'Druddigon Crest':
+            if (attacker.name === 'Druddigon') {
+                if (move.hasType('Fire')) {
+                    move.bp *= 1.3;
+                }
+                if (move.hasType('Dragon')) {
+                    move.bp *= 1.3;
+                }
+            }
+            break;
+        case 'Luxray Crest':
+            if (attacker.name === 'Luxray') {
+                attacker.types = ['Electric', 'Dark'];
+            }
+            if (move.hasType('Normal')) {
+                move.type = 'Electric';
+            }
+            break;
+        case 'Boltund Crest':
+            if (attacker.name === 'Boltund') {
+                if (attacker.stats.spe > defender.stats.spe && move.flags.bite) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Samurott Crest':
+            if (attacker.name === 'Samurott') {
+                attacker.types = ['Water', 'Fighting'];
+                if (move.flags.slicing) {
+                    move.bp *= 1.5;
+                }
+            }
+            break;
+        case 'Reuniclus Crest':
+            if (attacker.name === 'Reuniclus') {
+                if (move.hasType('Fighting')) {
+                    attacker.types = ['Fighting'];
+                    attacker.stats.atk = attacker.stats.spa;
+                }
+                else if (move.hasType('Psychic')) {
+                    attacker.types = ['Psychic'];
+                }
+            }
+            break;
+        case 'Electrode Crest':
+            if (attacker.name === 'Electrode') {
+                defender.stats.def *= 0.5;
+            }
+            break;
+        case 'Crabominable Crest':
+            if (attacker.name === 'Crabominable' && attacker.stats.spe < defender.stats.spe) {
+                move.bp *= 1.5;
+            }
+            break;
+        case 'Simisear Crest':
+            if (attacker.name === 'Simisear') {
+                attacker.types = ['Fire', 'Water'];
+                attacker.stats.atk *= 1.2;
+                attacker.stats.spa *= 1.2;
+                if (move.hasType('Normal')) {
+                    move.type = 'Water';
+                }
+            }
+            break;
+        case 'Simipour Crest':
+            if (attacker.name === 'Simipour') {
+                attacker.types = ['Water', 'Grass'];
+                attacker.stats.atk *= 1.2;
+                attacker.stats.spa *= 1.2;
+                if (move.hasType('Normal')) {
+                    move.type = 'Grass';
+                }
+            }
+            break;
+        case 'Simisage Crest':
+            if (attacker.name === 'Simisage') {
+                attacker.types = ['Grass', 'Fire'];
+                attacker.stats.atk *= 1.2;
+                attacker.stats.spa *= 1.2;
+                if (move.hasType('Normal')) {
+                    move.type = 'Fire';
+                }
+            }
+            break;
+    }
+    switch (defender.item) {
+        case 'Magcargo Crest':
+            if (defender.name === 'Magcargo') {
+                defender.stats.def = defender.stats.spe;
+            }
+            break;
+        case 'Glaceon Crest':
+            if (defender.name === 'Glaceon' && defender.hasItem('Glaceon Crest') && move.hasType('Rock', 'Fighting')) {
+                typeEffectiveness /= 4;
+            }
+            break;
+        case 'Leafeon Crest':
+            if (defender.name === 'Leafeon' && defender.hasItem('Glaceon Crest') && move.hasType('Fire', 'Flying')) {
+                typeEffectiveness /= 4;
+            }
+            break;
+        case 'Relicanth Crest':
+            if (defender.name === 'Relicanth') {
+                defender.stats.spd *= 1.3;
+            }
+            break;
+        case 'Cofagrigus Crest':
+            if (defender.name === 'Cofagrigus') {
+                defender.stats.spa *= 1.25;
+            }
+            break;
+        case 'Skuntank Crest':
+            if (defender.name === 'Skuntank') {
+                if (move.hasType('Ground')) {
+                    move.bp *= 0;
+                }
+            }
+            break;
+        case 'Bastiodon Crest':
+            if (defender.name === 'Bastiodon') {
+                move.recoil = [1, 2];
+            }
+            break;
+        case 'Ariados Crest':
+            if (attacker.name === 'Ariados') {
+                attacker.stats.spe *= 1.5;
+                if (defender.hasStatus('psn', 'tox') || defender.boosts['spe'] < 0) {
+                    move.isCrit = true;
+                }
+            }
+            break;
+        case 'Whiscash Crest':
+            if (defender.name === 'Whiscash') {
+                if (move.hasType('Grass')) {
+                    move.bp *= 0;
+                }
+            }
+            break;
+        case 'Torterra Crest':
+            if (defender.name === 'Torterra') {
+                if (typeEffectiveness === 4) {
+                    typeEffectiveness = 0.25;
+                }
+                else if (typeEffectiveness === 2) {
+                    typeEffectiveness = 0.5;
+                }
+                else if (typeEffectiveness === 0.5) {
+                    typeEffectiveness = 2;
+                }
+                else if (typeEffectiveness === 0.25) {
+                    typeEffectiveness = 4;
+                }
+            }
+            break;
+        case 'Infernape Crest':
+            if (defender.name === 'Infernape') {
+                defender.stats.def = defender.stats.atk;
+            }
+            break;
+        case 'Cryogonal Crest':
+            if (defender.name === 'Cryogonal') {
+                defender.stats.spd *= 1.2;
+                defender.stats.atk += defender.stats.spd * 0.1;
+                defender.stats.spa += defender.stats.spd * 0.1;
+                defender.stats.def += defender.stats.spd * 0.1;
+                defender.stats.spe += defender.stats.spd * 0.1;
+            }
+            break;
+        case 'Druddigon Crest':
+            if (defender.name === 'Druddigon') {
+                if (move.hasType('Fire')) {
+                    typeEffectiveness *= 0;
+                }
+            }
+            break;
+        case 'Noctowl Crest':
+            if (defender.name === 'Noctowl') {
+                defender.stats.def *= 1.2;
+            }
+            break;
+        case 'Luxray Crest':
+            if (defender.name === 'Luxray') {
+                defender.types = ['Electric', 'Dark'];
+            }
+            break;
+        case 'Phione Crest':
+            if (defender.name === 'Phione') {
+                defender.stats.def *= 1.5;
+                defender.stats.spd *= 1.5;
+            }
+            break;
+        case 'Samurott Crest':
+            if (defender.name === 'Samurott') {
+                defender.types = ['Water', 'Fighting'];
+            }
+            break;
+        case 'Crabominable Crest':
+            if (defender.name === 'Crabominable') {
+                defender.stats.def *= 1.2;
+            }
+            break;
+    }
+    if (defender.named('Glaceon') && defender.hasItem('Glaceon Crest') && move.hasType('Rock', 'Fighting')) {
+        typeEffectiveness /= 4;
+    }
     if ((attacker.hasAbility('Triage') && move.drain) ||
         (attacker.hasAbility('Gale Wings') && move.hasType('Flying') && field.hasTerrain('Volcanic-Top', 'Mountain', 'Snowy-Mountain') && field.hasWeather('Strong Winds')) ||
         (attacker.hasAbility('Gale Wings') && move.hasType('Flying') && field.hasTerrain('Sky')) ||
@@ -813,11 +1153,6 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         : !hitsPhysical && field.hasTerrain('Glitch') && defender.stats.spa > defender.stats.spd ? 'spa'
             : 'spd';
     var baseDamage = calculateBaseDamageSMSSSV(gen, attacker, defender, basePower, attack, defense, move, field, desc, isCritical);
-    if (hasTerrainSeed(defender) &&
-        field.hasTerrain(defender.item.substring(0, defender.item.indexOf(' '))) &&
-        items_1.SEED_BOOSTED_STAT[defender.item] === defenseStat) {
-        desc.defenderItem = defender.item;
-    }
     var stabMod = 4096;
     if (attacker.hasOriginalType(move.type)) {
         stabMod += 2048;

@@ -552,7 +552,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         }
     }
     if (defender.hasStatus('psn')) {
-        if (defender.hasAbility('Poison Heal')) {
+        if (defender.hasAbility('Poison Heal') || (defender.hasItem('Zangoose Crest') && defender.name === 'Zangoose')) {
             damage += Math.floor(defender.maxHP() / 8);
             texts.push(damage + ' Poison Heal');
         }
@@ -954,6 +954,14 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     }
     if (field.hasTerrain('Back-Alley') && damage > 0) {
         damage *= 0.77;
+    }
+    if (defender.hasItem('Infernape Crest') && defender.name === 'Infernape') {
+        damage += Math.floor(defender.maxHP() / 16);
+        texts.push(damage + ' hp recovered (' + defender.item + ')');
+    }
+    else if (defender.hasItem('Druddigon Crest') && defender.name === 'Druddigon' && field.hasWeather('Sun', 'Harsh Sunshine')) {
+        damage += Math.floor(defender.maxHP() / 16);
+        texts.push(damage + ' hp recovered (' + defender.item + ')');
     }
     return { damage: damage, texts: texts };
 }
