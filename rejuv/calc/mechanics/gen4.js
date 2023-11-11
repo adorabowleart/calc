@@ -33,8 +33,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var _a;
     (0, util_1.checkAirLock)(attacker, field);
     (0, util_1.checkAirLock)(defender, field);
-    (0, util_1.checkTypeChanger)(attacker, field);
-    (0, util_1.checkTypeChanger)(defender, field);
+    (0, util_1.checkTypeChanger)(attacker, field, move);
+    (0, util_1.checkTypeChanger)(defender, field, move);
     (0, util_1.checkItem)(attacker);
     (0, util_1.checkItem)(defender);
     (0, util_1.checkIntimidate)(gen, attacker, defender);

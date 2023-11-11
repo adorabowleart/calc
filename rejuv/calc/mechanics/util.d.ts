@@ -9,11 +9,12 @@ export declare function computeFinalStats(gen: Generation, attacker: Pokemon, de
 export declare function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side): number;
 export declare function getMoveEffectiveness(gen: Generation, move: Move, type: TypeName, isGhostRevealed?: boolean, isGravity?: boolean, isRingTarget?: boolean): number;
 export declare function checkAirLock(pokemon: Pokemon, field: Field): void;
-export declare function checkTypeChanger(pokemon: Pokemon, field: Field): void;
+export declare function checkTypeChanger(pokemon: Pokemon, field: Field, move: Move): void;
 export declare function checkItem(pokemon: Pokemon, magicRoomActive?: boolean): void;
 export declare function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean): void;
 export declare function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon): void;
 export declare function checkDownload(source: Pokemon, target: Pokemon, field: Field, wonderRoomActive?: boolean): void;
+export declare function checkStatSwap(source: Pokemon, target: Pokemon): void;
 export declare function checkIntrepidSword(source: Pokemon, gen: Generation, field: Field): void;
 export declare function checkDauntlessShield(source: Pokemon, gen: Generation, field: Field): void;
 export declare function checkEmbody(source: Pokemon, gen: Generation): void;

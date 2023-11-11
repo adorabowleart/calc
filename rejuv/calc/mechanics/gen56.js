@@ -9,8 +9,8 @@ function calculateBWXY(gen, attacker, defender, move, field) {
     var _a;
     (0, util_2.checkAirLock)(attacker, field);
     (0, util_2.checkAirLock)(defender, field);
-    (0, util_2.checkTypeChanger)(attacker, field);
-    (0, util_2.checkTypeChanger)(defender, field);
+    (0, util_2.checkTypeChanger)(attacker, field, move);
+    (0, util_2.checkTypeChanger)(defender, field, move);
     (0, util_2.checkItem)(attacker, field.isMagicRoom);
     (0, util_2.checkItem)(defender, field.isMagicRoom);
     (0, util_2.checkWonderRoom)(attacker, field.isWonderRoom);

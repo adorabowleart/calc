@@ -321,7 +321,7 @@ function checkAirLock(pokemon, field) {
     }
 }
 exports.checkAirLock = checkAirLock;
-function checkTypeChanger(pokemon, field) {
+function checkTypeChanger(pokemon, field, move) {
     if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
         switch (field.weather) {
             case 'Sun':
@@ -447,6 +447,14 @@ function checkTypeChanger(pokemon, field) {
             pokemon.types = ['Dark'];
         }
     }
+    else if (pokemon.named('Gothitelle') && pokemon.hasItem('Gothitelle Crest')) {
+        if (move.hasType('Dark')) {
+            pokemon.types = ['Dark'];
+        }
+        else if (move.hasType('Psychic')) {
+            pokemon.types = ['Psychic'];
+        }
+    }
 }
 exports.checkTypeChanger = checkTypeChanger;
 function checkItem(pokemon, magicRoomActive) {
@@ -515,6 +523,40 @@ function checkDownload(source, target, field, wonderRoomActive) {
     }
 }
 exports.checkDownload = checkDownload;
+function checkStatSwap(source, target) {
+    var _a, _b, _c, _d, _e, _f, _g;
+    switch (source.item) {
+        case 'Magcargo Crest':
+            if (source.named('Magcargo')) {
+                var magSpe = target.stats.spe;
+                var magDef = target.stats.def;
+                _a = __read([magSpe, magDef], 2), magDef = _a[0], magSpe = _a[1];
+                source.stats.spe = magSpe;
+                source.stats.def = magDef;
+            }
+            break;
+        case 'Infernape Crest':
+            if (source.named('Infernape')) {
+                var infAtk = target.stats.atk;
+                var infDef = target.stats.def;
+                var infSpe = target.stats.spe;
+                _b = __read([infSpe, infAtk], 2), infAtk = _b[0], infSpe = _b[1];
+                _c = __read([infSpe, infDef], 2), infDef = _c[0], infSpe = _c[1];
+                source.stats.def = infDef;
+                _d = __read([infSpe, infAtk], 2), infAtk = _d[0], infSpe = _d[1];
+                source.stats.atk = infAtk;
+                var infSpa = target.stats.spa;
+                var infSpd = target.stats.spd;
+                _e = __read([infSpe, infSpa], 2), infSpa = _e[0], infSpe = _e[1];
+                _f = __read([infSpe, infSpd], 2), infSpd = _f[0], infSpe = _f[1];
+                source.stats.spd = infSpd;
+                _g = __read([infSpe, infSpa], 2), infSpa = _g[0], infSpe = _g[1];
+                source.stats.spa = infSpa;
+            }
+            break;
+    }
+}
+exports.checkStatSwap = checkStatSwap;
 function checkIntrepidSword(source, gen, field) {
     if (source.hasAbility('Intrepid Sword') && gen.num < 9) {
         source.boosts.atk = Math.min(6, source.boosts.atk + 1);

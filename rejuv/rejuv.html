@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<br lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <title>Pok&eacute;mon Rejuvenation Damage Calculator</title></head></br>
+    <title>Pok&eacute;mon Rejuvenation Damage Calculator</title></head></html>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?e90ee22b" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
@@ -246,6 +246,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                         <tr class="df">
                             <th scope="row">
@@ -281,6 +283,8 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
+                            </td>
+                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
@@ -318,6 +322,38 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
+                            <tr class="sl gen-specific g1 hide">
+                            <th scope="row">
+                                <label>Special</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td>
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
@@ -353,6 +389,8 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
+                            </td>
+                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                         <tr class="sl gen-specific g1 hide">
@@ -1198,6 +1236,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                         <tr class="df">
                             <th scope="row">
@@ -1233,6 +1273,8 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
+                            </td>
+                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                         <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
@@ -1270,6 +1312,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                         <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
@@ -1306,6 +1350,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                         <tr class="sl gen-specific g1 hide">
                             <th scope="row">
@@ -1335,6 +1381,8 @@
                                     <option value="-5">-5</option>
                                     <option value="-6">-6</option>
                                 </select>
+                            </td>
+                            <td><span class="totalMod">---</span>
                             </td>
                         </tr>
                         <tr class="sp">
@@ -1657,11 +1705,11 @@
     <script type="text/javascript" src="./calc/pokemon.js?e0fe71b6"></script>
     <script type="text/javascript" src="./calc/field.js?2c7f95da"></script>
     <script type="text/javascript" src="./calc/items.js?0499a973"></script>
-    <script type="text/javascript" src="./calc/mechanics/util.js?66652b07"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen789.js?ee53bf1d"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen56.js?629b155e"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen4.js?8854f36a"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen3.js?ccc579b1"></script>
+    <script type="text/javascript" src="./calc/mechanics/util.js?6041eec8"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?04603d77"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen56.js?aba2556f"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen4.js?98b5e8d8"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen3.js?9b62b23c"></script>
     <script type="text/javascript" src="./calc/mechanics/gen12.js?6ac81459"></script>
     <script type="text/javascript" src="./calc/calc.js?cd072314"></script>
     <script type="text/javascript" src="./calc/desc.js?8ab1ce63"></script>
@@ -1669,7 +1717,7 @@
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
     <script type="text/javascript" src="./js/shared_controls.js?f5d72b5d"></script>
-    <script type="text/javascript" src="./js/index_randoms_controls.js?8efdf1b2"></script>
+    <script type="text/javascript" src="./js/index_randoms_controls.js?392e6f4f"></script>
     <script type="text/javascript" src="./js/moveset_import.js?b09106ef"></script>
 </div>
 
