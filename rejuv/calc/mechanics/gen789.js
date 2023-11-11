@@ -229,6 +229,18 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (field.hasTerrain('Glitch') && move.hasType('Fairy')) {
         type = 'Normal';
     }
+    if (attacker.hasItem('Luxray Crest') && attacker.named('Luxray') && move.hasType('Normal')) {
+        type = 'Electric';
+    }
+    else if (attacker.hasItem('Simisage Crest') && attacker.named('Simisage') && move.hasType('Normal')) {
+        type = 'Fire';
+    }
+    else if (attacker.hasItem('Simisear Crest') && attacker.named('Simisear') && move.hasType('Normal')) {
+        type = 'Water';
+    }
+    else if (attacker.hasItem('Simipour Crest') && attacker.named('Simipour') && move.hasType('Normal')) {
+        type = 'Grass';
+    }
     move.type = type;
     if (field.hasTerrain('Glitch')) {
         if (move.hasType('Normal', 'Fighting', 'Ghost', 'Poison', 'Bug', 'Flying', 'Ground', 'Rock')) {
@@ -259,7 +271,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     switch (field.terrain) {
         case 'Ashen-Beach':
             type = 'Fighting';
-            addedType = gen.types.get('Psychic');
+            addedType = gen.types.get('psychic');
             if (move.named('Strength')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ?
                     addedType.effectiveness[defender.types[1]] : 1);
@@ -279,7 +291,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
                     addedType.effectiveness[defender.types[1]] : 1);
             }
             break;
-        case 'Back-Alley':
+        case 'City':
             addedType = gen.types.get('normal');
             if (move.named('First Impression')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ?
@@ -702,9 +714,6 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         case 'Luxray Crest':
             if (attacker.named('Luxray')) {
                 attacker.types = ['Electric', 'Dark'];
-                if (move.hasType('Normal')) {
-                    move.type = 'Electric';
-                }
             }
             break;
         case 'Boltund Crest':
@@ -741,25 +750,16 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         case 'Simisear Crest':
             if (attacker.named('Simisear')) {
                 attacker.types = ['Fire', 'Water'];
-                if (move.hasType('Normal') && attacker.named('Simisear')) {
-                    type = 'Water';
-                }
             }
             break;
         case 'Simipour Crest':
             if (attacker.named('Simipour')) {
                 attacker.types = ['Water', 'Grass'];
-                if (move.hasType('Normal') && attacker.named('Simipour')) {
-                    type = 'Grass';
-                }
             }
             break;
         case 'Simisage Crest':
             if (attacker.named('Simisage')) {
                 attacker.types = ['Grass', 'Fire'];
-                if (move.hasType('Normal')) {
-                    type = 'Fire';
-                }
             }
             break;
         case 'Cryogonal Crest':
