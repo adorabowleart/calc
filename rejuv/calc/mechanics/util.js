@@ -259,8 +259,32 @@ function getFinalSpeed(gen, pokemon, field, side) {
     if ((field.hasWeather('Shadow Sky') || field.hasTerrain('Dark-Crystal')) && pokemon.hasAbility('Shadow Dance')) {
         speedMods.push(6144);
     }
-    if (pokemon.hasItem('Empoleon Crest') && pokemon.name === 'Empoleon' && (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy-Mountain', 'Frozen'))) {
-        speedMods.push(8192);
+    switch (pokemon.item) {
+        case 'Seviper Crest':
+            if (pokemon.named('Seviper')) {
+                speedMods.push(6144);
+            }
+            break;
+        case 'Skuntank Crest':
+            if (pokemon.named('Skuntank')) {
+                speedMods.push(4915);
+            }
+            break;
+        case 'Ariados Crest':
+            if (pokemon.named('Ariados')) {
+                speedMods.push(6144);
+            }
+            break;
+        case 'Thievul Crest':
+            if (pokemon.named('Thievul')) {
+                speedMods.push(6144);
+            }
+            break;
+        case 'Empoleon Crest':
+            if (pokemon.named('Empoleon') && (field.hasWeather('Hail') || field.hasTerrain('Icy', 'Snowy-Mountain', 'Frozen'))) {
+                speedMods.push(8192);
+            }
+            break;
     }
     speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
     if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet')) {
