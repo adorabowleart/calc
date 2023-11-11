@@ -6269,8 +6269,462 @@ var SM_PATCH = {
     Vulpix: { otherFormes: ['Vulpix-Alola'] },
     Woobat: { bs: { hp: 65 } },
     Zygarde: { otherFormes: ['Zygarde-10%', 'Zygarde-Complete'] },
+    "Paras-Aevian": {
+        types: ['Bug', 'Poison'],
+        bs: { hp: 35, at: 70, df: 55, sa: 45, sd: 55, sp: 25 },
+        abilities: { 0: 'Resuscitation' },
+        weightkg: 5.4,
+        otherFormes: ['Paras', 'Paras-Aevian-Z']
+    },
+    "Paras-Aevian-Z": {
+        types: ['Ghost', 'Poison'],
+        bs: { hp: 15, at: 100, df: 25, sa: 45, sd: 25, sp: 75 },
+        abilities: { 0: 'Resuscitation' },
+        weightkg: 5.4,
+        otherFormes: ['Paras', 'Paras-Aevian']
+    },
+    "Parasect-Aevian": {
+        types: ['Bug', 'Poison'],
+        bs: { hp: 60, at: 90, df: 80, sa: 60, sd: 80, sp: 30 },
+        abilities: { 0: 'Resuscitation' },
+        weightkg: 29.5,
+        otherFormes: ['Parasect', 'Parasect-Aevian-Z']
+    },
+    "Parasect-Aevian-Z": {
+        types: ['Ghost', 'Poison'],
+        bs: { hp: 40, at: 130, df: 40, sa: 50, sd: 40, sp: 105 },
+        abilities: { 0: 'Resuscitation' },
+        weightkg: 29.5,
+        otherFormes: ['Parasect', 'Parasect-Aevian']
+    },
+    "Magikarp-Aevian": {
+        types: ['Fire'],
+        bs: { hp: 20, at: 10, df: 55, sa: 15, sd: 20, sp: 80 },
+        abilities: { 0: 'Rattled' },
+        weightkg: 10,
+        otherFormes: ['Magikarp']
+    },
+    "Gyarados-Aevian": {
+        types: ['Fire', 'Dragon'],
+        bs: { hp: 95, at: 60, df: 79, sa: 125, sd: 100, sp: 81 },
+        abilities: { 0: 'Intimidate' },
+        weightkg: 235,
+        otherFormes: ['Gyarados', 'Gyarados-Am', 'Gyarados-Rift']
+    },
+    "Gyarados-Am": {
+        types: ['Steel'],
+        bs: { hp: 120, at: 110, df: 100, sa: 100, sd: 130, sp: 81 },
+        abilities: { 0: 'Liquid Voice' },
+        weightkg: 906,
+        otherFormes: ['Gyarados', 'Gyarados-Aevian', 'Gyarados-Rift']
+    },
+    "Gyarados-Rift": {
+        types: ['Water', 'Ghost'],
+        bs: { hp: 95, at: 125, df: 89, sa: 90, sd: 110, sp: 81 },
+        abilities: { 0: 'Intimidate' },
+        weightkg: 306,
+        otherFormes: ['Gyarados', 'Gyarados-Aevian', 'Gyarados-Am']
+    },
+    "Lapras-Aevian": {
+        types: ['Rock', 'Psychic'],
+        bs: { hp: 135, at: 95, df: 80, sa: 85, sd: 85, sp: 60 },
+        abilities: { 0: 'Solid Rock' },
+        weightkg: 220,
+        otherFormes: ['Lapras']
+    },
+    "Mareep-Aevian": {
+        types: ['Ice', 'Electric'],
+        bs: { hp: 55, at: 40, df: 45, sa: 65, sd: 40, sp: 35 },
+        abilities: { 0: 'Filter' },
+        weightkg: 7.8,
+        otherFormes: ['Mareep']
+    },
+    "Flaafy-Aevian": {
+        types: ['Ice', 'Electric'],
+        bs: { hp: 70, at: 55, df: 60, sa: 80, sd: 50, sp: 45 },
+        abilities: { 0: 'Filter' },
+        weightkg: 13.3,
+        otherFormes: ['Flaafy']
+    },
+    "Ampharos-Aevian": {
+        types: ['Ice', 'Electric'],
+        bs: { hp: 90, at: 75, df: 90, sa: 115, sd: 85, sp: 55 },
+        abilities: { 0: 'Filter' },
+        weightkg: 61.5,
+        otherFormes: ['Ampharos']
+    },
+    "Misdreavus-Aevian": {
+        types: ['Grass', 'Ghost'],
+        bs: { hp: 60, at: 85, df: 60, sa: 85, sd: 60, sp: 85 },
+        abilities: { 0: 'Magic Bounce' },
+        weightkg: 1,
+        otherFormes: ['Misdreavus']
+    },
+    "Shroomish-Aevian": {
+        types: ['Grass'],
+        bs: { hp: 60, at: 40, df: 60, sa: 40, sd: 60, sp: 35 },
+        abilities: { 0: 'Rattled' },
+        weightkg: 4.5,
+        otherFormes: ['Shroomish']
+    },
+    "Breloom-Aevian": {
+        types: ['Grass', 'Electric'],
+        bs: { hp: 60, at: 130, df: 80, sa: 60, sd: 60, sp: 70 },
+        abilities: { 0: 'Rattled' },
+        weightkg: 39.2,
+        otherFormes: ['Breloom']
+    },
+    "Roselia-Aevian": {
+        types: ['Ground', 'Fighting'],
+        bs: { hp: 50, at: 60, df: 45, sa: 100, sd: 80, sp: 65 },
+        abilities: { 0: 'Dry Skin' },
+        weightkg: 2,
+        otherFormes: ['Roselia']
+    },
+    "Feebas-Aevian": {
+        types: ['Poison', 'Fairy'],
+        bs: { hp: 20, at: 15, df: 20, sa: 10, sd: 55, sp: 80 },
+        abilities: { 0: 'Poison Point' },
+        weightkg: 7.4,
+        otherFormes: ['Feebas']
+    },
+    "Milotic-Aevian": {
+        types: ['Poison', 'Fairy'],
+        bs: { hp: 95, at: 100, df: 79, sa: 60, sd: 125, sp: 81 },
+        abilities: { 0: 'Poison Point' },
+        weightkg: 162,
+        otherFormes: ['Milotic']
+    },
+    "Snorunt-Aevian": {
+        types: ['Grass', 'Rock'],
+        bs: { hp: 50, at: 50, df: 50, sa: 50, sd: 50, sp: 50 },
+        abilities: { 0: 'Grass Pelt' },
+        weightkg: 16.8,
+        otherFormes: ['Snorunt']
+    },
+    "Glalie-Aevian": {
+        types: ['Grass', 'Rock'],
+        bs: { hp: 110, at: 100, df: 90, sa: 50, sd: 80, sp: 50 },
+        abilities: { 0: 'Grassy Surge' },
+        weightkg: 256.5,
+        otherFormes: ['Glalie']
+    },
+    "Budew-Aevian": {
+        types: ['Ground'],
+        bs: { hp: 40, at: 30, df: 35, sa: 50, sd: 70, sp: 55 },
+        abilities: { 0: 'Dry Skin' },
+        weightkg: 1.2,
+        otherFormes: ['Budew']
+    },
+    "Roserade-Aevian": {
+        types: ['Ground', 'Fighting'],
+        bs: { hp: 60, at: 70, df: 65, sa: 125, sd: 105, sp: 90 },
+        abilities: { 0: 'Dry Skin' },
+        weightkg: 14.5,
+        otherFormes: ['Roserade']
+    },
+    "Mismagius-Aevian": {
+        types: ['Grass', 'Ghost'],
+        bs: { hp: 60, at: 105, df: 60, sa: 105, sd: 60, sp: 105 },
+        abilities: { 0: 'Magic Bounce' },
+        weightkg: 4.4,
+        otherFormes: ['Mismagius']
+    },
+    "Bronzor-Aevian": {
+        types: ['Steel'],
+        bs: { hp: 57, at: 24, df: 86, sa: 24, sd: 86, sp: 23 },
+        abilities: { 0: 'Reflector' },
+        weightkg: 60.5,
+        otherFormes: ['Bronzor']
+    },
+    "Bronzong-Aevian": {
+        types: ['Steel'],
+        bs: { hp: 67, at: 79, df: 116, sa: 89, sd: 116, sp: 33 },
+        abilities: { 0: 'Reflector' },
+        weightkg: 187,
+        otherFormes: ['Bronzong']
+    },
+    "Froslass-Aevian": {
+        types: ['Grass', 'Water'],
+        bs: { hp: 70, at: 80, df: 70, sa: 80, sd: 70, sp: 110 },
+        abilities: { 0: 'Adaptability' },
+        weightkg: 26.6,
+        otherFormes: ['Froslass']
+    },
+    "Froslass-Rift": {
+        types: ['Electric', 'Fairy'],
+        bs: { hp: 97, at: 66, df: 166, sa: 123, sd: 148, sp: 66 },
+        abilities: { 0: 'Temporal Shift' },
+        weightkg: 10,
+        otherFormes: ['Froslass']
+    },
+    "Munna-Aevian": {
+        types: ['Dark', 'Fairy'],
+        bs: { hp: 76, at: 67, df: 45, sa: 25, sd: 45, sp: 24 },
+        abilities: { 0: 'Bad Dreams' },
+        weightkg: 23.3,
+        otherFormes: ['Munna']
+    },
+    "Musharna-Aevian": {
+        types: ['Dark', 'Fairy'],
+        bs: { hp: 116, at: 107, df: 85, sa: 65, sd: 85, sp: 29 },
+        abilities: { 0: 'Bad Dreams' },
+        weightkg: 60.5,
+        otherFormes: ['Musharna']
+    },
+    "Sewaddle-Aevian": {
+        types: ['Dragon'],
+        bs: { hp: 45, at: 63, df: 65, sa: 40, sd: 55, sp: 42 },
+        abilities: { 0: 'Swarm' },
+        weightkg: 2.5,
+        otherFormes: ['Sewaddle']
+    },
+    "Swadloon-Aevian": {
+        types: ['Dragon'],
+        bs: { hp: 55, at: 73, df: 85, sa: 50, sd: 75, sp: 42 },
+        abilities: { 0: 'Swarm' },
+        weightkg: 7.3,
+        otherFormes: ['Swadloon']
+    },
+    "leavany-Aevian": {
+        types: ['Dragon'],
+        bs: { hp: 75, at: 108, df: 75, sa: 70, sd: 75, sp: 97 },
+        abilities: { 0: 'Swarm' },
+        weightkg: 20.5,
+        otherFormes: ['Leavanny']
+    },
+    "Sigilyh-Aevian": {
+        types: ['Fairy', 'Ghost'],
+        bs: { hp: 72, at: 58, df: 80, sa: 103, sd: 80, sp: 97 },
+        abilities: { 0: 'Flare Boost' },
+        weightkg: 14,
+        otherFormes: ['Sigilyph', 'Sigilyph-Am']
+    },
+    "Sigilyh-Am": {
+        types: ['Steel', 'Flying'],
+        bs: { hp: 80, at: 50, df: 70, sa: 130, sd: 90, sp: 80 },
+        abilities: { 0: 'Aftermath' },
+        weightkg: 14,
+        otherFormes: ['Sigilyph', 'Sigilyph-Aevian']
+    },
+    "Litwick-Aevian": {
+        types: ['Ghost', 'Fire'],
+        bs: { hp: 50, at: 35, df: 55, sa: 65, sd: 55, sp: 20 },
+        abilities: { 0: 'Illuminate' },
+        weightkg: 3.1,
+        otherFormes: ['Litwick']
+    },
+    "Lampent-Aevian": {
+        types: ['Ghost', 'Electric'],
+        bs: { hp: 60, at: 40, df: 60, sa: 95, sd: 60, sp: 55 },
+        abilities: { 0: 'Illuminate' },
+        weightkg: 13,
+        otherFormes: ['Lampent']
+    },
+    "Chandelure-Aevian": {
+        types: ['Ghost', 'Fire'],
+        bs: { hp: 65, at: 55, df: 90, sa: 145, sd: 90, sp: 80 },
+        abilities: { 0: 'Illuminate' },
+        weightkg: 34.3,
+        otherFormes: ['Chandelure', 'Chandelure-Rift']
+    },
+    "Chandelure-Rift": {
+        types: ['Ghost', 'Fire'],
+        bs: { hp: 99, at: 29, df: 69, sa: 179, sd: 119, sp: 99 },
+        abilities: { 0: 'Trace' },
+        weightkg: 101.1,
+        otherFormes: ['Chandelure', 'Chandelure-Aevian']
+    },
+    "Larvesta-Aevian": {
+        types: ['Flying'],
+        bs: { hp: 55, at: 85, df: 50, sa: 50, sd: 50, sp: 70 },
+        abilities: { 0: 'Wonder Skin' },
+        weightkg: 28.8,
+        otherFormes: ['Larvesta']
+    },
+    "Volcarona-Aevian": {
+        types: ['Flying'],
+        bs: { hp: 85, at: 60, df: 60, sa: 135, sd: 100, sp: 110 },
+        abilities: { 0: 'Shield Dust' },
+        weightkg: 46,
+        otherFormes: ['Volcarona']
+    },
+    "Wimpod-Aevian": {
+        types: ['Ground'],
+        bs: { hp: 25, at: 40, df: 35, sa: 15, sd: 35, sp: 80 },
+        abilities: { 0: 'Wimp Out' },
+        weightkg: 12,
+        otherFormes: ['Wimpod']
+    },
+    "Golisopod-Aevian": {
+        types: ['Ground'],
+        bs: { hp: 75, at: 125, df: 130, sa: 50, sd: 100, sp: 50 },
+        abilities: { 0: 'Battle Armor' },
+        weightkg: 108,
+        otherFormes: ['Golisopod']
+    },
+    "Jangmo-o-Aevian": {
+        types: ['Poison'],
+        bs: { hp: 50, at: 65, df: 55, sa: 40, sd: 40, sp: 40 },
+        abilities: { 0: 'Analytic' },
+        weightkg: 29.7,
+        otherFormes: ['Jangmo-o']
+    },
+    "Hakamo-o-Aevian": {
+        types: ['Poison'],
+        bs: { hp: 70, at: 85, df: 85, sa: 60, sd: 60, sp: 60 },
+        abilities: { 0: 'Analytic' },
+        weightkg: 47,
+        otherFormes: ['Hakamo-o']
+    },
+    "Kommo-o-Aevian": {
+        types: ['Poison'],
+        bs: { hp: 95, at: 125, df: 125, sa: 95, sd: 95, sp: 65 },
+        abilities: { 0: 'Analytic' },
+        weightkg: 78.2,
+        otherFormes: ['Kommo-o']
+    },
+    "Toxtricity-Aevian": {
+        types: ['Fire', 'Poison'],
+        bs: { hp: 70, at: 75, df: 70, sa: 114, sd: 70, sp: 98 },
+        abilities: { 0: 'Galvanize' },
+        weightkg: 40,
+        otherFormes: ['Toxtricity']
+    },
+    "Magneton-Am": {
+        types: ['Electric', 'Steel'],
+        bs: { hp: 80, at: 1, df: 90, sa: 130, sd: 120, sp: 40 },
+        abilities: { 0: 'Adaptability' },
+        weightkg: 60,
+        otherFormes: ['Magneton']
+    },
+    "Lairon-Am": {
+        types: ['Steel'],
+        bs: { hp: 80, at: 110, df: 90, sa: 70, sd: 70, sp: 140 },
+        abilities: { 0: 'Strong Jaw' },
+        weightkg: 750,
+        otherFormes: ['Lairon', 'Lairon-Am Rusty']
+    },
+    "Lairon-Am Rusty": {
+        types: ['Steel'],
+        bs: { hp: 80, at: 100, df: 90, sa: 70, sd: 70, sp: 60 },
+        abilities: { 0: 'Weak Armor' },
+        weightkg: 750,
+        otherFormes: ['Lairon', 'Lairon-Am']
+    },
+    "Claydol-Am": {
+        types: ['Steel', 'Psychic'],
+        bs: { hp: 120, at: 1, df: 140, sa: 70, sd: 140, sp: 50 },
+        abilities: { 0: 'Aftermath' },
+        weightkg: 108,
+        otherFormes: ['Claydol']
+    },
+    "Metang-Am": {
+        types: ['Steel', 'Psychic'],
+        bs: { hp: 80, at: 120, df: 120, sa: 60, sd: 90, sp: 80 },
+        abilities: { 0: 'Iron Fist' },
+        weightkg: 202.5,
+        otherFormes: ['Metang']
+    },
+    "Golurk-Am": {
+        types: ['Steel', 'Ghost'],
+        bs: { hp: 120, at: 140, df: 90, sa: 90, sd: 90, sp: 40 },
+        abilities: { 0: 'Aftermath' },
+        weightkg: 330,
+        otherFormes: ['Golurk']
+    },
+    "Tangela-Rift": {
+        types: ['Grass', 'Dark'],
+        bs: { hp: 65, at: 55, df: 15, sa: 100, sd: 40, sp: 60 },
+        abilities: { 0: 'Dancer' },
+        weightkg: 35,
+        otherFormes: ['Tangela']
+    },
+    "Ralts-Rift": {
+        types: ['Poison'],
+        bs: { hp: 56, at: 50, df: 50, sa: 90, sd: 70, sp: 80 },
+        abilities: { 0: 'Friend Guard' },
+        weightkg: 6.6,
+        otherFormes: ['Ralts']
+    },
+    "Kirlia-Rift": {
+        types: ['Fire'],
+        bs: { hp: 76, at: 70, df: 70, sa: 130, sd: 110, sp: 100 },
+        abilities: { 0: 'Friend Guard' },
+        weightkg: 20.2,
+        otherFormes: ['Kirlia']
+    },
+    "Regirock-Rift": {
+        types: ['Rock', 'Fighting'],
+        bs: { hp: 80, at: 135, df: 70, sa: 135, sd: 70, sp: 150 },
+        abilities: { 0: 'True Shot' },
+        weightkg: 110,
+        otherFormes: ['Regirock']
+    },
+    "Hippowdon-Rift": {
+        types: ['Ground', 'Poison'],
+        bs: { hp: 115, at: 135, df: 150, sa: 125, sd: 115, sp: 35 },
+        abilities: { 0: 'Accumulation' },
+        weightkg: 802.5,
+        otherFormes: ['Hippowdon']
+    },
+    "Carnivine-Rift": {
+        types: ['Grass', 'Dragon'],
+        bs: { hp: 104, at: 120, df: 72, sa: 110, sd: 72, sp: 96 },
+        abilities: { 0: 'Own Tempo' },
+        weightkg: 101.1,
+        otherFormes: ['Carnivine']
+    },
+    "Tangrowth-Rift": {
+        types: ['Grass', 'Ghost'],
+        bs: { hp: 100, at: 100, df: 125, sa: 110, sd: 50, sp: 50 },
+        abilities: { 0: 'Dancer' },
+        weightkg: 128.6,
+        otherFormes: ['Tangrowth']
+    },
+    "Garbodor-Rift": {
+        types: ['Poison', 'Dark'],
+        bs: { hp: 120, at: 80, df: 190, sa: 120, sd: 190, sp: 10 },
+        abilities: { 0: 'Poison Heal' },
+        weightkg: 101.1,
+        otherFormes: ['Garbodor']
+    },
+    "Galvantula-Rift": {
+        types: ['Poison', 'Electric'],
+        bs: { hp: 100, at: 87, df: 80, sa: 117, sd: 80, sp: 108 },
+        abilities: { 0: 'Unnerve' },
+        weightkg: 101.1,
+        otherFormes: ['Galvantula']
+    },
+    "Ferrothorn-Rift-S": {
+        types: ['Fire', 'Steel'],
+        bs: { hp: 150, at: 80, df: 150, sa: 50, sd: 150, sp: 20 },
+        abilities: { 0: 'Flash Fire' },
+        weightkg: 210.1,
+        otherFormes: ['Ferrothorn', 'Ferrothorn-U']
+    },
+    "Ferrothorn-Rift-U": {
+        types: ['Fire', 'Steel'],
+        bs: { hp: 150, at: 150, df: 100, sa: 150, sd: 100, sp: 150 },
+        abilities: { 0: 'Sheer Force' },
+        weightkg: 210.1,
+        otherFormes: ['Ferrothorn', 'Ferrothorn-S']
+    },
+    "Xerneas-Rift": {
+        types: ['Flying'],
+        bs: { hp: 150, at: 70, df: 100, sa: 140, sd: 100, sp: 20 },
+        abilities: { 0: 'Tempest' },
+        weightkg: 1,
+        otherFormes: ['Xerneas']
+    },
+    "Volcanion-Rift": {
+        types: ['Water', 'Fire'],
+        bs: { hp: 110, at: 60, df: 80, sa: 150, sd: 90, sp: 20 },
+        abilities: { 0: 'Water Absorb' },
+        weightkg: 101.1,
+        otherFormes: ['Volcanion']
+    },
     Araquanid: {
-        types: ['Water', 'Bug'],
         bs: { hp: 68, at: 70, df: 92, sa: 50, sd: 132, sp: 42 },
         abilities: { 0: 'Water Bubble' },
         weightkg: 82,

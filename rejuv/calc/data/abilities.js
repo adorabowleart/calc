@@ -247,6 +247,12 @@ var XY = BW.concat([
     'Tough Claws',
 ]);
 var SM = XY.concat([
+    'Rescucitation',
+    'Reflector',
+    'True Shot',
+    'Accumulation',
+    'Temporal Shift',
+    'Tempest',
     'Battery',
     'Battle Bond',
     'Beast Boost',

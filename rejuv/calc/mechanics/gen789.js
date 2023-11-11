@@ -969,6 +969,13 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
                 defender.stats.def *= 1.2;
             }
             break;
+        case 'A.Ampharos Crest':
+            if (defender.name === 'Ampharos-Aevian') {
+                if (typeEffectiveness > 0) {
+                    move.bp *= 0.7;
+                }
+            }
+            break;
     }
     if (defender.named('Glaceon') && defender.hasItem('Glaceon Crest') && move.hasType('Rock', 'Fighting')) {
         typeEffectiveness /= 4;
