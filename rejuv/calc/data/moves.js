@@ -2826,6 +2826,105 @@ var SM_PATCH = {
 };
 var SM = (0, util_1.extend)(true, {}, XY, SM_PATCH);
 var SS_PATCH = {
+    'Venam\'s Kiss': {
+        bp: 75,
+        type: 'Poison',
+        category: 'Physical',
+        secondaries: true,
+        zp: 140,
+        maxPower: 130
+    },
+    'Gale Strike': {
+        bp: 60,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 110
+    },
+    'Multipulse': {
+        bp: 65,
+        type: 'Normal',
+        category: 'Special',
+        zp: 120,
+        maxPower: 120
+    },
+    'Spectral Scream': {
+        bp: 65,
+        type: 'Ghost',
+        category: 'Special',
+        secondaries: true,
+        zp: 120,
+        maxPower: 120
+    },
+    'Gilded Arrow': {
+        bp: 80,
+        type: 'Normal',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Barbed Web': {
+        bp: 75,
+        type: 'Bug',
+        category: 'Physical',
+        target: 'allAdjacent',
+        zp: 140,
+        maxPower: 130
+    },
+    'Cold Truth': {
+        bp: 95,
+        type: 'Ice',
+        category: 'Special',
+        target: 'allAdjacent',
+        zp: 175,
+        maxPower: 130
+    },
+    'Fever Pitch': {
+        bp: 70,
+        type: 'Fire',
+        category: 'Special',
+        zp: 140,
+        maxPower: 120
+    },
+    'Thunder Raid': {
+        bp: 20,
+        type: 'Electric',
+        category: 'Physical',
+        multihit: 3,
+        zp: 100,
+        maxPower: 90
+    },
+    'Uproot Grass': {
+        bp: 90,
+        type: 'Grass',
+        category: 'Special',
+        secondaries: true,
+        zp: 175,
+        maxPower: 130
+    },
+    'Bunraku': {
+        bp: 75,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 140,
+        maxPower: 130
+    },
+    'Matrix Shot': {
+        bp: 90,
+        type: 'Rock',
+        category: 'Physical',
+        overrideDefensiveStat: 'def',
+        zp: 175,
+        maxPower: 130
+    },
+    'Super UMD Move': {
+        bp: 100,
+        type: 'Steel',
+        category: 'Physical',
+        secondaries: true,
+        zp: 180,
+        maxPower: 130
+    },
     'Apple Acid': {
         bp: 80,
         type: 'Grass',

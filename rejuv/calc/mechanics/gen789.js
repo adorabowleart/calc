@@ -67,6 +67,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     var isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') && (move.isCrit || (field.hasTerrain('Corrosive-Mist', 'Murkwater', 'Corrosive', 'Wasteland') && attacker.hasAbility("Merciless")) ||
         (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox')) || (attacker.hasAbility('Merciless') && field.hasTerrain('Chess') && (defender.curHP() <= defender.maxHP() * 0.4))
         || (defender.hasAbility('Rattled', 'Wimp Out') && field.hasTerrain('Colosseum')) ||
+        (move.named('Gale Strike') && attacker.curHP() < attacker.maxHP() / 2) ||
         (attacker.named('Ariados') && attacker.hasItem('Ariados Crest') && (defender.hasStatus('psn', 'tox') || defender.boosts.spe < 0))) && move.timesUsed === 1;
     var type = move.type;
     if (move.named('Weather Ball')) {
@@ -82,7 +83,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
         desc.moveType = type;
     }
-    else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
+    else if (move.named('Judgment', 'Multipulse') && attacker.item && attacker.item.includes('Plate')) {
         type = (0, items_1.getItemBoostType)(attacker.item);
     }
     else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
@@ -179,6 +180,14 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         }
         else if (attacker.name.includes('Ogerpon-Wellspring')) {
             type = 'Water';
+        }
+    }
+    else if (move.named('Gilded Arrow')) {
+        if (attacker.types[1] && attacker.types[1] !== 'Dragon' && attacker.types[1] !== 'Fairy') {
+            type = attacker.types[1];
+        }
+        else {
+            type = attacker.types[0];
         }
     }
     var hasAteAbilityTypeChange = false;
@@ -650,6 +659,11 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         else if (driveType === 'Water' && move.hasType('Water')) {
             typeEffectiveness *= 0;
         }
+    }
+    if (move.named('Venam\'s Kiss') && typeEffectiveness === 0 && defender.hasType('Steel')) {
+        typeEffectiveness = gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[0]] +
+            (defender.types[1] ? gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] : 1);
+        typeEffectiveness *= 2;
     }
     switch (attacker.item) {
         case 'Fearow Crest':
@@ -1762,6 +1776,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveBP = basePower;
             break;
         case 'Triple Axel':
+        case 'Thunder Raid':
             basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
             desc.moveBP = basePower;
             break;
@@ -1841,7 +1856,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Dark')) {
                 basePower *= 1.3;
             }
-            if (move.named('Hex', 'Mystical Fire', 'Spirit Break')) {
+            if (move.named('Hex', 'Mystical Fire', 'Spirit Break', 'Uproot')) {
                 basePower *= 1.5;
             }
             else if (move.named('Ice Beam', 'Hyper Beam', 'Signal Beam', 'Aurora Beam', 'Charge Beam', 'Psybeam', 'Flash Cannon', 'Mirror Beam', 'Magical Leaf', 'Bubble Beam')) {
@@ -1998,6 +2013,9 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveType = move.type;
             break;
         case 'Concert-H':
+            if (move.named('Fever Pitch')) {
+                basePower = 100;
+            }
             if (move.flags.sound) {
                 basePower *= 1.5;
             }
@@ -2011,6 +2029,9 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
         case 'Concert-SH':
             if (move.named('Magnitude')) {
                 move.bp = 150;
+            }
+            if (move.named('Fever Pitch')) {
+                basePower = 130;
             }
             if (move.flags.sound) {
                 basePower *= 1.5;
@@ -2184,7 +2205,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.named('Hyperspace Fury', 'Hyperspace Hole', 'Spacial Rend', 'Roar of Time', 'Eternabeam', 'Dynamax Cannon', 'Shadow Force', 'Outrage', 'Thrash', 'Stomping Tantrum', 'Lash Out', 'Freezing Glare', 'Fiery Wrath', 'Raging Fury')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Ice Burn', 'Freeze Shock', 'Glaciate', 'Seed Flare', 'Precipice Blades')) {
+            else if (move.named('Ice Burn', 'Freeze Shock', 'Glaciate', 'Seed Flare', 'Precipice Blades', 'Cold Truth')) {
                 basePower *= 1.3;
             }
             else if (move.named('Nature Power', 'Dark Pulse', 'Night Daze')) {
@@ -2377,7 +2398,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Dark')) {
                 basePower *= 1.5;
             }
-            if (move.named('Outrage', 'Thrash', 'Lash Out', 'Freezing Glare', 'Roar of Time', 'Fiery Wrath', 'Rage', 'Stomping Tantrum', 'Raging Fury')) {
+            if (move.named('Outrage', 'Thrash', 'Lash Out', 'Freezing Glare', 'Roar of Time', 'Fiery Wrath', 'Rage', 'Stomping Tantrum', 'Raging Fury', 'Cold Truth')) {
                 basePower *= 1.5;
             }
             if (move.named('Blast Burn', 'Inferno', 'Lava Plume', 'Heat Wave', 'Eruption', 'Flame Burst', 'Burn Up', 'Raging Fury')) {
@@ -2425,7 +2446,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Ghost')) {
                 basePower *= 1.5;
             }
-            if (move.named('Bone Club', 'Bonemerang', 'Bone Rush', 'Astonish')) {
+            if (move.named('Bone Club', 'Bonemerang', 'Bone Rush', 'Astonish', 'Spectral Scream')) {
                 basePower *= 1.5;
             }
             else if (move.named('Dazzling Gleam', 'Judgment', 'Origin Pulse', 'Sacred Fire', 'Flame Burst', 'Inferno', 'Flame Charge', 'Fire Spin')) {
@@ -2554,7 +2575,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Ground')) {
                 basePower *= 0;
             }
-            if (move.named('Mud Bomb', 'Mud Shot', 'Mud Slap', 'Thousand Wave', 'Mud Barrage', 'Smack Down', 'Apple Acid', 'Acid', 'Acid Spray', 'Brine')) {
+            if (move.named('Mud Bomb', 'Mud Shot', 'Mud Slap', 'Thousand Wave', 'Mud Barrage', 'Smack Down', 'Apple Acid', 'Acid', 'Acid Spray', 'Brine', 'Thunder Raid')) {
                 basePower *= 1.5;
             }
             else if (move.named('Whirlpool', 'Blizzard', 'Glaciate', 'Subzero Slammer')) {
@@ -2588,7 +2609,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Psychic') && (0, util_2.isGrounded)(attacker, field)) {
                 basePower *= 1.5;
             }
-            if (move.named('Hex', 'Magical Leaf', 'Mystical Fire', 'Moonblast', 'Aura Sphere', 'Mind Blown', 'Focus Blast', 'Secret Power') || move.name.includes('Hidden Power ')) {
+            if (move.named('Hex', 'Magical Leaf', 'Mystical Fire', 'Moonblast', 'Aura Sphere', 'Mind Blown', 'Focus Blast', 'Secret Power', 'Bunraku Beatdown') || move.name.includes('Hidden Power ')) {
                 basePower *= 1.5;
             }
             else if (move.named('Genesis Supernova') && field.hasTerrain === null) {
@@ -2840,6 +2861,9 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             }
             else if (move.named('Nature Power', 'Fly', 'Bounce', 'Blizzard', 'Glaciate', 'Subzero Slammer', 'Eruption', 'Heat Wave', ' Magma Storm', 'Lava Plume', 'Magma Drift')) {
                 basePower *= 1.3;
+            }
+            if (move.named('Fever Pitch')) {
+                basePower *= 1.2;
             }
             if (move.named('Surf', 'Muddy Water', 'Water Pledge', 'Water Spout', 'Water Sport', 'Sparkling Aria', 'Oceanic Operetta', 'Hydro Pump', 'Hydro Vortex')) {
                 basePower *= 0.555;
