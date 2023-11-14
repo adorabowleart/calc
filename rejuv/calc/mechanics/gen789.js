@@ -3206,10 +3206,13 @@ function calculateAttackSMSSSV(gen, attacker, defender, move, field, desc, isCri
 exports.calculateAttackSMSSSV = calculateAttackSMSSSV;
 function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
     var atMods = [];
-    if ((attacker.hasAbility('Slow Start') && !field.hasTerrain('Deep-Earth') && attacker.abilityOn &&
-        (move.category === 'Physical' || (move.category === 'Special' && move.isZ))) ||
-        (attacker.hasAbility('Defeatist') && attacker.curHP() <= attacker.maxHP() / 2) ||
-        (!attacker.hasType('Water') && move.category == 'Physical' && !(attacker.hasAbility('Steelworker', 'Swift Swim')))) {
+    if ((attacker.hasAbility('Slow Start') &&
+        !field.hasTerrain('Deep-Earth') && attacker.abilityOn &&
+        (move.category === 'Physical' || (move.category === 'Special' && move.isZ)))
+        ||
+            (attacker.hasAbility('Defeatist') && attacker.curHP() <= attacker.maxHP() / 2)
+        ||
+            (!attacker.hasType('Water') && move.category == 'Physical' && field.hasTerrain('Underwater') && !(attacker.hasAbility('Steelworker', 'Swift Swim')))) {
         atMods.push(2048);
         desc.attackerAbility = attacker.ability;
     }

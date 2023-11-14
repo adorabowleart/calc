@@ -524,7 +524,7 @@ function checkDownload(source, target, field, wonderRoomActive) {
 }
 exports.checkDownload = checkDownload;
 function checkStatSwap(source, target) {
-    var _a, _b, _c, _d, _e, _f, _g;
+    var _a;
     switch (source.item) {
         case 'Magcargo Crest':
             if (source.named('Magcargo')) {
@@ -537,21 +537,14 @@ function checkStatSwap(source, target) {
             break;
         case 'Infernape Crest':
             if (source.named('Infernape')) {
-                var infAtk = target.stats.atk;
+                var infAtk = target.rawStats.atk;
                 var infDef = target.stats.def;
-                var infSpe = target.stats.spe;
-                _b = __read([infSpe, infAtk], 2), infAtk = _b[0], infSpe = _b[1];
-                _c = __read([infSpe, infDef], 2), infDef = _c[0], infSpe = _c[1];
-                source.stats.def = infDef;
-                _d = __read([infSpe, infAtk], 2), infAtk = _d[0], infSpe = _d[1];
-                source.stats.atk = infAtk;
-                var infSpa = target.stats.spa;
+                var infSpa = target.rawStats.spa;
                 var infSpd = target.stats.spd;
-                _e = __read([infSpe, infSpa], 2), infSpa = _e[0], infSpe = _e[1];
-                _f = __read([infSpe, infSpd], 2), infSpd = _f[0], infSpe = _f[1];
-                source.stats.spd = infSpd;
-                _g = __read([infSpe, infSpa], 2), infSpa = _g[0], infSpe = _g[1];
-                source.stats.spa = infSpa;
+                source.rawStats.atk = infDef;
+                source.stats.def = infAtk;
+                source.rawStats.spa = infSpd;
+                source.stats.spd = infSpa;
             }
             break;
     }
