@@ -9224,12 +9224,7 @@ var SS_PATCH = {
         abilities: { 0: 'Pickup' },
         nfe: true,
         baseSpecies: 'Zigzagoon'
-    }
-};
-var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
-delete SS['Pikachu-Starter'];
-delete SS['Eevee-Starter'];
-var PLA_PATCH = {
+    },
     Arcanine: { otherFormes: ['Arcanine-Hisui'] },
     Avalugg: { otherFormes: ['Avalugg-Hisui'] },
     Basculin: { otherFormes: ['Basculin-Blue-Striped', 'Basculin-White-Striped'] },
@@ -9454,6 +9449,9 @@ var PLA_PATCH = {
         nfe: true
     }
 };
+var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
+delete SS['Pikachu-Starter'];
+delete SS['Eevee-Starter'];
 var SV_PATCH = {
     Bisharp: { nfe: true },
     Cresselia: { bs: { df: 110, sd: 120 } },
@@ -10404,7 +10402,7 @@ var SV_PATCH = {
         abilities: { 0: 'Gooey' }
     }
 };
-var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);
+var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
 exports.SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Species = (function () {
     function Species(gen) {
