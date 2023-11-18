@@ -464,9 +464,12 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     }
     if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Magma Armor') && field.hasTerrain('Dragon\'s Den')) ||
-        (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) || (move.hasType('Rock') && field.hasTerrain('Crystal Grass') && defender.hasAbility("Sap Sipper")) ||
-        (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) || ((move.hasType('Rock')) && field.hasTerrain('Crystal Fire') && defender.hasAbility("Flash Fire")) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) || (move.hasType('Rock') && field.hasTerrain('Crystal Water') && (defender.hasAbility("Water Absorb")) || defender.hasAbility('Storm Drain')) ||
+        (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
+        (move.hasType('Rock') && field.hasTerrain('Crystal Grass') && defender.hasAbility("Sap Sipper")) ||
+        (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
+        ((move.hasType('Rock')) && field.hasTerrain('Crystal Fire') && defender.hasAbility("Flash Fire")) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
+        (move.hasType('Rock') && field.hasTerrain('Crystal Water') && (defender.hasAbility("Water Absorb") || defender.hasAbility('Storm Drain'))) ||
         (move.hasType('Electric') && defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
         (move.hasType('Rock')) && field.hasTerrain('Crystal Psychic') && defender.hasType('Dark') ||
         (move.hasType('Ground') && !field.isGravity && !move.named('Thousand Arrows') && !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
