@@ -665,6 +665,9 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             (defender.types[1] ? gen.types.get((0, util_1.toID)(move.type)).effectiveness[defender.types[1]] : 1);
         typeEffectiveness *= 2;
     }
+    if (defender.hasAbility('Solaridol', 'Lunaridol') && move.hasType('Ground')) {
+        typeEffectiveness *= 0;
+    }
     switch (attacker.item) {
         case 'Fearow Crest':
             if (attacker.named('Fearow') && move.named('Drill Peck', 'Drill Run', 'Megahorn')) {
@@ -3404,6 +3407,14 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
         else if (move.hasType('Fairy')) {
             atMods.push(2048);
         }
+    }
+    if ((attacker.hasAbility('Solaridol') && move.hasType('Fire')) ||
+        (attacker.hasAbility('Lunaridol') && move.hasType('Ice'))) {
+        atMods.push(6144);
+    }
+    if ((attacker.hasAbility('Solaridol') && field.hasWeather('Sun', 'Harsh Sunshine') && move.category === 'Physical') ||
+        (attacker.hasAbility('Lunaridol') && field.hasWeather('Hail') && move.category === 'Special')) {
+        atMods.push(6144);
     }
     switch (attacker.item) {
         case 'Magcargo Crest':

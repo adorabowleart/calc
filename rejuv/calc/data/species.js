@@ -6724,6 +6724,20 @@ var SM_PATCH = {
         weightkg: 101.1,
         otherFormes: ['Volcanion']
     },
+    "Solrock Fusion": {
+        types: ['Rock', 'Psychic'],
+        bs: { hp: 90, at: 110, df: 90, sa: 75, sd: 90, sp: 44 },
+        abilities: { 0: 'Solaridol' },
+        weightkg: 154,
+        otherFormes: ['Solrock']
+    },
+    "Lunatone Fusion": {
+        types: ['Rock', 'Psychic'],
+        bs: { hp: 90, at: 44, df: 90, sa: 110, sd: 90, sp: 75 },
+        abilities: { 0: 'Lunaridol' },
+        weightkg: 168,
+        otherFormes: ['Lunatone']
+    },
     Araquanid: {
         bs: { hp: 68, at: 70, df: 92, sa: 50, sd: 132, sp: 42 },
         abilities: { 0: 'Water Bubble' },

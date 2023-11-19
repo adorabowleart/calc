@@ -297,6 +297,8 @@ var SM = XY.concat([
     'Wimp Out',
 ]);
 var SS = SM.concat([
+    'Solaridol',
+    'Lunaridol',
     'As One (Glastrier)',
     'As One (Spectrier)',
     'Ball Fetch',
