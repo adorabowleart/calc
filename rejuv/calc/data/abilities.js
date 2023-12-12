@@ -299,6 +299,7 @@ var SM = XY.concat([
 var SS = SM.concat([
     'Solaridol',
     'Lunaridol',
+    'Sharpness',
     'As One (Glastrier)',
     'As One (Spectrier)',
     'Ball Fetch',
@@ -361,7 +362,6 @@ var SV = SS.concat([
     'Quark Drive',
     'Rocky Payload',
     'Seed Sower',
-    'Sharpness',
     'Supersweet Syrup',
     'Supreme Overlord',
     'Sword of Ruin',

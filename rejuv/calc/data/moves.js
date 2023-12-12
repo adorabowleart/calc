@@ -2925,6 +2925,19 @@ var SS_PATCH = {
         zp: 180,
         maxPower: 130
     },
+    'Deluge': {
+        bp: 60,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        zp: 120,
+        maxPower: 110
+    },
+    'Aquabatics': {
+        bp: 0,
+        type: 'Water',
+        category: 'Status'
+    },
     'Apple Acid': {
         bp: 80,
         type: 'Grass',
