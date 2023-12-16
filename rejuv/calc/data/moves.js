@@ -2894,7 +2894,7 @@ var SS_PATCH = {
         zp: 100,
         maxPower: 90
     },
-    'Uproot Grass': {
+    'Uproot': {
         bp: 90,
         type: 'Grass',
         category: 'Special',
@@ -2902,7 +2902,7 @@ var SS_PATCH = {
         zp: 175,
         maxPower: 130
     },
-    'Bunraku': {
+    'Bunraku Beatdown': {
         bp: 75,
         type: 'Psychic',
         category: 'Special',
@@ -2937,6 +2937,175 @@ var SS_PATCH = {
         bp: 0,
         type: 'Water',
         category: 'Status'
+    },
+    "Mud Barrage": {
+        bp: 25,
+        type: 'Ground',
+        category: 'Special',
+        multihit: [2, 5],
+        maxPower: 130,
+        zp: 180,
+        isMultihit: true
+    },
+    "Heavenly Wing": {
+        bp: 90,
+        type: 'Flying',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 130
+    },
+    "Desert's Mark": {
+        bp: 0,
+        type: 'Ground',
+        category: 'Status'
+    },
+    "Decimation": {
+        bp: 100,
+        type: 'Dark',
+        category: 'Special',
+        priority: 1,
+        zp: 175,
+        maxPower: 130
+    },
+    "Pyrokineses": {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 175,
+        maxPower: 130
+    },
+    "Alpha Shot": {
+        bp: 50,
+        type: 'Normal',
+        category: 'Special',
+        zp: 120,
+        maxPower: 110
+    },
+    "Gilded Helix": {
+        bp: 50,
+        type: 'Normal',
+        category: 'Special',
+        zp: 120,
+        maxPower: 110
+    },
+    "Poison Sweep": {
+        bp: 50,
+        type: 'Poison',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 110,
+        makesContact: true
+    },
+    "Stacking Shot": {
+        bp: 40,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        zp: 120,
+        maxPower: 110
+    },
+    "Irritation": {
+        bp: 60,
+        type: 'Bug',
+        category: 'Special',
+        zp: 120,
+        maxPower: 110
+    },
+    "Magma Drift": {
+        bp: 90,
+        type: 'Fire',
+        category: 'Special',
+        target: 'allAdjacentFoes',
+        zp: 175,
+        maxPower: 130
+    },
+    "Slash and Burn": {
+        bp: 90,
+        type: 'Grass',
+        category: 'Physical',
+        makesContact: true,
+        isSlicing: true,
+        zp: 175,
+        maxPower: 130
+    },
+    "Arenite Wall": {
+        bp: 0,
+        type: 'Ground',
+        category: 'Status',
+        zp: 175,
+        maxPower: 130
+    },
+    "Quicksilver Spear": {
+        bp: 80,
+        type: 'Steel',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 130
+    },
+    "Sparkle On": {
+        bp: 120,
+        type: 'Fairy',
+        category: 'Physical',
+        makesContact: true,
+        recoil: [1, 33],
+        zp: 175,
+        maxPower: 130
+    },
+    "Solar Flare": {
+        bp: 100,
+        type: 'Fire',
+        category: 'Physical',
+        makesContact: true,
+        isSlicing: true,
+        zp: 175,
+        maxPower: 130
+    },
+    "Hoarfrost Moon": {
+        bp: 90,
+        type: 'Ice',
+        category: 'Special',
+        zp: 175,
+        maxPower: 130
+    },
+    "Hexing Slash": {
+        bp: 90,
+        type: 'Ghost',
+        category: 'Physical',
+        makesContact: true,
+        isSlicing: true,
+        drain: [1, 3],
+        zp: 175,
+        maxPower: 130
+    },
+    "Wake-Up Shock": {
+        bp: 80,
+        type: 'Electric',
+        category: 'Physical',
+        makesContact: true,
+        zp: 175,
+        maxPower: 130
+    },
+    "Vile Assault": {
+        bp: 90,
+        type: 'Poison',
+        category: 'Physical',
+        makesContact: true,
+        zp: 175,
+        maxPower: 130
+    },
+    "Ethereal Tempest": {
+        bp: 90,
+        type: 'Flying',
+        category: 'Special',
+        zp: 175,
+        maxPower: 130
+    },
+    "Mirror Beam": {
+        bp: 90,
+        type: 'Steel',
+        category: 'Special',
+        zp: 175,
+        maxPower: 130
     },
     'Apple Acid': {
         bp: 80,

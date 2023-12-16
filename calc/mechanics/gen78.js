@@ -172,6 +172,9 @@ function calculateSMSS(gen, attacker, defender, move, field) {
     if (field.hasTerrain('Glitch') && move.hasType('Dark', 'Steel', 'Fairy')) {
         type = 'Normal';
     }
+    if (field.hasTerrain('Ashen Beach') && move.named('Strength')) {
+        type = 'Fighting';
+    }
     move.type = type;
     if (field.hasTerrain('Glitch')) {
         if (move.hasType('Normal', 'Fighting', 'Ghost', 'Poison', 'Bug', 'Flying', 'Ground', 'Rock')) {
@@ -244,9 +247,8 @@ function calculateSMSS(gen, attacker, defender, move, field) {
         case 'Ashen Beach':
             addedType = gen.types.get('psychic');
             if (move.named('Strength')) {
-                moveType = gen.types.get('fighting').effectiveness[defender.types[0]] *
-                    (defender.types[1] ? gen.types.get('fighting').effectiveness[defender.types[1]] : 1);
-                typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                typeEffectiveness = ((attacker.hasAbility('Scrappy') && defender.hasType('Ghost')) ? 1 : moveType) * addedType.effectiveness[defender.types[0]] *
+                    (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
             }
             break;
         case 'Burning':
@@ -256,13 +258,22 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             if (move.named('Doom Desire') && field.hasTerrain('New World')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ?
                     addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (move.named('Smack Down', 'Thousand Arrows', 'Clear Smog', 'Smog') && field.hasTerrain('Burning')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ?
                     addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (move.named('Smack Down', 'Thousand Arrows', 'Continental Crush', 'Tectonic Rage') && field.hasTerrain('Dragon\'s Den')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         case 'Corrosive':
@@ -296,14 +307,23 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             if (field.hasTerrain('Crystal Fire') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('fire');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (field.hasTerrain('Crystal Water') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('water');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Water Absorb', 'Dry Skin', 'Storm Drain') || field.hasWeather('Harsh Sunshine')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (field.hasTerrain('Crystal Grass') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('grass');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Sap Sipper')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (field.hasTerrain('Crystal Psychic') && (move.named('Judgment', 'Multi-Attack', 'Rock Climb', 'Strength', 'Prismatic Laser') || move.hasType('Rock'))) {
                 addedType = gen.types.get('psychic');
@@ -314,6 +334,9 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType = gen.types.get('electric');
             if (move.named('Explosion', 'Hurricane', 'Muddy Water', 'Self-Destruct', 'Smack Down', 'Surf', 'Thousand Arrows', 'Hydro Vortex')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Volt Absorb', 'Lightning Rod', 'Motor Drive')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         case 'Fairy Tale':
@@ -333,6 +356,9 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             if (move.named('Sludge Wave', 'Nature Power')) {
                 addedType = gen.types.get('water');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Water Absorb', 'Dry Skin', 'Storm Drain') || field.hasWeather('Harsh Sunshine')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (move.hasType('Water') || move.named('Smack Down')) {
                 addedType = gen.types.get('poison');
@@ -347,6 +373,9 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             if (move.named('Flash Cannon', 'Gear Grind', 'Gyro Ball', 'Magnet Bomb', 'Muddy Water', 'Surf') || (attacker.hasAbility('Steelworker') && move.hasType('Steel'))) {
                 addedType = gen.types.get('electric');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Volt Absorb', 'Lightning Rod', 'Motor Drive')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         case 'Starlight':
@@ -357,12 +386,18 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             else if (move.named('Doom Desire')) {
                 addedType = gen.types.get('fire');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         case 'New World':
             if (move.named('Doom Desire')) {
                 addedType = gen.types.get('fire');
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Flash Fire') || field.hasWeather('Heavy Rain')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         case 'Swamp':
@@ -370,9 +405,15 @@ function calculateSMSS(gen, attacker, defender, move, field) {
             addedType = gen.types.get('water');
             if (move.named('Smack Down', 'Thousand Arrows') && field.hasTerrain('Swamp')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Water Absorb', 'Dry Skin', 'Storm Drain') || field.hasWeather('Harsh Sunshine')) {
+                    typeEffectiveness *= 0;
+                }
             }
             else if (move.hasType('Ground') && field.hasTerrain('Underwater')) {
                 typeEffectiveness = moveType * addedType.effectiveness[defender.types[0]] * (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
+                if (defender.hasAbility('Water Absorb', 'Dry Skin', 'Storm Drain') || field.hasWeather('Harsh Sunshine')) {
+                    typeEffectiveness *= 0;
+                }
             }
             break;
         default:

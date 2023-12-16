@@ -120,6 +120,15 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         desc.terrain = field.terrain;
         desc.moveType = type;
     }
+    else if (move.named('Guilded Arrow')) {
+        type = attacker.types[0];
+        desc.moveType = type;
+    }
+    else if (move.named('Mirror Beam')) {
+        attacker.types[1] ? move.type = attacker.types[1] : 'Steel';
+        type = attacker.types[0];
+        desc.moveType = type;
+    }
     else if (move.named('Terrain Pulse') && (0, util_2.isGrounded)(attacker, field)) {
         type =
             field.hasTerrain('Forest') ? 'Bug'
@@ -1448,6 +1457,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveBP = basePower;
             break;
         case 'Hex':
+        case 'Irritation':
             basePower = move.bp * (defender.status || defender.hasAbility('Comatose' || field.hasTerrain('Infernal', 'Concert-SH')) ? 2 : 1);
             desc.moveBP = basePower;
             break;
@@ -1480,6 +1490,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             basePower = move.bp * ((defender.hasAbility('Parental Bond (Child)') || field.hasTerrain('Concert-SH')) ? 2 : 1);
             break;
         case 'Wake-Up Slap':
+        case 'Wake-Up Shock':
             basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') || field.hasTerrain('Concert-SH') ? 2 : 1);
             desc.moveBP = basePower;
             break;
