@@ -119,7 +119,7 @@ var RBY = {
     Sludge: { bp: 65, type: 'Poison' },
     'Soft-Boiled': { bp: 0, category: 'Status', type: 'Normal' },
     'Solar Beam': { bp: 120, type: 'Grass' },
-    'Sonic Boom': { bp: 0, type: 'Normal' },
+    'Sonic Boom': { bp: 1, type: 'Normal' },
     'Spike Cannon': { bp: 20, type: 'Normal', multihit: [2, 5] },
     Stomp: { bp: 65, type: 'Normal' },
     Struggle: { bp: 50, type: 'Normal', recoil: [1, 2] },
@@ -227,6 +227,7 @@ var GSC_PATCH = {
     'Night Shade': { bp: 0 },
     'Sand Attack': { type: 'Ground' },
     'Seismic Toss': { bp: 0 },
+    'Sonic Boom': { bp: 0 },
     'Super Fang': { bp: 0 },
     'Wing Attack': { bp: 60 },
     Aeroblast: { bp: 100, type: 'Flying' },
@@ -287,7 +288,7 @@ var GSC_PATCH = {
     'Cotton Spore': { bp: 0, category: 'Status', type: 'Grass' },
     'Extreme Speed': { bp: 80, type: 'Normal', priority: 1 },
     'Fury Cutter': { bp: 10, type: 'Bug' },
-    Magnitude: { bp: 10, type: 'Ground' },
+    Magnitude: { bp: 0, type: 'Ground' },
     'Milk Drink': { bp: 0, category: 'Status', type: 'Normal' },
     'Scary Face': { bp: 0, category: 'Status', type: 'Normal' },
     Charm: { bp: 0, category: 'Status', type: 'Normal' },
@@ -373,7 +374,7 @@ var ADV_PATCH = {
     Surf: { target: 'allAdjacentFoes' },
     Thief: { makesContact: true },
     Thrash: { makesContact: true },
-    'Triple Kick': { makesContact: true, multihit: 3 },
+    'Triple Kick': { makesContact: true, multihit: 3, multiaccuracy: true },
     'Vine Whip': { makesContact: true },
     Waterfall: { makesContact: true },
     Wrap: { makesContact: true },
@@ -2510,7 +2511,7 @@ var SM_PATCH = {
         zp: 200
     },
     'Multi-Attack': {
-        bp: 120,
+        bp: 90,
         type: 'Normal',
         makesContact: true,
         category: 'Physical',
@@ -2820,7 +2821,1302 @@ var SM_PATCH = {
     }
 };
 var SM = (0, util_1.extend)(true, {}, XY, SM_PATCH);
-var SS_PATCH = {};
+var SS_PATCH = {
+    'Apple Acid': {
+        bp: 80,
+        type: 'Grass',
+        category: 'Special',
+        secondaries: true,
+        zp: 160,
+        maxPower: 130
+    },
+    'Astral Barrage': {
+        bp: 120,
+        type: 'Ghost',
+        category: 'Special',
+        target: 'allAdjacentFoes',
+        zp: 190,
+        maxPower: 140
+    },
+    'Aura Wheel': {
+        bp: 110,
+        type: 'Electric',
+        category: 'Physical',
+        secondaries: true,
+        zp: 185,
+        maxPower: 140
+    },
+    'Behemoth Bash': {
+        bp: 100,
+        type: 'Steel',
+        makesContact: true,
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130
+    },
+    'Behemoth Blade': {
+        bp: 100,
+        type: 'Steel',
+        makesContact: true,
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130
+    },
+    'Body Press': {
+        bp: 80,
+        type: 'Fighting',
+        makesContact: true,
+        category: 'Physical',
+        overrideOffensiveStat: 'def',
+        zp: 160,
+        maxPower: 90
+    },
+    'Bolt Beak': {
+        bp: 85,
+        type: 'Electric',
+        makesContact: true,
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130
+    },
+    'Branch Poke': {
+        bp: 40,
+        type: 'Grass',
+        makesContact: true,
+        category: 'Physical',
+        zp: 100,
+        maxPower: 90
+    },
+    'Breaking Swipe': {
+        bp: 60,
+        type: 'Dragon',
+        makesContact: true,
+        target: 'allAdjacentFoes',
+        category: 'Physical',
+        secondaries: true,
+        zp: 120,
+        maxPower: 110
+    },
+    'Burning Jealousy': {
+        bp: 70,
+        type: 'Fire',
+        target: 'allAdjacentFoes',
+        category: 'Special',
+        secondaries: true,
+        zp: 140,
+        maxPower: 120
+    },
+    'Clangorous Soul': { bp: 0, type: 'Dragon', isSound: true },
+    'Coaching': {
+        bp: 0,
+        type: 'Fighting',
+        category: 'Status'
+    },
+    'Corrosive Gas': {
+        bp: 0,
+        type: 'Poison',
+        category: 'Status',
+        target: 'allAdjacent'
+    },
+    'Court Change': { bp: 0, type: 'Normal' },
+    Decorate: { bp: 0, type: 'Fairy' },
+    'Dragon Darts': {
+        bp: 50,
+        type: 'Dragon',
+        multihit: 2,
+        category: 'Physical',
+        zp: 100,
+        maxPower: 130
+    },
+    'Dragon Energy': {
+        bp: 150,
+        type: 'Dragon',
+        category: 'Special',
+        target: 'allAdjacentFoes',
+        zp: 200,
+        maxPower: 150
+    },
+    'Drum Beating': {
+        bp: 80,
+        type: 'Grass',
+        category: 'Physical',
+        secondaries: true,
+        zp: 160,
+        maxPower: 130
+    },
+    'Dual Wingbeat': {
+        bp: 40,
+        type: 'Flying',
+        category: 'Physical',
+        makesContact: true,
+        multihit: 2,
+        zp: 100,
+        maxPower: 130
+    },
+    'Dynamax Cannon': {
+        bp: 100,
+        type: 'Dragon',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130
+    },
+    'Eerie Spell': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        isSound: true,
+        secondaries: true,
+        zp: 160,
+        maxPower: 130
+    },
+    Eternabeam: {
+        bp: 160,
+        type: 'Dragon',
+        category: 'Special',
+        zp: 200,
+        maxPower: 150
+    },
+    'Expanding Force': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'False Surrender': {
+        bp: 80,
+        type: 'Dark',
+        makesContact: true,
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130
+    },
+    'Fiery Wrath': {
+        bp: 90,
+        type: 'Dark',
+        category: 'Special',
+        target: 'allAdjacentFoes',
+        secondaries: true,
+        zp: 175,
+        maxPower: 130
+    },
+    'Fishious Rend': {
+        bp: 85,
+        type: 'Water',
+        makesContact: true,
+        isBite: true,
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130
+    },
+    'Flip Turn': {
+        bp: 60,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        zp: 120,
+        maxPower: 110
+    },
+    'Freezing Glare': {
+        bp: 90,
+        type: 'Psychic',
+        category: 'Special',
+        secondaries: true,
+        zp: 175,
+        maxPower: 130
+    },
+    'Glacial Lance': {
+        bp: 130,
+        type: 'Ice',
+        category: 'Physical',
+        target: 'allAdjacentFoes',
+        zp: 195,
+        maxPower: 140
+    },
+    'G-Max Befuddle': {
+        bp: 10,
+        type: 'Bug',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Centiferno': {
+        bp: 10,
+        type: 'Fire',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Cannonade': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Chi Strike': {
+        bp: 10,
+        type: 'Fighting',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Cuddle': {
+        bp: 10,
+        type: 'Normal',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Depletion': {
+        bp: 10,
+        type: 'Dragon',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Drum Solo': {
+        bp: 160,
+        type: 'Grass',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Fireball': {
+        bp: 160,
+        type: 'Fire',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Finale': {
+        bp: 10,
+        type: 'Fairy',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Foam Burst': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Gold Rush': {
+        bp: 10,
+        type: 'Normal',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Gravitas': {
+        bp: 10,
+        type: 'Psychic',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Hydrosnipe': {
+        bp: 160,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Malodor': {
+        bp: 10,
+        type: 'Poison',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Meltdown': {
+        bp: 10,
+        type: 'Steel',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max One Blow': {
+        bp: 10,
+        type: 'Dark',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Rapid Flow': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Replenish': {
+        bp: 10,
+        type: 'Normal',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Resonance': {
+        bp: 10,
+        type: 'Ice',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Sandblast': {
+        bp: 10,
+        type: 'Ground',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Smite': {
+        bp: 10,
+        type: 'Fairy',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Snooze': {
+        bp: 10,
+        type: 'Dark',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Steelsurge': {
+        bp: 10,
+        type: 'Steel',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Stonesurge': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Stun Shock': {
+        bp: 10,
+        type: 'Electric',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Sweetness': {
+        bp: 10,
+        type: 'Grass',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Tartness': {
+        bp: 10,
+        type: 'Grass',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Terror': {
+        bp: 10,
+        type: 'Ghost',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Vine Lash': {
+        bp: 10,
+        type: 'Grass',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Volcalith': {
+        bp: 10,
+        type: 'Rock',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Volt Crash': {
+        bp: 10,
+        type: 'Electric',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Wildfire': {
+        bp: 10,
+        type: 'Fire',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'G-Max Wind Rage': {
+        bp: 10,
+        type: 'Flying',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Grassy Glide': {
+        bp: 70,
+        type: 'Grass',
+        category: 'Physical',
+        makesContact: true,
+        zp: 140,
+        maxPower: 120
+    },
+    'Grav Apple': {
+        bp: 80,
+        type: 'Grass',
+        category: 'Physical',
+        secondaries: true,
+        zp: 160,
+        maxPower: 130
+    },
+    'Jaw Lock': {
+        bp: 80,
+        type: 'Dark',
+        makesContact: true,
+        isBite: true,
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130
+    },
+    'Jungle Healing': {
+        bp: 0,
+        type: 'Grass',
+        category: 'Status'
+    },
+    'Lash Out': {
+        bp: 75,
+        type: 'Dark',
+        makesContact: true,
+        category: 'Physical',
+        zp: 140,
+        maxPower: 130
+    },
+    'Life Dew': { bp: 0, type: 'Water' },
+    'Magic Powder': { bp: 0, type: 'Psychic' },
+    'Max Airstream': {
+        bp: 10,
+        type: 'Flying',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Darkness': {
+        bp: 10,
+        type: 'Dark',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Flare': {
+        bp: 100,
+        type: 'Fire',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Flutterby': {
+        bp: 10,
+        type: 'Bug',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Geyser': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Guard': { bp: 0, type: 'Normal', priority: 4, isMax: true },
+    'Max Hailstorm': {
+        bp: 10,
+        type: 'Ice',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Knuckle': {
+        bp: 10,
+        type: 'Fighting',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Lightning': {
+        bp: 10,
+        type: 'Electric',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Mindstorm': {
+        bp: 10,
+        type: 'Psychic',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Ooze': {
+        bp: 10,
+        type: 'Poison',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Overgrowth': {
+        bp: 10,
+        type: 'Grass',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Phantasm': {
+        bp: 10,
+        type: 'Ghost',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Quake': {
+        bp: 10,
+        type: 'Ground',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Rockfall': {
+        bp: 10,
+        type: 'Rock',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Starfall': {
+        bp: 10,
+        type: 'Fairy',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Steelspike': {
+        bp: 10,
+        type: 'Steel',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Strike': {
+        bp: 10,
+        type: 'Normal',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Max Wyrmwind': {
+        bp: 10,
+        type: 'Dragon',
+        category: 'Physical',
+        isMax: true,
+        maxPower: 1
+    },
+    'Meteor Assault': {
+        bp: 150,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 200,
+        maxPower: 100
+    },
+    'Meteor Beam': {
+        bp: 120,
+        type: 'Rock',
+        category: 'Special',
+        zp: 190,
+        maxPower: 140
+    },
+    'Misty Explosion': {
+        bp: 100,
+        type: 'Fairy',
+        category: 'Special',
+        target: 'allAdjacent',
+        zp: 180,
+        maxPower: 130
+    },
+    'No Retreat': { bp: 0, type: 'Fighting' },
+    Obstruct: { bp: 0, type: 'Dark', priority: 4 },
+    Octolock: { bp: 0, type: 'Fighting' },
+    Overdrive: {
+        bp: 80,
+        type: 'Electric',
+        isSound: true,
+        target: 'allAdjacentFoes',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    Poltergeist: {
+        bp: 110,
+        type: 'Ghost',
+        category: 'Physical',
+        zp: 185,
+        maxPower: 140
+    },
+    'Pyro Ball': {
+        bp: 120,
+        type: 'Fire',
+        category: 'Physical',
+        secondaries: true,
+        isBullet: true,
+        zp: 190,
+        maxPower: 140
+    },
+    'Rising Voltage': {
+        bp: 70,
+        type: 'Electric',
+        category: 'Special',
+        zp: 140,
+        maxPower: 140
+    },
+    'Scale Shot': {
+        bp: 25,
+        type: 'Dragon',
+        category: 'Physical',
+        multihit: [2, 5],
+        zp: 140,
+        maxPower: 130
+    },
+    'Shell Side Arm': {
+        bp: 90,
+        type: 'Poison',
+        category: 'Special',
+        secondaries: true,
+        zp: 175,
+        maxPower: 90
+    },
+    'Snap Trap': {
+        bp: 35,
+        type: 'Grass',
+        makesContact: true,
+        category: 'Physical',
+        zp: 100,
+        maxPower: 90
+    },
+    'Snipe Shot': {
+        bp: 80,
+        type: 'Water',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Scorching Sands': {
+        bp: 70,
+        type: 'Ground',
+        category: 'Special',
+        secondaries: true,
+        zp: 140,
+        maxPower: 120
+    },
+    'Skitter Smack': {
+        bp: 70,
+        type: 'Bug',
+        category: 'Physical',
+        makesContact: true,
+        secondaries: true,
+        zp: 140,
+        maxPower: 120
+    },
+    'Spirit Break': {
+        bp: 75,
+        type: 'Fairy',
+        makesContact: true,
+        category: 'Physical',
+        secondaries: true,
+        zp: 140,
+        maxPower: 130
+    },
+    'Steel Beam': {
+        bp: 140,
+        type: 'Steel',
+        mindBlownRecoil: true,
+        category: 'Special',
+        zp: 200,
+        maxPower: 140
+    },
+    'Steel Roller': {
+        bp: 130,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true,
+        zp: 195,
+        maxPower: 140
+    },
+    'Strange Steam': {
+        bp: 90,
+        type: 'Fairy',
+        category: 'Special',
+        secondaries: true,
+        zp: 175,
+        maxPower: 130
+    },
+    'Surging Strikes': {
+        bp: 25,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        willCrit: true,
+        isPunch: true,
+        multihit: 3,
+        zp: 140,
+        maxPower: 130
+    },
+    'Terrain Pulse': {
+        bp: 50,
+        type: 'Normal',
+        category: 'Special',
+        isPulse: true,
+        zp: 160,
+        maxPower: 130
+    },
+    'Triple Axel': {
+        bp: 20,
+        type: 'Ice',
+        category: 'Physical',
+        makesContact: true,
+        multihit: 3,
+        multiaccuracy: true,
+        zp: 120,
+        maxPower: 140
+    },
+    'Wicked Blow': {
+        bp: 80,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true,
+        willCrit: true,
+        isPunch: true,
+        zp: 160,
+        maxPower: 130
+    },
+    'Stuff Cheeks': { bp: 0, type: 'Normal' },
+    'Tar Shot': { bp: 0, type: 'Rock' },
+    Teatime: { bp: 0, type: 'Normal' },
+    'Thunder Cage': {
+        bp: 80,
+        type: 'Electric',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Thunderous Kick': {
+        bp: 90,
+        type: 'Fighting',
+        category: 'Physical',
+        secondaries: true,
+        makesContact: true,
+        zp: 175,
+        maxPower: 90
+    },
+    '10,000,000 Volt Thunderbolt': { maxPower: 1 },
+    Absorb: { maxPower: 90 },
+    Accelerock: { maxPower: 90 },
+    Acid: { maxPower: 70 },
+    'Acid Downpour': { maxPower: 1 },
+    'Acid Spray': { maxPower: 70 },
+    Acrobatics: { maxPower: 110 },
+    'Aerial Ace': { maxPower: 110 },
+    Aeroblast: { maxPower: 130 },
+    'Air Cutter': { maxPower: 110 },
+    'Air Slash': { maxPower: 130 },
+    'All-Out Pummeling': { maxPower: 1 },
+    'Anchor Shot': { maxPower: 130 },
+    'Ancient Power': { maxPower: 110 },
+    'Aqua Jet': { maxPower: 90 },
+    'Aqua Tail': { maxPower: 130 },
+    'Arm Thrust': { maxPower: 70 },
+    Assurance: { maxPower: 110 },
+    Astonish: { maxPower: 90 },
+    'Attack Order': { maxPower: 130 },
+    'Aura Sphere': { maxPower: 90 },
+    'Aurora Beam': { maxPower: 120 },
+    Avalanche: { maxPower: 110 },
+    Barrage: { maxPower: 90 },
+    'Beak Blast': { maxPower: 130 },
+    'Beat Up': { maxPower: 100 },
+    Belch: { maxPower: 95 },
+    Bide: { maxPower: 100 },
+    Bind: { maxPower: 90 },
+    Bite: { maxPower: 110 },
+    'Black Hole Eclipse': { maxPower: 1 },
+    'Blast Burn': { maxPower: 150 },
+    'Blaze Kick': { maxPower: 130 },
+    Blizzard: { maxPower: 140 },
+    'Bloom Doom': { maxPower: 1 },
+    'Blue Flare': { maxPower: 140 },
+    'Body Slam': { maxPower: 130 },
+    'Bolt Strike': { maxPower: 140 },
+    'Bone Club': { maxPower: 120 },
+    Bonemerang: { maxPower: 130 },
+    'Bone Rush': { maxPower: 130 },
+    Boomburst: { maxPower: 140 },
+    Bounce: { maxPower: 130 },
+    'Brave Bird': { maxPower: 140 },
+    'Breakneck Blitz': { maxPower: 1 },
+    'Brick Break': { maxPower: 90 },
+    Brine: { maxPower: 120 },
+    'Brutal Swing': { maxPower: 110 },
+    Bubble: { maxPower: 90 },
+    'Bubble Beam': { maxPower: 120 },
+    'Bug Bite': { maxPower: 110 },
+    'Bug Buzz': { maxPower: 130 },
+    Bulldoze: { maxPower: 110 },
+    'Bullet Punch': { maxPower: 90 },
+    'Bullet Seed': { maxPower: 130 },
+    'Burn Up': { maxPower: 140 },
+    Catastropika: { maxPower: 1 },
+    'Charge Beam': { maxPower: 100 },
+    Chatter: { maxPower: 120 },
+    'Chip Away': { maxPower: 120 },
+    'Circle Throw': { maxPower: 80 },
+    Clamp: { maxPower: 90 },
+    'Clanging Scales': { maxPower: 140 },
+    'Clangorous Soulblaze': { maxPower: 1 },
+    'Clear Smog': { maxPower: 75 },
+    'Close Combat': { maxPower: 95 },
+    'Comet Punch': { maxPower: 100 },
+    Confusion: { maxPower: 100 },
+    Constrict: { maxPower: 90 },
+    'Continental Crush': { maxPower: 1 },
+    'Core Enforcer': { maxPower: 130 },
+    'Corkscrew Crash': { maxPower: 1 },
+    Counter: { maxPower: 75 },
+    Covet: { maxPower: 110 },
+    Crabhammer: { maxPower: 130 },
+    'Cross Chop': { maxPower: 90 },
+    'Cross Poison': { maxPower: 85 },
+    Crunch: { maxPower: 130 },
+    'Crush Claw': { maxPower: 130 },
+    'Crush Grip': { maxPower: 140 },
+    Cut: { maxPower: 100 },
+    'Darkest Lariat': { maxPower: 130 },
+    'Dark Pulse': { maxPower: 130 },
+    'Dazzling Gleam': { maxPower: 130 },
+    'Devastating Drake': { maxPower: 1 },
+    'Diamond Storm': { maxPower: 130 },
+    Dig: { maxPower: 130 },
+    'Disarming Voice': { maxPower: 90 },
+    Discharge: { maxPower: 130 },
+    Dive: { maxPower: 130 },
+    'Dizzy Punch': { maxPower: 120 },
+    'Doom Desire': { maxPower: 140 },
+    'Double-Edge': { maxPower: 140 },
+    'Double Hit': { maxPower: 120 },
+    'Double Iron Bash': { maxPower: 140 },
+    'Double Kick': { maxPower: 80 },
+    'Double Slap': { maxPower: 90 },
+    'Draco Meteor': { maxPower: 140 },
+    'Dragon Ascent': { maxPower: 140 },
+    'Dragon Breath': { maxPower: 110 },
+    'Dragon Claw': { maxPower: 130 },
+    'Dragon Hammer': { maxPower: 130 },
+    'Dragon Pulse': { maxPower: 130 },
+    'Dragon Rage': { maxPower: 100 },
+    'Dragon Rush': { maxPower: 130 },
+    'Dragon Tail': { maxPower: 110 },
+    'Draining Kiss': { maxPower: 100 },
+    'Drain Punch': { maxPower: 90 },
+    'Dream Eater': { maxPower: 130 },
+    'Drill Peck': { maxPower: 130 },
+    'Drill Run': { maxPower: 130 },
+    'Dual Chop': { maxPower: 130 },
+    'Dynamic Punch': { maxPower: 90 },
+    'Earth Power': { maxPower: 130 },
+    Earthquake: { maxPower: 130 },
+    'Echoed Voice': { maxPower: 90 },
+    'Egg Bomb': { maxPower: 130 },
+    'Electro Ball': { maxPower: 130 },
+    Electroweb: { maxPower: 110 },
+    Ember: { maxPower: 90 },
+    Endeavor: { maxPower: 130 },
+    'Energy Ball': { maxPower: 130 },
+    Eruption: { maxPower: 150 },
+    Explosion: { maxPower: 150 },
+    Extrasensory: { maxPower: 130 },
+    'Extreme Speed': { maxPower: 130 },
+    Facade: { maxPower: 120 },
+    'Fairy Wind': { maxPower: 90 },
+    'Fake Out': { maxPower: 90 },
+    'False Swipe': { maxPower: 90 },
+    Feint: { maxPower: 90 },
+    'Feint Attack': { maxPower: 110 },
+    'Fell Stinger': { maxPower: 100 },
+    'Fiery Dance': { maxPower: 130 },
+    'Final Gambit': { maxPower: 100 },
+    'Fire Blast': { maxPower: 140 },
+    'Fire Fang': { maxPower: 120 },
+    'Fire Lash': { maxPower: 130 },
+    'Fire Pledge': { maxPower: 130 },
+    'Fire Punch': { maxPower: 130 },
+    'Fire Spin': { maxPower: 90 },
+    'First Impression': { maxPower: 130 },
+    Fissure: { maxPower: 130 },
+    Flail: { maxPower: 130 },
+    'Flame Burst': { maxPower: 120 },
+    'Flame Charge': { maxPower: 100 },
+    'Flame Wheel': { maxPower: 110 },
+    Flamethrower: { maxPower: 130 },
+    'Flare Blitz': { maxPower: 140 },
+    'Flash Cannon': { maxPower: 130 },
+    'Fleur Cannon': { maxPower: 140 },
+    Fling: { maxPower: 100 },
+    Fly: { maxPower: 130 },
+    'Flying Press': { maxPower: 90 },
+    'Focus Blast': { maxPower: 95 },
+    'Focus Punch': { maxPower: 100 },
+    'Force Palm': { maxPower: 80 },
+    'Foul Play': { maxPower: 130 },
+    'Freeze-Dry': { maxPower: 120 },
+    'Freeze Shock': { maxPower: 140 },
+    'Frenzy Plant': { maxPower: 150 },
+    'Frost Breath': { maxPower: 110 },
+    Frustration: { maxPower: 130 },
+    'Fury Attack': { maxPower: 90 },
+    'Fury Cutter': { maxPower: 90 },
+    'Fury Swipes': { maxPower: 100 },
+    'Fusion Bolt': { maxPower: 130 },
+    'Fusion Flare': { maxPower: 130 },
+    'Future Sight': { maxPower: 140 },
+    'Gear Grind': { maxPower: 130 },
+    'Genesis Supernova': { maxPower: 1 },
+    'Giga Drain': { maxPower: 130 },
+    'Giga Impact': { maxPower: 150 },
+    'Gigavolt Havoc': { maxPower: 1 },
+    Glaciate: { maxPower: 120 },
+    'Grass Knot': { maxPower: 130 },
+    'Grass Pledge': { maxPower: 130 },
+    'Guardian of Alola': { maxPower: 1 },
+    Guillotine: { maxPower: 130 },
+    'Gunk Shot': { maxPower: 95 },
+    Gust: { maxPower: 90 },
+    'Gyro Ball': { maxPower: 130 },
+    'Hammer Arm': { maxPower: 90 },
+    Headbutt: { maxPower: 120 },
+    'Head Charge': { maxPower: 140 },
+    'Head Smash': { maxPower: 150 },
+    'Heart Stamp': { maxPower: 110 },
+    'Heat Crash': { maxPower: 130 },
+    'Heat Wave': { maxPower: 130 },
+    'Heavy Slam': { maxPower: 130 },
+    Hex: { maxPower: 120 },
+    'HP': { maxPower: 110 },
+    'HP Bug': { maxPower: 110 },
+    'HP Dark': { maxPower: 110 },
+    'HP Dragon': { maxPower: 110 },
+    'HP Electric': { maxPower: 110 },
+    'HP Fighting': { maxPower: 80 },
+    'HP Fire': { maxPower: 110 },
+    'HP Flying': { maxPower: 110 },
+    'HP Ghost': { maxPower: 110 },
+    'HP Grass': { maxPower: 110 },
+    'HP Ground': { maxPower: 110 },
+    'HP Ice': { maxPower: 110 },
+    'HP Poison': { maxPower: 80 },
+    'HP Psychic': { maxPower: 110 },
+    'HP Rock': { maxPower: 110 },
+    'HP Steel': { maxPower: 110 },
+    'HP Water': { maxPower: 110 },
+    'High Horsepower': { maxPower: 130 },
+    'High Jump Kick': { maxPower: 95 },
+    'Hold Back': { maxPower: 90 },
+    'Horn Attack': { maxPower: 120 },
+    'Horn Drill': { maxPower: 130 },
+    'Horn Leech': { maxPower: 130 },
+    Howl: { isSound: true },
+    Hurricane: { maxPower: 140 },
+    'Hydro Cannon': { maxPower: 150 },
+    'Hydro Pump': { maxPower: 140 },
+    'Hydro Vortex': { maxPower: 1 },
+    'Hyper Beam': { maxPower: 150 },
+    'Hyper Fang': { maxPower: 130 },
+    'Hyperspace Fury': { maxPower: 130 },
+    'Hyperspace Hole': { maxPower: 130 },
+    'Hyper Voice': { maxPower: 130 },
+    'Ice Ball': { maxPower: 90 },
+    'Ice Beam': { maxPower: 130 },
+    'Ice Burn': { maxPower: 140 },
+    'Ice Fang': { maxPower: 120 },
+    'Ice Hammer': { maxPower: 130 },
+    'Ice Punch': { maxPower: 130 },
+    'Ice Shard': { maxPower: 90 },
+    'Icicle Crash': { maxPower: 130 },
+    'Icicle Spear': { maxPower: 130 },
+    'Icy Wind': { maxPower: 110 },
+    Incinerate: { maxPower: 110 },
+    Inferno: { maxPower: 130 },
+    'Inferno Overdrive': { maxPower: 1 },
+    Infestation: { maxPower: 90 },
+    'Iron Head': { maxPower: 130 },
+    'Iron Tail': { maxPower: 130 },
+    Judgment: { maxPower: 130 },
+    'Jump Kick': { maxPower: 90 },
+    'Karate Chop': { maxPower: 75 },
+    'Knock Off': { maxPower: 120 },
+    'Land\'s Wrath': { maxPower: 130 },
+    'Last Resort': { maxPower: 140 },
+    'Lava Plume': { maxPower: 130 },
+    Leafage: { maxPower: 90 },
+    'Leaf Blade': { maxPower: 130 },
+    'Leaf Storm': { maxPower: 140 },
+    'Leaf Tornado': { maxPower: 120 },
+    'Leech Life': { maxPower: 130 },
+    'Let\'s Snuggle Forever': { maxPower: 1 },
+    Lick: { maxPower: 90 },
+    'Light of Ruin': { maxPower: 140 },
+    'Light That Burns the Sky': { maxPower: 1 },
+    Liquidation: { maxPower: 130 },
+    'Low Kick': { maxPower: 100 },
+    'Low Sweep': { maxPower: 85 },
+    Lunge: { maxPower: 130 },
+    'Luster Purge': { maxPower: 120 },
+    'Mach Punch': { maxPower: 70 },
+    'Magical Leaf': { maxPower: 110 },
+    'Magma Storm': { maxPower: 130 },
+    'Magnet Bomb': { maxPower: 110 },
+    Magnitude: { maxPower: 140 },
+    'Malicious Moonsault': { maxPower: 1 },
+    'Mega Drain': { maxPower: 90 },
+    Megahorn: { maxPower: 140 },
+    'Mega Kick': { maxPower: 140 },
+    'Mega Punch': { maxPower: 130 },
+    'Menacing Moonraze Maelstrom': { maxPower: 1 },
+    'Metal Burst': { maxPower: 100 },
+    'Metal Claw': { maxPower: 100 },
+    'Meteor Mash': { maxPower: 130 },
+    'Mind Blown': { maxPower: 150 },
+    'Mirror Coat': { maxPower: 100 },
+    'Mirror Shot': { maxPower: 120 },
+    'Mist Ball': { maxPower: 120 },
+    Moonblast: { maxPower: 130 },
+    'Moongeist Beam': { maxPower: 130 },
+    'Mud Bomb': { maxPower: 120 },
+    'Mud Shot': { maxPower: 110 },
+    'Mud-Slap': { maxPower: 90 },
+    'Muddy Water': { maxPower: 130 },
+    'Multi-Attack': { bp: 120, maxPower: 95 },
+    'Mystical Fire': { maxPower: 130 },
+    'Natural Gift': { maxPower: 130 },
+    'Nature\'s Madness': { maxPower: 100 },
+    'Needle Arm': { maxPower: 110 },
+    'Never-Ending Nightmare': { maxPower: 1 },
+    'Night Daze': { maxPower: 130 },
+    'Night Shade': { maxPower: 100 },
+    'Night Slash': { maxPower: 120 },
+    Nuzzle: { maxPower: 90 },
+    'Oblivion Wing': { maxPower: 130 },
+    'Oceanic Operetta': { maxPower: 1 },
+    Octazooka: { maxPower: 120 },
+    'Ominous Wind': { maxPower: 110 },
+    'Origin Pulse': { maxPower: 140 },
+    Outrage: { maxPower: 140 },
+    Overheat: { maxPower: 140 },
+    'Paleo Wave': { maxPower: 130 },
+    'Parabolic Charge': { maxPower: 120 },
+    Payback: { maxPower: 100 },
+    'Pay Day': { maxPower: 90 },
+    Peck: { maxPower: 90 },
+    'Petal Blizzard': { maxPower: 130 },
+    'Petal Dance': { maxPower: 140 },
+    'Phantom Force': { maxPower: 130 },
+    'Photon Geyser': { maxPower: 130 },
+    'Pin Missile': { maxPower: 130 },
+    'Plasma Fists': { maxPower: 130 },
+    'Play Rough': { maxPower: 130 },
+    Pluck: { maxPower: 110 },
+    'Poison Fang': { maxPower: 75 },
+    'Poison Jab': { maxPower: 90 },
+    'Poison Sting': { maxPower: 70 },
+    'Poison Tail': { maxPower: 75 },
+    'Pollen Puff': { maxPower: 130 },
+    Pound: { maxPower: 90 },
+    'Powder Snow': { maxPower: 90 },
+    'Power Gem': { maxPower: 130 },
+    'Power Trip': { maxPower: 130 },
+    'Power-Up Punch': { maxPower: 70 },
+    'Power Whip': { maxPower: 140 },
+    'Precipice Blades': { maxPower: 140 },
+    Present: { maxPower: 100 },
+    'Prismatic Laser': { maxPower: 150 },
+    Psybeam: { maxPower: 120 },
+    Psychic: { maxPower: 130 },
+    'Psychic Fangs': { maxPower: 130 },
+    'Psycho Boost': { maxPower: 140 },
+    'Psycho Cut': { maxPower: 120 },
+    Psyshock: { maxPower: 130 },
+    Psystrike: { maxPower: 130 },
+    Psywave: { maxPower: 100 },
+    'Pulverizing Pancake': { maxPower: 1 },
+    Punishment: { maxPower: 130 },
+    Pursuit: { maxPower: 90 },
+    'Quick Attack': { maxPower: 90 },
+    Rage: { maxPower: 90 },
+    'Rapid Spin': { bp: 50, secondaries: true, maxPower: 100 },
+    'Razor Leaf': { maxPower: 110 },
+    'Razor Shell': { maxPower: 130 },
+    'Razor Wind': { maxPower: 130 },
+    'Relic Song': { maxPower: 130 },
+    Retaliate: { maxPower: 120 },
+    Return: { maxPower: 130 },
+    'Revelation Dance': { maxPower: 130 },
+    Revenge: { maxPower: 80 },
+    Reversal: { maxPower: 100 },
+    'Roar of Time': { maxPower: 150 },
+    'Rock Blast': { maxPower: 130 },
+    'Rock Climb': { maxPower: 130 },
+    'Rock Slide': { maxPower: 130 },
+    'Rock Smash': { maxPower: 70 },
+    'Rock Throw': { maxPower: 100 },
+    'Rock Tomb': { maxPower: 110 },
+    'Rock Wrecker': { maxPower: 150 },
+    'Rolling Kick': { maxPower: 80 },
+    Rollout: { maxPower: 90 },
+    Round: { maxPower: 110 },
+    'Sacred Fire': { maxPower: 130 },
+    'Sacred Sword': { maxPower: 90 },
+    'Sand Tomb': { maxPower: 90 },
+    'Savage Spin-Out': { maxPower: 1 },
+    Scald: { maxPower: 130 },
+    Scratch: { maxPower: 90 },
+    'Searing Shot': { maxPower: 130 },
+    'Searing Sunraze Smash': { maxPower: 1 },
+    'Secret Power': { maxPower: 120 },
+    'Secret Sword': { maxPower: 90 },
+    'Seed Bomb': { maxPower: 130 },
+    'Seed Flare': { maxPower: 140 },
+    'Seismic Toss': { maxPower: 75 },
+    'Self-Destruct': { maxPower: 150 },
+    'Shadow Ball': { maxPower: 130 },
+    'Shadow Bone': { maxPower: 130 },
+    'Shadow Claw': { maxPower: 120 },
+    'Shadow Force': { maxPower: 140 },
+    'Shadow Punch': { maxPower: 110 },
+    'Shadow Sneak': { maxPower: 90 },
+    'Shadow Strike': { maxPower: 130 },
+    'Shattered Psyche': { maxPower: 1 },
+    'Sheer Cold': { maxPower: 130 },
+    'Shell Trap': { maxPower: 150 },
+    'Shock Wave': { maxPower: 110 },
+    'Signal Beam': { maxPower: 130 },
+    'Silver Wind': { maxPower: 110 },
+    'Sinister Arrow Raid': { maxPower: 1 },
+    'Skull Bash': { maxPower: 140 },
+    'Sky Attack': { maxPower: 140 },
+    'Sky Drop': { maxPower: 110 },
+    'Sky Uppercut': { maxPower: 90 },
+    Slam: { maxPower: 130 },
+    Slash: { maxPower: 120 },
+    Sludge: { maxPower: 85 },
+    'Sludge Bomb': { maxPower: 90 },
+    'Sludge Wave': { maxPower: 90 },
+    'Smack Down': { maxPower: 100 },
+    'Smart Strike': { maxPower: 120 },
+    'Smelling Salts': { maxPower: 120 },
+    Smog: { maxPower: 70 },
+    Snarl: { maxPower: 110 },
+    Snore: { maxPower: 100 },
+    'Solar Beam': { maxPower: 140 },
+    'Solar Blade': { maxPower: 140 },
+    'Sonic Boom': { maxPower: 100 },
+    'Soul-Stealing 7-Star Strike': { maxPower: 1 },
+    'Spacial Rend': { maxPower: 130 },
+    Spark: { maxPower: 120 },
+    'Sparkling Aria': { maxPower: 130 },
+    'Spectral Thief': { maxPower: 130 },
+    'Spike Cannon': { maxPower: 120 },
+    'Spirit Shackle': { maxPower: 130 },
+    'Spit Up': { maxPower: 100 },
+    'Splintered Stormshards': { maxPower: 1 },
+    'Steam Eruption': { maxPower: 140 },
+    Steamroller: { maxPower: 120 },
+    'Steel Wing': { maxPower: 120 },
+    'Stoked Sparksurfer': { maxPower: 1 },
+    Stomp: { maxPower: 120 },
+    'Stomping Tantrum': { maxPower: 130 },
+    'Stone Edge': { maxPower: 130 },
+    'Stored Power': { maxPower: 130 },
+    'Storm Throw': { maxPower: 80 },
+    Strength: { maxPower: 130 },
+    'Struggle Bug': { maxPower: 100 },
+    Submission: { maxPower: 90 },
+    'Subzero Slammer': { maxPower: 1 },
+    'Sucker Punch': { maxPower: 120 },
+    'Sunsteel Strike': { maxPower: 130 },
+    'Super Fang': { maxPower: 100 },
+    Superpower: { maxPower: 95 },
+    'Supersonic Skystrike': { maxPower: 1 },
+    Surf: { maxPower: 130 },
+    Swift: { maxPower: 110 },
+    Synchronoise: { maxPower: 140 },
+    Tackle: { maxPower: 90 },
+    'Tail Slap': { maxPower: 130 },
+    'Take Down': { maxPower: 130 },
+    'Techno Blast': { maxPower: 140 },
+    'Tectonic Rage': { maxPower: 1 },
+    Thief: { maxPower: 110 },
+    'Thousand Arrows': { maxPower: 130 },
+    'Thousand Waves': { maxPower: 130 },
+    Thrash: { maxPower: 140 },
+    'Throat Chop': { maxPower: 130 },
+    Thunder: { maxPower: 140 },
+    Thunderbolt: { maxPower: 130 },
+    'Thunder Fang': { maxPower: 120 },
+    'Thunder Punch': { maxPower: 130 },
+    'Thunder Shock': { maxPower: 90 },
+    'Tri Attack': { maxPower: 130 },
+    'Triple Kick': { maxPower: 80 },
+    'Trop Kick': { maxPower: 120 },
+    'Trump Card': { maxPower: 130 },
+    Twineedle: { maxPower: 100 },
+    'Twinkle Tackle': { maxPower: 1 },
+    Twister: { maxPower: 90 },
+    'U-turn': { maxPower: 120 },
+    Uproar: { maxPower: 130 },
+    'Vacuum Wave': { maxPower: 70 },
+    'V-create': { maxPower: 150 },
+    Venoshock: { maxPower: 85 },
+    'Vine Whip': { maxPower: 100 },
+    'Vise Grip': { maxPower: 110 },
+    'Vital Throw': { maxPower: 85 },
+    'Volt Switch': { maxPower: 120 },
+    'Volt Tackle': { maxPower: 140 },
+    'Wake-Up Slap': { maxPower: 85 },
+    Waterfall: { maxPower: 130 },
+    'Water Gun': { maxPower: 90 },
+    'Water Pledge': { maxPower: 130 },
+    'Water Pulse': { maxPower: 110 },
+    'Water Shuriken': { maxPower: 90 },
+    'Water Spout': { maxPower: 150 },
+    'Weather Ball': { maxPower: 130 },
+    Whirlpool: { maxPower: 90 },
+    'Wild Charge': { maxPower: 130 },
+    'Wing Attack': { maxPower: 110 },
+    'Wood Hammer': { maxPower: 140 },
+    Wrap: { maxPower: 90 },
+    'Wring Out': { maxPower: 140 },
+    'X-Scissor': { maxPower: 130 },
+    'Zap Cannon': { maxPower: 140 },
+    'Zen Headbutt': { maxPower: 130 },
+    'Zing Zap': { maxPower: 130 }
+};
 var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
 var LGPE_MOVES = [
     'Baddy Bad',
@@ -2850,7 +4146,766 @@ finally {
     }
     finally { if (e_1) throw e_1.error; }
 }
-var SV_PATCH = {};
+var SV_PATCH = {
+    'Aerial Ace': { isSlicing: true },
+    Aeroblast: { isWind: true },
+    'Air Cutter': { isSlicing: true, isWind: true },
+    'Air Slash': { isSlicing: true },
+    'Behemoth Blade': { isSlicing: true },
+    Blizzard: { isWind: true },
+    'Cross Poison': { isSlicing: true },
+    Cut: { isSlicing: true },
+    'Fairy Wind': { isWind: true },
+    'Fury Cutter': { isSlicing: true },
+    'Glacial Lance': { bp: 120, zp: 190 },
+    'Grassy Glide': { bp: 55, zp: 100, maxPower: 110 },
+    Gust: { isWind: true },
+    'Heat Wave': { isWind: true },
+    Hurricane: { isWind: true },
+    'Icy Wind': { isWind: true },
+    'Leaf Blade': { isSlicing: true },
+    'Luster Purge': { bp: 95, zp: 175, maxPower: 130 },
+    'Mist Ball': { bp: 95, zp: 175, maxPower: 130 },
+    'Night Slash': { isSlicing: true },
+    'Petal Blizzard': { isWind: true },
+    'Psycho Cut': { isSlicing: true },
+    'Razor Leaf': { isSlicing: true },
+    'Razor Shell': { isSlicing: true },
+    'Sacred Sword': { isSlicing: true },
+    'Secret Sword': { isSlicing: true },
+    Sandstorm: { isWind: true },
+    Slash: { isSlicing: true },
+    'Solar Blade': { isSlicing: true },
+    Tailwind: { isWind: true },
+    Twister: { isWind: true },
+    Whirlwind: { isWind: true },
+    'Wicked Blow': { bp: 75, zp: 140 },
+    'X-Scissor': { isSlicing: true },
+    'Aqua Cutter': {
+        bp: 70,
+        type: 'Water',
+        category: 'Physical',
+        zp: 140,
+        maxPower: 120,
+        isSlicing: true
+    },
+    'Alluring Voice': {
+        bp: 80,
+        type: 'Fairy',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true,
+        isSound: true
+    },
+    'Aqua Step': {
+        bp: 80,
+        type: 'Water',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true,
+        makesContact: true
+    },
+    'Armor Cannon': {
+        bp: 120,
+        type: 'Fire',
+        category: 'Special',
+        zp: 190,
+        maxPower: 140
+    },
+    'Axe Kick': {
+        bp: 120,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 95,
+        secondaries: true,
+        hasCrashDamage: true,
+        makesContact: true
+    },
+    'Barb Barrage': {
+        bp: 60,
+        type: 'Poison',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 80,
+        secondaries: true
+    },
+    'Bitter Blade': {
+        bp: 90,
+        type: 'Fire',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 130,
+        makesContact: true,
+        isSlicing: true,
+        drain: [1, 2]
+    },
+    'Bitter Malice': {
+        bp: 75,
+        type: 'Ghost',
+        category: 'Special',
+        zp: 140,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Blazing Torque': {
+        bp: 80,
+        type: 'Fire',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Bleakwind Storm': {
+        bp: 100,
+        type: 'Flying',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true,
+        isWind: true,
+        target: 'allAdjacentFoes'
+    },
+    'Blood Moon': {
+        bp: 140,
+        type: 'Normal',
+        category: 'Special',
+        zp: 200,
+        maxPower: 140
+    },
+    'Burning Bulwark': { bp: 0, type: 'Fire', priority: 4 },
+    'Ceaseless Edge': {
+        bp: 65,
+        type: 'Dark',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 120,
+        makesContact: true,
+        isSlicing: true,
+        secondaries: true
+    },
+    'Chilling Water': {
+        bp: 50,
+        type: 'Water',
+        category: 'Special',
+        zp: 100,
+        maxPower: 100,
+        secondaries: true
+    },
+    'Chilly Reception': {
+        bp: 0,
+        type: 'Ice',
+        category: 'Status'
+    },
+    'Chloroblast': {
+        bp: 150,
+        type: 'Grass',
+        mindBlownRecoil: true,
+        category: 'Special',
+        zp: 200,
+        maxPower: 150
+    },
+    'Collision Course': {
+        bp: 100,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 90,
+        makesContact: true
+    },
+    'Combat Torque': {
+        bp: 100,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 90,
+        secondaries: true
+    },
+    Comeuppance: {
+        bp: 0,
+        type: 'Dark',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100,
+        makesContact: true
+    },
+    Doodle: {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    'Double Shock': {
+        bp: 120,
+        type: 'Electric',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 140,
+        makesContact: true
+    },
+    'Dire Claw': {
+        bp: 80,
+        type: 'Poison',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 90,
+        makesContact: true,
+        secondaries: true
+    },
+    'Dragon Cheer': { bp: 0, type: 'Dragon' },
+    'Electro Drift': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130,
+        makesContact: true
+    },
+    'Electro Shot': {
+        bp: 130,
+        type: 'Electric',
+        category: 'Special',
+        zp: 195,
+        maxPower: 140
+    },
+    'Esper Wing': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Fickle Beam': {
+        bp: 80,
+        type: 'Dragon',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Fillet Away': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    'Flower Trick': {
+        bp: 70,
+        type: 'Grass',
+        category: 'Physical',
+        willCrit: true,
+        zp: 140,
+        maxPower: 120
+    },
+    'Gigaton Hammer': {
+        bp: 160,
+        type: 'Steel',
+        category: 'Physical',
+        zp: 200,
+        maxPower: 150
+    },
+    'Glaive Rush': {
+        bp: 120,
+        type: 'Dragon',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 140,
+        makesContact: true
+    },
+    'Hard Press': {
+        bp: 0,
+        type: 'Steel',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100,
+        makesContact: true
+    },
+    'Headlong Rush': {
+        bp: 120,
+        type: 'Ground',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 140,
+        makesContact: true,
+        isPunch: true
+    },
+    'Hydro Steam': {
+        bp: 80,
+        type: 'Water',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Hyper Drill': {
+        bp: 100,
+        type: 'Normal',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130,
+        makesContact: true,
+        breaksProtect: true
+    },
+    'Ice Spinner': {
+        bp: 80,
+        type: 'Ice',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        makesContact: true
+    },
+    'Infernal Parade': {
+        bp: 60,
+        type: 'Ghost',
+        category: 'Special',
+        zp: 120,
+        maxPower: 110,
+        secondaries: true
+    },
+    'Ivy Cudgel': {
+        bp: 100,
+        type: 'Grass',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130
+    },
+    'Jet Punch': {
+        bp: 60,
+        type: 'Water',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 110,
+        makesContact: true,
+        isPunch: true,
+        priority: 1
+    },
+    'Kowtow Cleave': {
+        bp: 85,
+        type: 'Dark',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        makesContact: true,
+        isSlicing: true
+    },
+    'Last Respects': {
+        bp: 50,
+        type: 'Ghost',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100
+    },
+    'Lumina Crash': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Lunar Blessing': {
+        bp: 0,
+        type: 'Psychic',
+        category: 'Status'
+    },
+    'Magical Torque': {
+        bp: 100,
+        type: 'Fairy',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Make It Rain': {
+        bp: 120,
+        type: 'Steel',
+        category: 'Special',
+        zp: 190,
+        maxPower: 140,
+        target: 'allAdjacentFoes',
+        self: { boosts: { spa: -1 } }
+    },
+    'Malignant Chain': {
+        bp: 100,
+        type: 'Poison',
+        category: 'Special',
+        zp: 180,
+        maxPower: 90,
+        secondaries: true
+    },
+    'Matcha Gotcha': {
+        bp: 80,
+        type: 'Grass',
+        category: 'Special',
+        target: 'allAdjacentFoes',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true,
+        drain: [1, 2]
+    },
+    'Mighty Cleave': {
+        bp: 95,
+        type: 'Rock',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 130,
+        makesContact: true,
+        isSlicing: true
+    },
+    'Mortal Spin': {
+        bp: 30,
+        type: 'Poison',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 70,
+        makesContact: true,
+        secondaries: true,
+        target: 'allAdjacentFoes'
+    },
+    'Mountain Gale': {
+        bp: 100,
+        type: 'Ice',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Mystical Power': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 140,
+        maxPower: 120,
+        secondaries: true
+    },
+    'Noxious Torque': {
+        bp: 100,
+        type: 'Poison',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 90,
+        secondaries: true
+    },
+    'Order Up': {
+        bp: 80,
+        type: 'Dragon',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        isPulse: true
+    },
+    'Psychic Noise': {
+        bp: 75,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 140,
+        maxPower: 130,
+        secondaries: true,
+        isSound: true
+    },
+    'Population Bomb': {
+        bp: 20,
+        type: 'Normal',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 90,
+        makesContact: true,
+        isSlicing: true,
+        multihit: 10,
+        multiaccuracy: true
+    },
+    Pounce: {
+        bp: 50,
+        type: 'Bug',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100,
+        makesContact: true,
+        secondaries: true
+    },
+    'Power Shift': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    Psyblade: {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        makesContact: true,
+        isSlicing: true
+    },
+    'Psyshield Bash': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Physical',
+        zp: 140,
+        maxPower: 120,
+        makesContact: true,
+        secondaries: true
+    },
+    'Rage Fist': {
+        bp: 50,
+        type: 'Ghost',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100,
+        makesContact: true,
+        isPunch: true
+    },
+    'Raging Bull': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 130,
+        makesContact: true
+    },
+    'Raging Fury': {
+        bp: 120,
+        type: 'Fire',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 140
+    },
+    'Revival Blessing': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    Ruination: {
+        bp: 0,
+        type: 'Dark',
+        category: 'Special',
+        zp: 100,
+        maxPower: 100
+    },
+    'Salt Cure': {
+        bp: 40,
+        type: 'Rock',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 90,
+        secondaries: true
+    },
+    'Sandsear Storm': {
+        bp: 100,
+        type: 'Ground',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true,
+        isWind: true,
+        target: 'allAdjacentFoes'
+    },
+    'Shed Tail': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    Shelter: {
+        bp: 0,
+        type: 'Steel',
+        category: 'Status'
+    },
+    'Silk Trap': {
+        bp: 0,
+        type: 'Bug',
+        category: 'Status',
+        priority: 4
+    },
+    Snowscape: {
+        bp: 0,
+        type: 'Ice',
+        category: 'Status'
+    },
+    'Spicy Extract': {
+        bp: 0,
+        type: 'Grass',
+        category: 'Status'
+    },
+    'Spin Out': {
+        bp: 100,
+        type: 'Steel',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130,
+        makesContact: true
+    },
+    'Springtide Storm': {
+        bp: 100,
+        type: 'Fairy',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true,
+        isWind: true,
+        target: 'allAdjacentFoes'
+    },
+    'Stone Axe': {
+        bp: 65,
+        type: 'Rock',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 120,
+        makesContact: true,
+        isSlicing: true,
+        secondaries: true
+    },
+    'Supercell Slam': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Physical',
+        zp: 180,
+        maxPower: 130,
+        makesContact: true,
+        hasCrashDamage: true
+    },
+    'Syrup Bomb': {
+        bp: 60,
+        type: 'Grass',
+        category: 'Special',
+        zp: 120,
+        maxPower: 110,
+        isBullet: true,
+        secondaries: true
+    },
+    'Tachyon Cutter': {
+        bp: 50,
+        type: 'Steel',
+        category: 'Special',
+        zp: 180,
+        maxPower: 140,
+        multihit: 2,
+        isSlicing: true
+    },
+    'Take Heart': {
+        bp: 0,
+        type: 'Psychic',
+        category: 'Status'
+    },
+    'Temper Flare': {
+        bp: 75,
+        type: 'Fire',
+        category: 'Physical',
+        zp: 140,
+        maxPower: 130,
+        makesContact: true
+    },
+    'Tera Blast': {
+        bp: 80,
+        type: 'Normal',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130
+    },
+    'Tera Starstorm': {
+        bp: 120,
+        type: 'Normal',
+        category: 'Special',
+        zp: 190,
+        maxPower: 140
+    },
+    'Thunderclap': {
+        bp: 70,
+        type: 'Electric',
+        category: 'Special',
+        zp: 140,
+        maxPower: 120,
+        priority: 1
+    },
+    'Tidy Up': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    'Torch Song': {
+        bp: 80,
+        type: 'Fire',
+        category: 'Special',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true,
+        isSound: true
+    },
+    Trailblaze: {
+        bp: 50,
+        type: 'Grass',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100,
+        secondaries: true,
+        makesContact: true
+    },
+    'Triple Arrows': {
+        bp: 90,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 175,
+        maxPower: 90,
+        secondaries: true
+    },
+    'Triple Dive': {
+        bp: 30,
+        type: 'Water',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 90,
+        makesContact: true,
+        multihit: 3
+    },
+    'Twin Beam': {
+        bp: 40,
+        type: 'Psychic',
+        category: 'Special',
+        zp: 100,
+        maxPower: 90,
+        multihit: 2
+    },
+    'Upper Hand': {
+        bp: 65,
+        type: 'Fighting',
+        category: 'Physical',
+        zp: 120,
+        maxPower: 85,
+        makesContact: true,
+        secondaries: true,
+        priority: 3
+    },
+    'Victory Dance': {
+        bp: 0,
+        type: 'Fighting',
+        category: 'Status'
+    },
+    'Wave Crash': {
+        bp: 120,
+        type: 'Water',
+        category: 'Physical',
+        zp: 190,
+        maxPower: 140,
+        makesContact: true,
+        recoil: [33, 100]
+    },
+    'Wicked Torque': {
+        bp: 80,
+        type: 'Dark',
+        category: 'Physical',
+        zp: 160,
+        maxPower: 130,
+        secondaries: true
+    },
+    'Wildbolt Storm': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Special',
+        zp: 180,
+        maxPower: 130,
+        secondaries: true,
+        isWind: true,
+        target: 'allAdjacentFoes'
+    }
+};
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Moves = (function () {
@@ -2910,6 +4965,8 @@ var Move = (function () {
             this.flags.pulse = 1;
         if (data.isSlicing)
             this.flags.slicing = 1;
+        if (data.isWind)
+            this.flags.wind = 1;
         (0, util_1.assignWithout)(this, data, Move.FLAGS);
         this.basePower = data.bp;
         if (data.zp)
@@ -2932,6 +4989,7 @@ var Move = (function () {
         'zp',
         'maxPower',
         'isSlicing',
+        'isWind',
     ]);
     return Move;
 }());

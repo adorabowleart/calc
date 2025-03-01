@@ -271,6 +271,8 @@ var Move = (function () {
         }
         if (move.multihit)
             this.multihit = move.multihit;
+        if (move.multiaccuracy)
+            this.multiaccuracy = move.multiaccuracy;
         if (move.drain)
             this.drain = move.drain;
         if (move.willCrit)
@@ -321,6 +323,12 @@ var Move = (function () {
                 this.isMax = true;
             if (move.maxMove)
                 this.maxMove = { basePower: move.maxMove.basePower };
+        }
+        if (dex.gen >= 9) {
+            if (move.flags.wind)
+                this.flags.wind = move.flags.wind;
+            if (move.flags.slicing)
+                this.flags.slicing = move.flags.slicing;
         }
     }
     return Move;
@@ -596,16 +604,29 @@ var NATDEX_BANNED = [
     'Pikachu-Libre',
     'Pichu-Spiky-eared',
     'Floette-Eternal',
-    'Magearna-Original',
 ];
 function exists(val, gen) {
     if (!val.exists || val.id === 'noability')
         return false;
     if (gen === 7 && val.isNonstandard === 'LGPE')
         return true;
-    if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name))
-        return true;
-    if (gen === 8 && ['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id))
+    if (gen >= 8) {
+        if (gen === 8) {
+            if (('isMax' in val && val.isMax) || val.isNonstandard === 'Gigantamax')
+                return true;
+            if (['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id))
+                return true;
+            if (val.isNonstandard === 'Future')
+                return false;
+        }
+        if (val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name))
+            return true;
+        if (gen > 8 && 'isZ' in val && val.isZ)
+            return false;
+        if (gen > 8 && val.isNonstandard === 'Unobtainable')
+            return true;
+    }
+    if (gen >= 6 && ['floetteeternal'].includes(val.id))
         return true;
     if (val.isNonstandard && !['CAP', 'Unobtainable', 'Gigantamax'].includes(val.isNonstandard)) {
         return false;

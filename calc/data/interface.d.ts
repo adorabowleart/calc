@@ -18,9 +18,9 @@ export type SpeciesName = string & As<'SpeciesName'>;
 export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
 export type GameType = 'Singles' | 'Doubles';
 export type Terrain = 'Flower Garden 1' | 'Flower Garden 2' | 'Flower Garden 3' | 'Flower Garden 4' | 'Flower Garden 5' | 'Crystal Fire' | 'Crystal Water' | 'Crystal Grass' | 'Crystal Psychic' | 'Short-Circuit 0.8' | 'Short-Circuit 1.5' | 'Short-Circuit 0.5' | 'Short-Circuit 1.2' | 'Short-Circuit 2' | 'Ashen Beach' | 'Big Top' | 'Burning' | 'Cave' | 'Chess Board' | 'Corrosive' | 'Corrosive Mist' | 'Dark Crystal' | 'Desert' | 'Dragon\'s Den' | 'Electric' | 'Factory' | 'Fairy Tale' | 'Forest' | 'Glitch' | 'Grassy' | 'Holy' | 'Icy' | 'Inverse' | 'Mirror' | 'Misty' | 'Mountain' | 'Murkwater' | 'New World' | 'Psychic' | 'Rainbow' | 'Rocky' | 'Snowy Mt' | 'Starlight' | 'Superheated' | 'Swamp' | 'Underwater' | 'Wasteland' | 'Water';
-export type Weather = 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
+export type Weather = 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
 export type NatureName = 'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' | 'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' | 'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' | 'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' | 'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
-export type TypeName = 'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' | 'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+export type TypeName = 'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' | 'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | 'Stellar' | '???';
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 export type MoveTarget = 'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 export interface Generations {
@@ -73,6 +73,7 @@ export interface MoveFlags {
     bullet?: 1 | 0;
     pulse?: 1 | 0;
     slicing?: 1 | 0;
+    wind?: 1 | 0;
 }
 export interface SelfOrSecondaryEffect {
     boosts?: Partial<StatsTable>;
@@ -108,6 +109,7 @@ export interface Move extends Data<MoveName> {
         basePower: number;
     };
     readonly multihit?: number | number[];
+    readonly multiaccuracy?: boolean;
 }
 export interface Species {
     get(id: ID): Specie | undefined;

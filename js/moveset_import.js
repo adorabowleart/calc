@@ -16,6 +16,12 @@ function ExportPokemon(pokeInfo) {
 	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += "Level: " + pokemon.level + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
+	if (gen === 9) {
+		var teraType = pokeInfo.find(".teraType").val();
+		if (teraType !== undefined && teraType !== pokemon.types[0]) {
+			finalText += "Tera Type: " + teraType + "\n";
+		}
+	}
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (gen > 2) {
 		var EVs_Array = [];
@@ -82,6 +88,11 @@ function getAbility(row) {
 	if (calc.ABILITIES[9].indexOf(ability) !== -1) return ability;
 }
 
+function getTeraType(row) {
+	var teraType = row[1] ? row[1].trim() : '';
+	if (Object.keys(calc.TYPE_CHART[9]).slice(1).indexOf(teraType) !== -1) return teraType;
+}
+
 function statToLegacyStat(stat) {
 	switch (stat) {
 	case 'hp':
@@ -104,6 +115,7 @@ function getStats(currentPoke, rows, offset) {
 	var currentEV;
 	var currentIV;
 	var currentAbility;
+	var currentTeraType;
 	var currentNature;
 	currentPoke.level = 100;
 	for (var x = offset; x < offset + 9; x++) {
@@ -138,6 +150,11 @@ function getStats(currentPoke, rows, offset) {
 		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
 		if (currentAbility[0] == "Ability") {
 			currentPoke.ability = currentAbility[1].trim();
+		}
+
+		currentTeraType = rows[x] ? rows[x].trim().split(":") : '';
+		if (currentTeraType[0] == "Tera Type") {
+			currentPoke.teraType = currentTeraType[1].trim();
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
@@ -203,6 +220,9 @@ function addToDex(poke) {
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
 	}
+	if (poke.teraType !== undefined) {
+		dexObject.teraType = poke.teraType;
+	}
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
 	dexObject.ivs = poke.ivs;
@@ -265,7 +285,7 @@ function addSets(pokes, name) {
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
-				currentPoke = calc.SPECIES[8][currentRow[j].trim()];
+				currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[j].trim()]));
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
@@ -275,6 +295,7 @@ function addSets(pokes, name) {
 				}
 				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));
+				currentPoke.teraType = getTeraType(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
@@ -282,8 +303,11 @@ function addSets(pokes, name) {
 			}
 		}
 	}
-	if (addedpokes > 0) {
-		alert("Successfully imported " + addedpokes + " set(s)");
+	if (addedpokes == 1) {
+		alert("Successfully imported 1 set");
+		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+	} else if (addedpokes > 1) {
+		alert("Successfully imported " + addedpokes + " sets");
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
@@ -326,6 +350,14 @@ function checkExeptions(poke) {
 	case 'Florges-Orange':
 	case 'Florges-Yellow':
 		poke = "Florges";
+		break;
+	case 'Shellos-East':
+		poke = "Shellos";
+		break;
+	case 'Deerling-Summer':
+	case 'Deerling-Autumn':
+	case 'Deerling-Winter':
+		poke = "Deerling";
 		break;
 	}
 	return poke;

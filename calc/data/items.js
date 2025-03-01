@@ -79,7 +79,6 @@ var GSC = [
     'Charcoal',
     'Dragon Fang',
     'Dragon Scale',
-    'Energy Powder',
     'Fast Ball',
     'Fire Stone',
     'Focus Band',
@@ -147,7 +146,6 @@ var GSC_ONLY = [
     'Pink Bow',
     'Polkadot Bow',
     'PSN Cure Berry',
-    'Enigma Berry',
 ];
 var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Aguav Berry',
@@ -319,6 +317,7 @@ var DPP = ADV.concat([
 var BW = DPP.concat([
     'Absorb Bulb',
     'Air Balloon',
+    'Big Nugget',
     'Binding Band',
     'Bug Gem',
     'Burn Drive',
@@ -331,9 +330,7 @@ var BW = DPP.concat([
     'Dream Ball',
     'Eject Button',
     'Electric Gem',
-    'Everstone',
     'Eviolite',
-    'Everstone',
     'Fighting Gem',
     'Fire Gem',
     'Float Stone',
@@ -424,12 +421,6 @@ var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.ME
     'Whipped Dream',
 ], false).sort());
 var SM = XY.filter(function (i) { return i !== 'Old Amber'; }).concat([
-    'PULSE',
-    'Telluric Seed',
-    'Synthetic Seed',
-    'Elemental Seed',
-    'Magical Seed',
-    'Amplifield Rock',
     'Adrenaline Orb',
     'Aloraichium Z',
     'Beast Ball',
@@ -494,13 +485,61 @@ var SM = XY.filter(function (i) { return i !== 'Old Amber'; }).concat([
     'Water Memory',
     'Waterium Z',
 ]);
-var SS = SM.concat([]);
-var SV = SM.concat([]);
+var SS = SM.concat([
+    'Berry Sweet',
+    'Blunder Policy',
+    'Chipped Pot',
+    'Clover Sweet',
+    'Cracked Pot',
+    'Eject Pack',
+    'Flower Sweet',
+    'Fossilized Bird',
+    'Fossilized Dino',
+    'Fossilized Drake',
+    'Fossilized Fish',
+    'Galarica Cuff',
+    'Galarica Wreath',
+    'Heavy-Duty Boots',
+    'Leek',
+    'Love Sweet',
+    'Ribbon Sweet',
+    'Room Service',
+    'Rusted Shield',
+    'Rusted Sword',
+    'Star Sweet',
+    'Strawberry Sweet',
+    'Sweet Apple',
+    'Tart Apple',
+    'Throat Spray',
+]);
 for (var i = 0; i < 100; i++) {
     SS.push("TR".concat(i < 10 ? "0".concat(i) : i));
 }
 SS.push('Utility Umbrella', 'Vile Vial');
 SS.push.apply(SS, __spreadArray(__spreadArray([], __read(GSC_ONLY), false), ['Old Amber'], false));
+var SV = SS.concat([
+    'Adamant Crystal',
+    'Auspicious Armor',
+    'Ability Shield',
+    'Booster Energy',
+    'Clear Amulet',
+    'Cornerstone Mask',
+    'Covert Cloak',
+    'Fairy Feather',
+    'Hearthflame Mask',
+    'Loaded Dice',
+    'Malicious Armor',
+    'Masterpiece Teacup',
+    'Metal Alloy',
+    'Mirror Herb',
+    'Punching Glove',
+    'Lustrous Globe',
+    'Griseous Core',
+    'Strange Ball',
+    'Syrupy Apple',
+    'Unremarkable Teacup',
+    'Wellspring Mask',
+]);
 var BERRIES = {
     'Aguav Berry': { t: 'Dragon', p: 80 },
     'Apicot Berry': { t: 'Ground', p: 100 },

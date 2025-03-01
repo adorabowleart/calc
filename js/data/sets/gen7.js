@@ -815,7 +815,7 @@ var SETDEX_SM = {
 	"Ditto": {
 		"Elias (Holy)": {
 			"item": "Choice Scarf",
-			"level": 42,
+			"level": 100,
 			"nature": "Timid",
 			"ability": "Imposter",
 			"evs": {"hp": 252, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0},
@@ -1235,7 +1235,7 @@ var SETDEX_SM = {
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Stealth Rock", "Power Whip", "Gyro Ball", "Leech Seed"],
 			"nature": "Sassy", "item": "Leftovers"},
-		"Partner Florinia (Fiore Gauntlet)": {"ability": "Iron Barbs", "level": 69, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0}, "moves": ["Leech Seed", "Thunder Wave", "Power Whip", "Gyro Ball"], "nature": "Brave", "item": "Rocky Helmet",},
+		"Partner Florinia (Fiore Gauntlet)": {"ability": "Iron Barbs", "level": 69, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0}, "moves": ["Leech Seed", "Thunder Wave", "Power Whip", "Gyro Ball"], "nature": "Brave", "item": "Rocky Helmet",},
 		"Partner Florinia (Tournament)": {"ability": "Iron Barbs", "level": 93, "evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0}, "moves": ["Explosion", "Thunder Wave", "Power Whip", "Gyro Ball"], "nature": "Brave", "item": "Normal Gem",}},
 	"Florges": {
 		"Adrienn (Misty) Doubles": {
@@ -1304,7 +1304,7 @@ var SETDEX_SM = {
 			"level": 58,
 			"nature": "Brave",
 			"ability": "Justified",
-			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
+			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0},
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Strength", "Close Combat", "Knock Off", "Fire Punch"]},
 		"Victoria 4 (Factory)": {
@@ -1977,7 +1977,7 @@ var SETDEX_SM = {
 			"nature": "Adamant",
 			"ability": "Intimidate",
 			"evs": {"hp": 61, "at": 61, "df": 61, "sa": 61, "sd": 61, "sp": 61},
-			"moves": ["Strength", "Darkest Lariat", "Iron Head", "Fire Fang"]},
+			"moves": ["Brick Break", "Darkest Lariat", "Iron Head", "Fire Fang"]},
 		"Victoria 4 (Factory)": {
 			"item": "Assault Vest",
 			"level": 77,
@@ -2075,7 +2075,8 @@ var SETDEX_SM = {
 			"level": 100,
 			"nature": "Jolly",
 			"ability": "Parental Bond",
-			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252}}},
+			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
+			"moves": ["Power-Up Punch", "Return", "Rock Tomb", "Earthquake"]}},
 	"Kingdra": {
 		"Amaria:Zekrom (Water Surface)": {
 			"item": "Dragonium Z",
@@ -2368,7 +2369,7 @@ var SETDEX_SM = {
 			"moves": ["Aura Sphere", "Psychic", "Calm Mind", "HP Dark"]},
 		"Samson (Big Top)": {
 			"item": "Focus Sash",
-			"level": 67,
+			"level": 68,
 			"nature": "Adamant",
 			"ability": "Steadfast",
 			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
@@ -2632,7 +2633,7 @@ var SETDEX_SM = {
 			"level": 58,
 			"nature": "Brave",
 			"ability": "Contrary",
-			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
+			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0},
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Trick Room", "Superpower", "Throat Chop", "Rock Slide"]},
 		"Spirit Jonah (Fairy Tale) Doubles": {
@@ -2846,7 +2847,7 @@ var SETDEX_SM = {
 			"level": 59,
 			"nature": "Brave",
 			"ability": "Clear Body",
-			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
+			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0},
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Zen Headbutt", "Meteor Mash", "Ice Punch", "Strength"]},
 		"Ace of Spades (Factory)": {
@@ -2855,7 +2856,7 @@ var SETDEX_SM = {
 			"nature": "Adamant",
 			"ability": "Clear Body",
 			"evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0},
-			"moves": ["Zen Headbutt", "Meteor Mash", "Bullet Punch", "Earthquake"]},
+			"moves": ["Zen Headbutt", "Iron Head", "Bullet Punch", "Earthquake"]},
 		"Glass Gauntlet 3:Right (Factory) Doubles": {
 			"item": "Leftovers",
 			"level": 82,
@@ -3290,14 +3291,14 @@ var SETDEX_SM = {
 			"nature": "Timid",
 			"ability": "Snow Cloak",
 			"evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252},
-			"moves": ["Aurora Veil", "Moonblast", "Aurara Beam", "Extrasensory"]},
+			"moves": ["Aurora Veil", "Moonblast", "Aurora Beam", "Extrasensory"]},
 		"Lin 1": {
 			"item": "Eject Button",
 			"level": 100,
 			"nature": "Timid",
 			"ability": "Snow Warning",
 			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
-			"moves": ["Aurora Veil", "Moonblast", "Freeza", "Foul Play"]}},
+			"moves": ["Aurora Veil", "Moonblast", "Freeze-Dry", "Foul Play"]}},
 	"Noctowl": {
 		"Diana 1 Doubles": {
 			"level": 69,
@@ -3747,7 +3748,7 @@ var SETDEX_SM = {
 			"level": 57,
 			"nature": "Quiet",
 			"ability": "Magic Guard",
-			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
+			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0},
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Trick Room", "Psychic", "Focus Blast", "Toxic"]},
 		"Deryl Doubles": {
@@ -3915,7 +3916,7 @@ var SETDEX_SM = {
 			"ivs": {"hp": 25, "at": 25, "df": 25, "sa": 25, "sd": 25, "sp": 25},
 			"moves": ["Thunderbolt", "Hex", "Will-O-Wisp", "Foul Play"]}},
 	"Rotom-Frost": {
-		"Connal 4 (Short Circuit) Doubles": {"item": "Icium Z", "level": 94, "nature": "Timid", "ability": "Levitate", "evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 0, "at": 0, "df": 0, "sa": 0, "sd": 0, "sp": 0}, "moves": ["Shadow Ball", "Discharge", "Blizzard", "Foul Play"]},},
+		"Connal 4 (Short Circuit) Doubles": {"item": "Icium Z", "level": 94, "nature": "Timid", "ability": "Levitate", "evs": {"hp": 4, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Shadow Ball", "Discharge", "Blizzard", "Foul Play"]},},
 	"Rotom-Heat": {
 		"Charlotte (Superheated) Doubles": {
 			"item": "Light Clay",
@@ -4392,7 +4393,7 @@ var SETDEX_SM = {
 			"level": 57,
 			"nature": "Sassy",
 			"ability": "Regenerator",
-			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85},
+			"evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 0},
 			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 0},
 			"moves": ["Trick Room", "Psychic", "Scald", "Nasty Plot"]},
 		"Spirit Leo (Chess Board) Doubles": {
@@ -5215,7 +5216,7 @@ var SETDEX_SM = {
 			"ability": "Speed Boost",
 			"evs": {"hp": 49, "at": 49, "df": 49, "sa": 49, "sd": 49, "sp": 49},
 			"ivs": {"hp": 2, "at": 2, "df": 2, "sa": 2, "sd": 2, "sp": 2},
-			"moves": ["Giga Drain", "Struggle Bug", "Air Cutter", "Ancient Power"]},
+			"moves": ["Giga Drain", "Struggle Bug", "HP Flying", "Ancient Power"]},
 		"Bennett (Dark Crystal Cavern)": {
 			"item": "Life orb",
 			"level": 63,
