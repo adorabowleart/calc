@@ -269,6 +269,15 @@ var SETDEX_SM = {
 			"ivs": {"hp": 1, "at": 1, "df": 1, "sa": 1, "sd": 1, "sp": 1},
 			"moves": ["Leech Seed", "Spore", "Mach Punch", "Mega Drain"]},
 		"Partner Florinia (Fiore Gauntlet)": {"ability": "Poison Heal", "level": 70, "evs": {"hp": 85, "at": 85, "df": 85, "sa": 85, "sd": 85, "sp": 85}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "moves": ["Spore", "Drain Punch", "Leech Seed", "Seed Bomb"], "nature": "Adamant", "item": "Toxic Orb",}},
+	"Breloom-Bot": {
+		"Mechanic Shed": {
+			"item": "Muscle Band",
+			"level": 90,
+			"nature": "Adamant",
+			"ability": "Technician",
+			"evs": {"hp": 4, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252},
+			"ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31},
+			"moves": ["Spore", "Magnet Bomb", "Shadow Punch", "Shift Gear"]},},
 	"Brionne": {
 		"Cain 2": {
 			"item": "Zoom Lens",
