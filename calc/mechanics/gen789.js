@@ -470,7 +470,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             }
             else if (move.named("Smack Down", "Thousand Arrows", "Clear Smog", "Smog") &&
                 field.hasTerrain("Burning")) {
-                if (move.named("Thousand Arrows")) {
+                if (move.named("Thousand Arrows") && typeEffectiveness === 1) {
                     typeEffectiveness = 1 * addedType.effectiveness[defender.types[0]] *
                         (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
                 }
@@ -484,7 +484,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             }
             else if (move.named("Smack Down", "Thousand Arrows", "Continental Crush", "Tectonic Rage") &&
                 field.hasTerrain("Dragon's Den")) {
-                if (move.named("Thousand Arrows")) {
+                if (move.named("Thousand Arrows") && typeEffectiveness === 1) {
                     typeEffectiveness = 1 * addedType.effectiveness[defender.types[0]] *
                         (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
                 }
@@ -503,7 +503,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         case "Corrosive Mist":
             addedType = gen.types.get("poison");
             if ((move.named("Mud Bomb", "Mud Shot", "Mud-Slap", "Muddy Water", "Smack Down", "Thousand Arrows", "Whirlpool") || move.hasType("Grass")) && field.hasTerrain("Corrosive")) {
-                if (move.named("Thousand Arrows")) {
+                if (move.named("Thousand Arrows") && typeEffectiveness === 1) {
                     typeEffectiveness = 1 * addedType.effectiveness[defender.types[0]] *
                         (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
                 }
@@ -600,7 +600,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         case "Electric":
             addedType = gen.types.get("electric");
             if (move.named("Explosion", "Hurricane", "Muddy Water", "Self-Destruct", "Smack Down", "Surf", "Thousand Arrows", "Hydro Vortex")) {
-                if (move.named("Thousand Arrows")) {
+                if (move.named("Thousand Arrows") && typeEffectiveness === 1) {
                     typeEffectiveness = 1 * addedType.effectiveness[defender.types[0]] *
                         (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
                 }
@@ -707,7 +707,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
             addedType = gen.types.get("water");
             if (move.named("Smack Down", "Thousand Arrows") &&
                 field.hasTerrain("Swamp")) {
-                if (move.named("Thousand Arrows")) {
+                if (move.named("Thousand Arrows") && typeEffectiveness === 1) {
                     typeEffectiveness = 1 * addedType.effectiveness[defender.types[0]] *
                         (defender.types[1] ? addedType.effectiveness[defender.types[1]] : 1);
                 }
