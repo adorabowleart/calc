@@ -1682,7 +1682,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             else if (move.named('Blizzard', 'Subzero Slammer', 'Splintered Stormshards', 'Gust', 'Hurricane', 'Muddy Water', 'Razor Wind', 'Sand Tomb', 'Sludge Wave', 'Sparkling Area', 'Surf', 'Twister', 'Water Pledge', 'Water Spout', 'Continental Crush', 'Hydro Vortex', 'Oceanic Operetta', 'Splintered Stormshards', 'Supersonic Skystrike')) {
                 basePower *= 1.3;
             }
-            if ((move.hasType('Fire')) && (0, util_2.isGrounded)(attacker, field)) {
+            if ((0, util_2.isGrounded)(attacker, field) && move.hasType('Fire')) {
                 basePower *= 1.5;
             }
             if ((move.hasType('Grass') && (0, util_2.isGrounded)(defender, field)) || move.hasType('Ice')) {
@@ -1727,7 +1727,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveType = move.type;
             break;
         case 'Corrosive':
-            if (move.named('Acid', 'Acid Spray', 'Nature Power')) {
+            if (move.named('Acid', 'Acid Spray', 'Nature Power', "Grass Knot")) {
                 basePower *= 2;
             }
             else if (move.named('Mud Bomb', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Smack Down', 'Thousand Arrows', 'Whirlpool')) {
@@ -1805,7 +1805,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.terrain = field.terrain;
             desc.moveType = move.type;
             break;
-        case 'Dragon\'s Den':
+        case "Dragon's Den":
             if (move.named('Smack Down', 'Thousand Arrows', 'Continental Crush', 'Tectonic Rage', 'Dragon Ascent', 'Pay Day')) {
                 basePower *= 2;
             }
@@ -1818,7 +1818,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Dragon', 'Fire')) {
                 basePower *= 1.5;
             }
-            if (move.hasType('Water', 'Ice')) {
+            else if (move.hasType('Water', 'Ice')) {
                 basePower *= 0.5;
             }
             desc.moveBP = basePower;
@@ -2016,7 +2016,7 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             else if (move.named('Splintered Stormshards', 'Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
                 basePower *= 1.3;
             }
-            if (move.hasType('Ice')) {
+            if (move.hasType('Ice') || (move.flags.sound && attacker.hasAbility('Liquid Voice'))) {
                 basePower *= 1.5;
             }
             else if (move.hasType('Fire')) {
@@ -2224,10 +2224,10 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.named('Fairy Wind', 'Gust', 'Icy Wind', 'Ominous Wind', 'Razor Wind', 'Silver Wind', 'Twister') && field.hasWeather('Strong Winds')) {
                 basePower *= 1.5;
             }
-            if (move.named('Scald', 'Steam Eruption')) {
+            else if (move.named('Scald', 'Steam Eruption')) {
                 basePower *= 0.5;
             }
-            if (move.named('Splintered Stormshards', 'Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
+            else if (move.named('Splintered Stormshards', 'Eruption', 'Fire Pledge', 'Flame Burst', 'Heat Wave', 'Incinerate', 'Lava Plume', 'Mind Blown', 'Searing Shot', 'Inferno Overdrive')) {
                 basePower *= 1.3;
             }
             if (move.hasType('Flying') && move.category == 'Special' && field.hasWeather('Strong Winds')) {
@@ -2236,10 +2236,10 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             if (move.hasType('Rock', 'Flying')) {
                 basePower *= 1.5;
             }
-            if (move.hasType('Ice')) {
+            else if (move.hasType('Ice')) {
                 basePower *= 1.5;
             }
-            if (move.hasType('Fire')) {
+            else if (move.hasType('Fire')) {
                 basePower *= 0.5;
             }
             desc.moveBP = basePower;
@@ -2387,9 +2387,6 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
     }
     if (basePower === 0) {
         return 0;
-    }
-    if (move.named('Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc', 'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage', 'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare', 'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle') || move.isMax) {
-        desc.moveBP = move.bp;
     }
     var bpMods = calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, basePower, hasAteAbilityTypeChange, turnOrder, hit);
     basePower = (0, util_2.OF16)(Math.max(1, (0, util_2.pokeRound)((basePower * (0, util_2.chainMods)(bpMods, 41, 2097152)) / 4096)));
@@ -2884,6 +2881,10 @@ function calculateDfModsSMSSSV(gen, attacker, defender, move, field, desc, isCri
     if (field.hasTerrain('Dragon\'s Den') && defender.hasType('Dragon')) {
         dfMods.push(5325);
         desc.terrain = field.terrain;
+    }
+    if (field.hasTerrain("Dragon's Den") && defender.hasAbility('Magma Armor')) {
+        dfMods.push(6144);
+        desc.defenderAbility = defender.ability;
     }
     if (field.hasTerrain('Dark Crystal') && (defender.hasType('Dark', 'Ghost'))) {
         dfMods.push(6144);

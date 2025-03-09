@@ -128,7 +128,7 @@ var SETDEX_SM = {
 			"level": 93,
 			"nature": "Modest",
 			"ability": "Aroma Veil",
-			"evs": {"hp": 200, "at": 0, "df": 56, "sa": 252, "sd": 0, "sp": 252},
+			"evs": {"hp": 200, "at": 0, "df": 56, "sa": 252, "sd": 0, "sp": 0},
 			"moves": ["Dazzling Gleam", "Psychic", "Flash Cannon", "Thunder"]},},
 	"Aurorus": {
 		"Zel 3 (Factory)": {
@@ -846,7 +846,7 @@ var SETDEX_SM = {
 			"moves": ["Gyro Ball", "Brick Break", "Swords Dance", "Shadow Claw"]}},
 	"Donphan": {
 		"Alistasia (Big Top)": {
-			"item": "Synthetic Field",
+			"item": "Synthetic Seed",
 			"level": 66,
 			"nature": "Adamant",
 			"ability": "Sturdy",
@@ -1829,8 +1829,8 @@ var SETDEX_SM = {
 			"level": 89,
 			"nature": "Adamant",
 			"ability": "Guts",
-			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 252},
-			"moves": ["Swords Dance", "Close Combat", "Mega Horn", "Throat Chop"]}},
+			"evs": {"hp": 252, "at": 252, "df": 252, "sa": 252, "sd": 252, "sp": 0},
+			"moves": ["Swords Dance", "Close Combat", "Megahorn", "Throat Chop"]}},
 	"Hippowdon": {
 		"T3RR4 1 (Glitch)": {
 			"item": "Smooth Rock",
@@ -2971,6 +2971,7 @@ var SETDEX_SM = {
 	"Mime-Pulse": {
 		"Master Mime (Short Circuit) Doubles": {
 			"level": 100,
+			"item": "Leftovers",
 			"nature": "Careful",
 			"ability": "Wonder Guard",
 			"evs": {"hp": 252, "at": 0, "df": 4, "sa": 0, "sd": 252, "sp": 0},
@@ -4462,7 +4463,7 @@ var SETDEX_SM = {
 			"nature": "Adamant",
 			"ability": "Intimidate",
 			"evs": {"hp": 156, "at": 100, "df": 0, "sa": 0, "sd": 0, "sp": 252},
-			"moves": ["Return", "Close Combat", "U-turn", "Brave Birb"]},
+			"moves": ["Return", "Close Combat", "U-turn", "Brave Bird"]},
 		"Spirit Leo (Chess Board) Doubles": {
 			"ability": "Reckless", "level": 95,
 			"evs": {"hp": 0, "at": 252, "df": 4, "sa": 0, "sd": 0, "sp": 252},

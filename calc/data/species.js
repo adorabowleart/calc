@@ -2749,6 +2749,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Multitype' },
         gender: 'N',
         otherFormes: [
+            "Arceus-.Pulse",
             'Arceus-Bug',
             'Arceus-Dark',
             'Arceus-Dragon',
@@ -7695,7 +7696,7 @@ var SS_PATCH = {
     Melmetal: { otherFormes: ['Melmetal-Gmax'] },
     Meowth: { otherFormes: ['Meowth-Alola', 'Meowth-Galar', 'Meowth-Gmax'] },
     Moltres: { otherFormes: ['Moltres-Galar'] },
-    'Mr. Mime': { otherFormes: ['Mr. Mime-Galar'] },
+    'Mr. Mime': { otherFormes: ['Mr. Mime-Galar', "Mime-Pulse"] },
     Pikachu: {
         otherFormes: [
             'Pikachu-Alola',
