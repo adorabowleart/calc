@@ -2361,10 +2361,13 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             desc.moveType = move.type;
             break;
         case 'Water':
-            if (move.named('Dive', 'Muddy Water', 'Surf', 'Whirlpool', 'Nature Power', 'Hydro Vortex')) {
+            if (move.named('Dive')) {
+                basePower *= 1.95;
+                
+            else if (move.named('Muddy Water', 'Surf', 'Whirlpool', 'Nature Power', 'Hydro Vortex')) {
                 basePower *= 1.5;
             }
-            else if (move.named('Splintered Stormshards', 'Dive', 'Blizzard', 'Glaciate', 'Subzero Slammer', 'Acid Downpour')) {
+            else if (move.named('Splintered Stormshards', 'Blizzard', 'Glaciate', 'Subzero Slammer', 'Acid Downpour')) {
                 basePower *= 1.3;
             }
             if (move.hasType('Ground')) {
